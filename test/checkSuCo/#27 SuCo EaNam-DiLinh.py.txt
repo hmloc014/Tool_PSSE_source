@@ -1,0 +1,2944 @@
+
+  ITER       DELTAP      BUS         DELTAQ      BUS        DELTA/V/      BUS       DELTAANG      BUS
+   0         0.0000(   137031   )    0.0000(   321010   )
+                                                             0.13209(   937061   )   0.02614(   914025   )
+   1         0.0437(   137031   )    0.9115(   975042   )
+                                                             0.12024(   914025   )   0.02695(   914025   )
+   2         0.0325(   137031   )    0.0548(   914025   )
+                                                             0.01360(   937061   )   0.00579(   138003   )
+   3         0.0011(   137031   )    0.0010(   972322   )
+                                                             0.00020(   937061   )   0.00011(   138003   )
+   4         0.0000(   137031   )    0.0000(   972322   )
+
+
+ Reached tolerance in 4 iterations
+
+ Largest mismatch:      0.00 MW     -0.00 Mvar      0.00 MVA at bus 72010 [VINHTAN5    500.00]
+ System total absolute mismatch:                    0.00 MVA
+
+ SWING BUS SUMMARY:
+   BUS# X-- NAME --X BASKV      PGEN     PMAX    PMIN      QGEN     QMAX    QMIN
+ 113017 MAOMAOTIAO1 110.00      91.9    150.0     0.0      -5.2     50.0   -30.0
+ 126047 THAMCAU1    110.00      59.5    150.0     0.0     -33.0*    30.0   -30.0
+ 923011 HOABINH_H1  15.800     214.4    240.0     0.0      55.5    180.0   -80.0
+
+  ITER       DELTAP      BUS         DELTAQ      BUS        DELTA/V/      BUS       DELTAANG      BUS
+   0         0.0000(   137031   )    0.0000(   321010   )
+                                                             0.13209(   937061   )   0.02614(   914025   )
+   1         0.0437(   137031   )    0.9115(   975042   )
+                                                             0.12024(   914025   )   0.02695(   914025   )
+   2         0.0325(   137031   )    0.0548(   914025   )
+                                                             0.01360(   937061   )   0.00579(   138003   )
+   3         0.0011(   137031   )    0.0010(   972322   )
+                                                             0.00020(   937061   )   0.00011(   138003   )
+   4         0.0000(   137031   )    0.0000(   972322   )
+
+
+ Reached tolerance in 4 iterations
+
+ Largest mismatch:      0.00 MW     -0.00 Mvar      0.00 MVA at bus 72010 [VINHTAN5    500.00]
+ System total absolute mismatch:                    0.00 MVA
+
+ SWING BUS SUMMARY:
+   BUS# X-- NAME --X BASKV      PGEN     PMAX    PMIN      QGEN     QMAX    QMIN
+ 113017 MAOMAOTIAO1 110.00      91.9    150.0     0.0      -5.2     50.0   -30.0
+ 126047 THAMCAU1    110.00      59.5    150.0     0.0     -33.0*    30.0   -30.0
+ 923011 HOABINH_H1  15.800     214.4    240.0     0.0      55.5    180.0   -80.0
+
+  ITER       DELTAP      BUS         DELTAQ      BUS        DELTA/V/      BUS       DELTAANG      BUS
+   0         0.0000(   137031   )    0.0000(   321010   )
+                                                             0.13209(   937061   )   0.02614(   914025   )
+   1         0.0437(   137031   )    0.9115(   975042   )
+                                                             0.12024(   914025   )   0.02695(   914025   )
+   2         0.0325(   137031   )    0.0548(   914025   )
+                                                             0.01360(   937061   )   0.00579(   138003   )
+   3         0.0011(   137031   )    0.0010(   972322   )
+                                                             0.00020(   937061   )   0.00011(   138003   )
+   4         0.0000(   137031   )    0.0000(   334010   )
+
+
+ Reached tolerance in 4 iterations
+
+ Largest mismatch:      0.00 MW     -0.00 Mvar      0.00 MVA at bus 72010 [VINHTAN5    500.00]
+ System total absolute mismatch:                    0.00 MVA
+
+ SWING BUS SUMMARY:
+   BUS# X-- NAME --X BASKV      PGEN     PMAX    PMIN      QGEN     QMAX    QMIN
+ 113017 MAOMAOTIAO1 110.00      91.9    150.0     0.0      -5.2     50.0   -30.0
+ 126047 THAMCAU1    110.00      59.5    150.0     0.0     -33.0*    30.0   -30.0
+ 923011 HOABINH_H1  15.800     214.4    240.0     0.0      55.5    180.0   -80.0
+ Diagonals = 3804   Off-diagonals = 8791   Maximum size = 11094
+
+  ITER       DELTAP      BUS         DELTAQ      BUS        DELTA/V/      BUS       DELTAANG      BUS
+   0         0.0000(   137031   )    0.0000(   334010   )
+                                                             0.13209(   937061   )   0.02614(   914025   )
+   1         0.0437(   137031   )    0.9115(   975042   )
+                                                             0.12024(   914025   )   0.02695(   914025   )
+   2         0.0325(   137031   )    0.0548(   914025   )
+                                                             0.01360(   937061   )   0.00579(   138003   )
+   3         0.0011(   137031   )    0.0010(   972322   )
+                                                             0.00020(   937061   )   0.00011(   138003   )
+   4         0.0000(   137031   )    0.0000(   334010   )
+
+
+ Reached tolerance in 4 iterations
+
+ Largest mismatch:     -0.00 MW     -0.00 Mvar      0.00 MVA at bus 72010 [VINHTAN5    500.00]
+ System total absolute mismatch:                    0.00 MVA
+
+ SWING BUS SUMMARY:
+   BUS# X-- NAME --X BASKV      PGEN     PMAX    PMIN      QGEN     QMAX    QMIN
+ 113017 MAOMAOTIAO1 110.00      91.9    150.0     0.0      -5.2     50.0   -30.0
+ 126047 THAMCAU1    110.00      59.5    150.0     0.0     -33.0*    30.0   -30.0
+ 923011 HOABINH_H1  15.800     214.4    240.0     0.0      55.5    180.0   -80.0
+
+ 1346 loads converted during this step
+
+ 1346 of 1346 loads converted
+ No plant at type 2 bus 290009 [TRAVINH2    220.00]--bus type code set to 1
+ No plant at type 2 bus 212015 [LANGSON2    220.00]--bus type code set to 1
+ No plant at type 2 bus 219021 [TXSONLA2    220.00]--bus type code set to 1
+ No plant at type 2 bus 216023 [THANUYEN2   220.00]--bus type code set to 1
+ No plant at type 2 bus 213002 [BACME       220.00]--bus type code set to 1
+ No plant at type 2 bus 138081 [HBRE_HT     110.00]--bus type code set to 1
+
+ Generator conversion completed using ZSORCE
+ Diagonals = 3807   Off-diagonals = 8794   Maximum size = 11100
+
+ 3807 diagonal and 8118 off-diagonal elements
+
+ ITER DELTAV/TOL X-------- AT BUS ---------X  REAL(DELTAV)  IMAG(DELTAV)
+    1     1.564  777082 [THUDUC214_C215.000]    0.9050E-05    0.1276E-04
+    2     0.006  170149 [DATEH       110.00]    0.6102E-07    0.1955E-07
+
+ Reached tolerance in 2 iterations
+
+ Largest mismatch:     -0.00 MW      0.02 Mvar      0.02 MVA at bus 173051 [TDLONGHA    110.00]
+ System total absolute mismatch:                    0.14 MVA
+
+ Case saved in file sme.sav on THU, NOV 04 2021  17:07
+
+ 3807 diagonal and 8118 off-diagonal elements
+
+ Duplicate model type: "ESST4B" at bus 958051 machine "1"
+ RECORD IGNORED:
+ 958051	'ESST4B'	1	0	15	15	5	-0.87	0	1	0	99	-99	0	9.3	0	11.63	0.113	0.124	0	/	/
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Input error detected at !
+ 955092	'ESST4B'	1	0	10.75	10.75	5	-0.87	0	1	0	99	-99	0	9.3	0	11.63	0.113	0.124	0	/	/					
+        !
+
+ RECORD IGNORED:
+ 955091	'PSS2A'	1	1	0	3	0	5	1	2.5	2.5	0	2.5	0	2.5	0.39	1	0	0.1	6.5	0.44	0.08					
+
+ Machine is a wind machine - Model "EXAC4" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Duplicate model type: "ESST4B" at bus 916095 machine "1"
+ RECORD IGNORED:
+ 916095	'ESST4B'	1	0	10.75	10.75	5	-0.87	0	1	0	99	-99	0	9.3	0	11.63	0.113	0.124	0	/
+
+ Duplicate model type: "ESST4B" at bus 919126 machine "1"
+ RECORD IGNORED:
+ 919126	'ESST4B'	1	0	10.75	10.75	5	-0.87	0	1	0	99	-99	0	9.3	0	11.63	0.113	0.124	0	/
+
+ Duplicate model type: "GENSAL" at bus 919126 machine "1"
+ RECORD IGNORED:
+ 919126	'GENSAL'	1	6.6	0.05	0.155	2	0	1.13	0.734	0.26	0.23	0.104	0.194	0.685	/	/
+
+ Duplicate model type: "HYGOV" at bus 919126 machine "1"
+ RECORD IGNORED:
+ 919126	'HYGOV'	1	0.06	0.4	3	0.099	0.4	0.15	1	0.1	1.35	1.4	0.1	0.1	/	/
+
+ Duplicate model type: "PSS2A" at bus 919126 machine "1"
+ RECORD IGNORED:
+ 919126	'PSS2A'	1	1	0	3	0	5	1	2.5	2.5	0	2.5	0	2.5	0.39	1	0	0.1	6.5	0.44	0.08	0.2	0.98	0.1	-0.1	/
+
+ Duplicate model type: "ESST4B" at bus 950107 machine "1"
+ RECORD IGNORED:
+ 950107	'ESST4B'	1	0	10.75	10.75	5	-0.87	0	1	0	99	-99	0	9.3	0	11.63	0.113	0.124	0	/
+
+ Duplicate model type: "GENSAL" at bus 950107 machine "1"
+ RECORD IGNORED:
+ 950107	'GENSAL'	1	6.6	0.05	0.155	2	0	1.13	0.734	0.26	0.23	0.104	0.194	0.685	/	/
+
+ Duplicate model type: "HYGOV" at bus 950107 machine "1"
+ RECORD IGNORED:
+ 950107	'HYGOV'	1	0.06	0.4	3	0.099	0.4	0.15	1	0.1	1.35	1.4	0.1	0.1	/	/
+
+ Duplicate model type: "PSS2A" at bus 950107 machine "1"
+ RECORD IGNORED:
+ 950107	'PSS2A'	1	1	0	3	0	5	1	2.5	2.5	0	2.5	0	2.5	0.39	1	0	0.1	6.5	0.44	0.08	0.2	0.98	0.1	-0.1	/
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "EXAC4" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENROU" cannot be attached
+
+ Machine is a wind machine - Model "TGOV1" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "EXAC4" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "EXAC4" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENROU" cannot be attached
+
+ Machine is a wind machine - Model "TGOV1" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "ESST4B" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "GENSAL" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "HYGOV" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Machine is a wind machine - Model "PSS2A" cannot be attached
+
+ Duplicate model type: "ESST4B" at bus 931022 machine "1"
+ RECORD IGNORED:
+ 931022	'ESST4B'	1	0	15	15	5	-0.87	0	1	0	99	-99	0	9.3	0	11.63	0.113	0.124	0	/	/	0	0	0	0	0	0	TRUE
+
+ Duplicate model type: "ESST4B" at bus 955022 machine "1"
+ RECORD IGNORED:
+ 955022	'ESST4B'	1	0	10.75	10.75	5	-0.87	0	1	0	99	-99	0	9.3	0	11.63	0.113	0.124	0	/	/	0	0	0	0	0	0	TRUE
+
+ Duplicate model type: "ESST4B" at bus 954092 machine "1"
+ RECORD IGNORED:
+ 954092	'ESST4B'	1	0	15	15	5	-0.87	0	1	0	99	-99	0	9.3	0	11.63	0.113	0.124	0	/	/	0	0	0	0	0	0	TRUE
+
+ Duplicate model type: "ESST4B" at bus 916083 machine "1"
+ RECORD IGNORED:
+ 916083	'ESST4B'	1	0	10.75	10.75	5	-0.87	0	1	0	99	-99	0	9.3	0	11.63	0.113	0.124	0	/	0	0	0	0	0	0	0	TRUE
+
+ Duplicate model type: "ESST4B" at bus 916083 machine "1"
+ RECORD IGNORED:
+ 916083	'ESST4B'	1	0	10.75	10.75	5	-0.87	0	1	0	99	-99	0	9.3	0	11.63	0.113	0.124	0	/	0	0	0	0	0	0	0	TRUE
+
+ Duplicate model type: "GENSAL" at bus 931022 machine "1"
+ RECORD IGNORED:
+ 931022	'GENSAL'	1	6.6	0.05	0.155	2	0	1.13	0.734	0.26	0.28	0.104	0.194	0.685	/	/
+
+ Duplicate model type: "GENSAL" at bus 955022 machine "1"
+ RECORD IGNORED:
+ 955022	'GENSAL'	1	6.6	0.05	0.155	2	0	1.13	0.734	0.26	0.22	0.104	0.194	0.685	/	/
+
+ Duplicate model type: "GENSAL" at bus 954092 machine "1"
+ RECORD IGNORED:
+ 954092	'GENSAL'	1	6.6	0.05	0.155	2	0	1.13	0.734	0.26	0.22	0.104	0.194	0.685	/	/
+
+ Duplicate model type: "GENSAL" at bus 916083 machine "1"
+ RECORD IGNORED:
+ 916083	'GENSAL'	1	6.6	0.05	0.155	2	0	1.13	0.734	0.26	0.23	0.104	0.194	0.685	/	/
+
+ Duplicate model type: "GENSAL" at bus 916083 machine "1"
+ RECORD IGNORED:
+ 916083	'GENSAL'	1	6.6	0.05	0.155	2	0	1.13	0.734	0.26	0.23	0.104	0.194	0.685	/	/
+
+ Duplicate model type: "HYGOV" at bus 931022 machine "1"
+ RECORD IGNORED:
+ 931022	'HYGOV'	1	0.06	0.4	3	0.099	0.4	0.15	1	0.1	1.35	1.4	0.1	0.1	/	/	0	0	0	0	0	0	0	0	0	0	0
+
+ Duplicate model type: "HYGOV" at bus 955022 machine "1"
+ RECORD IGNORED:
+ 955022	'HYGOV'	1	0.06	0.4	3	0.099	0.4	0.15	1	0.1	1.35	1.4	0.1	0.1	/	/	0	0	0	0	0	0	0	0	0	0	0
+
+ Duplicate model type: "HYGOV" at bus 954092 machine "1"
+ RECORD IGNORED:
+ 954092	'HYGOV'	1	0.06	0.4	3	0.099	0.4	0.15	1	0.1	1.35	1.4	0.1	0.1	/	/	0	0	0	0	0	0	0	0	0	0	0
+
+ Duplicate model type: "HYGOV" at bus 916083 machine "1"
+ RECORD IGNORED:
+ 916083	'HYGOV'	1	0.06	0.4	3	0.099	0.4	0.15	1	0.1	1.35	1.4	0.1	0.1	/	/	0	0	0	0	0	0	0	0	0	0	0
+
+ Duplicate model type: "HYGOV" at bus 916083 machine "1"
+ RECORD IGNORED:
+ 916083	'HYGOV'	1	0.06	0.4	3	0.099	0.4	0.15	1	0.1	1.35	1.4	0.1	0.1	/	/	0	0	0	0	0	0	0	0	0	0	0
+
+ Duplicate model type: "PSS2A" at bus 931022 machine "1"
+ RECORD IGNORED:
+ 931022	'PSS2A'	1	1	0	3	0	5	1	2.5	2.5	0	2.5	0	2.5	0.39	1	0	0.1	6.5	0.44	0.08	0.2	0.98	0.1	-0.1	/	0
+
+ Duplicate model type: "PSS2A" at bus 955022 machine "1"
+ RECORD IGNORED:
+ 955022	'PSS2A'	1	1	0	3	0	5	1	2.5	2.5	0	2.5	0	2.5	0.39	1	0	0.1	6.5	0.44	0.08	0.2	0.98	0.1	-0.1	/	0
+
+ Duplicate model type: "PSS2A" at bus 954092 machine "1"
+ RECORD IGNORED:
+ 954092	'PSS2A'	1	1	0	3	0	5	1	2.5	2.5	0	2.5	0	2.5	0.39	1	0	0.1	6.5	0.44	0.08	0.2	0.98	0.1	-0.1	/	0
+
+ Duplicate model type: "PSS2A" at bus 916083 machine "1"
+ RECORD IGNORED:
+ 916083	'PSS2A'	1	1	0	3	0	5	1	2.5	2.5	0	2.5	0	2.5	0.39	1	0	0.1	6.5	0.44	0.08	0.2	0.98	0.1	-0.1	/	0
+
+ Duplicate model type: "PSS2A" at bus 916083 machine "1"
+ RECORD IGNORED:
+ 916083	'PSS2A'	1	1	0	3	0	5	1	2.5	2.5	0	2.5	0	2.5	0.39	1	0	0.1	6.5	0.44	0.08	0.2	0.98	0.1	-0.1	/	0
+ Out of file data--switch to terminal input mode
+
+ Generator models use:
+  CONS        1- 10958
+  STATES      1-  4601
+
+ Stabilizer models use:
+  CONS    10959- 25867
+  STATES   4602- 18633
+  VARS        1-  3508
+  ICONS       1-  5262
+
+ Excitation System models use:
+  CONS    25868- 40060
+  STATES  18634- 22038
+  ICONS    5263-  5264
+
+ Turbine Governor models use:
+  CONS    40061- 49649
+  STATES  22039- 25182
+  VARS     3509-  5053
+
+ Wind Generator models use:
+  CONS    49650- 50881
+  STATES  25183- 25446
+  VARS     5054-  5405
+  ICONS    5265-  5352
+
+ Wind Electrical models use:
+  CONS    50882- 54841
+  STATES  25447- 25974
+  VARS     5406-  6197
+  ICONS    5353-  5880
+
+ Wind Auxiliary models use:
+  CONS    54842- 57217
+  STATES  25975- 26590
+  VARS     6198-  6989
+  ICONS    5881-  6496
+
+
+ SUMMARY OF MODELS READ:
+
+ GENS:  GENROU           GENSAL
+         211              667
+
+ STABS: PSS2A
+         877
+
+ EXSYS: EXAC4            ESST1A           ESST4B
+         100                1              775
+
+ GOVS:  TGOV1            GAST             HYGOV
+         157               54              667
+
+ USER:  USRMDL
+         264
+
+ NEXT AVAILABLE ADDRESSES ARE:
+    CON  STATE    VAR   ICON
+  57218  26591   6990   6497
+
+ Only PSS/E supplied models in case. Compilation is not required
+
+ CHANNEL  932 WITH IDENTIFIER "ANGLE_HOABINH_H1" ADDED
+
+ CHANNEL  933 WITH IDENTIFIER "ANGLE_SONLA_H1" ADDED
+
+ CHANNEL  934 WITH IDENTIFIER "ANGLE_LAICHAU_H1" ADDED
+
+ CHANNEL  935 WITH IDENTIFIER "ANGLE_MONGDUONG_S1" ADDED
+
+ CHANNEL  936 WITH IDENTIFIER "ANGLE_QUANGNINH_S1" ADDED
+
+ CHANNEL  937 WITH IDENTIFIER "ANGLE_THANGLONG_S1" ADDED
+
+ CHANNEL  938 WITH IDENTIFIER "ANGLE_THANGLONG_S1" ADDED
+
+ CHANNEL  939 WITH IDENTIFIER "ANGLE_VUNGANG_S1" ADDED
+
+ CHANNEL  940 WITH IDENTIFIER "ANGLE_YALI_H1" ADDED
+
+ CHANNEL  941 WITH IDENTIFIER "ANGLE_VINHTAN_S1" ADDED
+
+ CHANNEL  942 WITH IDENTIFIER "ANGLE_VINHTAN_S2" ADDED
+
+ CHANNEL  943 WITH IDENTIFIER "ANGLE_PHUMY_S1" ADDED
+
+ CHANNEL  944 WITH IDENTIFIER "ANGLE_DUYENHAI_S1" ADDED
+
+ CHANNEL  945 WITH IDENTIFIER "ANGLE_SONGHAU_S1" ADDED
+
+ CHANNEL  946 WITH IDENTIFIER "ANGLE_OMON_S1" ADDED
+
+ CHANNEL  947 WITH IDENTIFIER "PELEC_HOABINH_H1" ADDED
+
+ CHANNEL  948 WITH IDENTIFIER "PELEC_SONLA_H1" ADDED
+
+ CHANNEL  949 WITH IDENTIFIER "PELEC_LAICHAU_H1" ADDED
+
+ CHANNEL  950 WITH IDENTIFIER "PELEC_MONGDUONG_S1" ADDED
+
+ CHANNEL  951 WITH IDENTIFIER "PELEC_QUANGNINH_S1" ADDED
+
+ CHANNEL  952 WITH IDENTIFIER "PELEC_THANGLONG_S1" ADDED
+
+ CHANNEL  953 WITH IDENTIFIER "PELEC_THANGLONG_S1" ADDED
+
+ CHANNEL  954 WITH IDENTIFIER "PELEC_VUNGANG_S1" ADDED
+
+ CHANNEL  955 WITH IDENTIFIER "PELEC_YALI_H1" ADDED
+
+ CHANNEL  956 WITH IDENTIFIER "PELEC_VINHTAN_S1" ADDED
+
+ CHANNEL  957 WITH IDENTIFIER "PELEC_VINHTAN_S2" ADDED
+
+ CHANNEL  958 WITH IDENTIFIER "PELEC_PHUMY_S1" ADDED
+
+ CHANNEL  959 WITH IDENTIFIER "PELEC_DUYENHAI_S1" ADDED
+
+ CHANNEL  960 WITH IDENTIFIER "PELEC_SONGHAU_S1" ADDED
+
+ CHANNEL  961 WITH IDENTIFIER "PELEC_OMON_S1" ADDED
+
+ CHANNEL  962 WITH IDENTIFIER "QELEC_HOABINH_H1" ADDED
+
+ CHANNEL  963 WITH IDENTIFIER "QELEC_SONLA_H1" ADDED
+
+ CHANNEL  964 WITH IDENTIFIER "QELEC_LAICHAU_H1" ADDED
+
+ CHANNEL  965 WITH IDENTIFIER "QELEC_MONGDUONG_S1" ADDED
+
+ CHANNEL  966 WITH IDENTIFIER "QELEC_QUANGNINH_S1" ADDED
+
+ CHANNEL  967 WITH IDENTIFIER "QELEC_THANGLONG_S1" ADDED
+
+ CHANNEL  968 WITH IDENTIFIER "QELEC_THANGLONG_S1" ADDED
+
+ CHANNEL  969 WITH IDENTIFIER "QELEC_VUNGANG_S1" ADDED
+
+ CHANNEL  970 WITH IDENTIFIER "QELEC_YALI_H1" ADDED
+
+ CHANNEL  971 WITH IDENTIFIER "QELEC_VINHTAN_S1" ADDED
+
+ CHANNEL  972 WITH IDENTIFIER "QELEC_VINHTAN_S2" ADDED
+
+ CHANNEL  973 WITH IDENTIFIER "QELEC_PHUMY_S1" ADDED
+
+ CHANNEL  974 WITH IDENTIFIER "QELEC_DUYENHAI_S1" ADDED
+
+ CHANNEL  975 WITH IDENTIFIER "QELEC_SONGHAU_S1" ADDED
+
+ CHANNEL  976 WITH IDENTIFIER "QELEC_OMON_S1" ADDED
+
+ CHANNEL  977 WITH IDENTIFIER "PMECH_HOABINH_H1" ADDED
+
+ CHANNEL  978 WITH IDENTIFIER "PMECH_SONLA_H1" ADDED
+
+ CHANNEL  979 WITH IDENTIFIER "PMECH_LAICHAU_H1" ADDED
+
+ CHANNEL  980 WITH IDENTIFIER "PMECH_MONGDUONG_S1" ADDED
+
+ CHANNEL  981 WITH IDENTIFIER "PMECH_QUANGNINH_S1" ADDED
+
+ CHANNEL  982 WITH IDENTIFIER "PMECH_THANGLONG_S1" ADDED
+
+ CHANNEL  983 WITH IDENTIFIER "PMECH_THANGLONG_S1" ADDED
+
+ CHANNEL  984 WITH IDENTIFIER "PMECH_VUNGANG_S1" ADDED
+
+ CHANNEL  985 WITH IDENTIFIER "PMECH_YALI_H1" ADDED
+
+ CHANNEL  986 WITH IDENTIFIER "PMECH_VINHTAN_S1" ADDED
+
+ CHANNEL  987 WITH IDENTIFIER "PMECH_VINHTAN_S2" ADDED
+
+ CHANNEL  988 WITH IDENTIFIER "PMECH_PHUMY_S1" ADDED
+
+ CHANNEL  989 WITH IDENTIFIER "PMECH_DUYENHAI_S1" ADDED
+
+ CHANNEL  990 WITH IDENTIFIER "PMECH_SONGHAU_S1" ADDED
+
+ CHANNEL  991 WITH IDENTIFIER "PMECH_OMON_S1" ADDED
+
+ CHANNEL  992 WITH IDENTIFIER "VOLTAGE_LAICHAU" ADDED
+
+ CHANNEL  993 WITH IDENTIFIER "VOLTAGE_TDLAICHAU" ADDED
+
+ CHANNEL  994 WITH IDENTIFIER "VOLTAGE_SONLA" ADDED
+
+ CHANNEL  995 WITH IDENTIFIER "VOLTAGE_VIETTRI" ADDED
+
+ CHANNEL  996 WITH IDENTIFIER "VOLTAGE_HIEPHOA" ADDED
+
+ CHANNEL  997 WITH IDENTIFIER "VOLTAGE_QUANGNINH" ADDED
+
+ CHANNEL  998 WITH IDENTIFIER "VOLTAGE_MONGDUONG" ADDED
+
+ CHANNEL  999 WITH IDENTIFIER "VOLTAGE_NDTHANGLONG" ADDED
+
+ CHANNEL 1000 WITH IDENTIFIER "VOLTAGE_PHONOI" ADDED
+
+ CHANNEL 1001 WITH IDENTIFIER "VOLTAGE_DONGANH" ADDED
+
+ CHANNEL 1002 WITH IDENTIFIER "VOLTAGE_THUONGTIN" ADDED
+
+ CHANNEL 1003 WITH IDENTIFIER "VOLTAGE_TAYHANOI" ADDED
+
+ CHANNEL 1004 WITH IDENTIFIER "VOLTAGE_NHOQUAN" ADDED
+
+ CHANNEL 1005 WITH IDENTIFIER "VOLTAGE_NGHISON" ADDED
+
+ CHANNEL 1006 WITH IDENTIFIER "VOLTAGE_HATINH" ADDED
+
+ CHANNEL 1007 WITH IDENTIFIER "VOLTAGE_VUNGANG" ADDED
+
+ CHANNEL 1008 WITH IDENTIFIER "VOLTAGE_DANANG" ADDED
+
+ CHANNEL 1009 WITH IDENTIFIER "VOLTAGE_DOCSOI" ADDED
+
+ CHANNEL 1010 WITH IDENTIFIER "VOLTAGE_THANHMY" ADDED
+
+ CHANNEL 1011 WITH IDENTIFIER "VOLTAGE_PLEIKU" ADDED
+
+ CHANNEL 1012 WITH IDENTIFIER "VOLTAGE_TDYALI" ADDED
+
+ CHANNEL 1013 WITH IDENTIFIER "VOLTAGE_PLEIKU3" ADDED
+
+ CHANNEL 1014 WITH IDENTIFIER "VOLTAGE_PLEIKU2" ADDED
+
+ CHANNEL 1015 WITH IDENTIFIER "VOLTAGE_DAKNONG" ADDED
+
+ CHANNEL 1016 WITH IDENTIFIER "VOLTAGE_DILINH" ADDED
+
+ CHANNEL 1017 WITH IDENTIFIER "VOLTAGE_THUANNAM" ADDED
+
+ CHANNEL 1018 WITH IDENTIFIER "VOLTAGE_VINHTAN" ADDED
+
+ CHANNEL 1019 WITH IDENTIFIER "VOLTAGE_SONGMAY" ADDED
+
+ CHANNEL 1020 WITH IDENTIFIER "VOLTAGE_TANUYEN" ADDED
+
+ CHANNEL 1021 WITH IDENTIFIER "VOLTAGE_TANDINH" ADDED
+
+ CHANNEL 1022 WITH IDENTIFIER "VOLTAGE_CAUBONG" ADDED
+
+ CHANNEL 1023 WITH IDENTIFIER "VOLTAGE_DUCHOA" ADDED
+
+ CHANNEL 1024 WITH IDENTIFIER "VOLTAGE_PHULAM" ADDED
+
+ CHANNEL 1025 WITH IDENTIFIER "VOLTAGE_NHABE" ADDED
+
+ CHANNEL 1026 WITH IDENTIFIER "VOLTAGE_PHUMY" ADDED
+
+ CHANNEL 1027 WITH IDENTIFIER "VOLTAGE_MYTHO" ADDED
+
+ CHANNEL 1028 WITH IDENTIFIER "VOLTAGE_DUYENHAI" ADDED
+
+ CHANNEL 1029 WITH IDENTIFIER "VOLTAGE_SONGHAU" ADDED
+
+ CHANNEL 1030 WITH IDENTIFIER "VOLTAGE_OMON" ADDED
+
+ CHANNEL 1031 WITH IDENTIFIER "VOLTAGE_LONGPHU" ADDED
+
+ CHANNEL 1032 WITH IDENTIFIER "BSFREQ_LAICHAU" ADDED
+
+ CHANNEL 1033 WITH IDENTIFIER "BSFREQ_TDLAICHAU" ADDED
+
+ CHANNEL 1034 WITH IDENTIFIER "BSFREQ_SONLA" ADDED
+
+ CHANNEL 1035 WITH IDENTIFIER "BSFREQ_VIETTRI" ADDED
+
+ CHANNEL 1036 WITH IDENTIFIER "BSFREQ_HIEPHOA" ADDED
+
+ CHANNEL 1037 WITH IDENTIFIER "BSFREQ_QUANGNINH" ADDED
+
+ CHANNEL 1038 WITH IDENTIFIER "BSFREQ_MONGDUONG" ADDED
+
+ CHANNEL 1039 WITH IDENTIFIER "BSFREQ_NDTHANGLONG" ADDED
+
+ CHANNEL 1040 WITH IDENTIFIER "BSFREQ_PHONOI" ADDED
+
+ CHANNEL 1041 WITH IDENTIFIER "BSFREQ_DONGANH" ADDED
+
+ CHANNEL 1042 WITH IDENTIFIER "BSFREQ_THUONGTIN" ADDED
+
+ CHANNEL 1043 WITH IDENTIFIER "BSFREQ_TAYHANOI" ADDED
+
+ CHANNEL 1044 WITH IDENTIFIER "BSFREQ_NHOQUAN" ADDED
+
+ CHANNEL 1045 WITH IDENTIFIER "BSFREQ_NGHISON" ADDED
+
+ CHANNEL 1046 WITH IDENTIFIER "BSFREQ_HATINH" ADDED
+
+ CHANNEL 1047 WITH IDENTIFIER "BSFREQ_VUNGANG" ADDED
+
+ CHANNEL 1048 WITH IDENTIFIER "BSFREQ_DANANG" ADDED
+
+ CHANNEL 1049 WITH IDENTIFIER "BSFREQ_DOCSOI" ADDED
+
+ CHANNEL 1050 WITH IDENTIFIER "BSFREQ_THANHMY" ADDED
+
+ CHANNEL 1051 WITH IDENTIFIER "BSFREQ_PLEIKU" ADDED
+
+ CHANNEL 1052 WITH IDENTIFIER "BSFREQ_TDYALI" ADDED
+
+ CHANNEL 1053 WITH IDENTIFIER "BSFREQ_PLEIKU3" ADDED
+
+ CHANNEL 1054 WITH IDENTIFIER "BSFREQ_PLEIKU2" ADDED
+
+ CHANNEL 1055 WITH IDENTIFIER "BSFREQ_DAKNONG" ADDED
+
+ CHANNEL 1056 WITH IDENTIFIER "BSFREQ_DILINH" ADDED
+
+ CHANNEL 1057 WITH IDENTIFIER "BSFREQ_THUANNAM" ADDED
+
+ CHANNEL 1058 WITH IDENTIFIER "BSFREQ_VINHTAN" ADDED
+
+ CHANNEL 1059 WITH IDENTIFIER "BSFREQ_SONGMAY" ADDED
+
+ CHANNEL 1060 WITH IDENTIFIER "BSFREQ_TANUYEN" ADDED
+
+ CHANNEL 1061 WITH IDENTIFIER "BSFREQ_TANDINH" ADDED
+
+ CHANNEL 1062 WITH IDENTIFIER "BSFREQ_CAUBONG" ADDED
+
+ CHANNEL 1063 WITH IDENTIFIER "BSFREQ_DUCHOA" ADDED
+
+ CHANNEL 1064 WITH IDENTIFIER "BSFREQ_PHULAM" ADDED
+
+ CHANNEL 1065 WITH IDENTIFIER "BSFREQ_NHABE" ADDED
+
+ CHANNEL 1066 WITH IDENTIFIER "BSFREQ_PHUMY" ADDED
+
+ CHANNEL 1067 WITH IDENTIFIER "BSFREQ_MYTHO" ADDED
+
+ CHANNEL 1068 WITH IDENTIFIER "BSFREQ_DUYENHAI" ADDED
+
+ CHANNEL 1069 WITH IDENTIFIER "BSFREQ_SONGHAU" ADDED
+
+ CHANNEL 1070 WITH IDENTIFIER "BSFREQ_OMON" ADDED
+
+ CHANNEL 1071 WITH IDENTIFIER "BSFREQ_LONGPHU" ADDED
+
+ Snapshot at TIME = 50.00761 saved in file ssn1.snp on THU, NOV 04 2021  17:07
+
+ 3807 diagonal and 8118 off-diagonal elements
+ REPCAU1 AT BUS  916038 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  991087 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971081 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971082 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971085 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971102 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971111 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971112 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971113 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971121 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971122 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971123 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971124 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971125 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971126 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971131 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971132 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971133 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971141 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971142 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971143 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971144 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971145 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971151 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971152 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971153 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971154 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971155 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971156 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971161 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971162 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971163 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971164 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971165 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971166 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971168 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971169 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971171 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971172 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971177 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971183 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972111 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972112 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972113 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972121 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972221 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972223 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972231 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972232 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972233 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972251 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972252 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972271 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972272 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972291 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972292 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972293 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972321 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972322 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972331 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972351 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972352 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972353 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972361 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972511 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972651 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972831 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972841 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  973099 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  973155 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  974051 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  974052 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  974053 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  974054 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  974055 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  974056 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  974060 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  974061 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  974065 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  974066 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  974067 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  985058 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  988011 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  988031 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  988051 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  990061 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  916038 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  991087 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971081 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971082 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971085 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971102 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971111 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971112 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971113 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971121 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971122 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971123 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971124 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971125 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971126 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971131 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971132 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971133 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971141 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971142 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971143 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971144 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971145 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971151 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971152 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971153 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971154 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971155 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971156 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971161 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971162 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971163 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971164 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971165 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971166 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971168 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971169 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971171 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971172 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971177 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971183 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972111 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972112 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972113 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972121 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972221 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972223 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972231 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972232 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972233 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972251 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972252 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972271 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972272 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972291 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972292 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972293 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972321 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972322 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972331 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972351 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972352 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972353 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972361 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972511 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972651 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972831 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972841 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  973099 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  973155 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  974051 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  974052 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  974053 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  974054 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  974055 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  974056 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  974060 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  974061 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  974065 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  974066 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  974067 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  985058 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  988011 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  988031 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  988051 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  990061 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+
+ Model TGOV1 Bus 937061 [TDCHIKHE_H1 13.800] Machine "1 " :
+     initialized out of limit(s) PMECH(I)
+
+     PTI INTERACTIVE POWER SYSTEM SIMULATOR--PSS(R)E     THU, NOV 04 2021  17:07
+ NAM 2020-PHU TAI CUC DAI-TH2
+
+
+ INITIAL CONDITION LOAD FLOW USED 1 ITERATIONS
+
+ ----------------------------- MACHINE INITIAL CONDITIONS -----------------------------
+   BUS# X-- NAME --X BASKV ID  ETERM   EFD    POWER    VARS   P.F.  ANGLE   ID     IQ
+ 113017 MAOMAOTIAO1 110.00 1  1.0000 1.1715   91.91   -5.25 0.9984  19.37 0.1277 0.4422
+ 126047 THAMCAU1    110.00 1  1.0000 0.9072   59.50  -33.04 0.8742  14.29-0.0867 0.3291
+ 216099 GUMAN-TQ    220.00 1  1.0000 1.1544  450.00  -90.15 0.9805  35.34 0.1281 0.5592
+ 910011 BAOLAC_H1   15.800 1  1.0000 1.4394   77.75   33.56 0.9181  -3.21 0.2258 0.3300
+ 912011 NADUONG1_S1 6.3000 1  1.0000 2.3214   47.52   23.38 0.8973  30.13 0.7535 0.3875
+ 912012 NADUONG1_S2 6.3000 1  1.0000 2.3214   47.52   23.38 0.8973  30.13 0.7535 0.3875
+ 912041 THACXANG1   6.3000 1  0.9179 1.3159    8.64   12.40 0.5718 -11.09 0.2303 0.1277
+ 912053 MAUSON      6.3000 1  0.9671 1.1787    1.94    3.00 0.5438 -14.60 0.0504 0.0310
+ 913011 THUANHOA_H1 13.800 1  1.0000 1.1417   35.42   -1.97 0.9985  -2.34 0.0405 0.2548
+ 913051 BACME_H1    13.800 1  1.0000 1.2096   19.44   -0.33 0.9999  -4.69 0.0364 0.2333
+ 913061 NHOQUE3_H1  13.800 1  1.0000 1.3798   47.52   11.44 0.9722   0.23 0.1613 0.3168
+ 914001 NGHIALO_H1  10.500 1  1.0111 0.9613   20.65  -12.40 0.8573  42.08 0.1925 0.9332
+ 914009 TRAMTAU_H1  11.000 1  1.0249 0.6551   12.96  -17.00 0.6062  17.49-0.3043 0.4629
+ 914011 THACBA_H1   10.500 1  1.0003 0.6795   15.55  -17.00 0.6750  11.68-0.2439 0.4839
+ 914012 THACBA_H2   10.500 1  1.0000 0.8114   15.55  -12.55 0.7781  10.37-0.1607 0.4419
+ 914013 THACBA_H3   11.000 1  1.0003 0.6795   15.55  -17.00 0.6750  11.68-0.2439 0.4839
+ 914015 NGOIHUT2_H1 13.800 1  1.0000 0.9763   20.73  -13.37 0.8405  12.39-0.1039 0.2595
+ 914017 DONGNGAI_H1 10.500 1  1.0044 0.5687    8.80  -12.40 0.5789  20.61-0.3279 0.5092
+ 914019 CHANTHINH_H110.500 1  1.0000 0.8295    4.32   -6.03 0.5821   8.11-0.2122 0.2075
+ 914021 SUOISAP_H1  10.500 1  1.0000 0.8706    5.27   -5.46 0.6943  10.50-0.1767 0.2469
+ 914023 DONGSUNG_H1 10.500 1  1.0000 1.0545    8.64   -2.99 0.9450   9.45-0.0227 0.3650
+ 914025 THACCA_H1   11.000 1  1.1069 1.3380   17.93   -6.00 0.9483  15.51 0.0360 0.5681
+ 914035 VANCHAN     13.800 1  1.0000 0.9008   25.05  -18.58 0.8032  14.49-0.1365 0.3260
+ 915001 TUYENQUAG_H113.800 1  1.0000 1.3229   49.24   10.16 0.9794   3.73 0.1476 0.3446
+ 915002 TUYENQUAG_H213.800 1  1.0000 1.3229   49.24   10.16 0.9794   3.73 0.1476 0.3446
+ 915003 YENSON1     13.800 1  1.0000 1.3457   30.24    8.53 0.9625  13.53 0.1439 0.1848
+ 915007 TUYENQUAG_H313.800 1  1.0000 1.3789   49.24   15.55 0.9536   3.54 0.1855 0.3374
+ 915023 SONGLO8B    22.000 1  1.0000 1.4305   22.46   -0.32 0.9999  22.72 0.3885 0.6871
+ 915025 SONGLO8A    22.000 1  1.0000 1.1992   12.96   -1.43 0.9940  10.56 0.1019 0.4466
+ 915031 TDCHIEMHOA  22.000 1  1.0000 1.4407   20.73    5.49 0.9667   7.32 0.2144 0.3656
+ 915035 MIADUONGTQ  22.000 1  1.0000 1.7936   10.80    8.08 0.8008   4.90 0.3954 0.3249
+ 915043 TDTHACVANG  22.000 1  1.0000 1.7806   12.96    9.47 0.8073   8.47 0.3890 0.3262
+ 915051 ANHOA       22.000 1  0.9942 1.7936   10.80    8.33 0.7917   0.92 0.4075 0.3241
+ 916007 LAOCAI      10.000 1  1.0000 1.6789   13.26    6.04 0.9100  20.09 0.3682 0.4093
+ 916021 BACHA_1     10.000 1  1.0301 1.3374   19.44    0.00 1.0000  16.69 0.0878 0.3455
+ 916022 BACHA_2     10.000 1  1.0301 1.3374   19.44    0.00 1.0000  16.69 0.0878 0.3455
+ 916029 BACNA       10.000 1  1.0000 1.5765   12.96    2.67 0.9794  26.97 0.3802 0.5415
+ 916031 BAONHAI     10.000 1  1.0000 2.2037    6.05    8.60 0.5751  10.92 0.5829 0.2605
+ 916033 COCSAN_1    6.0000 1  1.0000 1.7376    4.28    3.29 0.7927  14.09 0.3555 0.2968
+ 916034 COCSAN_2    6.0000 1  1.0000 1.7376    4.28    3.29 0.7927  14.09 0.3555 0.2968
+ 916035 MINHLUONG   6.0000 1  1.0000 1.3514   12.10    2.07 0.9857  18.72 0.1524 0.3399
+ 916036 COCSAN_3    6.0000 1  1.0000 1.7376    4.28    3.29 0.7927  14.09 0.3555 0.2968
+ 916038 MINHLUONGTHU6.0000 1  1.0000 0.0000   13.60    1.77 0.9916   4.90 0.1236 0.9500
+ 916039 MUONGHUM_1  10.000 1  1.0000 1.5298    6.91    3.14 0.9103  15.46 0.2481 0.3181
+ 916040 MUONGHUM_2  10.000 1  1.0000 1.5298    6.91    3.14 0.9103  15.46 0.2481 0.3181
+ 916041 NAMCAN1A    6.0000 1  1.0000 1.9310    4.32    4.52 0.6906  12.60 0.4520 0.2803
+ 916043 NAMCUN      6.0000 1  1.0000 1.4446   17.28    5.55 0.9521  16.21 0.2028 0.3280
+ 916045 NAMCUN_2    6.0000 1  1.0000 1.8272    2.94    2.29 0.7893  15.15 0.4139 0.3264
+ 916047 NAMKHANH    10.000 1  1.0000 0.6056    5.18   -6.55 0.6205  24.00-0.2906 0.5153
+ 916049 NAMKHOA_3   6.0000 1  1.0000 1.3942    7.78    1.87 0.9723  17.62 0.1757 0.3342
+ 916051 NAMLUC      6.0000 1  1.0000 1.4411   10.37    3.27 0.9536  15.82 0.2009 0.3284
+ 916053 NAMPHANG_1  6.0000 1  1.0000 1.3903    7.78    1.82 0.9736  16.73 0.1736 0.3347
+ 916054 NAMPHANG_2  6.0000 1  1.0000 1.3903    7.78    1.82 0.9736  16.73 0.1736 0.3347
+ 916055 NAMPUNG     6.0000 1  1.0000 1.8064    4.02    2.70 0.8297  16.59 0.4155 0.3587
+ 916057 NAMTHA      6.0000 1  1.0000 1.5466   26.13    3.81 0.9895  30.71 0.3889 0.5838
+ 916059 NAMTOONG    6.0000 1  1.0000 1.4472   14.69    4.78 0.9510  16.04 0.2042 0.3277
+ 916061 NAMTRUNGHO  6.0000 1  1.0000 1.4390    7.78    1.79 0.9744  19.39 0.2243 0.3926
+ 916063 NAMTRUNGHO_26.0000 1  1.0000 1.7118    2.81    1.86 0.8331  15.15 0.3509 0.3236
+ 916065 NAMXAYNOI   6.0000 1  1.0000 1.5337    5.18    2.39 0.9081  16.11 0.2501 0.3176
+ 916067 NGOIPHAT_1  6.0000 1  1.0000 1.2556   10.37    0.13 0.9999  20.21 0.0996 0.3534
+ 916068 NGOIPHAT_2  6.0000 1  1.0000 1.2263   10.37    0.13 0.9999  17.16 0.0807 0.3582
+ 916069 NGOIPHAT_3  6.0000 1  1.0000 1.2556   10.37    0.13 0.9999  20.21 0.0996 0.3534
+ 916070 NGOIPHAT_4  6.0000 1  1.0000 1.2199    5.18    0.21 0.9992  11.94 0.0318 0.1809
+ 916071 PAKE        10.000 1  0.9981 2.3597   11.23    7.44 0.8338  22.05 0.7961 0.5289
+ 916073 PHUCLONG    6.0000 1  1.0000 1.3293    9.50    1.28 0.9910  16.91 0.1403 0.3429
+ 916075 POHO        6.0000 1  1.0000 1.4988    5.70    2.32 0.9264  15.49 0.2317 0.3216
+ 916077 SEOTRONGHO_16.0000 1  1.0000 1.5053    4.75    1.98 0.9231  15.46 0.2352 0.3208
+ 916078 SEOTRONGHO_26.0000 1  1.0000 1.5053    4.75    1.98 0.9231  15.46 0.2352 0.3208
+ 916079 SUOICHAN1   10.000 1  1.0000 1.6138   11.66    6.81 0.8637  14.74 0.2920 0.3090
+ 916081 SUPAN_1     10.000 1  1.0000 1.4157   12.96    3.56 0.9642  16.59 0.1873 0.3316
+ 916083 SUPAN_2     10.000 1  1.0000 1.3727    4.97    4.13 0.7688   6.04 0.1116 0.1135
+ 916085 TALOI_1     6.0000 1  1.0000 1.5625    6.48    3.28 0.8925  14.86 0.2653 0.3144
+ 916087 TALOI2      10.000 1  1.0000 1.5348    5.18    2.40 0.9076  15.16 0.2507 0.3174
+ 916089 TATHANG_1   10.000 1  1.0000 1.4148   12.96    3.54 0.9646  17.50 0.1868 0.3317
+ 916090 TATHANG_2   10.000 1  1.0000 1.4148   12.96    3.54 0.9646  17.50 0.1868 0.3317
+ 916091 VINHHA_1    10.000 1  1.0000 1.5381    4.54    2.12 0.9059  14.88 0.2525 0.3172
+ 916092 VINHHA_2    10.000 1  1.0000 1.5381    4.54    2.12 0.9059  14.88 0.2525 0.3172
+ 916093 YENHA       6.0000 1  1.0000 1.6664    5.62    3.72 0.8335  14.61 0.3192 0.3038
+ 916095 SUOICHAN2   10.000 1  1.0000 1.5881    6.91    3.76 0.8783  15.05 0.2787 0.3117
+ 916115 NXL45       10.000 1  1.0000 1.2994   12.96    2.59 0.9806  14.36 0.0901 0.2328
+ 916169 NGOISAN1    6.0000 1  1.0000 1.3778   11.60    2.48 0.9779  19.08 0.1668 0.3364
+ 916169 NGOISAN1    6.0000 2  1.0000 1.3778   11.60    2.48 0.9779  19.08 0.1668 0.3364
+ 917011 BANCHAT_H1  13.800 1  1.0000 1.0352   47.52  -18.89 0.9293  16.55-0.0594 0.3850
+ 917012 BANCHAT_H2  13.800 1  1.0000 1.0352   47.52  -18.89 0.9293  16.55-0.0594 0.3850
+ 917016 NAMBUM      15.800 1  1.0000 1.0066    2.85   -1.89 0.8335  22.98-0.0956 0.2070
+ 917017 NAMCUM4     15.800 1  1.0000 1.1600   23.33   -3.68 0.9878  39.19 0.0617 0.4103
+ 917018 NAMCUM3.6   15.800 1  1.0000 1.1402   20.30   -3.84 0.9826  39.10 0.0506 0.4140
+ 917019 NAMCUM1.2.5 15.800 1  1.0000 1.1260   18.36   -3.89 0.9783  38.95 0.0426 0.4167
+ 917020 PACMA       15.800 1  1.0000 1.2283   60.48   -0.26 1.0000  41.72 0.0932 0.3991
+ 917022 HO4         15.800 1  1.0000 1.0002    7.78   -2.85 0.9389  24.19 0.0084 0.4365
+ 917023 KHAOMANG    15.800 1  1.0000 1.1330   23.76   -3.20 0.9911  25.10 0.0856 0.4045
+ 917024 NAMSL4      15.800 1  1.0000 0.9863    9.07   -3.56 0.9310  39.51 0.0001 0.4401
+ 917025 NAMSL3      15.800 1  1.0000 1.0161    9.07   -3.56 0.9308  37.08-0.0200 0.4397
+ 917026 NAMSL1.1A   15.800 1  1.0000 1.1257   16.41   -3.49 0.9782  37.51 0.0425 0.4167
+ 917027 PAHA        15.800 1  1.0000 0.9323    6.26   -3.36 0.8811  37.91-0.0686 0.4601
+ 917028 NAMXL1      15.800 1  1.0000 1.0035    6.91   -3.34 0.9004  32.13-0.0690 0.3237
+ 917029 NAMXL2      15.800 1  1.0000 1.1046   14.69   -3.63 0.9708  36.33 0.0216 0.3981
+ 917031 NAMNA3.A    15.800 1  1.0000 1.3103   41.04   -1.27 0.9995  53.31 0.2204 0.3457
+ 917032 HUOIQUANG_H215.800 1  1.0000 1.0593  129.59  -42.73 0.9497  20.86-0.0120 0.3864
+ 917033 NAMNA2      15.800 1  1.0000 1.2247   28.51   -1.62 0.9984  33.75 0.0977 0.3987
+ 917034 NAMNA1      15.800 1  1.0000 1.1733   12.96   -1.77 0.9908  32.06 0.0692 0.4078
+ 917035 NAMXE       15.800 1  1.0000 1.0848    3.89   -1.08 0.9633  29.80 0.0193 0.4248
+ 917037 NAMSO2      15.800 1  1.0000 1.1403    7.78   -1.47 0.9826  30.31 0.0507 0.4141
+ 917038 NAMSO1      10.000 1  1.0000 1.1706    5.18   -0.73 0.9902  30.98 0.0676 0.4083
+ 917039 NAMPAC      15.800 1  1.0000 1.1879   17.45   -1.99 0.9936  31.86 0.0773 0.4051
+ 917041 PACMA_H1    15.800 1  1.0000 1.1302   77.75    5.98 0.9971  23.09 0.0355 0.1716
+ 917042 HUACHANG    15.800 1  1.0000 1.2026    4.41   -0.40 0.9959  22.96 0.0855 0.4026
+ 917043 CHUVA2      15.800 1  1.0007 0.8057    3.89   -3.00 0.7917  23.73-0.1452 0.4963
+ 917044 NAMTHI      15.800 1  1.0000 1.0184    8.64   -3.36 0.9321  21.99-0.0186 0.4393
+ 917058 TDPATAN     10.000 1  1.0000 1.2087    8.64   -0.70 0.9967  32.59 0.0888 0.4015
+ 917059 TDPHINHO    15.800 1  1.0000 1.1572   10.80   -1.75 0.9871  32.21 0.0602 0.4108
+ 917060 TDMALYPHO   15.800 1  1.0000 1.1796   11.66   -1.48 0.9920  31.36 0.0727 0.4067
+ 917061 TDBUMNUA    15.800 1  1.0000 1.0837   11.23   -3.15 0.9629  35.91 0.0187 0.4251
+ 917062 MUONGKIM3   15.800 1  1.0000 1.0882   11.66   -3.18 0.9647  22.31 0.0213 0.4243
+ 917063 NAMHAN      10.000 1  1.0000 1.3106    7.04   -1.04 0.9893  47.63 0.3648 0.7617
+ 917064 PATAN1      10.000 1  1.0000 1.3126    7.04   -1.03 0.9895  49.88 0.3656 0.7610
+ 917065 SONBINH     35.000 1  1.0000 1.6725    7.04    1.09 0.9882  39.85 0.5213 0.6656
+ 917066 NAMMO       6.0000 1  1.0000 1.0517    8.80   -3.08 0.9440  33.03 0.1204 0.6700
+ 917067 NAMBUM1     6.0000 1  1.0000 1.2802   14.09   -2.49 0.9847  51.48 0.3513 0.7717
+ 917068 NAMBUM2     6.0000 1  1.0000 1.3328   22.01   -2.79 0.9921  52.63 0.3743 0.7542
+ 917071 LAICHAU_H1  15.800 1  1.0000 1.1727  172.79   -9.88 0.9984  31.13 0.1000 0.3758
+ 917072 LAICHAU_H2  15.800 1  1.0000 1.1727  172.79   -9.88 0.9984  31.13 0.1000 0.3758
+ 917073 LAICHAU_H3  15.800 1  1.0000 1.1727  172.79   -9.88 0.9984  31.13 0.1000 0.3758
+ 917074 TDNLAICHAU  15.800 1  1.0000 1.1327  129.59  -11.77 0.9959  25.56 0.0442 0.2891
+ 918010 DIENBIEN_H1 10.500 1  1.0300 1.4815   12.66    6.42 0.8919  19.90 0.1243 0.1820
+ 919011 SONLA_H1    15.800 1  1.0300 1.4093  172.79   38.41 0.9762  24.13 0.1838 0.3396
+ 919012 SONLA_H2    15.800 1  1.0300 1.4093  172.79   38.41 0.9762  24.13 0.1838 0.3396
+ 919013 SONLA_H3    15.800 1  1.0300 1.4093  172.79   38.41 0.9762  24.13 0.1838 0.3396
+ 919014 SONLA_H4    15.800 1  1.0300 1.4093  172.79   38.41 0.9762  24.13 0.1838 0.3396
+ 919015 SONLA_H5    15.800 1  1.0300 1.4093  172.79   38.41 0.9762  24.13 0.1838 0.3396
+ 919016 SONLA_H6    15.800 1  1.0300 1.4093  172.79   38.41 0.9762  24.13 0.1838 0.3396
+ 919021 NAMCHIEN_H1 13.800 1  1.0300 1.3623   43.20    6.85 0.9877  13.93 0.0980 0.2929
+ 919022 NAMCHIEN_H2 13.800 1  1.0300 1.3623   43.20    6.85 0.9877  13.93 0.0980 0.2929
+ 919103 NAMCHIEN11  15.800 1  1.0437 1.3625   13.82    0.00 1.0000  15.93 0.0485 0.2604
+ 919104 PACHIEN1    15.800 1  1.0430 1.3495   10.45    0.00 1.0000  12.73 0.0280 0.1985
+ 919105 NAMTRAI31   15.800 1  1.0448 1.3728    7.78    0.00 1.0000  16.39 0.0609 0.2914
+ 919106 NAMHONG1    15.800 1  1.0457 1.3691    6.91    0.00 1.0000  15.00 0.0482 0.2599
+ 919107 NAMXA1      15.800 1  1.0458 1.3589    4.15    0.00 1.0000  12.03 0.0273 0.1964
+ 919108 CHIENGCONG1 15.800 1  1.0454 1.3477    2.27    0.00 1.0000   8.13 0.0082 0.1082
+ 919109 NAMCPIA1    15.800 1  1.0459 1.3745    9.07    0.00 1.0000  16.29 0.0575 0.2833
+ 919110 SUOILUM31   15.800 1  1.0450 1.3715    6.05    0.00 1.0000  15.88 0.0576 0.2836
+ 919111 SUOILUM11   15.800 1  1.0461 1.3844    8.64    0.00 1.0000  17.97 0.0746 0.3218
+ 919112 NAMCHIM21   15.800 1  1.0503 1.4467   12.96    0.00 1.0000  25.13 0.1609 0.4666
+ 919113 XIMVANG21   15.800 1  1.0508 1.3838    7.78    0.00 1.0000  15.17 0.0419 0.2431
+ 919114 NAMPAN51    15.800 1  1.0380 1.3577   12.10    0.00 1.0000  17.59 0.0763 0.3241
+ 919115 NAMLA1      15.800 1  1.0404 1.3539   11.66    0.00 1.0000  15.76 0.0544 0.2749
+ 919116 HANGDONGA11 15.800 1  1.0300 1.3919    3.63    1.06 0.9602   5.27 0.0720 0.1687
+ 919117 HANGDONGA1  15.800 1  1.0300 1.4151    6.91    0.99 0.9899  11.88 0.1223 0.3161
+ 919118 HANGDONGB1  15.800 1  1.0300 1.3737    7.78    0.74 0.9955  11.01 0.0904 0.2895
+ 919119 SUOISAP11   15.800 1  1.0300 1.4464    8.42    1.72 0.9798  10.72 0.1363 0.3048
+ 919120 SUOISAP2MR1 15.800 1  1.0300 1.4996    6.48    2.70 0.9228   5.99 0.1450 0.2309
+ 919121 NAMCHIM1A+B115.800 1  1.0460 1.3842    8.64    0.00 1.0000  17.69 0.0746 0.3218
+ 919122 NAMCHIM1    15.800 1  1.0466 1.3635    5.53    0.00 1.0000  12.77 0.0310 0.2090
+ 919123 NAMCHIM12   15.800 1  1.0472 1.3882   10.37    0.00 1.0000  18.16 0.0744 0.3215
+ 919124 SAPVIET1    15.800 1  1.0300 1.3704    9.07    0.51 0.9984  15.58 0.1040 0.3372
+ 919125 PHIENGCON1  15.800 1  1.0307 1.3130    6.05    0.00 1.0000  10.95 0.0387 0.2315
+ 919126 TOBUONG1    15.800 1  1.0217 1.5116    3.46    2.00 0.8655   6.84 0.1621 0.2039
+ 919127 TATNGOANG1  15.800 1  1.0150 1.4853    3.02    2.00 0.8341   4.69 0.1561 0.1798
+ 919128 NAMCONG41   15.800 1  1.0330 1.3287    4.32    0.00 1.0000  17.07 0.0542 0.2735
+ 919129 TACO1       15.800 1  1.0351 1.3304   12.96    0.00 1.0000  17.81 0.0438 0.2465
+ 919130 MUONGHUNG1  15.800 1  1.0446 1.3623   10.37    0.00 1.0000  19.08 0.0426 0.2444
+ 919131 NAMGION1    15.800 1  1.0316 1.3243    8.64    0.00 1.0000  20.07 0.0544 0.2738
+ 919132 NAMHOA1+2   15.800 1  1.0300 1.4264   11.23    1.56 0.9905  24.31 0.1371 0.3404
+ 919133 BOSINH1     15.800 1  1.0378 1.3393   10.37    0.00 1.0000  21.53 0.0434 0.2459
+ 919134 MUONGLAM    15.800 1  1.0410 1.3599    7.78    0.00 1.0000  21.21 0.0616 0.2923
+ 919135 CHIENGKHUONG15.800 1  1.0392 1.3493    8.64    0.00 1.0000  16.41 0.0532 0.2720
+ 919136 CHIENGSO    15.800 1  1.0360 1.3235    3.89    0.00 1.0000  18.01 0.0247 0.1860
+ 922011 CAONGAN_S1  10.500 1  0.9906 2.5280   49.68   20.00 0.9276  27.63 0.7206 0.3457
+ 922012 CAONGAN_S2  10.500 1  0.9906 2.5280   49.68   20.00 0.9276  27.63 0.7206 0.3457
+ 923011 HOABINH_H1  15.800 1  1.0300 1.8172  214.38   55.53 0.9680  28.38 0.5482 0.5899
+ 923012 HOABINH_H2  15.800 1  1.0300 1.5815  103.67   50.26 0.8998  12.51 0.2732 0.3176
+ 923013 HOABINH_H3  15.800 1  1.0300 1.5815  103.67   50.26 0.8998  12.51 0.2732 0.3176
+ 923014 HOABINH_H4  15.800 1  1.0300 1.5815  103.67   50.26 0.8998  12.51 0.2732 0.3176
+ 923015 HOABINH_H5  15.800 1  1.0300 1.5815  103.67   50.26 0.8998  12.51 0.2732 0.3176
+ 923016 HOABINH_H6  15.800 1  1.0300 1.5815  103.67   50.26 0.8998  12.51 0.2732 0.3176
+ 923017 HOABINH_H7  15.800 1  1.0300 1.5815  103.67   50.26 0.8998  12.51 0.2732 0.3176
+ 923018 HOABINH_H8  15.800 1  1.0300 1.5815  103.67   50.26 0.8998  12.51 0.2732 0.3176
+ 924001 SONDONG_S1  10.500 1  1.0200 2.2122   95.03   22.96 0.9720  45.72 0.5653 0.3689
+ 924002 SONDONG_S2  10.500 1  1.0200 2.2122   95.03   22.96 0.9720  45.72 0.5653 0.3689
+ 924003 BACME       10.500 1  1.0200 1.5947   38.88   25.44 0.8368  -2.74 0.2185 0.2349
+ 926014 UONGBI_S4   19.000 1  1.0200 1.9906  259.18   58.49 0.9755  44.35 0.5892 0.4339
+ 926021 UONGBIMR_S1 19.000 1  1.0200 2.1241  285.10   61.65 0.9774  47.07 0.6583 0.4583
+ 926031 CAMPHA1_S1  19.000 1  1.0200 1.6880  114.30    4.28 0.9993  53.32 0.4519 0.4440
+ 926032 CAMPHA1_S2  19.000 1  1.0200 1.7444  114.30    4.28 0.9993  54.92 0.4929 0.4579
+ 926041 QUANGNINI_S119.000 1  1.0200 1.9461  259.18   46.13 0.9845  52.49 0.5806 0.4446
+ 926042 QUANGNINI_S219.000 1  1.0200 1.8936  259.18   33.91 0.9915  54.40 0.5670 0.4536
+ 926051 MAOKHE_S1   15.000 1  1.0200 2.3529  190.06   48.35 0.9691  43.88 0.6121 0.3810
+ 926052 MAOKHE_S2   15.000 1  1.0200 2.3529  190.06   48.35 0.9691  43.88 0.6121 0.3810
+ 926061 CAMPHA2_S1  19.000 1  1.0200 2.1027  152.40    7.03 0.9989  63.66 0.7320 0.5191
+ 926062 CAMPHA2_S2  19.000 1  1.0200 2.1027  152.40    7.03 0.9989  63.66 0.7320 0.5191
+ 926071 QUANGNIN2_S119.000 1  1.0200 1.8171  235.32   36.08 0.9884  53.53 0.5039 0.4283
+ 926072 QUANGNIN2_S219.000 1  1.0200 1.8171  235.32   36.08 0.9884  53.53 0.5039 0.4283
+ 926075 CAMPHA3_S1  15.000 1  1.0200 1.9542  190.06   80.36 0.9210  27.78 0.5406 0.5323
+ 926076 CAMPHA3_S2  15.000 1  1.0200 1.9542  190.06   80.36 0.9210  27.78 0.5406 0.5323
+ 926081 MONGDUON1_S119.000 1  1.0200 1.4204  224.11   41.25 0.9835  33.67 0.2367 0.2970
+ 926082 MONGDUON1_S219.000 1  1.0200 1.4204  224.11   41.25 0.9835  33.67 0.2367 0.2970
+ 926091 MONGDUON2_S126.000 1  1.0200 1.8846  537.80   61.48 0.9935  55.13 0.5956 0.4588
+ 926092 MONGDUON2_S226.000 1  1.0200 1.8846  537.80   61.48 0.9935  55.13 0.5956 0.4588
+ 926101 THANGLONG_S119.000 1  1.0200 1.8241  235.32   36.54 0.9882  52.84 0.4920 0.4258
+ 926102 THANGLONG_S219.000 1  1.0200 1.8241  235.32   36.54 0.9882  52.84 0.4920 0.4258
+ 927021 HAIPHONG1_S119.000 1  1.0200 1.8863  259.18   35.33 0.9908  47.28 0.5557 0.4494
+ 927022 HAIPHONG1_S219.000 1  1.0200 1.8815  259.18   35.33 0.9908  47.33 0.5561 0.4490
+ 927023 HAIPHONG2_S119.000 1  1.0092 2.3412  259.18  185.92 0.8126  16.23 0.7338 0.4873
+ 927024 HAIPHONG2_S219.000 1  1.0092 2.3412  259.18  185.92 0.8126  16.23 0.7338 0.4873
+ 928011 PHALAI1_S1  10.500 1  1.0200 2.4896  122.85   37.33 0.9568  39.87 0.6712 0.3805
+ 928012 PHALAI1_S2  10.500 1  1.0200 2.4896  122.85   37.33 0.9568  39.87 0.6712 0.3805
+ 928013 PHALAI1_S3  10.500 1  1.0200 1.8559   61.63   22.33 0.9402  27.68 0.3551 0.2805
+ 928014 PHALAI1_S4  10.500 1  1.0200 1.8559   61.63   22.33 0.9402  27.68 0.3551 0.2805
+ 928021 PHALAI2_S1  19.000 1  1.0200 2.3454  259.18  161.31 0.8490  26.32 0.6687 0.3522
+ 928022 PHALAI2_S2  19.000 1  1.0200 1.8923  259.18   61.27 0.9732  37.14 0.5165 0.4098
+ 928051 HAIDUONG_S1 26.000 1  1.0200 1.4858  259.18   75.00 0.9606  10.68 0.1856 0.3256
+ 931022 THAIBINH1_S219.000 1  1.0200 1.9181  263.50   47.57 0.9841  46.10 0.5853 0.4389
+ 931031 THAIBINH2_S119.000 1  1.0200 1.5397  259.18   96.79 0.9368  10.49 0.2136 0.3194
+ 931032 THAIBINH2_S219.000 1  1.0200 1.7213  518.36  115.46 0.9761  25.15 0.4487 0.5854
+ 936011 CUADAT_H1   13.800 1  1.0300 2.1574   23.76   30.94 0.6091  11.80 0.4900 0.2517
+ 936012 CUADAT_H2   13.800 1  1.0300 2.1574   23.76   30.94 0.6091  11.80 0.4900 0.2517
+ 936021 NGHISON1_S1 19.000 1  1.0300 2.6518  259.18  175.40 0.8282  48.70 0.7612 0.3709
+ 936022 NGHISON1_S2 19.000 1  1.0300 2.6518  259.18  175.40 0.8282  48.70 0.7612 0.3709
+ 936041 TRUNGSON_H1 15.800 1  1.0300 1.2156   56.16    9.77 0.9852   8.24 0.0642 0.1973
+ 936042 TRUNGSON_H2 15.800 1  1.0300 1.2556   56.16    9.17 0.9869  12.20 0.1135 0.2907
+ 936051 HOIXUAN_H1  13.800 1  1.0300 1.6016   47.52   17.97 0.9354  14.14 0.2337 0.3381
+ 936061 DONGVAN_H1  13.800 1  1.0300 2.2932   47.52   61.65 0.6104  21.82 0.5925 0.2135
+ 937001 BANVE_H1    13.800 2  1.0300 1.6606   69.11   61.75 0.7457  34.08 0.4310 0.3072
+ 937002 BANVE_H2    13.800 1  1.0300 1.6606   69.11   61.75 0.7457  34.08 0.4310 0.3072
+ 937021 KHEBO_H1    13.800 1  1.0300 2.2202   43.20   66.56 0.5444  29.02 0.5129 0.2255
+ 937041 HUANA_H1    15.800 1  1.0300 2.0155   77.75  103.97 0.5989  14.80 0.5388 0.2531
+ 937061 TDCHIKHE_H1 13.800 1  0.9098 1.7309    6.05    7.00 0.6537  29.28 0.4498 0.1791
+ 937063 TDNAMNON_H1 13.800 1  0.9137 1.8332    8.64    7.00 0.7770  36.69 0.5259 0.2433
+ 937065 TDBANPUNG_H113.800 1  0.9124 1.4701    5.18    4.00 0.7917  24.27 0.3745 0.2977
+ 937067 TDNAMMO_H1  13.800 1  0.9212 1.7137   31.10   12.00 0.9330  39.21 0.6432 0.5734
+ 937069 TDCANAN_H1  13.800 1  0.9143 1.5338    9.94    8.00 0.7789  24.96 0.4138 0.3094
+ 937081 TDNAMPONG_H113.800 1  0.9487 1.5878   12.96   10.00 0.7917  27.00 0.3527 0.2105
+ 937083 TDNHANHAC_H113.800 1  0.9626 2.0770   25.49   20.00 0.7867  25.53 0.6748 0.4322
+ 937085 TDSOGQUAN_H113.800 1  0.9483 1.3968    5.18    4.00 0.7917  15.02 0.2426 0.2219
+ 937087 TDCHAUTHO_H113.800 1  0.9529 1.6090    7.78    6.00 0.7917  19.06 0.3831 0.3067
+ 938011 VUNGANG1_S1 26.000 1  1.0300 2.4368  537.80  286.28 0.8827  80.68 0.7402 0.3927
+ 938012 VUNGANG1_S2 26.000 1  1.0300 2.4368  537.80  286.28 0.8827  80.68 0.7402 0.3927
+ 938071 FORMOSAHT_S 26.000 1  1.0300 1.9974  345.57  222.31 0.8410  69.68 0.4819 0.2953
+ 950031 LATRONG_H1  11.000 1  1.0300 2.1419   20.73    5.96 0.9610  77.57 0.7949 0.6819
+ 950041 KIMHOA_H1   11.000 1  1.0300 2.2685   10.37    7.32 0.8170  61.12 0.6856 0.4523
+ 951001 TDNHO_TD    10.500 1  1.0300 1.5179   13.82    4.00 0.9607  57.49 0.1824 0.3231
+ 951029 DAKRONG_TD1310.500 1  1.0300 1.3977   13.82    1.36 0.9952  59.09 0.1198 0.3376
+ 951031 QUANGTRI_H1 10.500 1  1.0300 1.5490   13.82    4.67 0.9475  57.18 0.1983 0.3197
+ 951032 QUANGTRI_H2 10.500 1  1.0300 1.5490   13.82    4.67 0.9475  57.18 0.1983 0.3197
+ 951039 HUONPHU_TD  10.500 1  1.0300 1.5078   13.82    3.78 0.9646  57.56 0.1771 0.3243
+ 951061 HUONGLINH_H110.500 1  1.0300 1.4665   13.82    2.88 0.9790  57.92 0.1557 0.3291
+ 951062 HUONGLINH_H210.500 1  1.0300 1.4665   13.82    2.88 0.9790  57.92 0.1557 0.3291
+ 951071 DAKDRONG2_H110.500 1  1.0300 1.5703   13.82    5.12 0.9378  56.69 0.2092 0.3174
+ 951072 DAKDRONG4_H110.500 1  1.0300 1.4026   13.82    1.47 0.9944  58.94 0.1224 0.3369
+ 952011 ALUOI_H1    13.800 1  1.0300 1.7479   73.43   52.58 0.8131  57.70 0.3614 0.3410
+ 952021 BINHDIEN_H1 10.500 1  1.0300 1.6593   19.44    9.85 0.8920  57.17 0.2542 0.3078
+ 952031 HUONGDIEN_H110.500 1  1.0300 1.5443   34.56   11.56 0.9484  57.92 0.1949 0.3173
+ 952041 TATRACH_H1  10.500 1  1.0300 1.8235   19.44   14.59 0.7998  56.82 0.3356 0.2925
+ 952042 TATRACH_H2  10.500 1  1.0300 1.8235   19.44   14.59 0.7998  56.82 0.3356 0.2925
+ 952051 PHONGDIE_RE110.500 1  1.0300 1.7834   19.44   13.45 0.8224  55.05 0.3159 0.2961
+ 952061 RAOTRAN_4-H110.500 1  1.0300 1.6093   19.44    8.37 0.9184  56.69 0.2289 0.3129
+ 952062 RAOTRAN_3-H110.500 1  1.0300 1.5946   19.44    7.94 0.9258  56.78 0.2215 0.3144
+ 952063 ALINB1-H1   10.500 1  1.0300 1.4793   19.44    4.45 0.9748  57.71 0.1623 0.3273
+ 952064 ALINB2-H1   10.500 1  1.0300 1.4837   19.44    4.58 0.9733  57.68 0.1646 0.3267
+ 952167 DMT_PD2     10.500 1  1.0300 1.7776   17.71   12.50 0.8170  54.75 0.3104 0.2886
+ 953021 SONGNAM_H1  6.0000 1  1.0300 1.4133    3.89    0.31 0.9968  61.50 0.1499 0.3931
+ 953031 SONGBAC1_H1 10.500 1  1.0300 2.2350    8.64   12.21 0.5775  54.66 0.5260 0.2468
+ 953041 SONGBAC2_H1 10.500 1  1.0267 2.2373    8.64   12.39 0.5720  54.63 0.5345 0.2463
+ 954001 AVUONG_H1   13.800 1  1.0300 1.6227   45.36   29.55 0.8379  61.56 0.2712 0.2946
+ 954002 AVUONG_H2   13.800 1  1.0300 1.6227   45.36   29.55 0.8379  61.56 0.2712 0.2946
+ 954011 SONGCON2_H1 10.500 1  1.0300 1.5177    8.64    6.26 0.8100  54.89 0.1391 0.1535
+ 954012 SONGCON2_H2 10.500 1  1.0300 1.5177    8.64    6.26 0.8100  54.89 0.1391 0.1535
+ 954013 SONGCON_H3  10.500 1  1.0300 1.5177    8.64    6.26 0.8100  54.89 0.1391 0.1535
+ 954014 NDNONGSON   10.500 1  1.0167 2.2020    8.64   12.39 0.5720  58.11 0.5403 0.2474
+ 954041 SONGTRAN2_H113.800 1  1.0300 1.8293   41.04   18.67 0.9102  68.32 0.2962 0.3586
+ 954042 SONGTRAN2_H213.800 1  1.0300 1.8293   41.04   18.67 0.9102  68.32 0.2962 0.3586
+ 954051 SEKAMAN3_H1 15.800 1  1.0300 1.4148  107.99   27.20 0.9697  70.63 0.1810 0.3234
+ 954061 SONGBUNG4_H113.800 1  1.0300 1.6909   79.48   22.81 0.9612  71.72 0.2427 0.3848
+ 954071 DAKMI4_H1   13.800 1  1.0300 1.4225   31.97   13.12 0.9251  61.40 0.1259 0.2224
+ 954072 DAKMI4_H2   13.800 1  1.0300 1.4225   31.97   13.12 0.9251  61.40 0.1259 0.2224
+ 954081 SONGBUNG2_H113.800 1  1.0300 1.6342   43.20   21.82 0.8926  65.90 0.2357 0.2928
+ 954091 SONGBUNG5_H110.500 1  1.0300 1.4012   12.31    6.27 0.8910  54.57 0.0691 0.1123
+ 954092 SONGBUNG5_H210.500 1  1.0300 1.7118   12.31    6.27 0.8910  63.91 0.2929 0.3378
+ 954101 DAKMI1_H1   13.800 1  1.0300 1.3734   23.33    9.31 0.9287  59.60 0.0846 0.1654
+ 954102 DAKMI1_H2   13.800 1  1.0300 1.3934   42.33    9.30 0.9767  64.80 0.1203 0.2972
+ 954161 SGBUNG4A_H1 13.800 1  1.0300 1.5556   21.17   16.35 0.7914  65.27 0.1993 0.1593
+ 954171 SONGTRAN3_H113.800 1  1.0300 1.4794   26.78    8.64 0.9517  74.87 0.1952 0.2403
+ 954173 SONGTRAN4_H113.800 1  1.0300 1.4408   20.73    8.83 0.9201  69.90 0.1586 0.1906
+ 954181 ZAHUNG_H1   10.500 1  1.0300 1.5773    6.48    3.96 0.8531  65.92 0.2205 0.1959
+ 954182 ZAHUNG_H2   10.500 1  1.0300 1.5773    6.48    3.96 0.8531  65.92 0.2205 0.1959
+ 954191 SONGBUNG6_H110.500 1  1.0300 1.6582    6.26    4.97 0.7836  64.28 0.2511 0.1825
+ 954192 SONGBUNG6_H210.500 1  1.0300 1.6582    6.26    4.97 0.7836  64.28 0.2511 0.1825
+ 954201 DAKMI32_H1  10.500 1  1.0300 1.4259   27.21    6.62 0.9717  64.94 0.1074 0.2447
+ 954211 DAKM22_H1   13.800 1  1.0300 1.4063   42.33   10.50 0.9706  64.55 0.1288 0.2958
+ 955021 DAKRINH_H1  13.800 1  1.0300 1.6484   27.00   16.49 0.8534  63.59 0.2330 0.2585
+ 955022 DAKRINH_H2  13.800 1  1.0300 1.6484   27.00   16.49 0.8534  63.59 0.2330 0.2585
+ 955031 SONGLIEN_H1 10.500 1  1.0300 2.1130   17.28    6.06 0.9436  87.73 0.5595 0.4389
+ 955041 DAKRE_H1    13.800 1  1.0300 1.4149   25.92    2.59 0.9950  76.87 0.1224 0.2591
+ 955042 DAKRE_H2    13.800 1  1.0300 1.4149   25.92    2.59 0.9950  76.87 0.1224 0.2591
+ 955081 DAKBA_H1    10.500 1  1.0300 1.8377   17.28    5.64 0.9507  76.63 0.4588 0.5364
+ 955091 SONTRA_H1_1 13.800 1  1.0300 1.2420   32.40    2.56 0.9969  73.10 0.1224 0.3359
+ 955093 SONTAY_H1_1 13.800 1  1.0300 1.4555    7.78    8.29 0.6842  55.49 0.0959 0.0802
+ 955095 SONTRA_H2_1 13.800 1  1.0300 1.3026   12.96    0.25 0.9998  61.97 0.0171 0.1416
+ 956010 HOAPHU_H1   13.800 1  1.0300 1.7086    6.26    4.63 0.8040  67.67 0.2619 0.2473
+ 956011 DONGNAI3_H1 13.800 1  1.0300 1.3547   38.88   10.43 0.9658  78.34 0.1923 0.3298
+ 956012 DONGNAI3_H2 13.800 1  1.0300 1.3547   38.88   10.43 0.9658  78.34 0.1923 0.3298
+ 956020 HOAPHU_H2   13.800 1  1.0300 1.7086    6.26    4.63 0.8040  67.67 0.2619 0.2473
+ 956021 BUONTUASA_H110.500 1  1.0300 1.5215   18.57    8.22 0.9145  71.72 0.1590 0.2387
+ 956022 BUONTUASA_H210.500 1  1.0300 1.5215   18.57    8.22 0.9145  71.72 0.1590 0.2387
+ 956025 DIENMT_T1   13.800 1  1.0265 1.4779   12.96   10.00 0.7917  62.30 0.1208 0.1296
+ 956029 DAKNONG2_H1 13.800 1  1.0300 1.7909    5.40    5.64 0.6914  65.83 0.2950 0.2082
+ 956031 DONGNAI4_H1 15.800 1  1.0300 1.5558   73.43   33.53 0.9097  76.87 0.2656 0.3188
+ 956032 DONGNAI4_H2 15.800 1  1.0300 1.5558   73.43   33.53 0.9097  76.87 0.2656 0.3188
+ 956041 DAKRTIH_H1  13.800 1  1.0300 1.8333   35.42   18.62 0.8852  74.80 0.2851 0.3241
+ 956042 DAKRTIH_H2  13.800 1  1.0300 1.6835   26.78   18.63 0.8209  71.01 0.2490 0.2487
+ 956051 DONGNAI2_H1 13.800 1  1.0300 1.2701   31.53    5.26 0.9864  81.11 0.1310 0.3026
+ 956061 DONGNAI5_H1 13.800 1  1.0300 1.6166   64.79   18.78 0.9605  76.31 0.1839 0.3224
+ 956090 DAKSIN_H1   13.800 1  1.0300 1.3279    5.40    1.91 0.9428  59.83 0.0230 0.0574
+ 956091 DAKSIN_H2   13.800 1  1.0300 1.3279    5.40    1.91 0.9428  59.83 0.0230 0.0574
+ 957001 BUONKUOP_H1 13.800 1  1.0300 1.4143   60.48   28.36 0.9054  75.57 0.2424 0.3102
+ 957002 BUONKUOP_H2 13.800 1  1.0300 1.4143   60.48   28.36 0.9054  75.57 0.2424 0.3102
+ 957011 SREPOK3_H1  13.800 1  1.0300 1.4120   47.52   11.15 0.9736  74.72 0.1372 0.3161
+ 957012 SREPOK3_H2  13.800 1  1.0300 1.4120   47.52   11.15 0.9736  74.72 0.1372 0.3161
+ 957018 EAKRONGHN_H113.800 1  1.0300 1.5776   28.51   11.32 0.9294  74.51 0.2098 0.3075
+ 957019 EAKRONGHN_H213.200 1  1.0013 1.4133    5.18    5.00 0.7197  62.00 0.1327 0.1160
+ 957023 SEREPOK4A   13.800 1  1.0300 1.3942   27.65    7.05 0.9690  72.90 0.1153 0.2708
+ 957024 DAKSONG3B   13.200 1  1.0300 1.8426   28.51    9.25 0.9512  84.14 0.4643 0.5409
+ 957029 TD_NHO111   13.800 1  1.0073 1.8759    9.29    7.00 0.7986  72.34 0.4300 0.3425
+ 957031 SREPOK4_H1  13.800 1  1.0300 1.4930   17.28    4.32 0.9702  77.76 0.1695 0.3260
+ 957032 SREPOK4_H2  13.800 1  1.0300 1.4930   17.28    4.32 0.9702  77.76 0.1695 0.3260
+ 957033 TD_NHO111   13.800 1  1.0300 1.8478   17.28   11.87 0.8242  73.42 0.3595 0.3250
+ 958011 VINHSON_H1  13.800 1  1.0300 1.1200   14.25   -5.33 0.9366  75.34-0.0342 0.3678
+ 958012 VINHSON_H2  13.800 1  1.0300 1.1200   14.25   -5.33 0.9366  75.34-0.0342 0.3678
+ 958021 VINHSON2_H1 13.800 1  1.0300 1.2825   45.36   -3.78 0.9965  78.37 0.0466 0.3180
+ 958031 KENLUTHA_H1213.800 1  1.0300 1.7759   14.25   10.04 0.8177  69.54 0.3095 0.2885
+ 958032 TRAXOM-H1   13.800 1  1.0300 1.7962   14.25   10.47 0.8059  69.32 0.3195 0.2868
+ 958033 VINHSON5-H1 13.800 1  1.0300 1.7891   14.25   10.32 0.8100  69.61 0.3160 0.2874
+ 958034 VINHSON3-H1 13.800 1  1.0300 1.7237   14.25    8.90 0.8482  71.45 0.2836 0.2932
+ 958041 VINHSON4-H1 13.800 1  1.0300 1.7765   14.25   10.05 0.8174  71.84 0.3098 0.2885
+ 959001 PLEIKRONG_H110.500 1  1.0300 1.6632   21.60   11.91 0.8756  73.95 0.2504 0.2900
+ 959002 PLEIKRONG_H210.500 2  1.0300 1.6632   21.60   11.91 0.8756  73.95 0.2504 0.2900
+ 959011 THUONGKOT_H113.800 1  1.0300 1.3513   45.36    5.48 0.9928  66.02 0.0938 0.3087
+ 959012 THUONGKOT_H213.800 1  1.0300 1.3513   45.36    5.48 0.9928  66.02 0.0938 0.3087
+ 959041 DAKLA_H1    10.500 1  1.0300 1.4308    8.64    1.47 0.9859  71.83 0.1306 0.3142
+ 959051 DAKNE_H1    10.500 1  1.0300 1.1780    8.64   -2.36 0.9646  73.84-0.0058 0.3478
+ 959061 DAKPONE1_H1 10.500 1  1.0300 1.1836    8.64   -2.27 0.9671  73.65-0.0026 0.3469
+ 959062 DAKPONE2_H1 6.0000 1  1.0300 1.9250    3.24    2.97 0.7374  71.09 0.3832 0.2789
+ 959063 DAKPON2AB_H16.0000 1  1.0300 1.9250    3.24    2.97 0.7374  71.09 0.3832 0.2789
+ 959071 DAKRING1A_H16.0000 1  1.0300 1.9250    3.24    2.97 0.7374  71.09 0.3832 0.2789
+ 959072 DAKRING1B_H16.0000 1  1.0300 1.9250    3.24    2.97 0.7374  71.09 0.3832 0.2789
+ 959073 DAKRING2_H1 6.0000 1  1.0300 1.9250    3.24    2.97 0.7374  71.09 0.3832 0.2789
+ 959074 DAKSAO_H1   6.0000 1  1.0300 1.9250    3.24    2.97 0.7374  71.09 0.3832 0.2789
+ 959081 DAKGRET_H1  6.0000 1  1.0300 1.9250    3.24    2.97 0.7374  71.09 0.3832 0.2789
+ 959082 DAKPIA_H1   6.0000 1  1.0300 1.9250    3.24    2.97 0.7374  71.09 0.3832 0.2789
+ 959083 DAKLA1_H1   10.500 1  1.0300 1.2177    8.64   -1.74 0.9803  73.82 0.0161 0.3419
+ 959091 DAKLO_H1    10.500 1  1.0300 1.0762    9.50   -4.16 0.9162  76.79-0.0496 0.3998
+ 959092 DAKLO1_H1   6.0000 1  1.0300 1.8014    3.24    2.38 0.8062  72.24 0.3230 0.2891
+ 959093 DAKLO2_H1   6.0000 1  1.0300 1.8014    3.24    2.38 0.8062  72.24 0.3230 0.2891
+ 959094 DAKLO3_H1   6.0000 1  1.0300 1.8014    3.24    2.38 0.8062  72.24 0.3230 0.2891
+ 959131 BOKO_H1     10.500 1  1.0300 1.1084    8.64   -3.47 0.9279  73.75-0.0445 0.3588
+ 959141 DAKPSI_H1   10.500 1  1.0300 1.1491    8.64   -2.82 0.9507  77.68-0.0217 0.3522
+ 959142 DAKPSI5_H1  10.500 1  1.0300 1.1491    8.64   -2.82 0.9507  77.68-0.0217 0.3522
+ 959161 DAKPSI2B_H1 10.500 1  1.0300 1.0347    6.05   -4.26 0.8174  75.49-0.1188 0.2616
+ 959171 DAKROSA1_H1 6.0000 1  1.0300 1.8631    3.24    2.67 0.7713  74.97 0.3532 0.2839
+ 959172 DAKROSA2_H1 6.0000 1  1.0300 1.8631    3.24    2.67 0.7713  74.97 0.3532 0.2839
+ 959173 DLAY_KDAO_H16.0000 1  1.0300 1.8409    1.81    2.69 0.5590  68.87 0.3109 0.1611
+ 959175 DAKPSI1_H1  6.0000 1  1.0300 1.8642    1.81    2.80 0.5435  68.56 0.3226 0.1600
+ 959176 DAKPSI2_H1  6.0000 1  1.0300 1.8642    1.81    2.80 0.5435  68.56 0.3226 0.1600
+ 959181 DAKPOCO_H1  10.500 1  1.0300 1.0348    8.64   -4.67 0.8797  78.06-0.0860 0.3715
+ 959191 DAKSU2_H1   6.0000 1  1.0300 1.7595    3.24    2.17 0.8303  76.19 0.3023 0.2928
+ 959201 DAKPLU1 _H1 6.0000 1  1.0300 1.7595    3.24    2.17 0.8303  76.19 0.3023 0.2928
+ 959202 DAKPLU2 _H1 6.0000 1  1.0300 1.7595    3.24    2.17 0.8303  76.19 0.3023 0.2928
+ 959211 DAKPOCO_H1  10.500 1  1.0300 1.0147    7.34   -4.77 0.8385  76.81-0.1154 0.3199
+ 959241 DAKRUOI_H1  6.0000 1  1.0300 1.6548    3.24    1.66 0.8902  77.51 0.2500 0.3027
+ 959242 DAKRUOI3_H1 6.0000 1  1.0300 1.6548    3.24    1.66 0.8902  77.51 0.2500 0.3027
+ 959251 DAKRUOI2_H1 10.500 1  1.0300 0.9889    8.64   -5.43 0.8464  80.72-0.1123 0.3801
+ 959261 DAKNA_H1    6.0000 1  1.0300 1.6548    3.24    1.66 0.8902  77.51 0.2500 0.3027
+ 959262 DAKNA_H1    6.0000 1  1.0300 1.6548    3.24    1.66 0.8902  77.51 0.2500 0.3027
+ 959271 DAKTER1_H1  6.0000 1  1.0300 1.7849    3.24    2.30 0.8157  77.36 0.3149 0.2906
+ 959272 DAKTER2_H1  6.0000 1  1.0300 1.7849    3.24    2.30 0.8157  77.36 0.3149 0.2906
+ 959281 THON3_H1    6.0000 1  1.0300 1.7849    3.24    2.30 0.8157  77.36 0.3149 0.2906
+ 959282 THON9_H1    6.0000 1  1.0300 1.7849    3.24    2.30 0.8157  77.36 0.3149 0.2906
+ 959291 DAKPSI4_H1  10.500 1  1.0300 1.0590   13.82   -6.59 0.9027  81.46-0.0643 0.3896
+ 959301 DAKPSI3_H1  10.500 1  1.0300 1.0516    8.64   -4.39 0.8914  80.42-0.0765 0.3685
+ 959311 DAKKRIN_H1  6.0000 1  1.0300 1.4332   21.60    3.75 0.9853  91.03 0.1318 0.3140
+ 959321 DAKPOKO_H1  6.0000 1  1.0300 1.6620    3.24    1.69 0.8862  77.35 0.2537 0.3020
+ 959331 DAKPRU_H1   6.0000 1  1.0300 1.6620    3.24    1.69 0.8862  77.35 0.2537 0.3020
+ 959341 DAKPRU3_H1  6.0000 1  1.0300 1.6620    3.24    1.69 0.8862  77.35 0.2537 0.3020
+ 959351 DAKMEKI1_H1 6.0000 1  1.0300 1.5978    3.24    1.37 0.9209  77.82 0.2212 0.3084
+ 959352 DAKMEKI2_H1 6.0000 1  1.0300 1.5978    3.24    1.37 0.9209  77.82 0.2212 0.3084
+ 959353 DAKMEKI3_H1 6.0000 1  1.0300 1.5978    3.24    1.37 0.9209  77.82 0.2212 0.3084
+ 959381 DAKDOA      10.500 1  1.0300 1.5173    8.64    2.72 0.9540  70.92 0.1758 0.3046
+ 960011 YALI_H1     15.800 1  1.0300 1.3784   77.75   16.91 0.9771  74.34 0.1697 0.3229
+ 960012 YALI_H2     15.800 1  1.0300 1.3784   77.75   16.91 0.9771  74.34 0.1697 0.3229
+ 960013 YALI_H3     15.800 1  1.0300 1.3784   77.75   16.91 0.9771  74.34 0.1697 0.3229
+ 960014 YALI_H4     15.800 1  1.0300 1.3784   77.75   16.91 0.9771  74.34 0.1697 0.3229
+ 960015 YALI_H5 MR  15.800 1  1.0300 1.6311  155.51   21.53 0.9906  89.99 0.4274 0.5791
+ 960021 SESAN3_H1   13.800 1  1.0300 1.2193   56.16    2.75 0.9988  73.63 0.0912 0.3180
+ 960022 SESAN3_H2   13.800 1  1.0300 1.2193   56.16    2.75 0.9988  73.63 0.0912 0.3180
+ 960031 SSAN3A_H1   10.500 1  1.0300 1.3574   23.33    1.03 0.9990  73.42 0.0917 0.3231
+ 960032 SSAN3A_H2   10.500 1  1.0300 1.3574   23.33    1.03 0.9990  73.42 0.0917 0.3231
+ 960034 TD_CHUSE1   13.200 1  1.0213 1.6345    1.30    1.00 0.7917  65.01 0.2334 0.2197
+ 960035 TD_MUN1     13.200 1  1.0300 1.5727    7.00    4.03 0.8664  65.78 0.1835 0.2251
+ 960037 TD_AYUN1    13.200 1  1.0300 1.6449    5.18    4.00 0.7917  64.70 0.2186 0.2094
+ 960039 BAMIA_GL1   13.200 1  1.0300 1.4518    9.76    1.85 0.9824  71.40 0.1464 0.3260
+ 960041 ANKHE_H1    13.800 1  1.0300 1.2736   34.56    4.77 0.9906  72.34 0.1414 0.3309
+ 960042 ANKHE_H2    13.800 1  1.0300 1.2350   34.56    2.27 0.9978  73.75 0.1183 0.3371
+ 960043 DSK_ANKHE_S113.800 1  1.0300 1.3313   17.28    1.62 0.9956  64.50 0.0388 0.1748
+ 960044 DSK_ANKHE_S213.800 1  1.0300 1.3400   23.76    1.54 0.9979  67.56 0.0574 0.2388
+ 960051 SESAN4_H1   11.000 1  1.0300 1.3255   56.16    0.72 0.9999  71.57 0.0744 0.3486
+ 960052 SESAN4_H2   11.000 1  1.0300 1.3256   51.84    0.67 0.9999  71.39 0.0745 0.3486
+ 960053 SESAN4_H3   11.000 1  1.0300 1.3256   51.84    0.67 0.9999  71.39 0.0745 0.3486
+ 960061 SESAN4A_H1  13.800 1  1.0300 1.3096   27.21   -0.73 0.9996  72.08 0.0550 0.2945
+ 960071 SEKAMAN1_H1 13.800 1  1.0300 1.6263   62.63   26.71 0.9198  75.43 0.2634 0.3427
+ 960072 SEKAMAN1_H2 13.800 1  1.0300 1.6263   62.63   26.71 0.9198  75.43 0.2634 0.3427
+ 960073 XANXAY_H1   13.800 1  1.0300 1.5677   13.82   11.76 0.7615  66.97 0.1932 0.1756
+ 960103 TD_DIENHOG1 13.200 1  1.0226 1.5798    9.85    5.00 0.8917  68.02 0.2157 0.2736
+ 960141 TD_CHUPRONG113.200 1  1.0329 1.6459    6.74    5.00 0.8031  65.50 0.2136 0.2119
+ 960195 MTPP_MT1    13.800 1  1.0500 1.5068   43.20    8.22 0.9824  75.26 0.1794 0.4072
+ 960197 MTAH_MT1    13.800 1  1.0500 1.6208   73.43    9.02 0.9925  85.60 0.3555 0.6589
+ 961011 SONGHINH_H1 10.500 1  1.0300 1.6993   15.12    8.57 0.8700  72.53 0.2743 0.3041
+ 961012 SONGHINH_H2 10.500 1  1.0300 1.6993   15.12    8.57 0.8700  72.53 0.2743 0.3041
+ 961014 KCP_ND      10.500 1  1.0300 1.8261   27.16   10.53 0.9323  81.78 0.4192 0.4793
+ 961021 SONGBAHA_H1 13.800 1  1.0300 1.8883   47.52   54.35 0.6582  72.90 0.4307 0.2726
+ 961022 SONGBAHA_H2 13.800 1  1.0300 1.8883   47.52   54.35 0.6582  72.90 0.4307 0.2726
+ 961031 LAHIENG_H1  10.500 1  1.0294 2.1669    7.78   10.00 0.6138  67.63 0.5552 0.2651
+ 961051 SONGIANG_H1 10.500 1  1.0300 1.6250    4.32    7.74 0.4873  62.01 0.1886 0.0899
+ 962031 S_GIANG_H1  10.500 1  1.0300 1.4951   14.25    4.40 0.9556  85.81 0.1575 0.2855
+ 962032 S_GIANG_H2  10.500 1  1.0300 1.5203   15.12    4.43 0.9597  87.57 0.1835 0.3227
+ 962041 SONGGIANG_H110.500 1  1.0300 1.5399    8.64    3.04 0.9434  85.21 0.1875 0.3022
+ 962042 SONGGIANG_H210.500 1  1.0300 1.5399    8.64    3.04 0.9434  85.21 0.1875 0.3022
+ 962051 BMNINHHOA-S110.500 1  1.0300 1.7218   14.25   10.02 0.8182  80.77 0.2737 0.2647
+ 962061 EAKRONGR_H1 10.500 1  1.0300 1.7979    8.64    6.60 0.7947  81.10 0.3176 0.2781
+ 962062 EAKRONGR_H2 10.500 1  1.0300 1.7979    8.64    6.60 0.7947  81.10 0.3176 0.2781
+ 962107 DMT.MTRUNG1 26.000 1  1.0300 1.7356    0.00   13.02 0.0000  73.25 0.2422-0.0000
+ 970011 DANHIM_H1   13.200 1  1.0300 1.4481   17.28    8.57 0.8959  83.21 0.1015 0.1574
+ 970012 DANHIM_H2   13.200 1  1.0300 1.4481   17.28    8.57 0.8959  83.21 0.1015 0.1574
+ 970013 DANHIM_H3   13.200 1  1.0300 1.4473   17.28    8.52 0.8969  83.23 0.1010 0.1574
+ 970014 DANHIM_H4   13.200 1  1.0300 1.4482   17.28    8.57 0.8958  83.21 0.1015 0.1574
+ 970021 SONGPHA_H1  6.0000 1  1.0510 1.4041    3.24    0.00 1.0000  90.90 0.0797 0.3331
+ 970031 DADANG_H1   10.500 1  1.0300 2.1144    5.18   10.98 0.4270  75.99 0.4457 0.1535
+ 970041 DAMBRI_H1   10.500 1  1.0300 1.7396   17.28   11.62 0.8297  79.53 0.2887 0.2831
+ 970042 DAMBRI_H2   10.500 1  1.0300 1.7396   17.28   11.62 0.8297  79.53 0.2887 0.2831
+ 971011 HAMTHUAN_H1 13.800 1  1.0300 1.4258   64.79   32.19 0.8956  81.98 0.2508 0.3076
+ 971012 HAMTHUAN_H2 13.800 1  1.0300 1.4258   64.79   32.19 0.8956  81.98 0.2508 0.3076
+ 971021 DAMI_H1     13.800 1  1.0300 1.4236   38.01   15.37 0.9271  83.50 0.2291 0.3112
+ 971022 DAMY_H2     13.800 1  1.0300 1.4236   38.01   15.37 0.9271  83.50 0.2291 0.3112
+ 971051 HASOPHA_H1  6.3000 1  1.0300 1.1124    4.54   -1.78 0.9310  93.81-0.0411 0.3615
+ 971081 PH_THAI_PV1 22.000 1  1.0300 0.0000   99.00   17.16 0.9853  84.60 0.1599 0.9223
+ 971082 PH_THAI_PV2 22.000 1  1.0300 0.0000   99.00   17.16 0.9853  84.60 0.1599 0.9223
+ 971085 NHONHAI_PV  22.000 1  1.0300 0.0000   29.00   -3.73 0.9918  81.41-0.1185 0.9223
+ 971102 THIENTAN_PV222.000 1  1.0222 0.0000   50.00   16.43 0.9500  76.52 0.3055 0.9294
+ 971111 BAUZON_PV   22.000 1  1.0295 0.0000   21.00    6.90 0.9500  84.08 0.3033 0.9228
+ 971112 DIENLUC_1_PV22.000 1  1.0300 0.0000   25.00    6.56 0.9672  84.46 0.2420 0.9223
+ 971113 BAUNGU_PV   22.000 1  1.0300 0.0000   50.00    6.64 0.9913  87.56 0.1224 0.9223
+ 971121 TRUNGNAM_W1 22.000 1  1.0316 0.0000   40.00  -13.15 0.9500  84.14-0.3027 0.9209
+ 971122 TRUNGNAM_W2 22.000 1  1.0300 0.0000   65.80  -11.82 0.9842  86.65-0.1657 0.9223
+ 971123 XUANTHIEN_PV22.000 1  1.0300 0.0000   50.00   12.16 0.9717  81.77 0.2243 0.9223
+ 971124 XUANTHIEN_PV22.000 1  1.0300 0.0000   50.00   12.16 0.9717  81.77 0.2243 0.9223
+ 971125 XUANTHIEN_PV22.000 1  1.0300 0.0000   50.00   12.16 0.9717  81.77 0.2243 0.9223
+ 971126 XUANTHIEN_PV22.000 1  1.0300 0.0000   49.00   12.08 0.9709  81.68 0.2274 0.9223
+ 971131 INFRA_PV    22.000 1  1.0300 0.0000   41.00    9.43 0.9745  85.27 0.2122 0.9223
+ 971132 GELEX_PV    22.000 1  1.0300 0.0000   41.00    6.82 0.9865  86.39 0.1533 0.9223
+ 971133 HONUIMOT_PV 22.000 1  1.0300 0.0000   41.00    5.37 0.9915  87.64 0.1209 0.9223
+ 971141 SINENERY_PV 22.000 1  1.0300 0.0000   41.00    8.14 0.9809  85.98 0.1831 0.9223
+ 971142 PHUOCHUU_PV 22.000 1  1.0300 0.0000   50.00    9.02 0.9841  86.56 0.1663 0.9223
+ 971143 BPSOLAR_PV  22.000 1  1.0300 0.0000   38.00    7.96 0.9788  85.70 0.1932 0.9223
+ 971144 THNAM19_PV  22.000 1  1.0300 0.0000   41.00    5.99 0.9895  87.26 0.1347 0.9223
+ 971145 ADANI_PV    22.000 1  1.0300 0.0000   51.00    3.84 0.9972  88.46 0.0695 0.9223
+ 971151 CMX_PV1     22.000 1  1.0300 0.0000   41.50    6.32 0.9886  85.40 0.1405 0.9223
+ 971152 CMX_PV2     22.000 1  1.0300 0.0000   41.50    6.32 0.9886  85.40 0.1405 0.9223
+ 971153 CMX_PV3     22.000 1  1.0300 0.0000   41.50    6.32 0.9886  85.40 0.1405 0.9223
+ 971154 CMX_PV4     22.000 1  1.0300 0.0000   41.50    6.32 0.9886  85.40 0.1405 0.9223
+ 971155 MYSON_PV    22.000 1  1.0300 0.0000   41.00    5.95 0.9896  85.47 0.1338 0.9223
+ 971156 TANSON_PV   22.000 1  1.0300 0.0000   50.00    6.58 0.9914  86.33 0.1215 0.9223
+ 971161 BIM_PV      22.000 1  1.0300 0.0000   25.00    4.81 0.9820  85.83 0.1773 0.9223
+ 971162 PHUOCNINH_PV22.000 1  1.0300 0.0000   37.00    3.64 0.9952  86.87 0.0907 0.9223
+ 971163 MYSON_HLV_PV22.000 1  1.0253 0.0000   41.00   13.48 0.9500  80.51 0.3045 0.9266
+ 971164 TR.NAM_PV1  22.000 1  1.0300 0.0000   85.00   -7.35 0.9963  82.25-0.0798 0.9223
+ 971165 TR.NAM_PV2  22.000 1  1.0300 0.0000  125.00   -4.98 0.9992  84.14-0.0368 0.9223
+ 971166 BIM_3       22.000 1  1.0495 0.0000   41.00  -13.48 0.9500  81.06-0.2975 0.9052
+ 971168 NINHPHUOC_6222.000 1  1.0300 0.0000   48.00    7.84 0.9869  86.65 0.1507 0.9223
+ 971169 TH.NAM_19APV22.000 1  1.0250 0.0000   41.00   13.48 0.9500  80.98 0.3046 0.9268
+ 971171 BIM_2       22.000 1  1.0300 0.0000  205.00    5.84 0.9996  88.83 0.0263 0.9223
+ 971172 NHIHA_MT1   22.000 1  1.0249 0.0000   41.00   13.48 0.9500  80.92 0.3047 0.9270
+ 971177 THUANNAM12  22.000 1  1.0250 0.0000   41.00   13.48 0.9500  80.98 0.3046 0.9268
+ 971179 THNADUCLONG 22.000 1  1.0247 2.0305   36.10   13.00 0.9408 106.59 0.6225 0.6085
+ 971183 TRUNGNAM_PV 22.000 1  1.0300 0.0000  446.00   29.60 0.9978  92.30 0.0612 0.9223
+ 972021 DAININH_H1  13.800 1  1.0000 1.1118   64.79   -7.03 0.9942  85.87 0.0601 0.3633
+ 972022 DAININH_H2  13.800 1  1.0300 1.4226   64.79   31.73 0.8981  82.94 0.2484 0.3081
+ 972031 VINHTAN1_S1 26.000 1  1.0300 1.8333  500.00   66.64 0.9912 123.94 0.5347 0.4421
+ 972032 VINHTAN1_S2 26.000 1  1.0300 1.8333  500.00   66.64 0.9912 123.94 0.5347 0.4421
+ 972051 VINHTAN2_S1 26.000 1  1.0000 1.6628  537.80  -34.67 0.9979 138.32 0.5661 0.4816
+ 972052 VINHTAN2_S2 26.000 1  1.0000 1.6628  537.80  -34.67 0.9979 138.32 0.5661 0.4816
+ 972071 VINHTAN4_S1 26.000 1  1.0300 1.8954  532.18   68.16 0.9919 126.06 0.5797 0.4567
+ 972072 VINHTAN4_S2 26.000 1  1.0300 1.4228  259.18   48.73 0.9828 105.22 0.2202 0.2882
+ 972073 VINHTAN4M_S126.000 1  1.0300 1.4228  259.18   48.73 0.9828 105.22 0.2202 0.2882
+ 972101 BACBINH_H1  10.500 1  1.0300 1.2421    7.13   -1.13 0.9878  89.85 0.0330 0.3487
+ 972102 BACBINH_H2  10.500 1  1.0300 1.2421    7.13   -1.13 0.9878  89.85 0.0330 0.3487
+ 972111 PHULAC_W1   22.000 1  1.0300 0.0000   24.00    4.40 0.9836  85.30 0.1690 0.9223
+ 972112 TUYPHONG_W1 22.000 1  1.0300 0.0000   30.00    4.14 0.9906  87.67 0.1271 0.9223
+ 972113 TUYPHONG2_W122.000 1  1.0300 0.0000   41.60    8.42 0.9801  87.15 0.1866 0.9223
+ 972121 THUANNIEN_W122.000 1  1.0300 0.0000   32.00   10.31 0.9518  75.99 0.2971 0.9223
+ 972221 SONGLUY1-PV122.000 1  1.0215 0.0000   39.00   12.82 0.9500  77.60 0.3057 0.9300
+ 972223 HOPHONG52_PV22.000 1  1.0215 0.0000   39.00   12.82 0.9500  77.60 0.3057 0.9300
+ 972231 SONGBINH-PV122.000 1  1.0300 0.0000   66.00   10.05 0.9886  86.23 0.1404 0.9223
+ 972232 SONGBINH-PV222.000 1  1.0300 0.0000   66.00   10.05 0.9886  86.23 0.1404 0.9223
+ 972233 SONGBINH-PV322.000 1  1.0300 0.0000   66.00   10.05 0.9886  86.23 0.1404 0.9223
+ 972251 MUINE-PV1   22.000 1  0.9932 0.0000   33.00   10.85 0.9500  75.12 0.3144 0.9565
+ 972252 HOPHONG3-PV222.000 1  0.9964 0.0000   40.00   13.15 0.9500  75.82 0.3134 0.9534
+ 972271 PHANLAM-PV  22.000 1  1.0233 0.0000   30.00    9.86 0.9500  79.96 0.3051 0.9284
+ 972272 PHANLAM2-PV122.000 1  0.9998 0.0000   40.00   13.15 0.9500  74.73 0.3123 0.9502
+ 972291 VINHHAO-PV1 22.000 1  1.0300 0.0000   30.00    2.57 0.9964  86.93 0.0790 0.9223
+ 972292 VINHHAO-PV2 22.000 1  1.0300 0.0000   32.00    2.29 0.9974  85.66 0.0661 0.9223
+ 972293 VINHHAO-PV3 22.000 1  1.0300 0.0000   40.00    2.48 0.9981  86.54 0.0571 0.9223
+ 972321 PHULAC-PV1  22.000 1  1.0300 0.0000   41.00    3.55 0.9963  86.15 0.0799 0.9223
+ 972322 PH.PHU-PV1  22.000 1  1.0298 0.0000   40.00   13.15 0.9500  83.59 0.3032 0.9225
+ 972331 TUYPHONG-PV 22.000 1  1.0300 0.0000   34.00    3.27 0.9954  86.86 0.0888 0.9223
+ 972351 HPHONG1A_PV122.000 1  1.0300 0.0000  248.00   54.57 0.9766  87.58 0.2030 0.9223
+ 972352 HPHONG1A_PV222.000 1  1.0139 0.0000   48.00   15.78 0.9500  77.79 0.3080 0.9369
+ 972353 HPHONG1A_PV322.000 1  1.0139 0.0000   48.00   15.78 0.9500  77.79 0.3080 0.9369
+ 972361 SONMY3-1-PV122.000 1  0.9779 0.0000   41.00   13.48 0.9500  66.35 0.3193 0.9714
+ 972511 HODAMI-PV1  22.000 1  1.0263 0.0000   38.00   12.49 0.9500  69.60 0.3042 0.9256
+ 972651 VINHTAN2-PV122.000 1  1.0300 0.0000   42.70    1.51 0.9994  87.33 0.0325 0.9223
+ 972831 BINHAN_PV1  22.000 1  1.0300 0.0000   50.00    8.71 0.9852  84.87 0.1607 0.9223
+ 972841 HAMPHU_PV1  22.000 1  0.9839 0.0000   20.00    6.57 0.9500  68.80 0.3174 0.9655
+ 973011 THACMO_H1   13.800 1  1.0300 1.3440   32.40    2.59 0.9968  69.77 0.0971 0.3441
+ 973012 THACMO_H2   13.800 1  1.0300 1.5835   32.40   17.32 0.8819  70.59 0.2511 0.3167
+ 973021 SROKPHUMI_H111.000 1  1.1255 1.6248   11.02    0.00 1.0000  73.92 0.0541 0.3217
+ 973022 SROKPHUMI_H211.000 1  1.1255 1.6248   11.02    0.00 1.0000  73.92 0.0541 0.3217
+ 973031 THACMOMR_H1 13.800 1  1.0300 1.5836   32.40   17.32 0.8819  70.60 0.2511 0.3168
+ 973051 LONGHA      110.00 1  1.0300 1.5012   77.75   30.79 0.9298  76.76 0.2257 0.3099
+ 973059 DAKGLUN2    110.00 1  1.0570 1.4424    3.89    0.00 1.0000  76.38 0.1116 0.3932
+ 973061 DUCTHANH    110.00 1  1.0300 1.7642   17.28    9.91 0.8674  73.30 0.3197 0.3351
+ 973091 DAKGLUN_H1  6.3000 1  1.0621 1.4598    3.89    0.00 1.0000  76.19 0.1101 0.3916
+ 973092 DAKGLUN_H2  6.3000 1  1.0621 1.4598    3.89    0.00 1.0000  76.19 0.1101 0.3916
+ 973099 THACMO_PV   22.000 1  1.0255 0.0000   41.00   13.48 0.9500  60.91 0.3045 0.9263
+ 973155 LOCNINH1    35.000 1  1.0300 0.0000  656.00   64.97 0.9951  71.04 0.0913 0.9223
+ 974021 CANDON_H1   11.000 1  1.0300 1.5870   16.76    9.07 0.8795  71.96 0.2533 0.3163
+ 974022 CANDON_H2   11.000 1  1.0300 1.5870   16.76    9.07 0.8795  71.96 0.2533 0.3163
+ 974051 DAUTIENG_PV122.000 1  1.0300 0.0000  150.00   36.93 0.9710  70.02 0.2270 0.9223
+ 974052 DAUTIENG_PV222.000 1  1.0300 0.0000  200.00   19.30 0.9954  72.32 0.0890 0.9223
+ 974053 DAUTIENG_PV322.000 1  1.0300 0.0000  150.00   36.93 0.9710  70.02 0.2270 0.9223
+ 974054 DAUTIENG_PV422.000 1  1.0300 0.0000  150.00   38.34 0.9688  69.74 0.2358 0.9223
+ 974055 HTG_PV      22.000 1  1.0222 0.0000   82.00   26.95 0.9500  65.06 0.3055 0.9293
+ 974056 HGC_PV      22.000 1  1.0105 0.0000   50.00   16.43 0.9500  61.92 0.3090 0.9401
+ 974060 TTC1_PV     22.000 1  1.0096 0.0000   51.00   16.76 0.9500  61.35 0.3093 0.9410
+ 974061 TTC2_PV     22.000 1  1.0057 0.0000   42.00   13.80 0.9500  60.46 0.3105 0.9446
+ 974065 BKAC_PV     22.000 1  0.9983 0.0000   24.20    7.95 0.9500  58.21 0.3128 0.9516
+ 974066 TRIVIET1_PV 22.000 1  0.9983 0.0000   24.20    7.95 0.9500  58.21 0.3128 0.9516
+ 974067 TANCHAU_PV  22.000 1  1.0063 0.0000   41.00   13.48 0.9500  59.89 0.3103 0.9441
+ 975021 VEDAN_S1    13.000 1  1.0300 2.9895   62.20   38.84 0.8482  96.23 0.8233 0.3379
+ 975031 TRIAN_H1    13.800 1  1.0300 1.7244   43.20   33.99 0.7858  69.43 0.3374 0.3034
+ 975032 TRIAN_H2    13.800 1  1.0300 1.7244   43.20   33.99 0.7858  69.43 0.3374 0.3034
+ 975033 TRIAN_H3    13.800 1  1.0300 1.7244   43.20   33.99 0.7858  69.43 0.3374 0.3034
+ 975034 TRIAN_H4    13.800 1  1.0300 1.7244   43.20   33.99 0.7858  69.43 0.3374 0.3034
+ 975035 TRIAN_H5    13.800 1  1.0300 1.7552   43.20   33.99 0.7858  72.78 0.3546 0.2832
+ 975036 TRIAN_H6    13.800 1  1.0300 1.7552   43.20   33.99 0.7858  72.78 0.3546 0.2832
+ 975041 FORMOSA_S1  13.800 1  1.0426 2.1008  112.06   20.00 0.9844 113.27 0.4962 0.3781
+ 975042 FORMOSA_S2  13.800 1  1.0052 2.8310  112.06   80.00 0.8139  93.09 0.7221 0.3020
+ 975043 FORMOSA_S3  13.800 1  1.0300 2.3864  112.06   44.79 0.9286 107.70 0.5743 0.3441
+ 975051 NHONTRAC1_G115.800 1  1.0300 2.2801  112.06   50.06 0.9130  97.82 0.4833 0.2973
+ 975052 NHONTRAC1_G215.800 2  1.0300 2.2801  112.06   50.06 0.9130  97.82 0.4833 0.2973
+ 975053 NHONTRAC1_G315.800 3  1.0300 2.5506  112.06   43.84 0.9313 103.17 0.5974 0.3396
+ 975061 NHONTRAC2_G115.800 1  1.0300 2.4455  215.98   77.32 0.9415 102.39 0.6562 0.4230
+ 975062 NHONTRAC2_G215.800 1  1.0300 2.4455  215.98   77.32 0.9415 102.39 0.6562 0.4230
+ 975071 NHONTRAC2_S115.800 1  1.0300 2.4455  215.98   77.32 0.9415 102.39 0.6562 0.4230
+ 975135 NOITRIAN    15.800 1  1.0300 1.0598    0.00  -24.35 0.0000  51.59-0.0886 0.0000
+ 977011 HIEPPHUOC_S113.800 1  1.0300 2.6744  140.07   47.32 0.9474 107.52 0.7537 0.3895
+ 977012 HIEPPHUOC_S213.800 1  1.0300 2.6744  140.07   47.32 0.9474 107.52 0.7537 0.3895
+ 977013 HIEPPHUOC_S313.800 1  1.0300 2.6744  140.07   47.32 0.9474 107.52 0.7537 0.3895
+ 977021 THUDUC_S1   13.800 1  1.0256 2.5333   28.51   15.00 0.8850  94.15 0.6282 0.3247
+ 977022 THUDUC_S2   13.800 1  1.0104 2.3145   53.56   20.00 0.9368  98.33 0.5955 0.3404
+ 977023 THUDUC_S3   13.800 1  1.0104 2.3145   53.56   20.00 0.9368  98.33 0.5955 0.3404
+ 977031 THUDUC_G1   11.000 1  1.0093 1.8155    0.00    8.00 0.0000  54.79 0.2815-0.0000
+ 977033 THUDUC_G3   11.000 1  1.0069 2.0040    0.00    7.00 0.0000  54.79 0.3586-0.0000
+ 977034 THUDUC_G4   11.000 1  1.0300 2.2016    0.00   20.45 0.0000  54.69 0.4555-0.0000
+ 977035 THUDUC_G5   11.000 1  1.0300 2.2016    0.00   20.45 0.0000  54.69 0.4555-0.0000
+ 978001 BARIA_S1    11.000 1  1.0059 2.1657   50.11   23.00 0.9088  93.53 0.6318 0.4133
+ 978002 BARIA_S2    11.000 1  1.0278 2.2084   50.11   23.00 0.9088  95.98 0.6088 0.4187
+ 978011 BARIA_G1    11.500 1  1.0300 1.7918   17.28    2.72 0.9878  98.38 0.4123 0.4419
+ 978012 BARIA_G2    11.500 1  1.0279 2.4470   17.28   13.00 0.7991  85.82 0.6588 0.3556
+ 978013 BARIA_G3    11.000 1  1.0251 2.4266   28.51   23.00 0.7783  84.84 0.6704 0.3417
+ 978014 BARIA_G4    11.000 1  1.0251 2.4266   28.51   23.00 0.7783  84.84 0.6704 0.3417
+ 978015 BARIA_G5    11.000 1  1.0300 2.4006   28.51   18.45 0.8395  90.99 0.6734 0.3852
+ 978016 BARIA_G6    11.000 1  1.0300 2.4006   28.51   18.45 0.8395  90.99 0.6734 0.3852
+ 978017 BARIA_G7    11.000 1  1.0300 2.5825   28.51   18.45 0.8395  93.29 0.6883 0.3578
+ 978018 BARIA_G8    11.000 1  1.0251 2.7588   28.51   23.00 0.7783  88.02 0.7566 0.3342
+ 978021 PHUMY1_G1   15.000 1  1.0300 2.0185  214.43   64.36 0.9578 101.36 0.4850 0.3879
+ 978022 PHUMY1_G2   15.000 1  1.0300 2.0184  214.43   64.35 0.9578 101.36 0.4850 0.3879
+ 978023 PHUMY1_G3   15.000 1  1.0300 2.0184  214.43   64.34 0.9578 101.36 0.4850 0.3879
+ 978031 PHUMY1_S1   23.000 1  1.0300 2.0611  224.11   89.94 0.9281  95.25 0.3700 0.2881
+ 978041 PHUMY21_G1  15.800 1  1.0300 2.1815  112.06   40.80 0.9396 101.47 0.4575 0.3076
+ 978042 PHUMY21_G2  15.800 1  1.0300 1.7185  112.06   40.83 0.9396  91.77 0.2396 0.2281
+ 978044 PHUMY21_G4  10.500 1  1.0300 1.8950  112.06   71.06 0.8445  87.21 0.3061 0.2044
+ 978045 PHUMY21_G5  10.500 1  1.0300 1.8949  112.06   71.05 0.8445  87.21 0.3061 0.2044
+ 978051 PHUMY21_S1  15.800 1  1.0300 1.6335  112.06   35.67 0.9529  94.47 0.2348 0.2265
+ 978052 PHUMY21_S2  15.800 1  1.0300 1.7740  145.14   38.12 0.9672 102.17 0.3157 0.2713
+ 978061 PHUMY4_G1   15.800 1  1.0300 1.4971  112.06   24.64 0.9767  95.39 0.1851 0.2589
+ 978062 PHUMY4_G2   15.800 1  1.0300 1.4971  112.06   24.64 0.9767  95.39 0.1851 0.2589
+ 978071 PHUMY4_S1   15.800 1  1.0300 1.5348  112.06   24.64 0.9767 100.69 0.2083 0.2407
+ 978081 PHUMY22_G1  15.800 1  1.0300 1.7401  168.09   39.31 0.9737 101.56 0.3333 0.3438
+ 978082 PHUMY22_G2  15.800 1  1.0300 2.0052  230.58   49.48 0.9777 111.65 0.5028 0.4185
+ 978091 PHUMY22_S1  15.800 1  1.0300 2.3217  249.68   53.24 0.9780 120.18 0.5991 0.3775
+ 978101 PHUMY3_G1   15.800 1  1.0300 2.2200  204.92   56.41 0.9641 107.83 0.4841 0.3366
+ 978102 PHUMY3_G2   15.800 1  1.0300 2.2689  204.92   64.02 0.9545 105.24 0.4947 0.3316
+ 978111 PHUMY3_S1   15.800 1  1.0300 2.1924  227.82   58.23 0.9689 110.32 0.5410 0.3644
+ 978351 DMT-CHAUDUC 13.000 1  1.0300 1.5885   67.39   63.95 0.7254  70.27 0.2310 0.1951
+ 979082 BANGDUONGPV 15.800 1  1.0300 1.8962   76.03   24.08 0.9533  86.44 0.5165 0.5768
+ 979083 GAIAPV      15.800 1  1.0300 1.7359   76.03   22.09 0.9603  81.95 0.4577 0.6175
+ 979084 DUCHUEPV    15.800 1  1.0300 1.9739   38.01   14.20 0.9368  83.63 0.5495 0.5647
+ 979085 EUROPV      15.800 1  1.0300 1.8958   45.79   14.39 0.9540  84.97 0.5177 0.5789
+ 979086 DMTSOLARPARK15.800 1  1.0300 1.3955    0.00   27.75 0.0000  53.63 0.0898 0.0000
+ 981011 SONGHAU1_S1 26.000 1  1.0300 2.0141  518.36  114.28 0.9765 108.95 0.5816 0.4413
+ 981012 SONGHAU1_S2 26.000 1  1.0300 2.0141  518.36  114.28 0.9765 108.95 0.5816 0.4413
+ 983021 CANTHO_G1   11.000 1  1.0253 2.8465   32.40   23.00 0.8154  90.06 0.8176 0.3690
+ 983022 CANTHO_G2   11.000 1  1.0253 2.8465   32.40   23.00 0.8154  90.06 0.8176 0.3690
+ 983023 CANTHO_G3   11.000 1  1.0253 2.8140   32.40   23.00 0.8154  89.83 0.8014 0.3656
+ 983024 CANTHO_G4   11.000 1  1.0253 2.8140   32.40   23.00 0.8154  89.83 0.8014 0.3656
+ 983041 OMON1_S1    19.000 1  1.0300 2.2582  285.10   87.92 0.9556 108.77 0.6739 0.4444
+ 983042 OMON1_S2    19.000 1  1.0300 2.2582  285.10   87.92 0.9556 108.77 0.6739 0.4444
+ 985053 PV_SAOMAI   22.000 1  1.0216 1.9980   44.02   16.50 0.9364  83.70 0.5965 0.5866
+ 985054 PV_SAOMAI2  22.000 1  1.0216 1.9980   44.02   16.50 0.9364  83.70 0.5965 0.5866
+ 985055 PV_SAOMAI3  22.000 1  1.0216 1.9980   44.02   16.50 0.9364  83.70 0.5965 0.5866
+ 985057 PV_KINECTIC 22.000 1  1.0022 1.9934   26.41   10.00 0.9352  82.89 0.6529 0.6065
+ 985058 PV_BINHHOA  22.000 1  0.9585 0.0000   10.00    3.29 0.9500  53.19 0.3258 0.9911
+ 985059 PV_VANGIAO  22.000 1  1.0066 1.9080   26.41   10.00 0.9352  80.68 0.5678 0.5658
+ 988011 NMDGV1-5    13.800 1  0.9771 0.0000   30.00    9.86 0.9500  63.45 0.3196 0.9723
+ 988031 DGSO5_BT    13.800 1  0.9816 0.0000   30.00    9.86 0.9500  63.65 0.3181 0.9678
+ 988051 DGTHAPHONG1 13.800 1  1.0026 0.0000   30.00    9.86 0.9500  63.18 0.3114 0.9475
+ 990011 DUYENHAI1_S126.000 1  1.0300 1.9700  518.36  112.66 0.9772 116.29 0.5859 0.4348
+ 990012 DUYENHAI1_S226.000 1  1.0300 1.9700  518.36  112.66 0.9772 116.29 0.5859 0.4348
+ 990021 DUYENHAI2_S126.000 1  1.0300 1.8862  518.36   75.58 0.9895 119.73 0.5645 0.4477
+ 990022 DUYENHAI2_S226.000 1  1.0300 1.8862  518.36   75.58 0.9895 119.73 0.5645 0.4477
+ 990031 DUYENHAI3_S119.000 1  1.0300 1.9638  537.80   77.48 0.9898 120.13 0.5862 0.4635
+ 990032 DUYENHAI3_S219.000 1  1.0300 1.9638  537.80   77.48 0.9898 120.13 0.5862 0.4635
+ 990033 DUYENHAI3_S319.000 1  1.0300 1.9622  609.50   85.15 0.9904 121.16 0.5874 0.4651
+ 990051 DSKTV1      22.000 1  1.0015 1.5140   22.01   15.00 0.8263  73.18 0.2074 0.2186
+ 990061 DMTTRUNGNAM 22.000 1  1.0100 0.0000  150.00    8.68 0.9983  76.76 0.0544 0.9406
+ 991007 DG_CAMAU1   22.000 1  1.0300 1.1714   76.03    7.81 0.9948  73.71 0.0377 0.1605
+ 991012 CAMAU_S2    20.000 1  1.0300 2.3325  228.94   51.64 0.9755 112.29 0.6559 0.4572
+ 991021 CAMAU_G1    20.000 1  1.0300 2.4512  218.57   50.60 0.9742 116.36 0.6604 0.3847
+ 991022 CAMAU_G2    20.000 1  1.0300 2.2747  218.57   50.60 0.9742 110.89 0.6207 0.4459
+ 991023 CAMAU_G3    20.000 1  1.0300 2.2747  218.57   50.60 0.9742 110.89 0.6207 0.4459
+ 991024 CAMAU_G4    20.000 1  1.0300 2.4512  218.57   50.60 0.9742 116.36 0.6604 0.3847
+ 991025 CAMAU_S3    20.000 1  1.0300 2.5238  228.94   51.64 0.9755 117.75 0.6964 0.3928
+ 991087 DMT22       22.000 1  1.0100 0.0000   25.00    5.39 0.9775  63.34 0.2030 0.9406
+
+ INITIAL CONDITIONS CHECK O.K.
+
+ Channel output file is "gop.out"
+
+ Snapshot at TIME = -0.02 saved in file ssn0.snp on THU, NOV 04 2021  17:07
+ REPCAU1 AT BUS  916038 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  991087 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971081 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971082 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971085 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971102 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971111 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971112 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971113 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971121 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971122 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971123 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971124 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971125 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971126 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971131 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971132 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971133 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971141 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971142 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971143 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971144 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971145 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971151 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971152 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971153 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971154 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971155 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971156 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971161 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971162 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971163 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971164 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971165 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971166 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971168 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971169 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971171 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971172 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971177 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  971183 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972111 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972112 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972113 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972121 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972221 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972223 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972231 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972232 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972233 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972251 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972252 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972271 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972272 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972291 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972292 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972293 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972321 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972322 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972331 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972351 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972352 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972353 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972361 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972511 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972651 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972831 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  972841 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  973099 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  973155 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  974051 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  974052 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  974053 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  974054 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  974055 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  974056 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  974060 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  974061 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  974065 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  974066 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  974067 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  985058 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  988011 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  988031 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  988051 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REPCAU1 AT BUS  990061 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  916038 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  991087 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971081 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971082 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971085 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971102 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971111 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971112 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971113 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971121 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971122 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971123 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971124 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971125 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971126 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971131 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971132 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971133 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971141 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971142 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971143 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971144 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971145 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971151 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971152 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971153 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971154 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971155 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971156 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971161 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971162 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971163 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971164 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971165 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971166 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971168 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971169 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971171 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971172 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971177 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  971183 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972111 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972112 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972113 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972121 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972221 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972223 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972231 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972232 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972233 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972251 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972252 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972271 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972272 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972291 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972292 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972293 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972321 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972322 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972331 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972351 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972352 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972353 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972361 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972511 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972651 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972831 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  972841 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  973099 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  973155 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  974051 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  974052 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  974053 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  974054 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  974055 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  974056 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  974060 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  974061 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  974065 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  974066 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  974067 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  985058 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  988011 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  988031 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  988051 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+ REECAU1 AT BUS  990061 MACHINE '1 ': REMOTE BUS NOT SPECIFIED OR NOT FOUND. WILL CONTROL LOCAL BUS
+
+ Model GAST Bus 977031 [THUDUC_G1   11.000] Machine "1 " :
+     initialized out of limit(s) PMECH(I)
+
+ Model TGOV1 Bus 937061 [TDCHIKHE_H1 13.800] Machine "1 " :
+     initialized out of limit(s) PMECH(I)
+
+     PTI INTERACTIVE POWER SYSTEM SIMULATOR--PSS(R)E     THU, NOV 04 2021  17:07
+ NAM 2020-PHU TAI CUC DAI-TH2
+
+
+ INITIAL CONDITION LOAD FLOW USED 1 ITERATIONS
+
+ ----------------------------- MACHINE INITIAL CONDITIONS -----------------------------
+   BUS# X-- NAME --X BASKV ID  ETERM   EFD    POWER    VARS   P.F.  ANGLE   ID     IQ
+ 113017 MAOMAOTIAO1 110.00 1  1.0000 1.1715   91.91   -5.25 0.9984  19.37 0.1277 0.4422
+ 126047 THAMCAU1    110.00 1  1.0000 0.9072   59.50  -33.04 0.8742  14.29-0.0867 0.3291
+ 216099 GUMAN-TQ    220.00 1  1.0000 1.1544  450.00  -90.15 0.9805  35.34 0.1281 0.5592
+ 910011 BAOLAC_H1   15.800 1  1.0000 1.4394   77.75   33.56 0.9181  -3.21 0.2258 0.3300
+ 912011 NADUONG1_S1 6.3000 1  1.0000 2.3214   47.52   23.38 0.8973  30.13 0.7535 0.3875
+ 912012 NADUONG1_S2 6.3000 1  1.0000 2.3214   47.52   23.38 0.8973  30.13 0.7535 0.3875
+ 912041 THACXANG1   6.3000 1  0.9179 1.3159    8.64   12.40 0.5718 -11.09 0.2303 0.1277
+ 912053 MAUSON      6.3000 1  0.9671 1.1787    1.94    3.00 0.5438 -14.60 0.0504 0.0310
+ 913011 THUANHOA_H1 13.800 1  1.0000 1.1417   35.42   -1.97 0.9985  -2.34 0.0405 0.2548
+ 913051 BACME_H1    13.800 1  1.0000 1.2096   19.44   -0.33 0.9999  -4.69 0.0364 0.2333
+ 913061 NHOQUE3_H1  13.800 1  1.0000 1.3798   47.52   11.44 0.9722   0.23 0.1613 0.3168
+ 914001 NGHIALO_H1  10.500 1  1.0111 0.9613   20.65  -12.40 0.8573  42.08 0.1925 0.9332
+ 914009 TRAMTAU_H1  11.000 1  1.0249 0.6551   12.96  -17.00 0.6062  17.49-0.3043 0.4629
+ 914011 THACBA_H1   10.500 1  1.0003 0.6795   15.55  -17.00 0.6750  11.68-0.2439 0.4839
+ 914012 THACBA_H2   10.500 1  1.0000 0.8114   15.55  -12.55 0.7781  10.37-0.1607 0.4419
+ 914013 THACBA_H3   11.000 1  1.0003 0.6795   15.55  -17.00 0.6750  11.68-0.2439 0.4839
+ 914015 NGOIHUT2_H1 13.800 1  1.0000 0.9763   20.73  -13.37 0.8405  12.39-0.1039 0.2595
+ 914017 DONGNGAI_H1 10.500 1  1.0044 0.5687    8.80  -12.40 0.5789  20.61-0.3279 0.5092
+ 914019 CHANTHINH_H110.500 1  1.0000 0.8295    4.32   -6.03 0.5821   8.11-0.2122 0.2075
+ 914021 SUOISAP_H1  10.500 1  1.0000 0.8706    5.27   -5.46 0.6943  10.50-0.1767 0.2469
+ 914023 DONGSUNG_H1 10.500 1  1.0000 1.0545    8.64   -2.99 0.9450   9.45-0.0227 0.3650
+ 914025 THACCA_H1   11.000 1  1.1069 1.3380   17.93   -6.00 0.9483  15.51 0.0360 0.5681
+ 914035 VANCHAN     13.800 1  1.0000 0.9008   25.05  -18.58 0.8032  14.49-0.1365 0.3260
+ 915001 TUYENQUAG_H113.800 1  1.0000 1.3229   49.24   10.16 0.9794   3.73 0.1476 0.3446
+ 915002 TUYENQUAG_H213.800 1  1.0000 1.3229   49.24   10.16 0.9794   3.73 0.1476 0.3446
+ 915003 YENSON1     13.800 1  1.0000 1.3457   30.24    8.53 0.9625  13.53 0.1439 0.1848
+ 915007 TUYENQUAG_H313.800 1  1.0000 1.3789   49.24   15.55 0.9536   3.54 0.1855 0.3374
+ 915023 SONGLO8B    22.000 1  1.0000 1.4305   22.46   -0.32 0.9999  22.72 0.3885 0.6871
+ 915025 SONGLO8A    22.000 1  1.0000 1.1992   12.96   -1.43 0.9940  10.56 0.1019 0.4466
+ 915031 TDCHIEMHOA  22.000 1  1.0000 1.4407   20.73    5.49 0.9667   7.32 0.2144 0.3656
+ 915035 MIADUONGTQ  22.000 1  1.0000 1.7936   10.80    8.08 0.8008   4.90 0.3954 0.3249
+ 915043 TDTHACVANG  22.000 1  1.0000 1.7806   12.96    9.47 0.8073   8.47 0.3890 0.3262
+ 915051 ANHOA       22.000 1  0.9942 1.7936   10.80    8.33 0.7917   0.92 0.4075 0.3241
+ 916007 LAOCAI      10.000 1  1.0000 1.6789   13.26    6.04 0.9100  20.09 0.3682 0.4093
+ 916021 BACHA_1     10.000 1  1.0301 1.3374   19.44    0.00 1.0000  16.69 0.0878 0.3455
+ 916022 BACHA_2     10.000 1  1.0301 1.3374   19.44    0.00 1.0000  16.69 0.0878 0.3455
+ 916029 BACNA       10.000 1  1.0000 1.5765   12.96    2.67 0.9794  26.97 0.3802 0.5415
+ 916031 BAONHAI     10.000 1  1.0000 2.2037    6.05    8.60 0.5751  10.92 0.5829 0.2605
+ 916033 COCSAN_1    6.0000 1  1.0000 1.7376    4.28    3.29 0.7927  14.09 0.3555 0.2968
+ 916034 COCSAN_2    6.0000 1  1.0000 1.7376    4.28    3.29 0.7927  14.09 0.3555 0.2968
+ 916035 MINHLUONG   6.0000 1  1.0000 1.3514   12.10    2.07 0.9857  18.72 0.1524 0.3399
+ 916036 COCSAN_3    6.0000 1  1.0000 1.7376    4.28    3.29 0.7927  14.09 0.3555 0.2968
+ 916038 MINHLUONGTHU6.0000 1  1.0000 0.0000   13.60    1.77 0.9916   4.90 0.1236 0.9500
+ 916039 MUONGHUM_1  10.000 1  1.0000 1.5298    6.91    3.14 0.9103  15.46 0.2481 0.3181
+ 916040 MUONGHUM_2  10.000 1  1.0000 1.5298    6.91    3.14 0.9103  15.46 0.2481 0.3181
+ 916041 NAMCAN1A    6.0000 1  1.0000 1.9310    4.32    4.52 0.6906  12.60 0.4520 0.2803
+ 916043 NAMCUN      6.0000 1  1.0000 1.4446   17.28    5.55 0.9521  16.21 0.2028 0.3280
+ 916045 NAMCUN_2    6.0000 1  1.0000 1.8272    2.94    2.29 0.7893  15.15 0.4139 0.3264
+ 916047 NAMKHANH    10.000 1  1.0000 0.6056    5.18   -6.55 0.6205  24.00-0.2906 0.5153
+ 916049 NAMKHOA_3   6.0000 1  1.0000 1.3942    7.78    1.87 0.9723  17.62 0.1757 0.3342
+ 916051 NAMLUC      6.0000 1  1.0000 1.4411   10.37    3.27 0.9536  15.82 0.2009 0.3284
+ 916053 NAMPHANG_1  6.0000 1  1.0000 1.3903    7.78    1.82 0.9736  16.73 0.1736 0.3347
+ 916054 NAMPHANG_2  6.0000 1  1.0000 1.3903    7.78    1.82 0.9736  16.73 0.1736 0.3347
+ 916055 NAMPUNG     6.0000 1  1.0000 1.8064    4.02    2.70 0.8297  16.59 0.4155 0.3587
+ 916057 NAMTHA      6.0000 1  1.0000 1.5466   26.13    3.81 0.9895  30.71 0.3889 0.5838
+ 916059 NAMTOONG    6.0000 1  1.0000 1.4472   14.69    4.78 0.9510  16.04 0.2042 0.3277
+ 916061 NAMTRUNGHO  6.0000 1  1.0000 1.4390    7.78    1.79 0.9744  19.39 0.2243 0.3926
+ 916063 NAMTRUNGHO_26.0000 1  1.0000 1.7118    2.81    1.86 0.8331  15.15 0.3509 0.3236
+ 916065 NAMXAYNOI   6.0000 1  1.0000 1.5337    5.18    2.39 0.9081  16.11 0.2501 0.3176
+ 916067 NGOIPHAT_1  6.0000 1  1.0000 1.2556   10.37    0.13 0.9999  20.21 0.0996 0.3534
+ 916068 NGOIPHAT_2  6.0000 1  1.0000 1.2263   10.37    0.13 0.9999  17.16 0.0807 0.3582
+ 916069 NGOIPHAT_3  6.0000 1  1.0000 1.2556   10.37    0.13 0.9999  20.21 0.0996 0.3534
+ 916070 NGOIPHAT_4  6.0000 1  1.0000 1.2199    5.18    0.21 0.9992  11.94 0.0318 0.1809
+ 916071 PAKE        10.000 1  0.9981 2.3597   11.23    7.44 0.8338  22.05 0.7961 0.5289
+ 916073 PHUCLONG    6.0000 1  1.0000 1.3293    9.50    1.28 0.9910  16.91 0.1403 0.3429
+ 916075 POHO        6.0000 1  1.0000 1.4988    5.70    2.32 0.9264  15.49 0.2317 0.3216
+ 916077 SEOTRONGHO_16.0000 1  1.0000 1.5053    4.75    1.98 0.9231  15.46 0.2352 0.3208
+ 916078 SEOTRONGHO_26.0000 1  1.0000 1.5053    4.75    1.98 0.9231  15.46 0.2352 0.3208
+ 916079 SUOICHAN1   10.000 1  1.0000 1.6138   11.66    6.81 0.8637  14.74 0.2920 0.3090
+ 916081 SUPAN_1     10.000 1  1.0000 1.4157   12.96    3.56 0.9642  16.59 0.1873 0.3316
+ 916083 SUPAN_2     10.000 1  1.0000 1.3727    4.97    4.13 0.7688   6.04 0.1116 0.1135
+ 916085 TALOI_1     6.0000 1  1.0000 1.5625    6.48    3.28 0.8925  14.86 0.2653 0.3144
+ 916087 TALOI2      10.000 1  1.0000 1.5348    5.18    2.40 0.9076  15.16 0.2507 0.3174
+ 916089 TATHANG_1   10.000 1  1.0000 1.4148   12.96    3.54 0.9646  17.50 0.1868 0.3317
+ 916090 TATHANG_2   10.000 1  1.0000 1.4148   12.96    3.54 0.9646  17.50 0.1868 0.3317
+ 916091 VINHHA_1    10.000 1  1.0000 1.5381    4.54    2.12 0.9059  14.88 0.2525 0.3172
+ 916092 VINHHA_2    10.000 1  1.0000 1.5381    4.54    2.12 0.9059  14.88 0.2525 0.3172
+ 916093 YENHA       6.0000 1  1.0000 1.6664    5.62    3.72 0.8335  14.61 0.3192 0.3038
+ 916095 SUOICHAN2   10.000 1  1.0000 1.5881    6.91    3.76 0.8783  15.05 0.2787 0.3117
+ 916115 NXL45       10.000 1  1.0000 1.2994   12.96    2.59 0.9806  14.36 0.0901 0.2328
+ 916169 NGOISAN1    6.0000 1  1.0000 1.3778   11.60    2.48 0.9779  19.08 0.1668 0.3364
+ 916169 NGOISAN1    6.0000 2  1.0000 1.3778   11.60    2.48 0.9779  19.08 0.1668 0.3364
+ 917011 BANCHAT_H1  13.800 1  1.0000 1.0352   47.52  -18.89 0.9293  16.55-0.0594 0.3850
+ 917012 BANCHAT_H2  13.800 1  1.0000 1.0352   47.52  -18.89 0.9293  16.55-0.0594 0.3850
+ 917016 NAMBUM      15.800 1  1.0000 1.0066    2.85   -1.89 0.8335  22.98-0.0956 0.2070
+ 917017 NAMCUM4     15.800 1  1.0000 1.1600   23.33   -3.68 0.9878  39.19 0.0617 0.4103
+ 917018 NAMCUM3.6   15.800 1  1.0000 1.1402   20.30   -3.84 0.9826  39.10 0.0506 0.4140
+ 917019 NAMCUM1.2.5 15.800 1  1.0000 1.1260   18.36   -3.89 0.9783  38.95 0.0426 0.4167
+ 917020 PACMA       15.800 1  1.0000 1.2283   60.48   -0.26 1.0000  41.72 0.0932 0.3991
+ 917022 HO4         15.800 1  1.0000 1.0002    7.78   -2.85 0.9389  24.19 0.0084 0.4365
+ 917023 KHAOMANG    15.800 1  1.0000 1.1330   23.76   -3.20 0.9911  25.10 0.0856 0.4045
+ 917024 NAMSL4      15.800 1  1.0000 0.9863    9.07   -3.56 0.9310  39.51 0.0001 0.4401
+ 917025 NAMSL3      15.800 1  1.0000 1.0161    9.07   -3.56 0.9308  37.08-0.0200 0.4397
+ 917026 NAMSL1.1A   15.800 1  1.0000 1.1257   16.41   -3.49 0.9782  37.51 0.0425 0.4167
+ 917027 PAHA        15.800 1  1.0000 0.9323    6.26   -3.36 0.8811  37.91-0.0686 0.4601
+ 917028 NAMXL1      15.800 1  1.0000 1.0035    6.91   -3.34 0.9004  32.13-0.0690 0.3237
+ 917029 NAMXL2      15.800 1  1.0000 1.1046   14.69   -3.63 0.9708  36.33 0.0216 0.3981
+ 917031 NAMNA3.A    15.800 1  1.0000 1.3103   41.04   -1.27 0.9995  53.31 0.2204 0.3457
+ 917032 HUOIQUANG_H215.800 1  1.0000 1.0593  129.59  -42.73 0.9497  20.86-0.0120 0.3864
+ 917033 NAMNA2      15.800 1  1.0000 1.2247   28.51   -1.62 0.9984  33.75 0.0977 0.3987
+ 917034 NAMNA1      15.800 1  1.0000 1.1733   12.96   -1.77 0.9908  32.06 0.0692 0.4078
+ 917035 NAMXE       15.800 1  1.0000 1.0848    3.89   -1.08 0.9633  29.80 0.0193 0.4248
+ 917037 NAMSO2      15.800 1  1.0000 1.1403    7.78   -1.47 0.9826  30.31 0.0507 0.4141
+ 917038 NAMSO1      10.000 1  1.0000 1.1706    5.18   -0.73 0.9902  30.98 0.0676 0.4083
+ 917039 NAMPAC      15.800 1  1.0000 1.1879   17.45   -1.99 0.9936  31.86 0.0773 0.4051
+ 917041 PACMA_H1    15.800 1  1.0000 1.1302   77.75    5.98 0.9971  23.09 0.0355 0.1716
+ 917042 HUACHANG    15.800 1  1.0000 1.2026    4.41   -0.40 0.9959  22.96 0.0855 0.4026
+ 917043 CHUVA2      15.800 1  1.0007 0.8057    3.89   -3.00 0.7917  23.73-0.1452 0.4963
+ 917044 NAMTHI      15.800 1  1.0000 1.0184    8.64   -3.36 0.9321  21.99-0.0186 0.4393
+ 917058 TDPATAN     10.000 1  1.0000 1.2087    8.64   -0.70 0.9967  32.59 0.0888 0.4015
+ 917059 TDPHINHO    15.800 1  1.0000 1.1572   10.80   -1.75 0.9871  32.21 0.0602 0.4108
+ 917060 TDMALYPHO   15.800 1  1.0000 1.1796   11.66   -1.48 0.9920  31.36 0.0727 0.4067
+ 917061 TDBUMNUA    15.800 1  1.0000 1.0837   11.23   -3.15 0.9629  35.91 0.0187 0.4251
+ 917062 MUONGKIM3   15.800 1  1.0000 1.0882   11.66   -3.18 0.9647  22.31 0.0213 0.4243
+ 917063 NAMHAN      10.000 1  1.0000 1.3106    7.04   -1.04 0.9893  47.63 0.3648 0.7617
+ 917064 PATAN1      10.000 1  1.0000 1.3126    7.04   -1.03 0.9895  49.88 0.3656 0.7610
+ 917065 SONBINH     35.000 1  1.0000 1.6725    7.04    1.09 0.9882  39.85 0.5213 0.6656
+ 917066 NAMMO       6.0000 1  1.0000 1.0517    8.80   -3.08 0.9440  33.03 0.1204 0.6700
+ 917067 NAMBUM1     6.0000 1  1.0000 1.2802   14.09   -2.49 0.9847  51.48 0.3513 0.7717
+ 917068 NAMBUM2     6.0000 1  1.0000 1.3328   22.01   -2.79 0.9921  52.63 0.3743 0.7542
+ 917071 LAICHAU_H1  15.800 1  1.0000 1.1727  172.79   -9.88 0.9984  31.13 0.1000 0.3758
+ 917072 LAICHAU_H2  15.800 1  1.0000 1.1727  172.79   -9.88 0.9984  31.13 0.1000 0.3758
+ 917073 LAICHAU_H3  15.800 1  1.0000 1.1727  172.79   -9.88 0.9984  31.13 0.1000 0.3758
+ 917074 TDNLAICHAU  15.800 1  1.0000 1.1327  129.59  -11.77 0.9959  25.56 0.0442 0.2891
+ 918010 DIENBIEN_H1 10.500 1  1.0300 1.4815   12.66    6.42 0.8919  19.90 0.1243 0.1820
+ 919011 SONLA_H1    15.800 1  1.0300 1.4093  172.79   38.41 0.9762  24.13 0.1838 0.3396
+ 919012 SONLA_H2    15.800 1  1.0300 1.4093  172.79   38.41 0.9762  24.13 0.1838 0.3396
+ 919013 SONLA_H3    15.800 1  1.0300 1.4093  172.79   38.41 0.9762  24.13 0.1838 0.3396
+ 919014 SONLA_H4    15.800 1  1.0300 1.4093  172.79   38.41 0.9762  24.13 0.1838 0.3396
+ 919015 SONLA_H5    15.800 1  1.0300 1.4093  172.79   38.41 0.9762  24.13 0.1838 0.3396
+ 919016 SONLA_H6    15.800 1  1.0300 1.4093  172.79   38.41 0.9762  24.13 0.1838 0.3396
+ 919021 NAMCHIEN_H1 13.800 1  1.0300 1.3623   43.20    6.85 0.9877  13.93 0.0980 0.2929
+ 919022 NAMCHIEN_H2 13.800 1  1.0300 1.3623   43.20    6.85 0.9877  13.93 0.0980 0.2929
+ 919103 NAMCHIEN11  15.800 1  1.0437 1.3625   13.82    0.00 1.0000  15.93 0.0485 0.2604
+ 919104 PACHIEN1    15.800 1  1.0430 1.3495   10.45    0.00 1.0000  12.73 0.0280 0.1985
+ 919105 NAMTRAI31   15.800 1  1.0448 1.3728    7.78    0.00 1.0000  16.39 0.0609 0.2914
+ 919106 NAMHONG1    15.800 1  1.0457 1.3691    6.91    0.00 1.0000  15.00 0.0482 0.2599
+ 919107 NAMXA1      15.800 1  1.0458 1.3589    4.15    0.00 1.0000  12.03 0.0273 0.1964
+ 919108 CHIENGCONG1 15.800 1  1.0454 1.3477    2.27    0.00 1.0000   8.13 0.0082 0.1082
+ 919109 NAMCPIA1    15.800 1  1.0459 1.3745    9.07    0.00 1.0000  16.29 0.0575 0.2833
+ 919110 SUOILUM31   15.800 1  1.0450 1.3715    6.05    0.00 1.0000  15.88 0.0576 0.2836
+ 919111 SUOILUM11   15.800 1  1.0461 1.3844    8.64    0.00 1.0000  17.97 0.0746 0.3218
+ 919112 NAMCHIM21   15.800 1  1.0503 1.4467   12.96    0.00 1.0000  25.13 0.1609 0.4666
+ 919113 XIMVANG21   15.800 1  1.0508 1.3838    7.78    0.00 1.0000  15.17 0.0419 0.2431
+ 919114 NAMPAN51    15.800 1  1.0380 1.3577   12.10    0.00 1.0000  17.59 0.0763 0.3241
+ 919115 NAMLA1      15.800 1  1.0404 1.3539   11.66    0.00 1.0000  15.76 0.0544 0.2749
+ 919116 HANGDONGA11 15.800 1  1.0300 1.3919    3.63    1.06 0.9602   5.27 0.0720 0.1687
+ 919117 HANGDONGA1  15.800 1  1.0300 1.4151    6.91    0.99 0.9899  11.88 0.1223 0.3161
+ 919118 HANGDONGB1  15.800 1  1.0300 1.3737    7.78    0.74 0.9955  11.01 0.0904 0.2895
+ 919119 SUOISAP11   15.800 1  1.0300 1.4464    8.42    1.72 0.9798  10.72 0.1363 0.3048
+ 919120 SUOISAP2MR1 15.800 1  1.0300 1.4996    6.48    2.70 0.9228   5.99 0.1450 0.2309
+ 919121 NAMCHIM1A+B115.800 1  1.0460 1.3842    8.64    0.00 1.0000  17.69 0.0746 0.3218
+ 919122 NAMCHIM1    15.800 1  1.0466 1.3635    5.53    0.00 1.0000  12.77 0.0310 0.2090
+ 919123 NAMCHIM12   15.800 1  1.0472 1.3882   10.37    0.00 1.0000  18.16 0.0744 0.3215
+ 919124 SAPVIET1    15.800 1  1.0300 1.3704    9.07    0.51 0.9984  15.58 0.1040 0.3372
+ 919125 PHIENGCON1  15.800 1  1.0307 1.3130    6.05    0.00 1.0000  10.95 0.0387 0.2315
+ 919126 TOBUONG1    15.800 1  1.0217 1.5116    3.46    2.00 0.8655   6.84 0.1621 0.2039
+ 919127 TATNGOANG1  15.800 1  1.0150 1.4853    3.02    2.00 0.8341   4.69 0.1561 0.1798
+ 919128 NAMCONG41   15.800 1  1.0330 1.3287    4.32    0.00 1.0000  17.07 0.0542 0.2735
+ 919129 TACO1       15.800 1  1.0351 1.3304   12.96    0.00 1.0000  17.81 0.0438 0.2465
+ 919130 MUONGHUNG1  15.800 1  1.0446 1.3623   10.37    0.00 1.0000  19.08 0.0426 0.2444
+ 919131 NAMGION1    15.800 1  1.0316 1.3243    8.64    0.00 1.0000  20.07 0.0544 0.2738
+ 919132 NAMHOA1+2   15.800 1  1.0300 1.4264   11.23    1.56 0.9905  24.31 0.1371 0.3404
+ 919133 BOSINH1     15.800 1  1.0378 1.3393   10.37    0.00 1.0000  21.53 0.0434 0.2459
+ 919134 MUONGLAM    15.800 1  1.0410 1.3599    7.78    0.00 1.0000  21.21 0.0616 0.2923
+ 919135 CHIENGKHUONG15.800 1  1.0392 1.3493    8.64    0.00 1.0000  16.41 0.0532 0.2720
+ 919136 CHIENGSO    15.800 1  1.0360 1.3235    3.89    0.00 1.0000  18.01 0.0247 0.1860
+ 922011 CAONGAN_S1  10.500 1  0.9906 2.5280   49.68   20.00 0.9276  27.63 0.7206 0.3457
+ 922012 CAONGAN_S2  10.500 1  0.9906 2.5280   49.68   20.00 0.9276  27.63 0.7206 0.3457
+ 923011 HOABINH_H1  15.800 1  1.0300 1.8172  214.38   55.53 0.9680  28.38 0.5482 0.5899
+ 923012 HOABINH_H2  15.800 1  1.0300 1.5815  103.67   50.26 0.8998  12.51 0.2732 0.3176
+ 923013 HOABINH_H3  15.800 1  1.0300 1.5815  103.67   50.26 0.8998  12.51 0.2732 0.3176
+ 923014 HOABINH_H4  15.800 1  1.0300 1.5815  103.67   50.26 0.8998  12.51 0.2732 0.3176
+ 923015 HOABINH_H5  15.800 1  1.0300 1.5815  103.67   50.26 0.8998  12.51 0.2732 0.3176
+ 923016 HOABINH_H6  15.800 1  1.0300 1.5815  103.67   50.26 0.8998  12.51 0.2732 0.3176
+ 923017 HOABINH_H7  15.800 1  1.0300 1.5815  103.67   50.26 0.8998  12.51 0.2732 0.3176
+ 923018 HOABINH_H8  15.800 1  1.0300 1.5815  103.67   50.26 0.8998  12.51 0.2732 0.3176
+ 924001 SONDONG_S1  10.500 1  1.0200 2.2122   95.03   22.96 0.9720  45.72 0.5653 0.3689
+ 924002 SONDONG_S2  10.500 1  1.0200 2.2122   95.03   22.96 0.9720  45.72 0.5653 0.3689
+ 924003 BACME       10.500 1  1.0200 1.5947   38.88   25.44 0.8368  -2.74 0.2184 0.2349
+ 926014 UONGBI_S4   19.000 1  1.0200 1.9906  259.18   58.49 0.9755  44.35 0.5892 0.4339
+ 926021 UONGBIMR_S1 19.000 1  1.0200 2.1241  285.10   61.65 0.9774  47.07 0.6583 0.4583
+ 926031 CAMPHA1_S1  19.000 1  1.0200 1.6880  114.30    4.28 0.9993  53.32 0.4519 0.4440
+ 926032 CAMPHA1_S2  19.000 1  1.0200 1.7444  114.30    4.28 0.9993  54.92 0.4929 0.4579
+ 926041 QUANGNINI_S119.000 1  1.0200 1.9461  259.18   46.13 0.9845  52.49 0.5806 0.4446
+ 926042 QUANGNINI_S219.000 1  1.0200 1.8936  259.18   33.91 0.9915  54.40 0.5670 0.4536
+ 926051 MAOKHE_S1   15.000 1  1.0200 2.3529  190.06   48.35 0.9691  43.88 0.6121 0.3810
+ 926052 MAOKHE_S2   15.000 1  1.0200 2.3529  190.06   48.35 0.9691  43.88 0.6121 0.3810
+ 926061 CAMPHA2_S1  19.000 1  1.0200 2.1027  152.40    7.03 0.9989  63.66 0.7320 0.5191
+ 926062 CAMPHA2_S2  19.000 1  1.0200 2.1027  152.40    7.03 0.9989  63.66 0.7320 0.5191
+ 926071 QUANGNIN2_S119.000 1  1.0200 1.8171  235.32   36.08 0.9884  53.53 0.5039 0.4283
+ 926072 QUANGNIN2_S219.000 1  1.0200 1.8171  235.32   36.08 0.9884  53.53 0.5039 0.4283
+ 926075 CAMPHA3_S1  15.000 1  1.0200 1.9542  190.06   80.36 0.9210  27.78 0.5406 0.5323
+ 926076 CAMPHA3_S2  15.000 1  1.0200 1.9542  190.06   80.36 0.9210  27.78 0.5406 0.5323
+ 926081 MONGDUON1_S119.000 1  1.0200 1.4204  224.11   41.25 0.9835  33.67 0.2367 0.2970
+ 926082 MONGDUON1_S219.000 1  1.0200 1.4204  224.11   41.25 0.9835  33.67 0.2367 0.2970
+ 926091 MONGDUON2_S126.000 1  1.0200 1.8846  537.80   61.48 0.9935  55.13 0.5956 0.4588
+ 926092 MONGDUON2_S226.000 1  1.0200 1.8846  537.80   61.48 0.9935  55.13 0.5956 0.4588
+ 926101 THANGLONG_S119.000 1  1.0200 1.8241  235.32   36.54 0.9882  52.84 0.4920 0.4258
+ 926102 THANGLONG_S219.000 1  1.0200 1.8241  235.32   36.54 0.9882  52.84 0.4920 0.4258
+ 927021 HAIPHONG1_S119.000 1  1.0200 1.8863  259.18   35.33 0.9908  47.28 0.5557 0.4494
+ 927022 HAIPHONG1_S219.000 1  1.0200 1.8815  259.18   35.33 0.9908  47.33 0.5561 0.4490
+ 927023 HAIPHONG2_S119.000 1  1.0092 2.3412  259.18  185.92 0.8126  16.23 0.7338 0.4873
+ 927024 HAIPHONG2_S219.000 1  1.0092 2.3412  259.18  185.92 0.8126  16.23 0.7338 0.4873
+ 928011 PHALAI1_S1  10.500 1  1.0200 2.4896  122.85   37.33 0.9568  39.87 0.6712 0.3805
+ 928012 PHALAI1_S2  10.500 1  1.0200 2.4896  122.85   37.33 0.9568  39.87 0.6712 0.3805
+ 928013 PHALAI1_S3  10.500 1  1.0200 1.8559   61.63   22.33 0.9402  27.68 0.3551 0.2805
+ 928014 PHALAI1_S4  10.500 1  1.0200 1.8559   61.63   22.33 0.9402  27.68 0.3551 0.2805
+ 928021 PHALAI2_S1  19.000 1  1.0200 2.3454  259.18  161.31 0.8490  26.32 0.6687 0.3522
+ 928022 PHALAI2_S2  19.000 1  1.0200 1.8923  259.18   61.27 0.9732  37.14 0.5165 0.4098
+ 928051 HAIDUONG_S1 26.000 1  1.0200 1.4858  259.18   75.00 0.9606  10.68 0.1856 0.3256
+ 931022 THAIBINH1_S219.000 1  1.0200 1.9181  263.50   47.57 0.9841  46.10 0.5853 0.4389
+ 931031 THAIBINH2_S119.000 1  1.0200 1.5397  259.18   96.79 0.9368  10.49 0.2136 0.3194
+ 931032 THAIBINH2_S219.000 1  1.0200 1.7213  518.36  115.46 0.9761  25.15 0.4487 0.5854
+ 936011 CUADAT_H1   13.800 1  1.0300 2.1574   23.76   30.94 0.6091  11.80 0.4900 0.2517
+ 936012 CUADAT_H2   13.800 1  1.0300 2.1574   23.76   30.94 0.6091  11.80 0.4900 0.2517
+ 936021 NGHISON1_S1 19.000 1  1.0300 2.6518  259.18  175.40 0.8282  48.70 0.7612 0.3709
+ 936022 NGHISON1_S2 19.000 1  1.0300 2.6518  259.18  175.40 0.8282  48.70 0.7612 0.3709
+ 936041 TRUNGSON_H1 15.800 1  1.0300 1.2156   56.16    9.77 0.9852   8.24 0.0642 0.1973
+ 936042 TRUNGSON_H2 15.800 1  1.0300 1.2556   56.16    9.17 0.9869  12.20 0.1135 0.2907
+ 936051 HOIXUAN_H1  13.800 1  1.0300 1.6016   47.52   17.97 0.9354  14.14 0.2337 0.3381
+ 936061 DONGVAN_H1  13.800 1  1.0300 2.2932   47.52   61.65 0.6104  21.82 0.5925 0.2135
+ 937001 BANVE_H1    13.800 2  1.0300 1.6606   69.11   61.75 0.7457  34.08 0.4310 0.3072
+ 937002 BANVE_H2    13.800 1  1.0300 1.6606   69.11   61.75 0.7457  34.08 0.4310 0.3072
+ 937021 KHEBO_H1    13.800 1  1.0300 2.2202   43.20   66.56 0.5444  29.02 0.5129 0.2255
+ 937041 HUANA_H1    15.800 1  1.0300 2.0155   77.75  103.97 0.5989  14.80 0.5388 0.2531
+ 937061 TDCHIKHE_H1 13.800 1  0.9098 1.7309    6.05    7.00 0.6537  29.28 0.4498 0.1791
+ 937063 TDNAMNON_H1 13.800 1  0.9137 1.8332    8.64    7.00 0.7770  36.69 0.5259 0.2433
+ 937065 TDBANPUNG_H113.800 1  0.9124 1.4701    5.18    4.00 0.7917  24.27 0.3745 0.2977
+ 937067 TDNAMMO_H1  13.800 1  0.9212 1.7137   31.10   12.00 0.9330  39.21 0.6432 0.5734
+ 937069 TDCANAN_H1  13.800 1  0.9143 1.5338    9.94    8.00 0.7789  24.96 0.4138 0.3094
+ 937081 TDNAMPONG_H113.800 1  0.9487 1.5878   12.96   10.00 0.7917  27.00 0.3527 0.2105
+ 937083 TDNHANHAC_H113.800 1  0.9626 2.0770   25.49   20.00 0.7867  25.53 0.6748 0.4322
+ 937085 TDSOGQUAN_H113.800 1  0.9483 1.3968    5.18    4.00 0.7917  15.02 0.2426 0.2219
+ 937087 TDCHAUTHO_H113.800 1  0.9529 1.6090    7.78    6.00 0.7917  19.06 0.3831 0.3067
+ 938011 VUNGANG1_S1 26.000 1  1.0300 2.4368  537.80  286.28 0.8827  80.68 0.7402 0.3927
+ 938012 VUNGANG1_S2 26.000 1  1.0300 2.4368  537.80  286.28 0.8827  80.68 0.7402 0.3927
+ 938071 FORMOSAHT_S 26.000 1  1.0300 1.9974  345.57  222.31 0.8410  69.68 0.4819 0.2953
+ 950031 LATRONG_H1  11.000 1  1.0300 2.1419   20.73    5.96 0.9610  77.57 0.7949 0.6819
+ 950041 KIMHOA_H1   11.000 1  1.0300 2.2685   10.37    7.32 0.8170  61.12 0.6856 0.4523
+ 951001 TDNHO_TD    10.500 1  1.0300 1.5179   13.82    4.00 0.9607  57.49 0.1824 0.3231
+ 951029 DAKRONG_TD1310.500 1  1.0300 1.3977   13.82    1.36 0.9952  59.09 0.1198 0.3376
+ 951031 QUANGTRI_H1 10.500 1  1.0300 1.5490   13.82    4.67 0.9475  57.18 0.1983 0.3197
+ 951032 QUANGTRI_H2 10.500 1  1.0300 1.5490   13.82    4.67 0.9475  57.18 0.1983 0.3197
+ 951039 HUONPHU_TD  10.500 1  1.0300 1.5078   13.82    3.78 0.9646  57.56 0.1771 0.3243
+ 951061 HUONGLINH_H110.500 1  1.0300 1.4665   13.82    2.88 0.9790  57.92 0.1557 0.3291
+ 951062 HUONGLINH_H210.500 1  1.0300 1.4665   13.82    2.88 0.9790  57.92 0.1557 0.3291
+ 951071 DAKDRONG2_H110.500 1  1.0300 1.5703   13.82    5.12 0.9378  56.69 0.2092 0.3174
+ 951072 DAKDRONG4_H110.500 1  1.0300 1.4026   13.82    1.47 0.9944  58.94 0.1224 0.3369
+ 952011 ALUOI_H1    13.800 1  1.0300 1.7479   73.43   52.58 0.8131  57.70 0.3614 0.3410
+ 952021 BINHDIEN_H1 10.500 1  1.0300 1.6593   19.44    9.85 0.8920  57.17 0.2542 0.3078
+ 952031 HUONGDIEN_H110.500 1  1.0300 1.5443   34.56   11.56 0.9484  57.92 0.1949 0.3173
+ 952041 TATRACH_H1  10.500 1  1.0300 1.8235   19.44   14.59 0.7998  56.82 0.3356 0.2925
+ 952042 TATRACH_H2  10.500 1  1.0300 1.8235   19.44   14.59 0.7998  56.82 0.3356 0.2925
+ 952051 PHONGDIE_RE110.500 1  1.0300 1.7834   19.44   13.45 0.8224  55.05 0.3159 0.2961
+ 952061 RAOTRAN_4-H110.500 1  1.0300 1.6093   19.44    8.37 0.9184  56.69 0.2289 0.3129
+ 952062 RAOTRAN_3-H110.500 1  1.0300 1.5946   19.44    7.94 0.9258  56.78 0.2215 0.3144
+ 952063 ALINB1-H1   10.500 1  1.0300 1.4793   19.44    4.45 0.9748  57.71 0.1623 0.3273
+ 952064 ALINB2-H1   10.500 1  1.0300 1.4837   19.44    4.58 0.9733  57.68 0.1646 0.3267
+ 952167 DMT_PD2     10.500 1  1.0300 1.7776   17.71   12.50 0.8170  54.75 0.3104 0.2886
+ 953021 SONGNAM_H1  6.0000 1  1.0300 1.4133    3.89    0.31 0.9968  61.50 0.1499 0.3931
+ 953031 SONGBAC1_H1 10.500 1  1.0300 2.2350    8.64   12.21 0.5775  54.66 0.5259 0.2468
+ 953041 SONGBAC2_H1 10.500 1  1.0267 2.2373    8.64   12.39 0.5720  54.63 0.5345 0.2463
+ 954001 AVUONG_H1   13.800 1  1.0300 1.6227   45.36   29.55 0.8379  61.56 0.2712 0.2946
+ 954002 AVUONG_H2   13.800 1  1.0300 1.6227   45.36   29.55 0.8379  61.56 0.2712 0.2946
+ 954011 SONGCON2_H1 10.500 1  1.0300 1.5177    8.64    6.26 0.8100  54.89 0.1391 0.1535
+ 954012 SONGCON2_H2 10.500 1  1.0300 1.5177    8.64    6.26 0.8100  54.89 0.1391 0.1535
+ 954013 SONGCON_H3  10.500 1  1.0300 1.5177    8.64    6.26 0.8100  54.89 0.1391 0.1535
+ 954014 NDNONGSON   10.500 1  1.0167 2.2020    8.64   12.39 0.5720  58.11 0.5403 0.2474
+ 954041 SONGTRAN2_H113.800 1  1.0300 1.8293   41.04   18.67 0.9102  68.32 0.2962 0.3586
+ 954042 SONGTRAN2_H213.800 1  1.0300 1.8293   41.04   18.67 0.9102  68.32 0.2962 0.3586
+ 954051 SEKAMAN3_H1 15.800 1  1.0300 1.4148  107.99   27.20 0.9697  70.63 0.1810 0.3234
+ 954061 SONGBUNG4_H113.800 1  1.0300 1.6909   79.48   22.81 0.9612  71.72 0.2427 0.3848
+ 954071 DAKMI4_H1   13.800 1  1.0300 1.4225   31.97   13.12 0.9251  61.40 0.1259 0.2224
+ 954072 DAKMI4_H2   13.800 1  1.0300 1.4225   31.97   13.12 0.9251  61.40 0.1259 0.2224
+ 954081 SONGBUNG2_H113.800 1  1.0300 1.6342   43.20   21.82 0.8926  65.90 0.2357 0.2928
+ 954091 SONGBUNG5_H110.500 1  1.0300 1.4012   12.31    6.27 0.8910  54.57 0.0691 0.1123
+ 954092 SONGBUNG5_H210.500 1  1.0300 1.7118   12.31    6.27 0.8910  63.91 0.2929 0.3378
+ 954101 DAKMI1_H1   13.800 1  1.0300 1.3734   23.33    9.31 0.9287  59.60 0.0846 0.1654
+ 954102 DAKMI1_H2   13.800 1  1.0300 1.3934   42.33    9.30 0.9767  64.80 0.1203 0.2972
+ 954161 SGBUNG4A_H1 13.800 1  1.0300 1.5556   21.17   16.35 0.7914  65.27 0.1993 0.1593
+ 954171 SONGTRAN3_H113.800 1  1.0300 1.4794   26.78    8.64 0.9517  74.87 0.1952 0.2403
+ 954173 SONGTRAN4_H113.800 1  1.0300 1.4408   20.73    8.83 0.9201  69.90 0.1586 0.1906
+ 954181 ZAHUNG_H1   10.500 1  1.0300 1.5773    6.48    3.96 0.8531  65.92 0.2205 0.1959
+ 954182 ZAHUNG_H2   10.500 1  1.0300 1.5773    6.48    3.96 0.8531  65.92 0.2205 0.1959
+ 954191 SONGBUNG6_H110.500 1  1.0300 1.6582    6.26    4.97 0.7836  64.28 0.2511 0.1825
+ 954192 SONGBUNG6_H210.500 1  1.0300 1.6582    6.26    4.97 0.7836  64.28 0.2511 0.1825
+ 954201 DAKMI32_H1  10.500 1  1.0300 1.4259   27.21    6.62 0.9717  64.94 0.1074 0.2447
+ 954211 DAKM22_H1   13.800 1  1.0300 1.4064   42.33   10.50 0.9706  64.55 0.1288 0.2958
+ 955021 DAKRINH_H1  13.800 1  1.0300 1.6484   27.00   16.49 0.8534  63.59 0.2330 0.2585
+ 955022 DAKRINH_H2  13.800 1  1.0300 1.6484   27.00   16.49 0.8534  63.59 0.2330 0.2585
+ 955031 SONGLIEN_H1 10.500 1  1.0300 2.1130   17.28    6.06 0.9436  87.73 0.5595 0.4389
+ 955041 DAKRE_H1    13.800 1  1.0300 1.4149   25.92    2.59 0.9950  76.87 0.1224 0.2591
+ 955042 DAKRE_H2    13.800 1  1.0300 1.4149   25.92    2.59 0.9950  76.87 0.1224 0.2591
+ 955081 DAKBA_H1    10.500 1  1.0300 1.8377   17.28    5.64 0.9507  76.63 0.4588 0.5364
+ 955091 SONTRA_H1_1 13.800 1  1.0300 1.2420   32.40    2.56 0.9969  73.10 0.1224 0.3359
+ 955093 SONTAY_H1_1 13.800 1  1.0300 1.4555    7.78    8.29 0.6842  55.49 0.0959 0.0802
+ 955095 SONTRA_H2_1 13.800 1  1.0300 1.3026   12.96    0.25 0.9998  61.97 0.0171 0.1416
+ 956010 HOAPHU_H1   13.800 1  1.0300 1.7086    6.26    4.63 0.8040  67.67 0.2619 0.2473
+ 956011 DONGNAI3_H1 13.800 1  1.0300 1.3547   38.88   10.43 0.9658  78.34 0.1923 0.3298
+ 956012 DONGNAI3_H2 13.800 1  1.0300 1.3547   38.88   10.43 0.9658  78.34 0.1923 0.3298
+ 956020 HOAPHU_H2   13.800 1  1.0300 1.7086    6.26    4.63 0.8040  67.67 0.2619 0.2473
+ 956021 BUONTUASA_H110.500 1  1.0300 1.5215   18.57    8.22 0.9145  71.72 0.1590 0.2387
+ 956022 BUONTUASA_H210.500 1  1.0300 1.5215   18.57    8.22 0.9145  71.72 0.1590 0.2387
+ 956025 DIENMT_T1   13.800 1  1.0265 1.4779   12.96   10.00 0.7917  62.30 0.1208 0.1296
+ 956029 DAKNONG2_H1 13.800 1  1.0300 1.7909    5.40    5.64 0.6914  65.83 0.2950 0.2082
+ 956031 DONGNAI4_H1 15.800 1  1.0300 1.5558   73.43   33.53 0.9097  76.87 0.2656 0.3188
+ 956032 DONGNAI4_H2 15.800 1  1.0300 1.5558   73.43   33.53 0.9097  76.87 0.2656 0.3188
+ 956041 DAKRTIH_H1  13.800 1  1.0300 1.8333   35.42   18.62 0.8852  74.80 0.2851 0.3241
+ 956042 DAKRTIH_H2  13.800 1  1.0300 1.6835   26.78   18.63 0.8209  71.01 0.2490 0.2487
+ 956051 DONGNAI2_H1 13.800 1  1.0300 1.2701   31.53    5.26 0.9864  81.11 0.1310 0.3026
+ 956061 DONGNAI5_H1 13.800 1  1.0300 1.6166   64.79   18.78 0.9605  76.31 0.1839 0.3224
+ 956090 DAKSIN_H1   13.800 1  1.0300 1.3279    5.40    1.91 0.9428  59.83 0.0230 0.0574
+ 956091 DAKSIN_H2   13.800 1  1.0300 1.3279    5.40    1.91 0.9428  59.83 0.0230 0.0574
+ 957001 BUONKUOP_H1 13.800 1  1.0300 1.4143   60.48   28.36 0.9054  75.57 0.2424 0.3102
+ 957002 BUONKUOP_H2 13.800 1  1.0300 1.4143   60.48   28.36 0.9054  75.57 0.2424 0.3102
+ 957011 SREPOK3_H1  13.800 1  1.0300 1.4120   47.52   11.15 0.9736  74.72 0.1372 0.3161
+ 957012 SREPOK3_H2  13.800 1  1.0300 1.4120   47.52   11.15 0.9736  74.72 0.1372 0.3161
+ 957018 EAKRONGHN_H113.800 1  1.0300 1.5776   28.51   11.32 0.9294  74.51 0.2098 0.3075
+ 957019 EAKRONGHN_H213.200 1  1.0013 1.4133    5.18    5.00 0.7197  62.00 0.1327 0.1160
+ 957023 SEREPOK4A   13.800 1  1.0300 1.3942   27.65    7.05 0.9690  72.90 0.1153 0.2708
+ 957024 DAKSONG3B   13.200 1  1.0300 1.8426   28.51    9.25 0.9512  84.14 0.4643 0.5409
+ 957029 TD_NHO111   13.800 1  1.0073 1.8759    9.29    7.00 0.7986  72.34 0.4300 0.3425
+ 957031 SREPOK4_H1  13.800 1  1.0300 1.4930   17.28    4.32 0.9702  77.76 0.1695 0.3260
+ 957032 SREPOK4_H2  13.800 1  1.0300 1.4930   17.28    4.32 0.9702  77.76 0.1695 0.3260
+ 957033 TD_NHO111   13.800 1  1.0300 1.8478   17.28   11.87 0.8242  73.42 0.3595 0.3250
+ 958011 VINHSON_H1  13.800 1  1.0300 1.1200   14.25   -5.33 0.9366  75.34-0.0342 0.3678
+ 958012 VINHSON_H2  13.800 1  1.0300 1.1200   14.25   -5.33 0.9366  75.34-0.0342 0.3678
+ 958021 VINHSON2_H1 13.800 1  1.0300 1.2825   45.36   -3.78 0.9965  78.37 0.0466 0.3180
+ 958031 KENLUTHA_H1213.800 1  1.0300 1.7759   14.25   10.04 0.8177  69.54 0.3095 0.2885
+ 958032 TRAXOM-H1   13.800 1  1.0300 1.7962   14.25   10.47 0.8059  69.32 0.3195 0.2868
+ 958033 VINHSON5-H1 13.800 1  1.0300 1.7891   14.25   10.32 0.8100  69.61 0.3160 0.2874
+ 958034 VINHSON3-H1 13.800 1  1.0300 1.7237   14.25    8.90 0.8482  71.45 0.2836 0.2932
+ 958041 VINHSON4-H1 13.800 1  1.0300 1.7765   14.25   10.05 0.8174  71.84 0.3098 0.2885
+ 959001 PLEIKRONG_H110.500 1  1.0300 1.6632   21.60   11.91 0.8756  73.95 0.2504 0.2900
+ 959002 PLEIKRONG_H210.500 2  1.0300 1.6632   21.60   11.91 0.8756  73.95 0.2504 0.2900
+ 959011 THUONGKOT_H113.800 1  1.0300 1.3513   45.36    5.48 0.9928  66.02 0.0938 0.3087
+ 959012 THUONGKOT_H213.800 1  1.0300 1.3513   45.36    5.48 0.9928  66.02 0.0938 0.3087
+ 959041 DAKLA_H1    10.500 1  1.0300 1.4308    8.64    1.47 0.9859  71.83 0.1306 0.3142
+ 959051 DAKNE_H1    10.500 1  1.0300 1.1780    8.64   -2.36 0.9646  73.84-0.0058 0.3478
+ 959061 DAKPONE1_H1 10.500 1  1.0300 1.1836    8.64   -2.27 0.9671  73.65-0.0026 0.3469
+ 959062 DAKPONE2_H1 6.0000 1  1.0300 1.9250    3.24    2.97 0.7374  71.09 0.3832 0.2789
+ 959063 DAKPON2AB_H16.0000 1  1.0300 1.9250    3.24    2.97 0.7374  71.09 0.3832 0.2789
+ 959071 DAKRING1A_H16.0000 1  1.0300 1.9250    3.24    2.97 0.7374  71.09 0.3832 0.2789
+ 959072 DAKRING1B_H16.0000 1  1.0300 1.9250    3.24    2.97 0.7374  71.09 0.3832 0.2789
+ 959073 DAKRING2_H1 6.0000 1  1.0300 1.9250    3.24    2.97 0.7374  71.09 0.3832 0.2789
+ 959074 DAKSAO_H1   6.0000 1  1.0300 1.9250    3.24    2.97 0.7374  71.09 0.3832 0.2789
+ 959081 DAKGRET_H1  6.0000 1  1.0300 1.9250    3.24    2.97 0.7374  71.09 0.3832 0.2789
+ 959082 DAKPIA_H1   6.0000 1  1.0300 1.9250    3.24    2.97 0.7374  71.09 0.3832 0.2789
+ 959083 DAKLA1_H1   10.500 1  1.0300 1.2177    8.64   -1.74 0.9803  73.82 0.0161 0.3419
+ 959091 DAKLO_H1    10.500 1  1.0300 1.0762    9.50   -4.16 0.9162  76.79-0.0496 0.3998
+ 959092 DAKLO1_H1   6.0000 1  1.0300 1.8014    3.24    2.38 0.8062  72.24 0.3230 0.2891
+ 959093 DAKLO2_H1   6.0000 1  1.0300 1.8014    3.24    2.38 0.8062  72.24 0.3230 0.2891
+ 959094 DAKLO3_H1   6.0000 1  1.0300 1.8014    3.24    2.38 0.8062  72.24 0.3230 0.2891
+ 959131 BOKO_H1     10.500 1  1.0300 1.1084    8.64   -3.47 0.9279  73.75-0.0445 0.3588
+ 959141 DAKPSI_H1   10.500 1  1.0300 1.1491    8.64   -2.82 0.9507  77.68-0.0217 0.3522
+ 959142 DAKPSI5_H1  10.500 1  1.0300 1.1491    8.64   -2.82 0.9507  77.68-0.0217 0.3522
+ 959161 DAKPSI2B_H1 10.500 1  1.0300 1.0347    6.05   -4.26 0.8174  75.49-0.1188 0.2616
+ 959171 DAKROSA1_H1 6.0000 1  1.0300 1.8631    3.24    2.67 0.7713  74.97 0.3532 0.2839
+ 959172 DAKROSA2_H1 6.0000 1  1.0300 1.8631    3.24    2.67 0.7713  74.97 0.3532 0.2839
+ 959173 DLAY_KDAO_H16.0000 1  1.0300 1.8409    1.81    2.69 0.5590  68.87 0.3109 0.1611
+ 959175 DAKPSI1_H1  6.0000 1  1.0300 1.8642    1.81    2.80 0.5435  68.56 0.3226 0.1600
+ 959176 DAKPSI2_H1  6.0000 1  1.0300 1.8642    1.81    2.80 0.5435  68.56 0.3226 0.1600
+ 959181 DAKPOCO_H1  10.500 1  1.0300 1.0348    8.64   -4.67 0.8797  78.06-0.0860 0.3715
+ 959191 DAKSU2_H1   6.0000 1  1.0300 1.7595    3.24    2.17 0.8303  76.19 0.3023 0.2928
+ 959201 DAKPLU1 _H1 6.0000 1  1.0300 1.7595    3.24    2.17 0.8303  76.19 0.3023 0.2928
+ 959202 DAKPLU2 _H1 6.0000 1  1.0300 1.7595    3.24    2.17 0.8303  76.19 0.3023 0.2928
+ 959211 DAKPOCO_H1  10.500 1  1.0300 1.0147    7.34   -4.77 0.8385  76.81-0.1154 0.3199
+ 959241 DAKRUOI_H1  6.0000 1  1.0300 1.6548    3.24    1.66 0.8902  77.51 0.2500 0.3027
+ 959242 DAKRUOI3_H1 6.0000 1  1.0300 1.6548    3.24    1.66 0.8902  77.51 0.2500 0.3027
+ 959251 DAKRUOI2_H1 10.500 1  1.0300 0.9889    8.64   -5.43 0.8464  80.72-0.1123 0.3801
+ 959261 DAKNA_H1    6.0000 1  1.0300 1.6548    3.24    1.66 0.8902  77.51 0.2500 0.3027
+ 959262 DAKNA_H1    6.0000 1  1.0300 1.6548    3.24    1.66 0.8902  77.51 0.2500 0.3027
+ 959271 DAKTER1_H1  6.0000 1  1.0300 1.7849    3.24    2.30 0.8157  77.36 0.3149 0.2906
+ 959272 DAKTER2_H1  6.0000 1  1.0300 1.7849    3.24    2.30 0.8157  77.36 0.3149 0.2906
+ 959281 THON3_H1    6.0000 1  1.0300 1.7849    3.24    2.30 0.8157  77.36 0.3149 0.2906
+ 959282 THON9_H1    6.0000 1  1.0300 1.7849    3.24    2.30 0.8157  77.36 0.3149 0.2906
+ 959291 DAKPSI4_H1  10.500 1  1.0300 1.0590   13.82   -6.59 0.9027  81.46-0.0643 0.3896
+ 959301 DAKPSI3_H1  10.500 1  1.0300 1.0516    8.64   -4.39 0.8914  80.42-0.0765 0.3685
+ 959311 DAKKRIN_H1  6.0000 1  1.0300 1.4332   21.60    3.75 0.9853  91.03 0.1318 0.3140
+ 959321 DAKPOKO_H1  6.0000 1  1.0300 1.6620    3.24    1.69 0.8862  77.35 0.2537 0.3020
+ 959331 DAKPRU_H1   6.0000 1  1.0300 1.6620    3.24    1.69 0.8862  77.35 0.2537 0.3020
+ 959341 DAKPRU3_H1  6.0000 1  1.0300 1.6620    3.24    1.69 0.8862  77.35 0.2537 0.3020
+ 959351 DAKMEKI1_H1 6.0000 1  1.0300 1.5978    3.24    1.37 0.9209  77.82 0.2212 0.3084
+ 959352 DAKMEKI2_H1 6.0000 1  1.0300 1.5978    3.24    1.37 0.9209  77.82 0.2212 0.3084
+ 959353 DAKMEKI3_H1 6.0000 1  1.0300 1.5978    3.24    1.37 0.9209  77.82 0.2212 0.3084
+ 959381 DAKDOA      10.500 1  1.0300 1.5173    8.64    2.72 0.9540  70.92 0.1758 0.3046
+ 960011 YALI_H1     15.800 1  1.0300 1.3784   77.75   16.91 0.9771  74.34 0.1697 0.3229
+ 960012 YALI_H2     15.800 1  1.0300 1.3784   77.75   16.91 0.9771  74.34 0.1697 0.3229
+ 960013 YALI_H3     15.800 1  1.0300 1.3784   77.75   16.91 0.9771  74.34 0.1697 0.3229
+ 960014 YALI_H4     15.800 1  1.0300 1.3784   77.75   16.91 0.9771  74.34 0.1697 0.3229
+ 960015 YALI_H5 MR  15.800 1  1.0300 1.6311  155.51   21.53 0.9906  89.99 0.4274 0.5791
+ 960021 SESAN3_H1   13.800 1  1.0300 1.2193   56.16    2.75 0.9988  73.63 0.0912 0.3180
+ 960022 SESAN3_H2   13.800 1  1.0300 1.2193   56.16    2.75 0.9988  73.63 0.0912 0.3180
+ 960031 SSAN3A_H1   10.500 1  1.0300 1.3574   23.33    1.03 0.9990  73.42 0.0917 0.3231
+ 960032 SSAN3A_H2   10.500 1  1.0300 1.3574   23.33    1.03 0.9990  73.42 0.0917 0.3231
+ 960034 TD_CHUSE1   13.200 1  1.0213 1.6345    1.30    1.00 0.7917  65.01 0.2334 0.2197
+ 960035 TD_MUN1     13.200 1  1.0300 1.5727    7.00    4.03 0.8664  65.78 0.1835 0.2251
+ 960037 TD_AYUN1    13.200 1  1.0300 1.6449    5.18    4.00 0.7917  64.70 0.2186 0.2094
+ 960039 BAMIA_GL1   13.200 1  1.0300 1.4518    9.76    1.85 0.9824  71.40 0.1464 0.3260
+ 960041 ANKHE_H1    13.800 1  1.0300 1.2736   34.56    4.77 0.9906  72.34 0.1414 0.3309
+ 960042 ANKHE_H2    13.800 1  1.0300 1.2350   34.56    2.27 0.9978  73.75 0.1183 0.3371
+ 960043 DSK_ANKHE_S113.800 1  1.0300 1.3313   17.28    1.62 0.9956  64.50 0.0388 0.1748
+ 960044 DSK_ANKHE_S213.800 1  1.0300 1.3400   23.76    1.54 0.9979  67.56 0.0574 0.2388
+ 960051 SESAN4_H1   11.000 1  1.0300 1.3255   56.16    0.72 0.9999  71.57 0.0744 0.3486
+ 960052 SESAN4_H2   11.000 1  1.0300 1.3256   51.84    0.67 0.9999  71.39 0.0745 0.3486
+ 960053 SESAN4_H3   11.000 1  1.0300 1.3256   51.84    0.67 0.9999  71.39 0.0745 0.3486
+ 960061 SESAN4A_H1  13.800 1  1.0300 1.3096   27.21   -0.73 0.9996  72.08 0.0550 0.2945
+ 960071 SEKAMAN1_H1 13.800 1  1.0300 1.6263   62.63   26.71 0.9198  75.43 0.2634 0.3427
+ 960072 SEKAMAN1_H2 13.800 1  1.0300 1.6263   62.63   26.71 0.9198  75.43 0.2634 0.3427
+ 960073 XANXAY_H1   13.800 1  1.0300 1.5677   13.82   11.76 0.7615  66.97 0.1932 0.1756
+ 960103 TD_DIENHOG1 13.200 1  1.0226 1.5798    9.85    5.00 0.8917  68.02 0.2157 0.2736
+ 960141 TD_CHUPRONG113.200 1  1.0329 1.6459    6.74    5.00 0.8031  65.50 0.2136 0.2119
+ 960195 MTPP_MT1    13.800 1  1.0500 1.5068   43.20    8.22 0.9824  75.26 0.1794 0.4072
+ 960197 MTAH_MT1    13.800 1  1.0500 1.6208   73.43    9.02 0.9925  85.60 0.3555 0.6589
+ 961011 SONGHINH_H1 10.500 1  1.0300 1.6993   15.12    8.57 0.8700  72.53 0.2743 0.3041
+ 961012 SONGHINH_H2 10.500 1  1.0300 1.6993   15.12    8.57 0.8700  72.53 0.2743 0.3041
+ 961014 KCP_ND      10.500 1  1.0300 1.8261   27.16   10.53 0.9323  81.78 0.4191 0.4793
+ 961021 SONGBAHA_H1 13.800 1  1.0300 1.8883   47.52   54.35 0.6582  72.90 0.4307 0.2726
+ 961022 SONGBAHA_H2 13.800 1  1.0300 1.8883   47.52   54.35 0.6582  72.90 0.4307 0.2726
+ 961031 LAHIENG_H1  10.500 1  1.0294 2.1669    7.78   10.00 0.6138  67.63 0.5552 0.2651
+ 961051 SONGIANG_H1 10.500 1  1.0300 1.6250    4.32    7.74 0.4873  62.01 0.1886 0.0899
+ 962031 S_GIANG_H1  10.500 1  1.0300 1.4951   14.25    4.40 0.9556  85.81 0.1575 0.2855
+ 962032 S_GIANG_H2  10.500 1  1.0300 1.5203   15.12    4.43 0.9597  87.57 0.1835 0.3227
+ 962041 SONGGIANG_H110.500 1  1.0300 1.5399    8.64    3.04 0.9434  85.21 0.1875 0.3022
+ 962042 SONGGIANG_H210.500 1  1.0300 1.5399    8.64    3.04 0.9434  85.21 0.1875 0.3022
+ 962051 BMNINHHOA-S110.500 1  1.0300 1.7218   14.25   10.02 0.8182  80.77 0.2737 0.2647
+ 962061 EAKRONGR_H1 10.500 1  1.0300 1.7979    8.64    6.60 0.7947  81.10 0.3176 0.2781
+ 962062 EAKRONGR_H2 10.500 1  1.0300 1.7979    8.64    6.60 0.7947  81.10 0.3176 0.2781
+ 962107 DMT.MTRUNG1 26.000 1  1.0300 1.7356    0.00   13.02 0.0000  73.25 0.2422-0.0000
+ 970011 DANHIM_H1   13.200 1  1.0300 1.4481   17.28    8.57 0.8959  83.21 0.1015 0.1574
+ 970012 DANHIM_H2   13.200 1  1.0300 1.4481   17.28    8.57 0.8959  83.21 0.1015 0.1574
+ 970013 DANHIM_H3   13.200 1  1.0300 1.4473   17.28    8.52 0.8969  83.23 0.1010 0.1574
+ 970014 DANHIM_H4   13.200 1  1.0300 1.4482   17.28    8.57 0.8958  83.21 0.1015 0.1574
+ 970021 SONGPHA_H1  6.0000 1  1.0510 1.4041    3.24    0.00 1.0000  90.90 0.0797 0.3331
+ 970031 DADANG_H1   10.500 1  1.0300 2.1144    5.18   10.98 0.4270  75.99 0.4457 0.1535
+ 970041 DAMBRI_H1   10.500 1  1.0300 1.7396   17.28   11.62 0.8297  79.53 0.2887 0.2831
+ 970042 DAMBRI_H2   10.500 1  1.0300 1.7396   17.28   11.62 0.8297  79.53 0.2887 0.2831
+ 971011 HAMTHUAN_H1 13.800 1  1.0300 1.4258   64.79   32.19 0.8956  81.98 0.2508 0.3076
+ 971012 HAMTHUAN_H2 13.800 1  1.0300 1.4258   64.79   32.19 0.8956  81.98 0.2508 0.3076
+ 971021 DAMI_H1     13.800 1  1.0300 1.4236   38.01   15.37 0.9271  83.50 0.2291 0.3112
+ 971022 DAMY_H2     13.800 1  1.0300 1.4236   38.01   15.37 0.9271  83.50 0.2291 0.3112
+ 971051 HASOPHA_H1  6.3000 1  1.0300 1.1124    4.54   -1.78 0.9310  93.81-0.0411 0.3615
+ 971081 PH_THAI_PV1 22.000 1  1.0300 0.0000   99.00   17.16 0.9853  84.60 0.1599 0.9223
+ 971082 PH_THAI_PV2 22.000 1  1.0300 0.0000   99.00   17.16 0.9853  84.60 0.1599 0.9223
+ 971085 NHONHAI_PV  22.000 1  1.0300 0.0000   29.00   -3.73 0.9918  81.41-0.1185 0.9223
+ 971102 THIENTAN_PV222.000 1  1.0222 0.0000   50.00   16.43 0.9500  76.52 0.3055 0.9294
+ 971111 BAUZON_PV   22.000 1  1.0295 0.0000   21.00    6.90 0.9500  84.08 0.3033 0.9228
+ 971112 DIENLUC_1_PV22.000 1  1.0300 0.0000   25.00    6.56 0.9672  84.46 0.2420 0.9223
+ 971113 BAUNGU_PV   22.000 1  1.0300 0.0000   50.00    6.64 0.9913  87.56 0.1224 0.9223
+ 971121 TRUNGNAM_W1 22.000 1  1.0316 0.0000   40.00  -13.15 0.9500  84.14-0.3027 0.9209
+ 971122 TRUNGNAM_W2 22.000 1  1.0300 0.0000   65.80  -11.82 0.9842  86.65-0.1657 0.9223
+ 971123 XUANTHIEN_PV22.000 1  1.0300 0.0000   50.00   12.16 0.9717  81.77 0.2243 0.9223
+ 971124 XUANTHIEN_PV22.000 1  1.0300 0.0000   50.00   12.16 0.9717  81.77 0.2243 0.9223
+ 971125 XUANTHIEN_PV22.000 1  1.0300 0.0000   50.00   12.16 0.9717  81.77 0.2243 0.9223
+ 971126 XUANTHIEN_PV22.000 1  1.0300 0.0000   49.00   12.08 0.9709  81.68 0.2274 0.9223
+ 971131 INFRA_PV    22.000 1  1.0300 0.0000   41.00    9.43 0.9745  85.27 0.2122 0.9223
+ 971132 GELEX_PV    22.000 1  1.0300 0.0000   41.00    6.82 0.9865  86.39 0.1533 0.9223
+ 971133 HONUIMOT_PV 22.000 1  1.0300 0.0000   41.00    5.37 0.9915  87.64 0.1209 0.9223
+ 971141 SINENERY_PV 22.000 1  1.0300 0.0000   41.00    8.14 0.9809  85.98 0.1831 0.9223
+ 971142 PHUOCHUU_PV 22.000 1  1.0300 0.0000   50.00    9.02 0.9841  86.56 0.1663 0.9223
+ 971143 BPSOLAR_PV  22.000 1  1.0300 0.0000   38.00    7.96 0.9788  85.70 0.1932 0.9223
+ 971144 THNAM19_PV  22.000 1  1.0300 0.0000   41.00    5.99 0.9895  87.26 0.1347 0.9223
+ 971145 ADANI_PV    22.000 1  1.0300 0.0000   51.00    3.84 0.9972  88.46 0.0695 0.9223
+ 971151 CMX_PV1     22.000 1  1.0300 0.0000   41.50    6.32 0.9886  85.40 0.1405 0.9223
+ 971152 CMX_PV2     22.000 1  1.0300 0.0000   41.50    6.32 0.9886  85.40 0.1405 0.9223
+ 971153 CMX_PV3     22.000 1  1.0300 0.0000   41.50    6.32 0.9886  85.40 0.1405 0.9223
+ 971154 CMX_PV4     22.000 1  1.0300 0.0000   41.50    6.32 0.9886  85.40 0.1405 0.9223
+ 971155 MYSON_PV    22.000 1  1.0300 0.0000   41.00    5.95 0.9896  85.47 0.1338 0.9223
+ 971156 TANSON_PV   22.000 1  1.0300 0.0000   50.00    6.58 0.9914  86.33 0.1215 0.9223
+ 971161 BIM_PV      22.000 1  1.0300 0.0000   25.00    4.81 0.9820  85.83 0.1773 0.9223
+ 971162 PHUOCNINH_PV22.000 1  1.0300 0.0000   37.00    3.64 0.9952  86.87 0.0907 0.9223
+ 971163 MYSON_HLV_PV22.000 1  1.0253 0.0000   41.00   13.48 0.9500  80.51 0.3045 0.9266
+ 971164 TR.NAM_PV1  22.000 1  1.0300 0.0000   85.00   -7.35 0.9963  82.25-0.0798 0.9223
+ 971165 TR.NAM_PV2  22.000 1  1.0300 0.0000  125.00   -4.98 0.9992  84.14-0.0368 0.9223
+ 971166 BIM_3       22.000 1  1.0495 0.0000   41.00  -13.48 0.9500  81.06-0.2975 0.9052
+ 971168 NINHPHUOC_6222.000 1  1.0300 0.0000   48.00    7.84 0.9869  86.65 0.1507 0.9223
+ 971169 TH.NAM_19APV22.000 1  1.0250 0.0000   41.00   13.48 0.9500  80.98 0.3046 0.9268
+ 971171 BIM_2       22.000 1  1.0300 0.0000  205.00    5.84 0.9996  88.83 0.0263 0.9223
+ 971172 NHIHA_MT1   22.000 1  1.0249 0.0000   41.00   13.48 0.9500  80.92 0.3047 0.9270
+ 971177 THUANNAM12  22.000 1  1.0250 0.0000   41.00   13.48 0.9500  80.98 0.3046 0.9268
+ 971179 THNADUCLONG 22.000 1  1.0247 2.0305   36.10   13.00 0.9408 106.59 0.6225 0.6085
+ 971183 TRUNGNAM_PV 22.000 1  1.0300 0.0000  446.00   29.60 0.9978  92.30 0.0612 0.9223
+ 972021 DAININH_H1  13.800 1  1.0000 1.1118   64.79   -7.03 0.9942  85.87 0.0601 0.3633
+ 972022 DAININH_H2  13.800 1  1.0300 1.4226   64.79   31.73 0.8981  82.94 0.2484 0.3081
+ 972031 VINHTAN1_S1 26.000 1  1.0300 1.8333  500.00   66.64 0.9912 123.94 0.5347 0.4421
+ 972032 VINHTAN1_S2 26.000 1  1.0300 1.8333  500.00   66.64 0.9912 123.94 0.5347 0.4421
+ 972051 VINHTAN2_S1 26.000 1  1.0000 1.6628  537.80  -34.67 0.9979 138.32 0.5661 0.4816
+ 972052 VINHTAN2_S2 26.000 1  1.0000 1.6628  537.80  -34.67 0.9979 138.32 0.5661 0.4816
+ 972071 VINHTAN4_S1 26.000 1  1.0300 1.8954  532.18   68.16 0.9919 126.06 0.5797 0.4567
+ 972072 VINHTAN4_S2 26.000 1  1.0300 1.4228  259.18   48.73 0.9828 105.22 0.2202 0.2882
+ 972073 VINHTAN4M_S126.000 1  1.0300 1.4228  259.18   48.73 0.9828 105.22 0.2202 0.2882
+ 972101 BACBINH_H1  10.500 1  1.0300 1.2421    7.13   -1.13 0.9878  89.85 0.0330 0.3487
+ 972102 BACBINH_H2  10.500 1  1.0300 1.2421    7.13   -1.13 0.9878  89.85 0.0330 0.3487
+ 972111 PHULAC_W1   22.000 1  1.0300 0.0000   24.00    4.40 0.9836  85.30 0.1690 0.9223
+ 972112 TUYPHONG_W1 22.000 1  1.0300 0.0000   30.00    4.14 0.9906  87.67 0.1271 0.9223
+ 972113 TUYPHONG2_W122.000 1  1.0300 0.0000   41.60    8.42 0.9801  87.15 0.1866 0.9223
+ 972121 THUANNIEN_W122.000 1  1.0300 0.0000   32.00   10.31 0.9518  75.99 0.2971 0.9223
+ 972221 SONGLUY1-PV122.000 1  1.0215 0.0000   39.00   12.82 0.9500  77.60 0.3057 0.9300
+ 972223 HOPHONG52_PV22.000 1  1.0215 0.0000   39.00   12.82 0.9500  77.60 0.3057 0.9300
+ 972231 SONGBINH-PV122.000 1  1.0300 0.0000   66.00   10.05 0.9886  86.23 0.1404 0.9223
+ 972232 SONGBINH-PV222.000 1  1.0300 0.0000   66.00   10.05 0.9886  86.23 0.1404 0.9223
+ 972233 SONGBINH-PV322.000 1  1.0300 0.0000   66.00   10.05 0.9886  86.23 0.1404 0.9223
+ 972251 MUINE-PV1   22.000 1  0.9932 0.0000   33.00   10.85 0.9500  75.12 0.3144 0.9565
+ 972252 HOPHONG3-PV222.000 1  0.9964 0.0000   40.00   13.15 0.9500  75.82 0.3134 0.9534
+ 972271 PHANLAM-PV  22.000 1  1.0233 0.0000   30.00    9.86 0.9500  79.96 0.3051 0.9284
+ 972272 PHANLAM2-PV122.000 1  0.9998 0.0000   40.00   13.15 0.9500  74.73 0.3123 0.9502
+ 972291 VINHHAO-PV1 22.000 1  1.0300 0.0000   30.00    2.57 0.9964  86.93 0.0790 0.9223
+ 972292 VINHHAO-PV2 22.000 1  1.0300 0.0000   32.00    2.29 0.9974  85.66 0.0661 0.9223
+ 972293 VINHHAO-PV3 22.000 1  1.0300 0.0000   40.00    2.48 0.9981  86.54 0.0571 0.9223
+ 972321 PHULAC-PV1  22.000 1  1.0300 0.0000   41.00    3.55 0.9963  86.15 0.0799 0.9223
+ 972322 PH.PHU-PV1  22.000 1  1.0298 0.0000   40.00   13.15 0.9500  83.59 0.3032 0.9225
+ 972331 TUYPHONG-PV 22.000 1  1.0300 0.0000   34.00    3.27 0.9954  86.86 0.0888 0.9223
+ 972351 HPHONG1A_PV122.000 1  1.0300 0.0000  248.00   54.57 0.9766  87.58 0.2030 0.9223
+ 972352 HPHONG1A_PV222.000 1  1.0139 0.0000   48.00   15.78 0.9500  77.79 0.3080 0.9369
+ 972353 HPHONG1A_PV322.000 1  1.0139 0.0000   48.00   15.78 0.9500  77.79 0.3080 0.9369
+ 972361 SONMY3-1-PV122.000 1  0.9779 0.0000   41.00   13.48 0.9500  66.35 0.3193 0.9714
+ 972511 HODAMI-PV1  22.000 1  1.0263 0.0000   38.00   12.49 0.9500  69.60 0.3042 0.9256
+ 972651 VINHTAN2-PV122.000 1  1.0300 0.0000   42.70    1.51 0.9994  87.33 0.0325 0.9223
+ 972831 BINHAN_PV1  22.000 1  1.0300 0.0000   50.00    8.71 0.9852  84.87 0.1607 0.9223
+ 972841 HAMPHU_PV1  22.000 1  0.9839 0.0000   20.00    6.57 0.9500  68.80 0.3174 0.9655
+ 973011 THACMO_H1   13.800 1  1.0300 1.3440   32.40    2.59 0.9968  69.77 0.0971 0.3441
+ 973012 THACMO_H2   13.800 1  1.0300 1.5835   32.40   17.32 0.8819  70.59 0.2511 0.3167
+ 973021 SROKPHUMI_H111.000 1  1.1255 1.6248   11.02    0.00 1.0000  73.92 0.0541 0.3217
+ 973022 SROKPHUMI_H211.000 1  1.1255 1.6248   11.02    0.00 1.0000  73.92 0.0541 0.3217
+ 973031 THACMOMR_H1 13.800 1  1.0300 1.5836   32.40   17.32 0.8819  70.60 0.2511 0.3168
+ 973051 LONGHA      110.00 1  1.0300 1.5012   77.75   30.79 0.9298  76.76 0.2257 0.3099
+ 973059 DAKGLUN2    110.00 1  1.0570 1.4424    3.89    0.00 1.0000  76.38 0.1116 0.3932
+ 973061 DUCTHANH    110.00 1  1.0300 1.7642   17.28    9.91 0.8674  73.30 0.3197 0.3351
+ 973091 DAKGLUN_H1  6.3000 1  1.0621 1.4598    3.89    0.00 1.0000  76.19 0.1101 0.3916
+ 973092 DAKGLUN_H2  6.3000 1  1.0621 1.4598    3.89    0.00 1.0000  76.19 0.1101 0.3916
+ 973099 THACMO_PV   22.000 1  1.0255 0.0000   41.00   13.48 0.9500  60.91 0.3045 0.9263
+ 973155 LOCNINH1    35.000 1  1.0300 0.0000  656.00   64.97 0.9951  71.04 0.0913 0.9223
+ 974021 CANDON_H1   11.000 1  1.0300 1.5870   16.76    9.07 0.8795  71.96 0.2533 0.3163
+ 974022 CANDON_H2   11.000 1  1.0300 1.5870   16.76    9.07 0.8795  71.96 0.2533 0.3163
+ 974051 DAUTIENG_PV122.000 1  1.0300 0.0000  150.00   36.93 0.9710  70.02 0.2270 0.9223
+ 974052 DAUTIENG_PV222.000 1  1.0300 0.0000  200.00   19.30 0.9954  72.32 0.0890 0.9223
+ 974053 DAUTIENG_PV322.000 1  1.0300 0.0000  150.00   36.93 0.9710  70.02 0.2270 0.9223
+ 974054 DAUTIENG_PV422.000 1  1.0300 0.0000  150.00   38.34 0.9688  69.74 0.2358 0.9223
+ 974055 HTG_PV      22.000 1  1.0222 0.0000   82.00   26.95 0.9500  65.06 0.3055 0.9293
+ 974056 HGC_PV      22.000 1  1.0105 0.0000   50.00   16.43 0.9500  61.92 0.3090 0.9401
+ 974060 TTC1_PV     22.000 1  1.0096 0.0000   51.00   16.76 0.9500  61.35 0.3093 0.9410
+ 974061 TTC2_PV     22.000 1  1.0057 0.0000   42.00   13.80 0.9500  60.46 0.3105 0.9446
+ 974065 BKAC_PV     22.000 1  0.9983 0.0000   24.20    7.95 0.9500  58.21 0.3128 0.9516
+ 974066 TRIVIET1_PV 22.000 1  0.9983 0.0000   24.20    7.95 0.9500  58.21 0.3128 0.9516
+ 974067 TANCHAU_PV  22.000 1  1.0063 0.0000   41.00   13.48 0.9500  59.89 0.3103 0.9441
+ 975021 VEDAN_S1    13.000 1  1.0300 2.9895   62.20   38.84 0.8482  96.23 0.8233 0.3379
+ 975031 TRIAN_H1    13.800 1  1.0300 1.7244   43.20   33.99 0.7858  69.43 0.3374 0.3034
+ 975032 TRIAN_H2    13.800 1  1.0300 1.7244   43.20   33.99 0.7858  69.43 0.3374 0.3034
+ 975033 TRIAN_H3    13.800 1  1.0300 1.7244   43.20   33.99 0.7858  69.43 0.3374 0.3034
+ 975034 TRIAN_H4    13.800 1  1.0300 1.7244   43.20   33.99 0.7858  69.43 0.3374 0.3034
+ 975035 TRIAN_H5    13.800 1  1.0300 1.7552   43.20   33.99 0.7858  72.78 0.3546 0.2832
+ 975036 TRIAN_H6    13.800 1  1.0300 1.7552   43.20   33.99 0.7858  72.78 0.3546 0.2832
+ 975041 FORMOSA_S1  13.800 1  1.0426 2.1008  112.06   20.00 0.9844 113.27 0.4962 0.3781
+ 975042 FORMOSA_S2  13.800 1  1.0052 2.8310  112.06   80.00 0.8139  93.09 0.7221 0.3020
+ 975043 FORMOSA_S3  13.800 1  1.0300 2.3864  112.06   44.79 0.9286 107.70 0.5743 0.3441
+ 975051 NHONTRAC1_G115.800 1  1.0300 2.2801  112.06   50.06 0.9130  97.82 0.4833 0.2973
+ 975052 NHONTRAC1_G215.800 2  1.0300 2.2801  112.06   50.06 0.9130  97.82 0.4833 0.2973
+ 975053 NHONTRAC1_G315.800 3  1.0300 2.5506  112.06   43.84 0.9313 103.17 0.5974 0.3396
+ 975061 NHONTRAC2_G115.800 1  1.0300 2.4455  215.98   77.32 0.9415 102.39 0.6562 0.4230
+ 975062 NHONTRAC2_G215.800 1  1.0300 2.4455  215.98   77.32 0.9415 102.39 0.6562 0.4230
+ 975071 NHONTRAC2_S115.800 1  1.0300 2.4455  215.98   77.32 0.9415 102.39 0.6562 0.4230
+ 975135 NOITRIAN    15.800 1  1.0300 1.0598    0.00  -24.35 0.0000  51.59-0.0886 0.0000
+ 977011 HIEPPHUOC_S113.800 1  1.0300 2.6744  140.07   47.32 0.9474 107.52 0.7537 0.3895
+ 977012 HIEPPHUOC_S213.800 1  1.0300 2.6744  140.07   47.32 0.9474 107.52 0.7537 0.3895
+ 977013 HIEPPHUOC_S313.800 1  1.0300 2.6744  140.07   47.32 0.9474 107.52 0.7537 0.3895
+ 977021 THUDUC_S1   13.800 1  1.0256 2.5333   28.51   15.00 0.8850  94.15 0.6282 0.3247
+ 977022 THUDUC_S2   13.800 1  1.0104 2.3145   53.56   20.00 0.9368  98.33 0.5955 0.3404
+ 977023 THUDUC_S3   13.800 1  1.0104 2.3145   53.56   20.00 0.9368  98.33 0.5955 0.3404
+ 977031 THUDUC_G1   11.000 1  1.0093 1.8155    0.00    8.00 0.0000  54.79 0.2815 0.0000
+ 977033 THUDUC_G3   11.000 1  1.0069 2.0040    0.00    7.00 0.0000  54.79 0.3586-0.0000
+ 977034 THUDUC_G4   11.000 1  1.0300 2.2016    0.00   20.45 0.0000  54.69 0.4555-0.0000
+ 977035 THUDUC_G5   11.000 1  1.0300 2.2016    0.00   20.45 0.0000  54.69 0.4555-0.0000
+ 978001 BARIA_S1    11.000 1  1.0059 2.1657   50.11   23.00 0.9088  93.53 0.6318 0.4133
+ 978002 BARIA_S2    11.000 1  1.0278 2.2084   50.11   23.00 0.9088  95.98 0.6088 0.4187
+ 978011 BARIA_G1    11.500 1  1.0300 1.7918   17.28    2.72 0.9878  98.38 0.4123 0.4419
+ 978012 BARIA_G2    11.500 1  1.0279 2.4470   17.28   13.00 0.7991  85.82 0.6588 0.3556
+ 978013 BARIA_G3    11.000 1  1.0251 2.4266   28.51   23.00 0.7783  84.84 0.6704 0.3417
+ 978014 BARIA_G4    11.000 1  1.0251 2.4266   28.51   23.00 0.7783  84.84 0.6704 0.3417
+ 978015 BARIA_G5    11.000 1  1.0300 2.4006   28.51   18.45 0.8395  90.99 0.6734 0.3852
+ 978016 BARIA_G6    11.000 1  1.0300 2.4006   28.51   18.45 0.8395  90.99 0.6734 0.3852
+ 978017 BARIA_G7    11.000 1  1.0300 2.5825   28.51   18.45 0.8395  93.29 0.6883 0.3578
+ 978018 BARIA_G8    11.000 1  1.0251 2.7588   28.51   23.00 0.7783  88.02 0.7566 0.3342
+ 978021 PHUMY1_G1   15.000 1  1.0300 2.0185  214.43   64.36 0.9578 101.36 0.4850 0.3879
+ 978022 PHUMY1_G2   15.000 1  1.0300 2.0184  214.43   64.35 0.9578 101.36 0.4850 0.3879
+ 978023 PHUMY1_G3   15.000 1  1.0300 2.0184  214.43   64.34 0.9578 101.36 0.4850 0.3879
+ 978031 PHUMY1_S1   23.000 1  1.0300 2.0611  224.11   89.94 0.9281  95.25 0.3700 0.2881
+ 978041 PHUMY21_G1  15.800 1  1.0300 2.1815  112.06   40.80 0.9396 101.47 0.4575 0.3076
+ 978042 PHUMY21_G2  15.800 1  1.0300 1.7185  112.06   40.83 0.9396  91.77 0.2396 0.2281
+ 978044 PHUMY21_G4  10.500 1  1.0300 1.8950  112.06   71.06 0.8445  87.21 0.3061 0.2044
+ 978045 PHUMY21_G5  10.500 1  1.0300 1.8949  112.06   71.05 0.8445  87.21 0.3061 0.2044
+ 978051 PHUMY21_S1  15.800 1  1.0300 1.6335  112.06   35.67 0.9529  94.47 0.2348 0.2265
+ 978052 PHUMY21_S2  15.800 1  1.0300 1.7740  145.14   38.12 0.9672 102.17 0.3157 0.2713
+ 978061 PHUMY4_G1   15.800 1  1.0300 1.4971  112.06   24.64 0.9767  95.39 0.1851 0.2589
+ 978062 PHUMY4_G2   15.800 1  1.0300 1.4971  112.06   24.64 0.9767  95.39 0.1851 0.2589
+ 978071 PHUMY4_S1   15.800 1  1.0300 1.5348  112.06   24.64 0.9767 100.69 0.2083 0.2407
+ 978081 PHUMY22_G1  15.800 1  1.0300 1.7401  168.09   39.31 0.9737 101.56 0.3333 0.3438
+ 978082 PHUMY22_G2  15.800 1  1.0300 2.0052  230.58   49.48 0.9777 111.65 0.5028 0.4185
+ 978091 PHUMY22_S1  15.800 1  1.0300 2.3217  249.68   53.24 0.9780 120.18 0.5991 0.3775
+ 978101 PHUMY3_G1   15.800 1  1.0300 2.2200  204.92   56.41 0.9641 107.83 0.4841 0.3366
+ 978102 PHUMY3_G2   15.800 1  1.0300 2.2689  204.92   64.02 0.9545 105.24 0.4947 0.3316
+ 978111 PHUMY3_S1   15.800 1  1.0300 2.1924  227.82   58.23 0.9689 110.32 0.5410 0.3644
+ 978351 DMT-CHAUDUC 13.000 1  1.0300 1.5885   67.39   63.95 0.7254  70.27 0.2310 0.1951
+ 979082 BANGDUONGPV 15.800 1  1.0300 1.8962   76.03   24.08 0.9533  86.44 0.5165 0.5768
+ 979083 GAIAPV      15.800 1  1.0300 1.7359   76.03   22.09 0.9603  81.95 0.4577 0.6175
+ 979084 DUCHUEPV    15.800 1  1.0300 1.9739   38.01   14.20 0.9368  83.63 0.5495 0.5647
+ 979085 EUROPV      15.800 1  1.0300 1.8958   45.79   14.39 0.9540  84.97 0.5177 0.5789
+ 979086 DMTSOLARPARK15.800 1  1.0300 1.3955    0.00   27.75 0.0000  53.63 0.0898 0.0000
+ 981011 SONGHAU1_S1 26.000 1  1.0300 2.0141  518.36  114.28 0.9765 108.95 0.5816 0.4413
+ 981012 SONGHAU1_S2 26.000 1  1.0300 2.0141  518.36  114.28 0.9765 108.95 0.5816 0.4413
+ 983021 CANTHO_G1   11.000 1  1.0253 2.8465   32.40   23.00 0.8154  90.06 0.8176 0.3690
+ 983022 CANTHO_G2   11.000 1  1.0253 2.8465   32.40   23.00 0.8154  90.06 0.8176 0.3690
+ 983023 CANTHO_G3   11.000 1  1.0253 2.8140   32.40   23.00 0.8154  89.83 0.8014 0.3656
+ 983024 CANTHO_G4   11.000 1  1.0253 2.8140   32.40   23.00 0.8154  89.83 0.8014 0.3656
+ 983041 OMON1_S1    19.000 1  1.0300 2.2582  285.10   87.92 0.9556 108.77 0.6739 0.4444
+ 983042 OMON1_S2    19.000 1  1.0300 2.2582  285.10   87.92 0.9556 108.77 0.6739 0.4444
+ 985053 PV_SAOMAI   22.000 1  1.0216 1.9980   44.02   16.50 0.9364  83.70 0.5965 0.5866
+ 985054 PV_SAOMAI2  22.000 1  1.0216 1.9980   44.02   16.50 0.9364  83.70 0.5965 0.5866
+ 985055 PV_SAOMAI3  22.000 1  1.0216 1.9980   44.02   16.50 0.9364  83.70 0.5965 0.5866
+ 985057 PV_KINECTIC 22.000 1  1.0022 1.9934   26.41   10.00 0.9352  82.89 0.6529 0.6065
+ 985058 PV_BINHHOA  22.000 1  0.9585 0.0000   10.00    3.29 0.9500  53.19 0.3258 0.9911
+ 985059 PV_VANGIAO  22.000 1  1.0066 1.9080   26.41   10.00 0.9352  80.68 0.5678 0.5658
+ 988011 NMDGV1-5    13.800 1  0.9771 0.0000   30.00    9.86 0.9500  63.45 0.3196 0.9723
+ 988031 DGSO5_BT    13.800 1  0.9816 0.0000   30.00    9.86 0.9500  63.65 0.3181 0.9678
+ 988051 DGTHAPHONG1 13.800 1  1.0026 0.0000   30.00    9.86 0.9500  63.18 0.3114 0.9475
+ 990011 DUYENHAI1_S126.000 1  1.0300 1.9700  518.36  112.66 0.9772 116.29 0.5859 0.4348
+ 990012 DUYENHAI1_S226.000 1  1.0300 1.9700  518.36  112.66 0.9772 116.29 0.5859 0.4348
+ 990021 DUYENHAI2_S126.000 1  1.0300 1.8862  518.36   75.58 0.9895 119.73 0.5645 0.4477
+ 990022 DUYENHAI2_S226.000 1  1.0300 1.8862  518.36   75.58 0.9895 119.73 0.5645 0.4477
+ 990031 DUYENHAI3_S119.000 1  1.0300 1.9638  537.80   77.48 0.9898 120.13 0.5862 0.4635
+ 990032 DUYENHAI3_S219.000 1  1.0300 1.9638  537.80   77.48 0.9898 120.13 0.5862 0.4635
+ 990033 DUYENHAI3_S319.000 1  1.0300 1.9622  609.50   85.15 0.9904 121.16 0.5874 0.4651
+ 990051 DSKTV1      22.000 1  1.0015 1.5140   22.01   15.00 0.8263  73.18 0.2074 0.2186
+ 990061 DMTTRUNGNAM 22.000 1  1.0100 0.0000  150.00    8.68 0.9983  76.76 0.0544 0.9406
+ 991007 DG_CAMAU1   22.000 1  1.0300 1.1714   76.03    7.81 0.9948  73.71 0.0377 0.1605
+ 991012 CAMAU_S2    20.000 1  1.0300 2.3325  228.94   51.64 0.9755 112.29 0.6559 0.4572
+ 991021 CAMAU_G1    20.000 1  1.0300 2.4512  218.57   50.60 0.9742 116.36 0.6604 0.3847
+ 991022 CAMAU_G2    20.000 1  1.0300 2.2747  218.57   50.60 0.9742 110.89 0.6207 0.4459
+ 991023 CAMAU_G3    20.000 1  1.0300 2.2747  218.57   50.60 0.9742 110.89 0.6207 0.4459
+ 991024 CAMAU_G4    20.000 1  1.0300 2.4512  218.57   50.60 0.9742 116.36 0.6604 0.3847
+ 991025 CAMAU_S3    20.000 1  1.0300 2.5238  228.94   51.64 0.9755 117.75 0.6964 0.3928
+ 991087 DMT22       22.000 1  1.0100 0.0000   25.00    5.39 0.9775  63.34 0.2030 0.9406
+
+ INITIAL CONDITIONS CHECK O.K.
+
+ Channel output file is "SucoEaNam-DiLinh.out"
+
+ Channel output file is "SucoEaNam-DiLinh.out"
+
+ Messages for api DIST_BRANCH_FAULT
+ Ckt "1" from bus 70130 [DILINH5     500.00] to bus 60100 [WP_EANAM    500.00] not found   (003428)
+
+ Channel output file is "SucoEaNam-DiLinh.out"
+
+ Messages for api DIST_BRANCH_TRIP
+ Ckt "1" from bus 70130 [DILINH5     500.00] to bus 60100 [WP_EANAM    500.00] not found   (003435)
+
+ Channel output file is "SucoEaNam-DiLinh.out"
