@@ -1,0 +1,4 @@
+{
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "python.pythonPath": ".venv-build-downloader\\Scripts\\python.exe"
+}
