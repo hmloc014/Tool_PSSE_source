@@ -413,30 +413,29 @@ class CustomGridSource(MyFrame1):
     
     # Lọc nguồn theo nội dung nhập vào ở ô Number
     def genNumberEnter_Fcn(self,event):
-        if self.ukNum != 0:
-            genNum = self.parent.genNumber.GetValue()
-            GenName = ''
-            PgenPercent = 0
-            Vschedule = 0
-            CosPhi = 0
-            PAMBA = [[]]
-            MAX = MIN = [[]]
-            result = []
-            if genNum != '':
-                for i in range(len(self.matrixGen[self.indexFile])):
-                    if (str(genNum) in str(self.matrixGen[self.indexFile][i][0])):
-                        result.append(self.matrixGen[self.indexFile][i][:])
+        genNum = self.parent.genNumber.GetValue()
+        GenName = ''
+        PgenPercent = 0
+        Vschedule = 0
+        CosPhi = 0
+        PAMBA = [[]]
+        MAX = MIN = [[]]
+        result = []
+        if genNum != '':
+            for i in range(len(self.matrixGen[self.indexFile])):
+                if (str(genNum) in str(self.matrixGen[self.indexFile][i][0])):
+                    result.append(self.matrixGen[self.indexFile][i][:])
 
-                if len(result)!=0:
-                    for i in range(self.myGridSource.GetNumberRows()):
-                        for j in range(27):
-                            self.myGridSource.SetCellValue(i,j,'')
+            if len(result)!=0:
+                for i in range(self.myGridSource.GetNumberRows()):
+                    for j in range(27):
+                        self.myGridSource.SetCellValue(i,j,'')
 
-                    for i in range(len(result)):
-                        for j in range(len(result[0])):
-                            self.myGridSource.SetCellValue(i,j,str(result[i][j]))
-                        coff = self.myGridSource.GetCellValue(i,13)
-                        self.myGridSource.SetCellValue(i,26,str(float(coff)/100))
+                for i in range(len(result)):
+                    for j in range(len(result[0])):
+                        self.myGridSource.SetCellValue(i,j,str(result[i][j]))
+                    coff = self.myGridSource.GetCellValue(i,13)
+                    self.myGridSource.SetCellValue(i,26,str(float(coff)/100))
 
     # Lọc nguồn theo nội dung nhập vào ở ô Name    
     def genNameEnter_Fcn(self,event):
