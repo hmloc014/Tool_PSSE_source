@@ -17,6 +17,7 @@ from LoadTab import loadBusTab,loadAreaInfo,loadFileInfo,loadZoneInfo,loadMachin
 from math import *
 from decimal import *
 from dialogAddShunt import Add_New_Shunt_Dialog
+from ui_performance import batched_grid_update, clear_grid, profiled
 
 cellValue = 0
 cellVal = 0
@@ -511,6 +512,8 @@ class CustomGrid3Wind(MyFrame1):
             f.close()
 
     # Cập nhật trang MBA 3 CD
+    @profiled('refresh.transformer_3wind')
+    @batched_grid_update('myGrid3Wind', 'parent.gridFile')
     def Update3WindPage(self,event,flagChange):
         if self.parent.flagUpdate == 1:
             if self.parent.flagSynch == 1:
@@ -522,9 +525,7 @@ class CustomGrid3Wind(MyFrame1):
 
         elif self.parent.flagPaste == 0:
             if flagChange == 0:
-                for row1 in range(self.myGrid3Wind.GetNumberRows()):
-                    for column1 in range(self.myGrid3Wind.GetNumberCols()):
-                        self.myGrid3Wind.SetCellValue(row1,column1,"")
+                clear_grid(self.myGrid3Wind)
                 self.matrix3Wind[self.indexFile] = load3windTab(self.Path)
                 for row1 in range(len(self.matrix3Wind[self.indexFile])):
                     for column1 in range(len(self.matrix3Wind[self.indexFile][0])):
@@ -547,9 +548,7 @@ class CustomGrid3Wind(MyFrame1):
                     self.parent.gridFile.SetCellValue(row,column,str(fileInfoTranspose[row][column]))
             
             if flagChange == 0:
-                for row1 in range(self.myGrid3Wind.GetNumberRows()):
-                    for column1 in range(self.myGrid3Wind.GetNumberCols()):
-                        self.myGrid3Wind.SetCellValue(row1,column1,"")
+                clear_grid(self.myGrid3Wind)
                 self.matrix3Wind[self.indexFile] = load3windTab(self.Path)
                 for row1 in range(len(self.matrix3Wind[self.indexFile])):
                     for column1 in range(len(self.matrix3Wind[self.indexFile][0])):

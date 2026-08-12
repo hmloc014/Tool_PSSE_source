@@ -29,6 +29,7 @@ from redirectOuput import silence
 from docx.enum.section import WD_ORIENT
 from docx.shared import Pt
 import pandas as pd
+from ui_performance import profiled
 
 class Calculation(MyFrame1):
     def __init__ (self,parent):
@@ -1002,6 +1003,7 @@ class Calculation(MyFrame1):
             wx.MessageBox("Please open an existing case first!")
 
     # Tính toán TLCS cho file được chọn
+    @profiled('psse.power_flow_selected')
     def Power_Flow_Selected_Cal_Fcn( self, event,path ):
         PATH = path 
         content = self.parent.terminalText

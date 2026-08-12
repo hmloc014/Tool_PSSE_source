@@ -1838,7 +1838,6 @@ class MyFrame1 ( wx.Frame ):
 		self.AddGen.Bind( wx.EVT_BUTTON, self.add_gen_fcn )
 		self.genNumber.Bind( wx.EVT_TEXT, self.genNumberEnter_Fcn )
 		self.genName.Bind( wx.EVT_TEXT, self.genNameEnter_Fcn )
-		self.genName.Bind( wx.EVT_KEY_DOWN, self.onKeyDownGenName )
 		self.loadNumber.Bind( wx.EVT_TEXT, self.loadNumberEnter_Fcn )
 		self.shuntNumber.Bind( wx.EVT_TEXT, self.shuntNumberEnter_Fcn )
 		self.search_dyn.Bind( wx.EVT_TEXT, self.dynNumberEnter_Fcn )

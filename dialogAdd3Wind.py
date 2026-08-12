@@ -15,7 +15,8 @@ PSSE_LOCATION = r"C:\Program Files\PTI\PSSE33\PSSBIN"
 sys.path.append(PSSE_LOCATION)
 os.environ['PATH'] = os.environ['PATH'] + ';' +  PSSE_LOCATION
 pssepath.add_pssepath(33)
-import psspy 
+import psspy
+from ui_performance import profiled
 import pyodbc
 from math import *
 from decimal import *
@@ -188,6 +189,7 @@ class Add_New_3Wind ( wx.Dialog ):
 		return transType,Base,R12,X12,R23,X23,R31,X31,PCA,PTA,PHA
 	
 	# tạo dialog để thêm mới MBA 3CD
+	@profiled('psse.add.transformer_3wind_and_save')
 	def AddNew3WindInDialog( self, event ):
 		self.flag = 0
 		FromBusNum = int(self.fromBusNum.GetValue().split('-')[0])

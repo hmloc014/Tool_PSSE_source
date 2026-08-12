@@ -7,6 +7,7 @@ from decimal import *
 from math import *
 import copy
 import csv
+from ui_performance import profiled
 
 fileNumber = 0
 fileName = [[]]
@@ -211,6 +212,7 @@ def loadZoneInfo(path=''):
         wx.MessageBox("Please open an existing case first!") 
 
 # lấy thông tin hiển thị trong bảng bus
+@profiled('psse.extract.bus')
 def loadBusTab(path=''):
     PATH = path
     if PATH != '':
@@ -292,6 +294,7 @@ def array2dict(dict_keys, dict_values):
     return tmpdict
 
 # lấy thông tin hiển thị cho bảng MBA 2 cuộn dây
+@profiled('psse.extract.transformer_2wind')
 def load2windTab(path=''):
     sid = -1
     owner = 1
@@ -349,6 +352,7 @@ def load2windTab(path=''):
         wx.MessageBox("Please open an existing case first!")
 
 # lấy thông tin hiển thị cho bảng MBA 3 cuộn dây
+@profiled('psse.extract.transformer_3wind')
 def load3windTab(path=''):
     sid = -1
     owner = 1
@@ -459,6 +463,7 @@ def load3windTab(path=''):
         wx.MessageBox("Please open an existing case first!")
 
 # lấy thông tin hiển thị cho bảng nguồn
+@profiled('psse.extract.source')
 def loadMachineTab(path=''):
     PATH = path
     if PATH != '':
@@ -566,6 +571,7 @@ def loadMachineTab(path=''):
         wx.MessageBox("Please open an existing case first!") 
 
 # lấy thông tin hiển thị cho phần thông tin nguồn, tải 3 miền và toàn quốc trong trang nguồn
+@profiled('psse.extract.source_load_totals')
 def loadSourceLoadInfo(path=''):
     ierr,loadTotal = psspy.azonereal(-1,2,'PLOADLD')
     ierr,genTotal = psspy.azonereal(-1,2,'PGEN')
@@ -679,6 +685,7 @@ def loadSourceLoadInfo(path=''):
     return result
     
 # lấy thông tin hiển thị cho bảng phụ tải
+@profiled('psse.extract.load')
 def loadLoadTab(path=''):
     PATH = path
     if PATH != '':
@@ -729,6 +736,7 @@ def loadLoadTab(path=''):
         wx.MessageBox("Please open an existing case first!") 
 
 # lấy thông tin hiển thị cho bảng kháng, tụ, gom chung fixed shunt và switched shunt
+@profiled('psse.extract.shunt')
 def loadShuntTab(path=''):
     PATH = path
     if PATH != '':

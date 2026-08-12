@@ -15,7 +15,8 @@ PSSE_LOCATION = r"C:\Program Files\PTI\PSSE33\PSSBIN"
 sys.path.append(PSSE_LOCATION)
 os.environ['PATH'] = os.environ['PATH'] + ';' +  PSSE_LOCATION
 pssepath.add_pssepath(33)
-import psspy 
+import psspy
+from ui_performance import profiled
 import pyodbc
 from math import *
 from decimal import *
@@ -107,6 +108,7 @@ class Add_New_Load_Dialog ( wx.Dialog ):
 		return self.flag
 	
 	# Tạo dialog để thêm mới phụ tải
+	@profiled('psse.add.load_and_save')
 	def AddNewLoadDialog( self, event ):
 		# try:
 		self.flag = 0

@@ -17,6 +17,7 @@ from LoadTab import loadBusTab,loadAreaInfo,loadFileInfo,loadZoneInfo,loadMachin
 from math import *
 from decimal import *
 from dialogAddLoad import Add_New_Load_Dialog
+from ui_performance import batched_grid_update, clear_grid, profiled
 from LoadTab import select_load_from_zone
 
 cellValue = 0
@@ -297,6 +298,10 @@ class CustomGridLoad(MyFrame1):
             f.close()
 
     # cập nhật trang thông tin tải
+    @profiled('refresh.load')
+    @batched_grid_update('myGridLoad', 'parent.gridFile',
+                         'parent.gridArea', 'parent.gridZone',
+                         'parent.gridLoad', 'parent.m_grid6')
     def UpdatedLoadPage(self, event):
         if self.parent.flagUpdate == 1:
             if self.parent.flagSynch == 1:
@@ -309,9 +314,7 @@ class CustomGridLoad(MyFrame1):
             self.parent.onUpdateFcn(event)
                 
         elif self.parent.flagPaste == 0:
-            for row1 in range(self.gridLoad.GetNumberRows()):
-                for column1 in range(self.gridLoad.GetNumberCols()):
-                    self.gridLoad.SetCellValue(row1,column1,"")
+            clear_grid(self.gridLoad)
             self.matrixLoad[self.indexFile] = loadLoadTab(self.Path)
             for row1 in range(len(self.matrixLoad[self.indexFile])):
                 for column1 in range(len(self.matrixLoad[self.indexFile][0])):
@@ -330,9 +333,7 @@ class CustomGridLoad(MyFrame1):
             for row in range(len(fileInfoTranspose)):
                 for column in range(len(fileInfoTranspose[0])):
                     self.parent.gridFile.SetCellValue(row,column,str(fileInfoTranspose[row][column]))
-            for row1 in range(self.parent.gridLoad.GetNumberRows()):
-                for column1 in range(12):
-                    self.parent.gridLoad.SetCellValue(row1,column1,"")
+            clear_grid(self.parent.gridLoad, 12)
             self.matrixArea[self.indexFile] = loadAreaInfo(self.Path)
             for row1 in range(len(self.matrixArea[self.indexFile])):
                 for column1 in range(len(self.matrixArea[self.indexFile][0])):
@@ -444,6 +445,8 @@ class CustomGridLoad(MyFrame1):
         self.parent.Cos_Phi_Value.SetValue(str(CosPhi))
 
     # lọc phụ tải theo thông tin nhập vào từ ô Bus Num
+    @profiled('search.load_number')
+    @batched_grid_update('myGridLoad')
     def loadNumberEnter_Fcn(self,event):
         loadNum = self.parent.loadNumber.GetValue()
         result = []
@@ -453,9 +456,7 @@ class CustomGridLoad(MyFrame1):
                     result.append(self.matrixLoad[self.indexFile][i][:])
 
             if len(result)!=0:
-                for i in range(self.myGridLoad.GetNumberRows()):
-                    for j in range(self.myGridLoad.GetNumberCols()):
-                        self.myGridLoad.SetCellValue(i,j,'')
+                clear_grid(self.myGridLoad)
 
                 for i in range(len(result)):
                     for j in range(len(result[0])):

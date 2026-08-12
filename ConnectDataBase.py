@@ -22,6 +22,7 @@ from dialogAdd2Wind import Add_New_2Wind
 from dialogAdd3Wind import Add_New_3Wind
 from redirectOuput import silence
 from LoadTab import loadBusTab,loadAreaInfo,loadFileInfo,loadZoneInfo,loadMachineTab,loadShuntTab,loadLoadTab,loadSourceLoadInfo
+from ui_performance import batched_grid_update, profiled
 
 
 row = 0
@@ -1918,6 +1919,8 @@ class ConnectDatabase(MyFrame1):
             event.Skip()
 
     # cập nhật thông tin bảng đường dây, MBA
+    @profiled('refresh.connected_elements')
+    @batched_grid_update('myGridBusInfo', 'myGridFile')
     def UpdatedBranchData(self,event):
         # cập nhật đồng thời nhiều file
         if self.parent.flagSynch == 1:

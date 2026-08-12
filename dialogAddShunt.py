@@ -15,7 +15,8 @@ PSSE_LOCATION = r"C:\Program Files\PTI\PSSE33\PSSBIN"
 sys.path.append(PSSE_LOCATION)
 os.environ['PATH'] = os.environ['PATH'] + ';' +  PSSE_LOCATION
 pssepath.add_pssepath(33)
-import psspy 
+import psspy
+from ui_performance import profiled
 import pyodbc
 from math import *
 from decimal import *
@@ -106,6 +107,7 @@ class Add_New_Shunt_Dialog ( wx.Dialog ):
 		return self.flag
 	
 	# Dialog thêm mới kháng tụ
+	@profiled('psse.add.shunt_and_save')
 	def AddNewShuntDialog( self, event ):
 		self.flag = 0
 		shuntNum = int(self.fromBusNum.GetValue().split('-')[0])

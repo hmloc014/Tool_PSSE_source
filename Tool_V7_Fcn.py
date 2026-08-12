@@ -44,6 +44,8 @@ from decimal import *
 from redirectOuput import silence
 import contextlib
 from Calculation import Calculation
+from ui_performance import (batched_grid_update, clear_grid, debounced_search,
+                            profiled)
 # import multiprocessing as mt
 # wiki.ozanh.com/doku.php?id=python:misc:wxpython_postevent_threading
 # from dialogEx import Mywin
@@ -763,9 +765,7 @@ class CustomMyframe1(MyFrame1):
                 for j in range(myGridZone.GetNumberCols()):
                     myGridZone.SetCellValue(i,j,'0')
 
-            for i in range(myGridBus.GetNumberRows()):
-                for j in range(myGridBus.GetNumberCols()):
-                    myGridBus.SetCellValue(i,j,'')
+            clear_grid(myGridBus)
 
             for i in range(self.grid2wind.GetNumberRows()):
                 for j in range(self.grid2wind.GetNumberCols()):
@@ -921,9 +921,7 @@ class CustomMyframe1(MyFrame1):
             [PLoad,QLoad,CosPhi,selectedMatrixLoad] = select_load_from_zone(self.rowZone,selectedZoneNum,matrixLoad[indexFile],myGridZone)
             selectedMatrixShunt = select_shunt_from_zone(selectedZoneNum,matrixShunt[indexFile])
 
-            for i in range(myGridBus.GetNumberRows()):
-                for j in range(myGridBus.GetNumberCols()):
-                    myGridBus.SetCellValue(i,j,'')
+            clear_grid(myGridBus)
 
             for i in range(self.m_grid6.GetNumberRows()):
                 for j in range(25):
@@ -1047,6 +1045,9 @@ class CustomMyframe1(MyFrame1):
         self.gridZoneLink.Change_Zone_Load_Fcn(event)
 
     # Chức năng hiển thị thông tin đường dây, MBA 2 CD, 3 CD nối tới bus được chọn
+    @debounced_search('bus_number', 'BusNumInput', delay_ms=200)
+    @profiled('search.bus_connections')
+    @batched_grid_update('gridBusInfo')
     def busNumberEnter_Fcn( self, event ):
         global busNumber,previousBusNumber,matrixBranch
         busNumber = self.BusNumInput.GetValue()
@@ -1093,9 +1094,7 @@ class CustomMyframe1(MyFrame1):
             if int(busNumber)!=previousBusNumber:
                 psspy.bsys(0,0,[ 1.0, 500.],0,[],1,[int(busNumber)],0,[],0,[])
                 ierr, busBaseKVOrigin = psspy.abusreal(0,2,'BASE')
-                for row in range(self.gridBusInfo.GetNumberRows()):
-                    for col in range(self.gridBusInfo.GetNumberCols()):
-                        self.gridBusInfo.SetCellValue(row,col,'')
+                clear_grid(self.gridBusInfo)
                             
                 for row1 in range(len(matrixBranch)):
 
@@ -1149,6 +1148,10 @@ class CustomMyframe1(MyFrame1):
             event.Skip()
 
     # chức năng tìm kiếm theo bus ID, bus Name, base kV, area name, area num, zone name, zone num,  code
+    @debounced_search('grid_filter', 'filter_input_text',
+                      priority='FILTER_INPUT_TEXT', delay_ms=200)
+    @profiled('search.grid_filter')
+    @batched_grid_update('gridSearch')
     def OnTextSearch( self, event ):
         self.priority = 'FILTER_INPUT_TEXT'
         choiceValue = self.filter_selection.GetSelection()
@@ -1167,9 +1170,7 @@ class CustomMyframe1(MyFrame1):
                 if ((str(searchText)).upper() in (matrixBus[indexFile][i,0])):
                     result.append(matrixBus[indexFile][i][:])
 
-            for i in range(myGridBus.GetNumberRows()):
-                for j in range(myGridBus.GetNumberCols()):
-                    myGridBus.SetCellValue(i,j,'')
+            clear_grid(myGridBus)
 
             for i in range(len(result)):
                 for j in range(len(result[0])):
@@ -1181,9 +1182,7 @@ class CustomMyframe1(MyFrame1):
                 if ((str(searchText)).upper() in (matrixBus[indexFile][i,1])):
                     result.append(matrixBus[indexFile][i][:])
 
-            for i in range(myGridBus.GetNumberRows()):
-                for j in range(myGridBus.GetNumberCols()):
-                    myGridBus.SetCellValue(i,j,'')
+            clear_grid(myGridBus)
 
             for i in range(len(result)):
                 for j in range(len(result[0])):
@@ -1195,9 +1194,7 @@ class CustomMyframe1(MyFrame1):
                 if (searchText in str(matrixBus[indexFile][i,2])):
                     result.append(matrixBus[indexFile][i][:])
 
-            for i in range(myGridBus.GetNumberRows()):
-                for j in range(myGridBus.GetNumberCols()):
-                    myGridBus.SetCellValue(i,j,'')
+            clear_grid(myGridBus)
 
             for i in range(len(result)):
                 for j in range(len(result[0])):
@@ -1209,9 +1206,7 @@ class CustomMyframe1(MyFrame1):
                 if (searchText in (matrixBus[indexFile][i][3])):
                     result.append(matrixBus[indexFile][i][:])
 
-            for i in range(myGridBus.GetNumberRows()):
-                for j in range(myGridBus.GetNumberCols()):
-                    myGridBus.SetCellValue(i,j,'')
+            clear_grid(myGridBus)
 
             for i in range(len(result)):
                 for j in range(len(result[0])):
@@ -1223,9 +1218,7 @@ class CustomMyframe1(MyFrame1):
                 if ((str(searchText)).upper() in (matrixBus[indexFile][i,4])):
                     result.append(matrixBus[indexFile][i][:])
 
-            for i in range(myGridBus.GetNumberRows()):
-                for j in range(myGridBus.GetNumberCols()):
-                    myGridBus.SetCellValue(i,j,'')
+            clear_grid(myGridBus)
 
             for i in range(len(result)):
                 for j in range(len(result[0])):
@@ -1237,9 +1230,7 @@ class CustomMyframe1(MyFrame1):
                 if (searchText in (matrixBus[indexFile][i][5])):
                     result.append(matrixBus[indexFile][i][:])
 
-            for i in range(myGridBus.GetNumberRows()):
-                for j in range(myGridBus.GetNumberCols()):
-                    myGridBus.SetCellValue(i,j,'')
+            clear_grid(myGridBus)
 
             for i in range(len(result)):
                 for j in range(len(result[0])):
@@ -1251,9 +1242,7 @@ class CustomMyframe1(MyFrame1):
                 if ((str(searchText)).upper() in (matrixBus[indexFile][i,6])):
                     result.append(matrixBus[indexFile][i][:])
 
-            for i in range(myGridBus.GetNumberRows()):
-                for j in range(myGridBus.GetNumberCols()):
-                    myGridBus.SetCellValue(i,j,'')
+            clear_grid(myGridBus)
 
             for i in range(len(result)):
                 for j in range(len(result[0])):
@@ -1265,9 +1254,7 @@ class CustomMyframe1(MyFrame1):
                 if (searchText in (matrixBus[indexFile][i][8])):
                     result.append(matrixBus[indexFile][i][:])
 
-            for i in range(myGridBus.GetNumberRows()):
-                for j in range(myGridBus.GetNumberCols()):
-                    myGridBus.SetCellValue(i,j,'')
+            clear_grid(myGridBus)
 
             for i in range(len(result)):
                 for j in range(len(result[0])):
@@ -1864,6 +1851,8 @@ class CustomMyframe1(MyFrame1):
 
     # Khi search một nguồn bất kỳ theo mã nguồn, sẽ xóa thông tin trong bảng source, 
     # chỉ hiển thị thông tin của nguồn tìm được
+    @debounced_search('gen_number', 'genNumber',
+                      priority='GENNUMBER', delay_ms=200)
     def genNumberEnter_Fcn(self,event):
         self.priority = 'GENNUMBER'
         self.gridSourceLink.matrixBus = matrixBus
@@ -1878,6 +1867,8 @@ class CustomMyframe1(MyFrame1):
     
     # Khi search một nguồn bất kỳ theo tên nguồn, sẽ xóa thông tin trong bảng source, 
     # chỉ hiển thị thông tin của nguồn tìm được
+    @debounced_search('gen_name', 'genName',
+                      priority='GENNAME', delay_ms=200)
     def genNameEnter_Fcn(self,event):
         self.priority = "GENNAME"
         self.gridSourceLink.matrixBus = matrixBus
@@ -1917,6 +1908,8 @@ class CustomMyframe1(MyFrame1):
         event.Skip()
 
     # chức năng thực hiện khi nhấn phím enter tại ô làm  việc trong bảng phụ tải
+    @debounced_search('load_number', 'loadNumber',
+                      priority='LOADNUMBER', delay_ms=200)
     def loadNumberEnter_Fcn(self,event):
         self.priority = 'LOADNUMBER'
         self.gridLoadLink.matrixBus = matrixBus
@@ -1931,6 +1924,8 @@ class CustomMyframe1(MyFrame1):
         event.Skip()
 
     # chức năng thực hiện khi nhấn phím enter tại ô làm  việc trong bảng kháng/tụ
+    @debounced_search('shunt_number', 'shuntNumber',
+                      priority='SHUNTNUMBER', delay_ms=200)
     def shuntNumberEnter_Fcn(self,event):
         self.priority = 'SHUNTNUMBER'
         self.gridShuntLink.matrixBus = matrixBus
@@ -1945,6 +1940,7 @@ class CustomMyframe1(MyFrame1):
         event.Skip()
 
     # chức năng thực hiện khi nhấn phím enter tại ô làm  việc trong bảng dynamic
+    @debounced_search('dynamic_number', 'search_dyn', delay_ms=200)
     def dynNumberEnter_Fcn(self,event):
         self.gridDynLink.matrixBus = matrixBus
         self.gridDynLink.myGridBus = myGridBus

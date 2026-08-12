@@ -17,6 +17,7 @@ from LoadTab import loadBusTab,loadAreaInfo,loadFileInfo,loadZoneInfo,loadMachin
 from math import *
 from decimal import *
 from dialogAddBus import Add_New_Bus
+from ui_performance import batched_grid_update, clear_grid, profiled
 
 cellValue = 0
 cellVal = 0
@@ -207,18 +208,22 @@ class CustomGridSearch(MyFrame1):
             self.parent.onUpdateFcn(event)
 
     # Cập nhật bảng bus
+    @profiled('refresh.bus')
+    @batched_grid_update('myGridBus')
     def onUpdateBus(self,event,indexfile,path):
         self.indexFile = indexfile
         self.Path = path
-        for row1 in range(self.myGridBus.GetNumberRows()):
-            for column1 in range(self.myGridBus.GetNumberCols()): 
-                self.myGridBus.SetCellValue(row1,column1,"")
+        clear_grid(self.myGridBus)
         self.matrixBus[self.indexFile] = loadBusTab(self.Path)
         for row1 in range(len(self.matrixBus[self.indexFile])):
             for column1 in range(len(self.matrixBus[self.indexFile][0])):
                 self.myGridBus.SetCellValue(row1,column1,str(self.matrixBus[self.indexFile][row1][column1]))
         self.parent.onUpdateFcn(event)
 
+    @profiled('refresh.dashboard_full')
+    @batched_grid_update('myGridFile', 'myGridArea', 'myGridZone',
+                         'myGridBus', 'myGridSource', 'myGridLoad',
+                         'myGridShunt', 'myGrid2Wind', 'myGrid3Wind')
     def UpdatedData(self,event,indexfile,path): # only for reload page
         self.indexFile = indexfile
         self.Path = path
@@ -233,30 +238,14 @@ class CustomGridSearch(MyFrame1):
             for row in range(len(fileInfoTranspose)):
                 for column in range(len(fileInfoTranspose[0])):
                     self.myGridFile.SetCellValue(row,column,str(fileInfoTranspose[row][column]))
-            for row1 in range(self.myGridArea.GetNumberRows()):
-                for column1 in range(self.myGridArea.GetNumberCols()):
-                    self.myGridArea.SetCellValue(row1,column1,"")
-            for row1 in range(self.myGridZone.GetNumberRows()):
-                for column1 in range(self.myGridZone.GetNumberCols()):
-                    self.myGridZone.SetCellValue(row1,column1,"")
-            for row1 in range(self.myGridBus.GetNumberRows()):
-                for column1 in range(self.myGridBus.GetNumberCols()): 
-                    self.myGridBus.SetCellValue(row1,column1,"")
-            for row1 in range(self.myGridSource.GetNumberRows()):
-                for column1 in range(27): 
-                    self.myGridSource.SetCellValue(row1,column1,"")
-            for row1 in range(self.gridLoad.GetNumberRows()):
-                for column1 in range(12):
-                    self.gridLoad.SetCellValue(row1,column1,"")
-            for row1 in range(self.gridShunt.GetNumberRows()):
-                for column1 in range(self.gridShunt.GetNumberCols()):
-                    self.gridShunt.SetCellValue(row1,column1,"")
-            for row1 in range(self.myGrid2Wind.GetNumberRows()):
-                for column1 in range(self.myGrid2Wind.GetNumberCols()):
-                    self.myGrid2Wind.SetCellValue(row1,column1,"")
-            for row1 in range(self.myGrid3Wind.GetNumberRows()):
-                for column1 in range(self.myGrid3Wind.GetNumberCols()):
-                    self.myGrid3Wind.SetCellValue(row1,column1,"")
+            clear_grid(self.myGridArea)
+            clear_grid(self.myGridZone)
+            clear_grid(self.myGridBus)
+            clear_grid(self.myGridSource, 27)
+            clear_grid(self.gridLoad, 12)
+            clear_grid(self.gridShunt)
+            clear_grid(self.myGrid2Wind)
+            clear_grid(self.myGrid3Wind)
 
             self.matrixArea[self.indexFile] = loadAreaInfo(self.Path)
             for row1 in range(len(self.matrixArea[self.indexFile])):

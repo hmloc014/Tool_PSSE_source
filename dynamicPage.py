@@ -17,6 +17,7 @@ from LoadTab import loadBusTab,loadAreaInfo,loadFileInfo,loadZoneInfo,loadShuntT
 from math import *
 from decimal import *
 from dialogSearchDyn import SearchDyn
+from ui_performance import batched_grid_update, profiled
 
 cellValue = 0
 cellVal = 0
@@ -790,6 +791,8 @@ class CustomGridDyn(MyFrame1):
                 self.myGridDyn.SetCellTextColour(row,25, wx.RED)
     
     # tìm kiếm thông tin từ ô Number trong bảng dynamic
+    @profiled('search.dynamic_number')
+    @batched_grid_update('myGridDyn')
     def dynNumberEnter_Fcn(self,event):
         genNum = self.parent.search_dyn.GetValue()
         result = []

@@ -17,6 +17,7 @@ from LoadTab import loadBusTab,loadAreaInfo,loadFileInfo,loadZoneInfo,loadMachin
 from math import *
 from decimal import *
 from dialogAddShunt import Add_New_Shunt_Dialog
+from ui_performance import batched_grid_update, clear_grid, profiled
 
 cellValue = 0
 cellVal = 0
@@ -356,6 +357,8 @@ class CustomGrid2Wind(MyFrame1):
             f.close()
 
     # cập nhật bảng MBA 2 CD
+    @profiled('refresh.transformer_2wind')
+    @batched_grid_update('myGrid2Wind', 'grid2wind', 'parent.gridFile')
     def Update2WindPage(self,event,flagChange):
         # cập nhật từng bước
         if self.parent.flagUpdate == 1:
@@ -371,9 +374,7 @@ class CustomGrid2Wind(MyFrame1):
         elif self.parent.flagPaste == 0: # không thực hiện chức năng copy-paste nên cập nhật ngay sau mỗi thay đổi, 
             #nếu thực hiện copy-paste thì chỉ cập nhật sau khi paste đến giá trị cuối cùng
             if flagChange == 0: # có sự thay đổi kích thước bảng MBA 2 CD, nếu =1 thì k cần xóa đi cập nhật lại
-                for row1 in range(self.grid2wind.GetNumberRows()):
-                    for column1 in range(self.grid2wind.GetNumberCols()):
-                        self.grid2wind.SetCellValue(row1,column1,"")
+                clear_grid(self.grid2wind)
                 self.matrix2Wind[self.indexFile] = load2windTab(self.Path)
                 for row1 in range(len(self.matrix2Wind[self.indexFile])):
                     for column1 in range(len(self.matrix2Wind[self.indexFile][0])):
@@ -398,9 +399,7 @@ class CustomGrid2Wind(MyFrame1):
             if flagChange == 0: # =0 có nghĩa là có sự thay đổi kích thước bảng, nên cần xóa đi cập nhật lại, nếu =1
                 # nghĩa là đã thay đổi trực tiếp trên bảng 2 wind rồi, không cần xóa đi cập nhật lại nữa mà chỉ cần cập nhật lại bảng file (thông tin TLCS) thôi
                 # như vậy việc thay đổi thông tin/ bật, tắt MBA không ảnh hưởng đến kích thước bảng nên flagchange = 1, chỉ khi add/delete thì mới thay đổi kích thước và flagchange = 0
-                for row1 in range(self.parent.grid2wind.GetNumberRows()):
-                    for column1 in range(self.parent.grid2wind.GetNumberCols()):
-                        self.parent.grid2wind.SetCellValue(row1,column1,"")
+                clear_grid(self.parent.grid2wind)
 
                 self.matrix2Wind[self.indexFile] = load2windTab(self.Path)
                 for row1 in range(len(self.matrix2Wind[self.indexFile])):

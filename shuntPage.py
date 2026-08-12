@@ -17,6 +17,7 @@ from LoadTab import loadBusTab,loadAreaInfo,loadFileInfo,loadZoneInfo,loadMachin
 from math import *
 from decimal import *
 from dialogAddShunt import Add_New_Shunt_Dialog
+from ui_performance import batched_grid_update, clear_grid, profiled
 
 cellValue = 0
 cellVal = 0
@@ -263,6 +264,10 @@ class CustomGridShunt(MyFrame1):
             f.close()
 
     # cập nhật trang shunt
+    @profiled('refresh.shunt')
+    @batched_grid_update('myGridShunt', 'parent.gridFile',
+                         'parent.gridSearch', 'parent.gridShunt',
+                         'parent.m_grid6')
     def UpdateShuntPage(self,event):
         if self.parent.flagUpdate == 1:
             if self.parent.flagSynch == 1:
@@ -274,9 +279,7 @@ class CustomGridShunt(MyFrame1):
                 self.onUpdateShunt(event,self.indexFile,self.Path)
             self.parent.onUpdateFcn(event)
         elif self.parent.flagPaste == 0:
-            for row1 in range(self.gridShunt.GetNumberRows()):
-                for column1 in range(self.gridShunt.GetNumberCols()):
-                    self.gridShunt.SetCellValue(row1,column1,"")
+            clear_grid(self.gridShunt)
             self.matrixShunt[self.indexFile] = loadShuntTab(self.Path)
             for row1 in range(len(self.matrixShunt[self.indexFile])):
                 for column1 in range(len(self.matrixShunt[self.indexFile][0])):
@@ -297,9 +300,7 @@ class CustomGridShunt(MyFrame1):
             for row in range(len(fileInfoTranspose)):
                 for column in range(len(fileInfoTranspose[0])):
                     self.parent.gridFile.SetCellValue(row,column,str(fileInfoTranspose[row][column]))
-            for row1 in range(self.parent.gridShunt.GetNumberRows()):
-                for column1 in range(self.parent.gridShunt.GetNumberCols()):
-                    self.parent.gridShunt.SetCellValue(row1,column1,"")
+            clear_grid(self.parent.gridShunt)
             self.matrixBus[self.indexFile] = loadBusTab(self.Path)
             for row1 in range(len(self.matrixBus[self.indexFile])):
                 for column1 in range(len(self.matrixBus[self.indexFile][0])):
@@ -330,6 +331,8 @@ class CustomGridShunt(MyFrame1):
             self.parent.loadSouth.SetValue(str(Decimal(totalLoadSouth).quantize(TWOPLACE)))
 
     # Lọc kháng/tụ theo nội dung nhập vào ở ô Number
+    @profiled('search.shunt_number')
+    @batched_grid_update('myGridShunt')
     def shuntNumberEnter_Fcn(self, event):
         shuntNum = self.parent.shuntNumber.GetValue()
         result = []
@@ -339,9 +342,7 @@ class CustomGridShunt(MyFrame1):
                     result.append(self.matrixShunt[self.indexFile][i][:])
 
             if len(result)!=0:
-                for i in range(self.myGridShunt.GetNumberRows()):
-                    for j in range(self.myGridShunt.GetNumberCols()):
-                        self.myGridShunt.SetCellValue(i,j,'')
+                clear_grid(self.myGridShunt)
 
                 for i in range(len(result)):
                     for j in range(len(result[0])):

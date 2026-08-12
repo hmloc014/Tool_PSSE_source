@@ -18,6 +18,7 @@ from math import *
 from decimal import *
 from dialogAddGen import Add_New_Gen
 from dynamicPage import CustomGridDyn
+from ui_performance import batched_grid_update, clear_grid, profiled
 import pyodbc
 
 cellValue = 0
@@ -412,6 +413,8 @@ class CustomGridSource(MyFrame1):
         return
     
     # Lọc nguồn theo nội dung nhập vào ở ô Number
+    @profiled('search.gen_number')
+    @batched_grid_update('myGridSource')
     def genNumberEnter_Fcn(self,event):
         genNum = self.parent.genNumber.GetValue()
         GenName = ''
@@ -427,9 +430,7 @@ class CustomGridSource(MyFrame1):
                     result.append(self.matrixGen[self.indexFile][i][:])
 
             if len(result)!=0:
-                for i in range(self.myGridSource.GetNumberRows()):
-                    for j in range(27):
-                        self.myGridSource.SetCellValue(i,j,'')
+                clear_grid(self.myGridSource, 27)
 
                 for i in range(len(result)):
                     for j in range(len(result[0])):
@@ -438,32 +439,31 @@ class CustomGridSource(MyFrame1):
                     self.myGridSource.SetCellValue(i,26,str(float(coff)/100))
 
     # Lọc nguồn theo nội dung nhập vào ở ô Name    
+    @profiled('search.gen_name')
+    @batched_grid_update('myGridSource')
     def genNameEnter_Fcn(self,event):
-        if self.ukName != 0:
-            GenName = self.parent.genName.GetValue()
-            genNum = ''
-            PgenPercent = 0
-            Vschedule = 0
-            CosPhi = 0
-            PAMBA = [[]]
-            MAX = MIN = [[]]
-            result = []
-            if GenName != '':
+        GenName = self.parent.genName.GetValue()
+        genNum = ''
+        PgenPercent = 0
+        Vschedule = 0
+        CosPhi = 0
+        PAMBA = [[]]
+        MAX = MIN = [[]]
+        result = []
+        if GenName != '':
 
-                for i in range(len(self.matrixGen[self.indexFile])):
-                    if (((GenName).encode('utf-8')).upper() in str(self.matrixGen[self.indexFile][i][1])):
-                        result.append(self.matrixGen[self.indexFile][i][:])
+            for i in range(len(self.matrixGen[self.indexFile])):
+                if (((GenName).encode('utf-8')).upper() in str(self.matrixGen[self.indexFile][i][1])):
+                    result.append(self.matrixGen[self.indexFile][i][:])
 
-                if len(result)!=0:
-                    for i in range(self.myGridSource.GetNumberRows()):
-                        for j in range(27):
-                            self.myGridSource.SetCellValue(i,j,'')
+            if len(result)!=0:
+                clear_grid(self.myGridSource, 27)
 
-                    for i in range(len(result)):
-                        for j in range(len(result[0])):
-                            self.myGridSource.SetCellValue(i,j,str(result[i][j]))
-                        coff = self.myGridSource.GetCellValue(i,13)
-                        self.myGridSource.SetCellValue(i,26,str(float(coff)/100))
+                for i in range(len(result)):
+                    for j in range(len(result[0])):
+                        self.myGridSource.SetCellValue(i,j,str(result[i][j]))
+                    coff = self.myGridSource.GetCellValue(i,13)
+                    self.myGridSource.SetCellValue(i,26,str(float(coff)/100))
 
     def addNew(self, event):
         self.Add_New_Gen(event)
@@ -534,9 +534,7 @@ class CustomGridSource(MyFrame1):
                 # self.parent.UpdatedData(event,self.indexFile,self.Path)
 
         else:
-            for row1 in range(self.myGridSource.GetNumberRows()):
-                for column1 in range(27):
-                    self.myGridSource.SetCellValue(row1,column1,"")
+            clear_grid(self.myGridSource, 27)
             self.matrixGen[self.indexFile] = loadMachineTab(self.Path)
             for row1 in range(len(self.matrixGen[self.indexFile])):
                 for column1 in range(len(self.matrixGen[self.indexFile][0])):
@@ -576,9 +574,7 @@ class CustomGridSource(MyFrame1):
                 self.onUpdateSourceTurnOO(event,self.indexFile,self.Path)
 
         else:
-            for row1 in range(self.myGridSource.GetNumberRows()):
-                for column1 in range(27):
-                    self.myGridSource.SetCellValue(row1,column1,"")
+            clear_grid(self.myGridSource, 27)
             self.matrixGen[self.indexFile] = loadMachineTab(self.Path)
             for row1 in range(len(self.matrixGen[self.indexFile])):
                 for column1 in range(len(self.matrixGen[self.indexFile][0])):
@@ -626,9 +622,7 @@ class CustomGridSource(MyFrame1):
                 self.parent.onUpdateFcn(event)
                 # self.parent.UpdatedData(event,self.indexFile,self.Path)
         else:
-            for row1 in range(self.myGridSource.GetNumberRows()):
-                for column1 in range(27):
-                    self.myGridSource.SetCellValue(row1,column1,"")
+            clear_grid(self.myGridSource, 27)
             self.matrixGen[self.indexFile] = loadMachineTab(self.Path)
             for row1 in range(len(self.matrixGen[self.indexFile])):
                 for column1 in range(len(self.matrixGen[self.indexFile][0])):
@@ -753,9 +747,7 @@ class CustomGridSource(MyFrame1):
                 self.parent.onUpdateFcn(event)
                 # self.parent.UpdatedData(event,self.indexFile,self.Path)
         else:
-            for row1 in range(self.myGridSource.GetNumberRows()):
-                for column1 in range(27):
-                    self.myGridSource.SetCellValue(row1,column1,"")
+            clear_grid(self.myGridSource, 27)
             self.matrixGen[self.indexFile] = loadMachineTab(self.Path)
             for row1 in range(len(self.matrixGen[self.indexFile])):
                 for column1 in range(len(self.matrixGen[self.indexFile][0])):
@@ -767,6 +759,9 @@ class CustomGridSource(MyFrame1):
     # turn on/off/delete need calculate power flow, for add new don't need
 
     # cập nhật bảng source  khi thực hiện chức năng DELETE (tính lại TLCS, xóa đi, cập nhật lại)
+    @profiled('refresh.source_delete')
+    @batched_grid_update('parent.gridFile', 'parent.gridArea',
+                         'parent.gridZone', 'parent.m_grid6')
     def onUpdateSourceDelete(self, event, indexfile, path):
            
         self.indexFile = indexfile
@@ -782,9 +777,7 @@ class CustomGridSource(MyFrame1):
                 for column in range(len(fileInfoTranspose[0])):
                     self.parent.gridFile.SetCellValue(row,column,str(fileInfoTranspose[row][column]))
 
-            for row1 in range(self.parent.m_grid6.GetNumberRows()):
-                for column1 in range(27): 
-                    self.parent.m_grid6.SetCellValue(row1,column1,"")
+            clear_grid(self.parent.m_grid6, 27)
             
             self.matrixArea[self.indexFile] = loadAreaInfo(self.Path)
             for row1 in range(len(self.matrixArea[self.indexFile])):
@@ -818,6 +811,9 @@ class CustomGridSource(MyFrame1):
             self.parent.loadSouth.SetValue(str(Decimal(totalLoadSouth).quantize(TWOPLACE)))
 
     # cập nhật bảng source  khi thực hiện chức năng TURN ON/OFF (không cần xóa đi cập nhật lại)
+    @profiled('refresh.source_status')
+    @batched_grid_update('parent.gridFile', 'parent.gridArea',
+                         'parent.gridZone', 'parent.m_grid6')
     def onUpdateSourceTurnOO(self, event, indexfile, path):
           
         self.indexFile = indexfile
@@ -868,6 +864,9 @@ class CustomGridSource(MyFrame1):
             self.parent.loadSouth.SetValue(str(Decimal(totalLoadSouth).quantize(TWOPLACE)))
 
     # cập nhật bảng source  khi thực hiện chức năng ADD NEW (không tính lại TLCS)
+    @profiled('refresh.source_add')
+    @batched_grid_update('parent.gridFile', 'parent.gridArea',
+                         'parent.gridZone', 'parent.m_grid6')
     def onUpdateSourceAdd(self, event, indexfile, path):
         self.indexFile = indexfile
         self.Path = path
@@ -878,9 +877,7 @@ class CustomGridSource(MyFrame1):
 
         if self.parent.flagUpdate == 1 or self.parent.flagReload == 1:
 
-            for row1 in range(self.parent.m_grid6.GetNumberRows()):
-                for column1 in range(27): 
-                    self.parent.m_grid6.SetCellValue(row1,column1,"")
+            clear_grid(self.parent.m_grid6, 27)
             
             for row in range(len(fileInfoTranspose)):
                 for column in range(len(fileInfoTranspose[0])):
