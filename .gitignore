@@ -23,6 +23,7 @@ dist-*/
 graphify-out/
 .docx-work/
 .github-upload-repo/
+Tool PSSE (release)/
 
 # Runtime and editor leftovers
 *.log
