@@ -23,7 +23,6 @@ dist-*/
 graphify-out/
 .docx-work/
 .github-upload-repo/
-.git/
 
 # Runtime and editor leftovers
 *.log
