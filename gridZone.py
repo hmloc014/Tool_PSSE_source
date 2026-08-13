@@ -221,6 +221,9 @@ class CustomGridZone(MyFrame1):
 
     # thay đổi P source/load của bảng zone
     def changePSourceLoad(self,event):
+        if self.parent.flagUpdate == 0:
+            self.parent.Mark_Pending_Refresh('source')
+            self.parent.Mark_Pending_Refresh('load')
 
         dialogChangeZoneLoad = Scale_Zone(self.parent)
         dialogChangeZoneLoad.mygridZone = self.myGridZone

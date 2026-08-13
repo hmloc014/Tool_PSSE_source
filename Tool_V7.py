@@ -600,7 +600,7 @@ class MyFrame1 ( wx.Frame ):
 		
 		functionButtonSize = wx.Size( -1, 40 )
 		functionButtonFont = wx.Font( 9, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial" )
-		functionButtonBackground = wx.Colour( 235, 235, 235 )
+		functionButtonBackground = wx.Colour( 242, 242, 242 )
 
 		def styleFunctionButton( button, bitmapPath, toolTip ):
 			bitmap = wx.Bitmap( bitmapPath, wx.BITMAP_TYPE_ANY )
@@ -612,6 +612,10 @@ class MyFrame1 ( wx.Frame ):
 			button.SetFont( functionButtonFont )
 			button.SetBackgroundColour( functionButtonBackground )
 			button.SetToolTipString( toolTip )
+
+		self.m_tool0 = wx.Button( self.gridPage, wx.ID_ANY, u"Power Flow", wx.DefaultPosition, functionButtonSize, wx.BU_LEFT )
+		styleFunctionButton( self.m_tool0, u"images/icon5.png", u"Calculate power flow and refresh grids" )
+		bSizer331.Add( self.m_tool0, 0, wx.LEFT|wx.RIGHT|wx.BOTTOM|wx.EXPAND, 8 )
 
 		self.m_tool1 = wx.Button( self.gridPage, wx.ID_ANY, u"Auto Contingencies", wx.DefaultPosition, functionButtonSize, wx.BU_LEFT )
 		styleFunctionButton( self.m_tool1, u"images/c.jpg", u"Run automatic contingencies" )
@@ -1690,7 +1694,8 @@ class MyFrame1 ( wx.Frame ):
 		self.updateDirect = wx.RadioButton( self.m_panel11, wx.ID_ANY, u"Update step by step", wx.DefaultPosition, wx.DefaultSize, 0 )
 		bSizer322.Add( self.updateDirect, 0, wx.ALL, 5 )
 		
-		self.UpdatedLater = wx.RadioButton( self.m_panel11, wx.ID_ANY, u"Updated Later (Ctrl+R)", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.UpdatedLater = wx.RadioButton( self.m_panel11, wx.ID_ANY, u"Update Later (Ctrl+R)", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.UpdatedLater.SetValue( True )
 		bSizer322.Add( self.UpdatedLater, 0, wx.ALL, 5 )
 		self.m_panel11.SetSizer( bSizer322 )
 		self.m_panel11.Layout()
@@ -1733,6 +1738,17 @@ class MyFrame1 ( wx.Frame ):
 		bSizer321.Add( self.m_panel13, 1, wx.EXPAND |wx.ALL, 5 )
 		
 		self.m_panel14 = wx.Panel( self.configure_page, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer325 = wx.BoxSizer( wx.VERTICAL )
+		self.m_staticText284 = wx.StaticText( self.m_panel14, wx.ID_ANY, u"Power flow:", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText284.Wrap( -1 )
+		bSizer325.Add( self.m_staticText284, 0, wx.ALL, 5 )
+
+		self.PowerFlowRefresh = wx.Button( self.m_panel14, wx.ID_ANY, u"Calculate Power Flow and Refresh Grids", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer325.Add( self.PowerFlowRefresh, 0, wx.ALL, 5 )
+
+		self.m_panel14.SetSizer( bSizer325 )
+		self.m_panel14.Layout()
+		bSizer325.Fit( self.m_panel14 )
 		bSizer321.Add( self.m_panel14, 1, wx.EXPAND |wx.ALL, 5 )
 		
 		self.m_panel15 = wx.Panel( self.configure_page, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
@@ -1868,11 +1884,13 @@ class MyFrame1 ( wx.Frame ):
 		self.SaveDynFile.Bind(wx.EVT_BUTTON, self.Save_Dyr_File )
 		self.updateDirect.Bind( wx.EVT_RADIOBUTTON, self.onUpdatedStepByStep )
 		self.UpdatedLater.Bind( wx.EVT_RADIOBUTTON, self.onUpdatedLater )
+		self.PowerFlowRefresh.Bind( wx.EVT_BUTTON, self.Power_Flow_Refresh_Fcn )
 		self.UpdateSynch.Bind( wx.EVT_RADIOBUTTON, self.onUpdateSynch )
 		self.UpdatedIndividual.Bind( wx.EVT_RADIOBUTTON, self.onUpdateIndividual )
 		self.CreateMacro.Bind( wx.EVT_RADIOBUTTON, self.onCreateMacro )
 		self.FinishRecord.Bind( wx.EVT_RADIOBUTTON, self.onFinishRecord )
 		self.SetRestriction.Bind( wx.EVT_CHECKBOX, self.onSetRestriction )
+		self.m_tool0.Bind( wx.EVT_BUTTON, self.Power_Flow_Refresh_Fcn )
 		self.m_tool1.Bind( wx.EVT_BUTTON, self.Auto_Contingency )
 		self.m_tool2.Bind( wx.EVT_BUTTON, self.Export_Multiple_Cad )
 		self.m_tool3.Bind( wx.EVT_BUTTON, self.Short_Circuit_All_File )
@@ -2220,6 +2238,9 @@ class MyFrame1 ( wx.Frame ):
 		event.Skip()
 	
 	def onUpdatedLater( self, event ):
+		event.Skip()
+
+	def Power_Flow_Refresh_Fcn( self, event ):
 		event.Skip()
 	
 	def onUpdateSynch(self,event):

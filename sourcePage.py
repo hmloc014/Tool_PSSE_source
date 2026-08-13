@@ -385,6 +385,8 @@ class CustomGridSource(MyFrame1):
 
     # Cập nhật thông tin bảng source
     def onUpdateGridSource(self,event):
+        if self.parent.flagUpdate == 0:
+            self.parent.Mark_Pending_Refresh('source')
         if self.parent.flagUpdate == 1:
             if self.parent.flagSynch == 1:
                 for i,path in enumerate(self.PathFile):
@@ -534,6 +536,7 @@ class CustomGridSource(MyFrame1):
                 # self.parent.UpdatedData(event,self.indexFile,self.Path)
 
         else:
+            self.parent.Mark_Pending_Refresh('source')
             clear_grid(self.myGridSource, 27)
             self.matrixGen[self.indexFile] = loadMachineTab(self.Path)
             for row1 in range(len(self.matrixGen[self.indexFile])):
@@ -545,6 +548,8 @@ class CustomGridSource(MyFrame1):
 
     # Bật/Tắt nguồn
     def Turn_On_Off( self, event ):
+        if self.parent.flagUpdate == 0:
+            self.parent.Mark_Pending_Refresh('source')
         if int(machineStatus) == 1:
             if self.parent.flagSynch == 1:
 
@@ -595,6 +600,8 @@ class CustomGridSource(MyFrame1):
 
     # Xóa nguồn
     def Delete(self, event):
+        if self.parent.flagUpdate == 0:
+            self.parent.Mark_Pending_Refresh('source')
         wx.MessageBox("Delete machine number {a}, id: {b}".format(a=busNum,b=busID))
         if self.parent.flagSynch == 1:
             for i,path in enumerate(self.PathFile):
@@ -702,6 +709,8 @@ class CustomGridSource(MyFrame1):
         return [XTransientArr,XSynchronousArr]
     
     def applyChangeSource(self,event):
+        if self.parent.flagUpdate == 0:
+            self.parent.Mark_Pending_Refresh('source')
         sourceType = ["NGUON_BAC_TD","NGUON_BAC_NT","NGUONBAC_PV","NGUON_BAC_W","BTRUNBO_1931","NGUON_TRG_TD","NGUON_TRG_NT","NGUON_TRG_NK","NGUON_TRG_HN","NGUONTRG_PV","NGUONTRG_W","NGUONTRG_SK","TNGUYEN_1931","NGUON_NAM_TD","NGUON_NAM_NT","NGUON_NAM_NK","NGUON_NAM_HN","NGUONNAM_PV","NGUONNAM_W","NGUONNAM_SK","NGUONNAM_LNG","TANAMBO_1931","NITHUAN_1931","DMT_1632","DMT_NOI_1870"]
         newRatio = []
         for i in range(len(sourceType)):

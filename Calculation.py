@@ -990,7 +990,6 @@ class Calculation(MyFrame1):
         content.Value = ''
         
         if PATHFILE != '':
-            wx.MessageBox("Calculate Power Flow!")
             for savfile in PATHFILE:
                 with open('output', 'w') as f, silence(f):
                     psspy.case(savfile)
@@ -1022,6 +1021,38 @@ class Calculation(MyFrame1):
             if line != '\n':
                 content.Value = content.Value + line.encode('utf-8') # loi 'utf8' codec can't decode byte 0xd0 in position 8: invalid continuation byte
                 # la do trong file sav co ten nut de tieng viet --> chinh lai file sav
+
+    # Run exactly one flat start, one FDNS and one FNSL for the current case.
+    @profiled('psse.power_flow_once')
+    def Power_Flow_Once_Cal_Fcn(self, event, path):
+        content = self.parent.terminalText
+        content.Value = ''
+        if path == '':
+            wx.MessageBox("Please open an existing case first!")
+            return False
+
+        with open('output', 'w') as f, silence(f):
+            psspy.case(path)
+            psspy.flat_2([0,0,0,0,0,0,0,0], [0.0,0.0])
+            psspy.fdns()
+            psspy.fnsl()
+
+        if self.parent.macroFile != '':
+            f = open(self.parent.macroFile, 'a')
+            f.writelines("psspy.flat_2([0,0,0,0,0,0,0,0],[0.0,0.0])\n")
+            f.writelines("psspy.fdns()\n")
+            f.writelines("psspy.fnsl()\n")
+            f.close()
+
+        r = open('output', 'r')
+        lines = r.readlines()
+        r.close()
+        for line in lines:
+            reload(sys)
+            sys.setdefaultencoding('utf-8')
+            if line != '\n':
+                content.Value = content.Value + line.encode('utf-8')
+        return True
 
     # tính ổn định động
     def Dynamic_Stability_Cal_Fcn( self, event ):

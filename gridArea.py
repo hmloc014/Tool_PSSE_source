@@ -219,6 +219,9 @@ class CustomGridArea(MyFrame1):
 
     # Thay đổi P source/P load trong bảng area
     def changePSourceLoad(self,event):
+        if self.parent.flagUpdate == 0:
+            self.parent.Mark_Pending_Refresh('source')
+            self.parent.Mark_Pending_Refresh('load')
 
         dialogChangeAreaLoad = Scale_Area(self.parent)
         dialogChangeAreaLoad.mygridArea  = self.myGridArea

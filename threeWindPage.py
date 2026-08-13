@@ -515,6 +515,8 @@ class CustomGrid3Wind(MyFrame1):
     @profiled('refresh.transformer_3wind')
     @batched_grid_update('myGrid3Wind', 'parent.gridFile')
     def Update3WindPage(self,event,flagChange):
+        if self.parent.flagUpdate == 0 and self.parent.flagPaste == 0:
+            self.parent.Mark_Pending_Refresh('3wind')
         if self.parent.flagUpdate == 1:
             if self.parent.flagSynch == 1:
                 for i,path in enumerate(self.PathFile):

@@ -269,6 +269,8 @@ class CustomGridShunt(MyFrame1):
                          'parent.gridSearch', 'parent.gridShunt',
                          'parent.m_grid6')
     def UpdateShuntPage(self,event):
+        if self.parent.flagUpdate == 0 and self.parent.flagPaste == 0:
+            self.parent.Mark_Pending_Refresh('shunt')
         if self.parent.flagUpdate == 1:
             if self.parent.flagSynch == 1:
                 for i,path in enumerate(self.PathFile):

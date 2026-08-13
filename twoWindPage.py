@@ -360,6 +360,8 @@ class CustomGrid2Wind(MyFrame1):
     @profiled('refresh.transformer_2wind')
     @batched_grid_update('myGrid2Wind', 'grid2wind', 'parent.gridFile')
     def Update2WindPage(self,event,flagChange):
+        if self.parent.flagUpdate == 0 and self.parent.flagPaste == 0:
+            self.parent.Mark_Pending_Refresh('2wind')
         # cập nhật từng bước
         if self.parent.flagUpdate == 1:
             # cập nhật đồng bộ cho các file

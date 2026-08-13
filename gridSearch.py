@@ -64,6 +64,8 @@ class CustomGridSearch(MyFrame1):
 
     # chức năng thực hiện khi có sự chuyển đổi ô làm việc trong bảng thông tin bus
     def on_cell_change_grid_search( self, event ):
+        if self.parent.flagUpdate == 0 and self.parent.flagPaste == 0:
+            self.parent.Mark_Pending_Refresh('bus')
 
         if (row == len(self.matrixBus[0]) and str(self.myGridBus.GetCellValue(row,0)) in self.matrixBus[self.indexFile][:,0]):
             wx.MessageBox("This number is existing in onGridCellChange3!")
@@ -198,6 +200,7 @@ class CustomGridSearch(MyFrame1):
                 self.onUpdateBus(event,self.indexFile,self.Path)
         else:
             # print('-------------con day la cap nhat sau nhe!!!')
+            self.parent.Mark_Pending_Refresh('bus')
             dt=np.dtype("<S16")
             a = np.array([],dt)
             self.matrixBus[self.indexFile] = loadBusTab(self.Path)
@@ -224,12 +227,17 @@ class CustomGridSearch(MyFrame1):
     @batched_grid_update('myGridFile', 'myGridArea', 'myGridZone',
                          'myGridBus', 'myGridSource', 'myGridLoad',
                          'myGridShunt', 'myGrid2Wind', 'myGrid3Wind')
-    def UpdatedData(self,event,indexfile,path): # only for reload page
+    def UpdatedData(self,event,indexfile,path,run_power_flow=True,
+                    refresh_targets=None): # only for reload page
         self.indexFile = indexfile
         self.Path = path
-        if self.parent.flagUpdate == 1 or self.parent.flagReload == 1:
+        if (self.parent.flagUpdate == 1 or self.parent.flagReload == 1 or
+                not run_power_flow):
 
-            self.parent.Power_Flow_Selected_Cal_Fcn_ALL(event,path)
+            if run_power_flow:
+                self.parent.Power_Flow_Selected_Cal_Fcn_ALL(event,path)
+            refresh_all = refresh_targets is None
+            targets = set(refresh_targets or [])
             fileInfo = loadFileInfo(self.Path)
             fileInfo1 = [fileInfo[0][0],fileInfo[1][0],fileInfo[2][0],fileInfo[3][0],fileInfo[4][0],fileInfo[5][0]]
             fileInfoArray = np.array(fileInfo1)
@@ -238,76 +246,89 @@ class CustomGridSearch(MyFrame1):
             for row in range(len(fileInfoTranspose)):
                 for column in range(len(fileInfoTranspose[0])):
                     self.myGridFile.SetCellValue(row,column,str(fileInfoTranspose[row][column]))
-            clear_grid(self.myGridArea)
-            clear_grid(self.myGridZone)
-            clear_grid(self.myGridBus)
-            clear_grid(self.myGridSource, 27)
-            clear_grid(self.gridLoad, 12)
-            clear_grid(self.gridShunt)
-            clear_grid(self.myGrid2Wind)
-            clear_grid(self.myGrid3Wind)
+            refresh_area_zone = (refresh_all or
+                                 len(targets.intersection(
+                                     set(['source', 'load', 'shunt']))) > 0)
+            if refresh_area_zone:
+                clear_grid(self.myGridArea)
+                clear_grid(self.myGridZone)
 
-            self.matrixArea[self.indexFile] = loadAreaInfo(self.Path)
-            for row1 in range(len(self.matrixArea[self.indexFile])):
-                for column1 in range(len(self.matrixArea[self.indexFile][0])):
-                    self.myGridArea.SetCellValue(row1,column1,str(self.matrixArea[self.indexFile][row1][column1]))
+                self.matrixArea[self.indexFile] = loadAreaInfo(self.Path)
+                for row1 in range(len(self.matrixArea[self.indexFile])):
+                    for column1 in range(len(self.matrixArea[self.indexFile][0])):
+                        self.myGridArea.SetCellValue(row1,column1,str(self.matrixArea[self.indexFile][row1][column1]))
 
-            self.matrixZone[self.indexFile] = loadZoneInfo(self.Path)
-            for row2 in range(len(self.matrixZone[self.indexFile])):
-                for column2 in range(len(self.matrixZone[self.indexFile][0])):
-                    self.myGridZone.SetCellValue(row2,column2,str(self.matrixZone[self.indexFile][row2][column2])) 
+                self.matrixZone[self.indexFile] = loadZoneInfo(self.Path)
+                for row2 in range(len(self.matrixZone[self.indexFile])):
+                    for column2 in range(len(self.matrixZone[self.indexFile][0])):
+                        self.myGridZone.SetCellValue(row2,column2,str(self.matrixZone[self.indexFile][row2][column2]))
 
-            self.matrixBus[self.indexFile] = loadBusTab(self.Path)
-            for row1 in range(len(self.matrixBus[self.indexFile])):
-                for column1 in range(len(self.matrixBus[self.indexFile][0])):
-                    self.myGridBus.SetCellValue(row1,column1,str(self.matrixBus[self.indexFile][row1][column1]))
+            if refresh_all or 'bus' in targets:
+                clear_grid(self.myGridBus)
+                self.matrixBus[self.indexFile] = loadBusTab(self.Path)
+                for row1 in range(len(self.matrixBus[self.indexFile])):
+                    for column1 in range(len(self.matrixBus[self.indexFile][0])):
+                        self.myGridBus.SetCellValue(row1,column1,str(self.matrixBus[self.indexFile][row1][column1]))
 
-            self.matrixSource[self.indexFile] = loadMachineTab(self.Path)
-            for row1 in range(len(self.matrixSource[self.indexFile])):
-                for column1 in range(len(self.matrixSource[self.indexFile][0])):
-                    self.myGridSource.SetCellValue(row1,column1,str(self.matrixSource[self.indexFile][row1][column1]))
-                coff = self.myGridSource.GetCellValue(row1,13)
-                self.myGridSource.SetCellValue(row1,26,str(float(coff)/100))
+            if refresh_all or 'source' in targets:
+                clear_grid(self.myGridSource, 27)
+                self.matrixSource[self.indexFile] = loadMachineTab(self.Path)
+                for row1 in range(len(self.matrixSource[self.indexFile])):
+                    for column1 in range(len(self.matrixSource[self.indexFile][0])):
+                        self.myGridSource.SetCellValue(row1,column1,str(self.matrixSource[self.indexFile][row1][column1]))
+                    coff = self.myGridSource.GetCellValue(row1,13)
+                    self.myGridSource.SetCellValue(row1,26,str(float(coff)/100))
 
-            self.matrixLoad[self.indexFile] = loadLoadTab(self.Path)
-            for row1 in range(len(self.matrixLoad[self.indexFile])):
-                for column1 in range(len(self.matrixLoad[self.indexFile][0])):
-                    self.myGridLoad.SetCellValue(row1,column1,str(self.matrixLoad[self.indexFile][row1][column1]))
+            if refresh_all or 'load' in targets:
+                clear_grid(self.myGridLoad, 12)
+                self.matrixLoad[self.indexFile] = loadLoadTab(self.Path)
+                for row1 in range(len(self.matrixLoad[self.indexFile])):
+                    for column1 in range(len(self.matrixLoad[self.indexFile][0])):
+                        self.myGridLoad.SetCellValue(row1,column1,str(self.matrixLoad[self.indexFile][row1][column1]))
 
-            self.matrixShunt[self.indexFile] = loadShuntTab(self.Path)
-            for row1 in range(len(self.matrixShunt[self.indexFile])):
-                for column1 in range(len(self.matrixShunt[self.indexFile][0])):
-                    self.myGridShunt.SetCellValue(row1,column1,str(self.matrixShunt[self.indexFile][row1][column1]))
+            if refresh_all or 'shunt' in targets:
+                clear_grid(self.myGridShunt)
+                self.matrixShunt[self.indexFile] = loadShuntTab(self.Path)
+                for row1 in range(len(self.matrixShunt[self.indexFile])):
+                    for column1 in range(len(self.matrixShunt[self.indexFile][0])):
+                        self.myGridShunt.SetCellValue(row1,column1,str(self.matrixShunt[self.indexFile][row1][column1]))
 
-            self.matrix2Wind[self.indexFile] = load2windTab(self.Path)
-            for row1 in range(len(self.matrix2Wind[self.indexFile])):
-                for column1 in range(len(self.matrix2Wind[self.indexFile][0])):
-                    self.myGrid2Wind.SetCellValue(row1,column1,str(self.matrix2Wind[self.indexFile][row1][column1]))
+            if refresh_all or '2wind' in targets:
+                clear_grid(self.myGrid2Wind)
+                self.matrix2Wind[self.indexFile] = load2windTab(self.Path)
+                for row1 in range(len(self.matrix2Wind[self.indexFile])):
+                    for column1 in range(len(self.matrix2Wind[self.indexFile][0])):
+                        self.myGrid2Wind.SetCellValue(row1,column1,str(self.matrix2Wind[self.indexFile][row1][column1]))
 
-            self.matrix3Wind[self.indexFile] = load3windTab(self.Path)
-            for row1 in range(len(self.matrix3Wind[self.indexFile])):
-                for column1 in range(len(self.matrix3Wind[self.indexFile][0])):
-                    self.myGrid3Wind.SetCellValue(row1,column1,str(self.matrix3Wind[self.indexFile][row1][column1]))
+            if refresh_all or '3wind' in targets:
+                clear_grid(self.myGrid3Wind)
+                self.matrix3Wind[self.indexFile] = load3windTab(self.Path)
+                for row1 in range(len(self.matrix3Wind[self.indexFile])):
+                    for column1 in range(len(self.matrix3Wind[self.indexFile][0])):
+                        self.myGrid3Wind.SetCellValue(row1,column1,str(self.matrix3Wind[self.indexFile][row1][column1]))
                 
-            sourceLoad = loadSourceLoadInfo(self.Path)
-            [totalPgen,totalLoad, totalPgenNorth,totalLoadNorth,totalPgenCentral,totalLoadCentral,totalPgenSouth,totalLoadSouth,ratio] = sourceLoad
-            for i in range(len(ratio)):
-                self.parent.m_grid6.SetCellValue(i,29, str((Decimal(ratio[i]).quantize(TWOPLACE))))
+            if refresh_area_zone:
+                sourceLoad = loadSourceLoadInfo(self.Path)
+                [totalPgen,totalLoad, totalPgenNorth,totalLoadNorth,totalPgenCentral,totalLoadCentral,totalPgenSouth,totalLoadSouth,ratio] = sourceLoad
+                for i in range(len(ratio)):
+                    self.parent.m_grid6.SetCellValue(i,29, str((Decimal(ratio[i]).quantize(TWOPLACE))))
 
-            self.parent.totalSource.SetValue(str(Decimal(totalPgen).quantize(TWOPLACE)))
-            self.parent.totalLoad.SetValue(str(Decimal(totalLoad).quantize(TWOPLACE)))
-            self.parent.sourceNorth.SetValue(str(Decimal(totalPgenNorth).quantize(TWOPLACE)))
-            self.parent.loadNorth.SetValue(str(Decimal(totalLoadNorth).quantize(TWOPLACE)))
-            self.parent.sourceCentral.SetValue(str(Decimal(totalPgenCentral).quantize(TWOPLACE)))
-            self.parent.loadCentral.SetValue(str(Decimal(totalLoadCentral).quantize(TWOPLACE)))
-            self.parent.sourceSouth.SetValue(str(Decimal(totalPgenSouth).quantize(TWOPLACE)))
-            self.parent.loadSouth.SetValue(str(Decimal(totalLoadSouth).quantize(TWOPLACE)))
+                self.parent.totalSource.SetValue(str(Decimal(totalPgen).quantize(TWOPLACE)))
+                self.parent.totalLoad.SetValue(str(Decimal(totalLoad).quantize(TWOPLACE)))
+                self.parent.sourceNorth.SetValue(str(Decimal(totalPgenNorth).quantize(TWOPLACE)))
+                self.parent.loadNorth.SetValue(str(Decimal(totalLoadNorth).quantize(TWOPLACE)))
+                self.parent.sourceCentral.SetValue(str(Decimal(totalPgenCentral).quantize(TWOPLACE)))
+                self.parent.loadCentral.SetValue(str(Decimal(totalLoadCentral).quantize(TWOPLACE)))
+                self.parent.sourceSouth.SetValue(str(Decimal(totalPgenSouth).quantize(TWOPLACE)))
+                self.parent.loadSouth.SetValue(str(Decimal(totalLoadSouth).quantize(TWOPLACE)))
 
     def addNew(self, e):
         self.parent.Add_New_Bus(e)
 
     # Bật/tắt bus
     def Turn_On_Off( self, event ):
+        if self.parent.flagUpdate == 0:
+            self.parent.Mark_Pending_Refresh('bus')
         busCode = self.myGridBus.GetCellValue(row,8)
         if int(busCode) == 4:
             if self.parent.flagSynch == 1:
@@ -375,6 +396,8 @@ class CustomGridSearch(MyFrame1):
 
     # Xóa bus
     def Delete_Bus_Fcn( self, event ):
+        if self.parent.flagUpdate == 0:
+            self.parent.Mark_Pending_Refresh('bus')
         if self.parent.flagSynch == 1:
             for i,path in enumerate(self.PathFile):
                 psspy.case(path)

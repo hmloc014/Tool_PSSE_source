@@ -712,6 +712,7 @@ class ConnectDatabase(MyFrame1):
         elif self.parent.flagUpdate == 1:
             self.UpdatedBranchData(event)
         elif self.parent.flagPaste == 0:
+            self.parent.Mark_Pending_Refresh('connections')
             self.parent.busNumberEnter_Fcn(event)
             self.loadBusNumberEnter(busNumber)
 
@@ -742,6 +743,8 @@ class ConnectDatabase(MyFrame1):
         elif self.parent.flagUpdate == 1:
             self.UpdatedBranchData(event)
         elif self.parent.flagPaste == 0:
+            self.parent.Mark_Pending_Refresh('connections')
+            self.parent.Mark_Pending_Refresh('2wind')
             self.parent.busNumberEnter_Fcn(event)
             self.loadBusNumberEnter(busNumber)
 
@@ -802,6 +805,8 @@ class ConnectDatabase(MyFrame1):
         elif self.parent.flagUpdate == 1:
             self.UpdatedBranchData(event)
         elif self.parent.flagPaste == 0:
+            self.parent.Mark_Pending_Refresh('connections')
+            self.parent.Mark_Pending_Refresh('3wind')
             self.parent.busNumberEnter_Fcn(event)
             self.loadBusNumberEnter(busNumber)
        
@@ -814,6 +819,13 @@ class ConnectDatabase(MyFrame1):
             self.Turn_On_Off_2Wind(status,toBus,branchID,nameElement)
         elif '3-Wind' in typeElement:
             self.Turn_On_Off_3Wind(row,status,typeElement,toBus,branchID,nameElement)
+
+        if self.parent.flagUpdate == 0:
+            self.parent.Mark_Pending_Refresh('connections')
+            if typeElement == '2-Wind':
+                self.parent.Mark_Pending_Refresh('2wind')
+            elif '3-Wind' in typeElement:
+                self.parent.Mark_Pending_Refresh('3wind')
         
         if self.parent.flagUpdate == 1:
             self.UpdatedBranchData(event)
@@ -1689,6 +1701,13 @@ class ConnectDatabase(MyFrame1):
             self.DeleteBranch(int(fromBus),int(toBus),branchID)
         else:
             self.Delete3Wind(int(fromBus),int(toBus),branchID)
+
+        if self.parent.flagUpdate == 0:
+            self.parent.Mark_Pending_Refresh('connections')
+            if typeElement == '2-Wind':
+                self.parent.Mark_Pending_Refresh('2wind')
+            elif '3-Wind' in typeElement:
+                self.parent.Mark_Pending_Refresh('3wind')
         
         if self.parent.flagUpdate == 1:
             self.UpdatedBranchData(event)
@@ -1784,6 +1803,14 @@ class ConnectDatabase(MyFrame1):
 
     # chức năng thực hiện khi có sự chuyển đổi ô làm việc trong bảng đường dây+MBA
     def on_cell_change_grid_bus( self, event ):
+
+        if self.parent.flagUpdate == 0 and self.parent.flagPaste == 0:
+            self.parent.Mark_Pending_Refresh('connections')
+            element_types = [str(typeElement), str(typeElementUpper)]
+            if '2-Wind' in element_types:
+                self.parent.Mark_Pending_Refresh('2wind')
+            if any('3-Wind' in value for value in element_types):
+                self.parent.Mark_Pending_Refresh('3wind')
 
         cellNewVal = self.parent.gridBusInfo.GetCellValue(row,col)
 

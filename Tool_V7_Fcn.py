@@ -103,7 +103,7 @@ class CustomMyframe1(MyFrame1):
         self.Path = ''
         self.PathFile = [[]]
         self.parent = parent
-        self.flagUpdate = 1
+        self.flagUpdate = 0
         self.flagReload = 0
         self.flagSynch = 0
         self.flagChangePPercent = 0
@@ -125,6 +125,7 @@ class CustomMyframe1(MyFrame1):
         self.colArea = 0
         self.rowZone = 0
         self.colZone = 0
+        self.pendingRefreshTargets = {}
 
         self.gridAreaLink = CustomGridArea(self)
         self.gridZoneLink = CustomGridZone(self)
@@ -1562,7 +1563,8 @@ class CustomMyframe1(MyFrame1):
         self.busNumberEnter_Fcn(event)
 
     # chức năng cập nhật toàn bộ bảng dữ liệu
-    def UpdatedData(self,event,indexfile,path):
+    def UpdatedData(self,event,indexfile,path,run_power_flow=True,
+                    refresh_targets=None):
         self.gridSearchLink.Path = path
         self.gridSearchLink.PathFile = PATHFILE
         self.gridSearchLink.indexFile = indexfile
@@ -1585,7 +1587,8 @@ class CustomMyframe1(MyFrame1):
         self.gridSearchLink.myGrid3Wind = self.grid3wind
         self.gridSearchLink.fileInfoTranspose = fileInfoTranspose
         self.gridSearchLink.flagSynch = self.flagSynch
-        self.gridSearchLink.UpdatedData(event,indexfile,path)
+        self.gridSearchLink.UpdatedData(event,indexfile,path,run_power_flow,
+                                        refresh_targets)
 
     # chức năng thực hiện khi righ click tại ô làm việc trong bảng đường dây + MBA
     def on_cell_right_click_grid_search( self, event ):
@@ -2409,6 +2412,48 @@ class CustomMyframe1(MyFrame1):
     def onUpdatedLater( self, event ):
         self.flagUpdate = 0
         event.Skip()
+
+    def Mark_Pending_Refresh(self, target):
+        """Remember which dashboard data needs reloading after a deferred edit."""
+        global PATH, PATHFILE
+        if self.flagUpdate == 0 and PATH != '':
+            paths = PATHFILE if self.flagSynch == 1 else [PATH]
+            for path in paths:
+                self.pendingRefreshTargets.setdefault(path, set()).add(target)
+
+    # Run one power-flow sequence, then refresh changed grids in deferred mode.
+    def Power_Flow_Refresh_Fcn(self, event):
+        global PATH, indexFile
+        if PATH == '':
+            wx.MessageBox("Please open an existing case first!")
+            return
+
+        self.Calculation_Link.Path = PATH
+        self.Calculation_Link.PathFile = self.PathFile
+        if self.Calculation_Link.Power_Flow_Once_Cal_Fcn(event, PATH):
+            refresh_targets = set(self.pendingRefreshTargets.get(PATH, set()))
+            deferred_refresh = (self.flagUpdate == 0 and
+                                len(refresh_targets) > 0)
+            if deferred_refresh:
+                self.UpdatedData(event, indexFile, PATH, False,
+                                 refresh_targets)
+                self.pendingRefreshTargets.pop(PATH, None)
+                self.onUpdateFcn(event)
+                if 'connections' in refresh_targets:
+                    previous_on_update = self.onUpdate
+                    self.onUpdate = 1
+                    try:
+                        self.busNumberEnter_Fcn(event)
+                    finally:
+                        self.onUpdate = previous_on_update
+            else:
+                self.UpdatedData(event, indexFile, PATH, False)
+                previous_on_update = self.onUpdate
+                self.onUpdate = 1
+                try:
+                    self.busNumberEnter_Fcn(event)
+                finally:
+                    self.onUpdate = previous_on_update
 
     # chức năng cập nhật đồng thời nhiều file
     def onUpdateSynch(self,event):

@@ -303,6 +303,8 @@ class CustomGridLoad(MyFrame1):
                          'parent.gridArea', 'parent.gridZone',
                          'parent.gridLoad', 'parent.m_grid6')
     def UpdatedLoadPage(self, event):
+        if self.parent.flagUpdate == 0 and self.parent.flagPaste == 0:
+            self.parent.Mark_Pending_Refresh('load')
         if self.parent.flagUpdate == 1:
             if self.parent.flagSynch == 1:
                 for i,path in enumerate(self.PathFile):
