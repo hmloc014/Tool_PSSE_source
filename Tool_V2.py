@@ -621,13 +621,13 @@ class MyFrame1 ( wx.Frame ):
 		styleFunctionButton( self.m_tool1, u"images/c.jpg", u"Run automatic contingencies" )
 		bSizer331.Add( self.m_tool1, 0, wx.LEFT|wx.RIGHT|wx.BOTTOM|wx.EXPAND, 8 )
 
+		self.m_toolN1 = wx.Button( self.gridPage, wx.ID_ANY, u"Create N-1 SAV Files", wx.DefaultPosition, functionButtonSize, wx.BU_LEFT )
+		styleFunctionButton( self.m_toolN1, u"images/c.jpg", u"Create one-outage SAV files from selected ACC contingencies" )
+		bSizer331.Add( self.m_toolN1, 0, wx.LEFT|wx.RIGHT|wx.BOTTOM|wx.EXPAND, 8 )
+
 		self.m_tool2 = wx.Button( self.gridPage, wx.ID_ANY, u"Export Multiple Cad", wx.DefaultPosition, functionButtonSize, wx.BU_LEFT )
 		styleFunctionButton( self.m_tool2, u"images/cad.jpg", u"Export multiple CAD files" )
 		bSizer331.Add( self.m_tool2, 0, wx.LEFT|wx.RIGHT|wx.BOTTOM|wx.EXPAND, 8 )
-
-		self.m_tool3 = wx.Button( self.gridPage, wx.ID_ANY, u"Short Circuit All File", wx.DefaultPosition, functionButtonSize, wx.BU_LEFT )
-		styleFunctionButton( self.m_tool3, u"images/short-circuit2-1.jpg", u"Calculate short circuit for all files" )
-		bSizer331.Add( self.m_tool3, 0, wx.LEFT|wx.RIGHT|wx.BOTTOM|wx.EXPAND, 8 )
 
 		self.m_tool4 = wx.ToggleButton( self.gridPage, wx.ID_ANY, u"Record", wx.DefaultPosition, functionButtonSize, wx.BU_LEFT )
 		styleFunctionButton( self.m_tool4, u"images/record.png", u"Record PSSE commands" )
@@ -1892,8 +1892,8 @@ class MyFrame1 ( wx.Frame ):
 		self.SetRestriction.Bind( wx.EVT_CHECKBOX, self.onSetRestriction )
 		self.m_tool0.Bind( wx.EVT_BUTTON, self.Power_Flow_Refresh_Fcn )
 		self.m_tool1.Bind( wx.EVT_BUTTON, self.Auto_Contingency )
+		self.m_toolN1.Bind( wx.EVT_BUTTON, self.Create_N1_SAV_Files )
 		self.m_tool2.Bind( wx.EVT_BUTTON, self.Export_Multiple_Cad )
-		self.m_tool3.Bind( wx.EVT_BUTTON, self.Short_Circuit_All_File )
 		self.m_tool4.Bind( wx.EVT_TOGGLEBUTTON, self.Record_Automation )
 		self.grid2wind.Bind( wx.grid.EVT_GRID_CELL_CHANGE, self.on_cell_change_grid_2wind )
 		self.grid2wind.Bind( wx.grid.EVT_GRID_CELL_RIGHT_CLICK, self.on_cell_right_click_grid_2wind )
@@ -2280,6 +2280,9 @@ class MyFrame1 ( wx.Frame ):
 		self.m_splitter21.Unbind( wx.EVT_IDLE )
 
 	def Auto_Contingency( self, event ):
+		event.Skip()
+
+	def Create_N1_SAV_Files( self, event ):
 		event.Skip()
 	
 	def Export_Multiple_Cad( self, event ):

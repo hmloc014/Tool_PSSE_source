@@ -80,7 +80,6 @@ def createAutoFile(dirname = ''):
         f.write('psspy.flat_2([0,0,0,0,0,0,0,0],[0.0,0.0])\n')
         f.write('psspy.fdns()\n')
         f.write('psspy.fnsl()\n')
-        f.write('psspy.fnsl()\n')
         f.write('psspy.accc_with_dsp( 0.5,[2,0,0,1,1,1,0,0],SUBSYSTEM,DFXFILE,ACCFILE,"","")\n')
     f.close
 
@@ -126,7 +125,6 @@ def createAutoStaticFile(dirname = '',sinkSource=[]):
         f.write('psspy.case(r"""{}""") \n'.format(savFilePath))
         f.write('psspy.flat_2([0,0,0,0,0,0,0,0],[0.0,0.0])\n')
         f.write('psspy.fdns()\n')
-        f.write('psspy.fnsl()\n')
         f.write('psspy.fnsl()\n')
         f.write('psspy.dfax([1,1], SUBFILE, MONFILE, CONFILE, DFXFILE)\n')
         f.write('psspy.pv_engine_6([0,0,0,1,1,0,0,1,0,0,1,1,4,0,0,0,1,0,0,0,0,0,1,1,0],[ 0.5, 100.0, 100.0, 10000., 0.8, 100.0,0.0,0.0],[SOURCE,SINK,SINKDEFAULT],DFXFILE,"","","",PVFILE,"")\n')
@@ -746,7 +744,6 @@ def createLineTabFile(dirName='',fromBus=0,toBus=0,id2='',voltage=0.0,segments=[
         f.write('psspy.flat_2([0,0,0,0,0,0,0,0],[0.0,0.0])\n')
         f.write('psspy.fdns()\n')
         f.write('psspy.fnsl()\n')
-        f.write('psspy.fnsl()\n')
     # chia 16 đoạn
     elif len(segments) == 17:
         midBus0 = segments[0] # 1
@@ -788,7 +785,6 @@ def createLineTabFile(dirName='',fromBus=0,toBus=0,id2='',voltage=0.0,segments=[
         f.write('psspy.ltap({fromBus},{toBus},r"""1""", 0.9999,{mid},r"""{id2}""",{voltage})\n'.format(fromBus=midBus15,toBus=toBus,mid=midBus16,id2=midBus16,voltage=voltage))
         f.write('psspy.flat_2([0,0,0,0,0,0,0,0],[0.0,0.0])\n')
         f.write('psspy.fdns()\n')
-        f.write('psspy.fnsl()\n')
         f.write('psspy.fnsl()\n')
     f.close()
 
@@ -843,7 +839,6 @@ def createLineTabFile3Bus(dirName='',fromBus=0,middle=0,id1='',toBus=0,id2='',vo
         f.write('psspy.ltap({fromBus},{toBus},r"""1""", 0.9999,{mid},r"""{id2}""",{voltage})\n'.format(fromBus=midBus15,toBus=toBus,mid=midBus16,id2=midBus16,voltage=voltage))
         f.write('psspy.flat_2([0,0,0,0,0,0,0,0],[0.0,0.0])\n')
         f.write('psspy.fdns()\n')
-        f.write('psspy.fnsl()\n')
         f.write('psspy.fnsl()\n')
     f.close()
 

@@ -10,14 +10,15 @@ from lineTapDialog import Line_Tab
 from lineTabShuntRector import Line_Tab_Shunt_Reactor
 from chooseBusZoneAreaDialog import Choose_Bus_Zone_Area
 from chooseBusDialog import Choose_Bus
-import glob, os, sys
+import codecs, glob, os, sys
 import pssepath
 import wx
 import wx.xrc
 import pssarrays
 from subprocess import call
 from openpyxl import load_workbook
-from Tool_V7 import MyFrame1
+from Tool_V3 import MyFrame1
+from n1_sav import as_text, apply_outage, resolve_contingency, safe_filename, three_winding_inventory
 import dyntools
 PSSE_LOCATION = r"C:\Program Files\PTI\PSSE33\PSSBIN"
 sys.path.append(PSSE_LOCATION)
@@ -1951,7 +1952,6 @@ class Calculation(MyFrame1):
             f.write('psspy.flat_2([0,0,0,0,0,0,0,0],[0.0,0.0])\n')
             f.write('psspy.fdns()\n')
             f.write('psspy.fnsl()\n')
-            f.write('psspy.fnsl()\n')
             f.close()
             execfile(path)
             os.remove(path)
@@ -1963,15 +1963,186 @@ class Calculation(MyFrame1):
         psspy.flat_2([0,0,0,0,0,0,0,0],[0.0,0.0])
         psspy.fdns()
         psspy.fnsl()
-        psspy.fnsl()
                         
         if self.parent.macroFile != '':
             f = open(self.parent.macroFile,'a')
             f.writelines("psspy.flat_2([0,0,0,0,0,0,0,0],[0.0,0.0])\n")
             f.writelines("psspy.fdns()\n")
             f.writelines("psspy.fnsl()\n")
-            f.writelines("psspy.fnsl()\n")
             f.close()
+
+    def _n1_choose_file(self, title, wildcard):
+        dialog = wx.FileDialog(self.parent, title, wildcard=wildcard,
+                               style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST)
+        try:
+            if dialog.ShowModal() == wx.ID_OK:
+                return dialog.GetPath()
+            return ''
+        finally:
+            dialog.Destroy()
+
+    def _n1_unique_output_path(self, sav_path, network_label):
+        directory = os.path.dirname(sav_path)
+        original_name = os.path.splitext(os.path.basename(sav_path))[0]
+        suffix = safe_filename(network_label)
+        candidate = os.path.join(directory, '%s - %s.sav' % (original_name, suffix))
+        number = 2
+        while os.path.exists(candidate):
+            candidate = os.path.join(directory, '%s - %s (%s).sav' %
+                                     (original_name, suffix, number))
+            number += 1
+        return candidate
+
+    def _n1_show_summary(self, saved_count, not_converged, failed, log_path):
+        lines = ['Saved: %s file(s)' % saved_count,
+                 'Not converged but saved: %s case(s)' % len(not_converged)]
+        if not_converged:
+            lines.extend(['  - %s' % item for item in not_converged])
+        lines.append('Failed or unresolved: %s case(s)' % len(failed))
+        if failed:
+            lines.extend(['  - %s' % item for item in failed])
+        lines.append('Details: %s' % log_path)
+
+        dialog = wx.Dialog(self.parent, wx.ID_ANY, 'Create N-1 SAV Files',
+                           size=(650, 420))
+        panel = wx.Panel(dialog)
+        text = wx.TextCtrl(panel, wx.ID_ANY, '\n'.join(lines),
+                           style=wx.TE_MULTILINE | wx.TE_READONLY | wx.HSCROLL)
+        ok_button = wx.Button(panel, wx.ID_OK, 'OK')
+        sizer = wx.BoxSizer(wx.VERTICAL)
+        sizer.Add(text, 1, wx.ALL | wx.EXPAND, 10)
+        sizer.Add(ok_button, 0, wx.ALL | wx.ALIGN_RIGHT, 10)
+        panel.SetSizer(sizer)
+        dialog.ShowModal()
+        dialog.Destroy()
+
+    def Create_N1_SAV_Files(self, event):
+        sav_path = self._n1_choose_file(
+            'Choose original SAV file', 'PSS/E SAV files (*.sav)|*.sav|All files|*.*')
+        if not sav_path:
+            return
+        acc_path = self._n1_choose_file(
+            'Choose ACC contingency results file', 'PSS/E ACC files (*.acc)|*.acc|All files|*.*')
+        if not acc_path:
+            return
+
+        summary = pssarrays.accc_summary(acc_path)
+        if getattr(summary, 'ierr', 0):
+            wx.MessageBox('Unable to read ACC file:\n%s' % acc_path,
+                          'Create N-1 SAV Files', wx.OK | wx.ICON_ERROR)
+            return
+
+        labels = []
+        for label in getattr(summary, 'colabel', []):
+            text = as_text(label)
+            if text and text.upper() != 'BASE CASE' and text not in labels:
+                labels.append(text)
+        if not labels:
+            wx.MessageBox('No contingency cases were found in the ACC file.',
+                          'Create N-1 SAV Files', wx.OK | wx.ICON_INFORMATION)
+            return
+
+        init_ierr = psspy.psseinit(50000)
+        if init_ierr:
+            wx.MessageBox('Unable to initialize PSS/E for the N-1 calculation (ierr=%s).' % init_ierr,
+                          'Create N-1 SAV Files', wx.OK | wx.ICON_ERROR)
+            return
+
+        case_ierr = psspy.case(sav_path)
+        if case_ierr:
+            wx.MessageBox('Unable to open original SAV file (PSS/E ierr=%s):\n%s' %
+                          (case_ierr, sav_path),
+                          'Create N-1 SAV Files', wx.OK | wx.ICON_ERROR)
+            return
+
+        inventory = three_winding_inventory(psspy)
+        cases = []
+        for label in labels:
+            try:
+                solution = pssarrays.accc_solution(acc_path, label, 'contingency', 0.5, 5.0)
+                description = as_text(getattr(solution, 'codesc', ''))
+                element = resolve_contingency(psspy, label, description, inventory)
+            except Exception as error:
+                description = ''
+                element = {'state': 'unresolved',
+                           'reason': 'Could not read ACC contingency: %s' % as_text(error)}
+            if element.get('state') == 'ready':
+                display = '%s | %s' % (label, element['display_name'])
+            else:
+                display = '%s | UNRESOLVED: %s' % (label, element.get('reason', 'unknown reason'))
+            cases.append({'label': label, 'description': description,
+                          'element': element, 'display': display})
+
+        selector = wx.MultiChoiceDialog(self.parent,
+                                        'Select ACC contingencies. Each selection switches off one element.',
+                                        'Create N-1 SAV Files',
+                                        [case['display'] for case in cases])
+        try:
+            if selector.ShowModal() != wx.ID_OK:
+                return
+            selected_indexes = selector.GetSelections()
+        finally:
+            selector.Destroy()
+        if not selected_indexes:
+            return
+
+        saved_count = 0
+        not_converged = []
+        failed = []
+        log_path = os.path.join(os.path.dirname(sav_path), 'log.txt')
+        log_lines = ['Create N-1 SAV Files', 'Original SAV: %s' % sav_path,
+                     'ACC file: %s' % acc_path]
+        try:
+            for index in selected_indexes:
+                case = cases[index]
+                element = case['element']
+                if element.get('state') != 'ready':
+                    message = '%s | %s' % (case['label'], element.get('reason', 'Unresolved case'))
+                    failed.append(message)
+                    log_lines.append('FAILED OR UNRESOLVED: %s' % message)
+                    continue
+
+                if psspy.case(sav_path):
+                    message = '%s | Could not reopen original SAV.' % case['label']
+                    failed.append(message)
+                    log_lines.append('FAILED: %s' % message)
+                    continue
+                ierr = apply_outage(psspy, element)
+                if ierr:
+                    message = '%s | Could not open %s (ierr=%s).' % (
+                        case['label'], element['display_name'], ierr)
+                    failed.append(message)
+                    log_lines.append('FAILED: %s' % message)
+                    continue
+
+                self.PowerFlow(event)
+                solved_ierr = psspy.solved()
+                output_path = self._n1_unique_output_path(sav_path, case['label'])
+                save_ierr = psspy.save(output_path)
+                if save_ierr:
+                    message = '%s | Could not save %s (ierr=%s).' % (
+                        case['label'], output_path, save_ierr)
+                    failed.append(message)
+                    log_lines.append('FAILED: %s' % message)
+                    continue
+
+                saved_count += 1
+                if solved_ierr:
+                    message = '%s | %s | %s' % (case['label'], element['display_name'], output_path)
+                    not_converged.append(message)
+                    log_lines.append('NOT CONVERGED BUT SAVED: %s' % message)
+                else:
+                    log_lines.append('SAVED: %s | %s | %s' %
+                                     (case['label'], element['display_name'], output_path))
+        finally:
+            psspy.case(sav_path)
+
+        log_file = codecs.open(log_path, 'a', 'utf-8')
+        try:
+            log_file.write('\n'.join(log_lines) + '\n\n')
+        finally:
+            log_file.close()
+        self._n1_show_summary(saved_count, not_converged, failed, log_path)
 
     # tính giới hạn truyền tải liên miền, tương tự tính ổn định tĩnh cho 4 trường hợp và tổng hợp 4
     # trường hợp: giới hạn truyền tải trung - bắc, bắc - trung, trung - nam, nam - trung
