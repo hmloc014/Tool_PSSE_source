@@ -1,7 +1,7 @@
 Để chỉnh code của tool
 	- Cài đặt file 'python-2.7.17' và 'wxPython3.0-win32-3.0.2.0-py27' trong folder package
 
-	- Mở thư mục, chạy file Tool_V7_Fcn.py
+	- Mở thư mục, chạy file Tool_V3_Fcn.py
 
 	* Trong trường hợp bị lỗi "no module 'abc xyz'"
 	-> mở cmd, bấm lệnh "py -2.7 -m pip install abc xyz" để cài thêm các module cần thiết
@@ -12,7 +12,7 @@
 	- Mở cmd, gõ "py -2.7 -m auto_py_to_exe"
 
 
-	- Script Location: trỏ tới vị trí file "Tool_V7_Fcn.py"
+	- Script Location: trỏ tới vị trí file "Tool_V3_Fcn.py"
 	- Chọn One File, Console Based
 	- Chọn Icon nếu muốn
 	- Trong Settings, chọn vị trí thư mục output
@@ -37,7 +37,7 @@ cd ..\flask\
 cd ..\Tool-PSSE-2
 
 # To run application
-python .\Tool_V7_Fcn.py)
+python .\Tool_V3_Fcn.py)
 
 
 

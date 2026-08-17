@@ -3,7 +3,7 @@
 block_cipher = None
 
 
-a = Analysis(['Tool_V7_fcn.py'],
+a = Analysis(['Tool_V3_Fcn.py'],
              pathex=['D:\\hang\\3. Programs\\SourceCode\\Tool-PSSE-2'],
              binaries=[],
              datas=[],
@@ -23,7 +23,7 @@ exe = EXE(pyz,
           a.zipfiles,
           a.datas,
           [],
-          name='Tool_V7_fcn',
+          name='Tool_V3_fcn',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,

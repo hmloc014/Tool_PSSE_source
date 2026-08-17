@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import pyodbc
 import time
-from Tool_V7 import MyFrame1
+from Tool_V3 import MyFrame1
 import glob, os, sys
 import pssepath
 import wx

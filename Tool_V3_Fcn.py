@@ -4,7 +4,7 @@ import time
 # reload(sys)
 # sys.setdefaultencoding('utf-8')
 import pssepath
-from Tool_V7 import MyFrame1
+from Tool_V3 import MyFrame1
 import wx
 import wx.xrc
 PSSE_LOCATION = r"C:\Program Files\PTI\PSSE33\PSSBIN"
