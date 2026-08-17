@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*- 
 import wx
 import wx.grid
-from Tool_V3 import MyFrame1
+from Tool_V2 import MyFrame1
 from wx.py.shell import Shell
 
 class CopyPaste(MyFrame1):

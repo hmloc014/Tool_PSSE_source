@@ -17,7 +17,7 @@ import wx.xrc
 import pssarrays
 from subprocess import call
 from openpyxl import load_workbook
-from Tool_V3 import MyFrame1
+from Tool_V2 import MyFrame1
 from n1_sav import as_text, apply_outage, resolve_contingency, safe_filename, three_winding_inventory
 import dyntools
 PSSE_LOCATION = r"C:\Program Files\PTI\PSSE33\PSSBIN"
