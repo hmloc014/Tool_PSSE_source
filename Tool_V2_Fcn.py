@@ -4,7 +4,7 @@ import time
 # reload(sys)
 # sys.setdefaultencoding('utf-8')
 import pssepath
-from Tool_V7 import MyFrame1
+from Tool_V3 import MyFrame1
 import wx
 import wx.xrc
 PSSE_LOCATION = r"C:\Program Files\PTI\PSSE33\PSSBIN"
@@ -2559,6 +2559,10 @@ class CustomMyframe1(MyFrame1):
     # Button tính nhanh có chức năng tính contingency cho tất cả các file trong thư mục được chọn
     def Auto_Contingency( self, event ):
         self.Auto_Contigencies_Fcn(event )
+        event.Skip()
+
+    def Create_N1_SAV_Files(self, event):
+        self.Calculation_Link.Create_N1_SAV_Files(event)
         event.Skip()
     
     # Button tính nhanh có chức năng xuất cad cho tất cả các file trong thư mục được chọn
