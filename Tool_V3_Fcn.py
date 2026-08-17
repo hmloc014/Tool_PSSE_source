@@ -2560,6 +2560,17 @@ class CustomMyframe1(MyFrame1):
     def Auto_Contingency( self, event ):
         self.Auto_Contigencies_Fcn(event )
         event.Skip()
+
+    def Create_N1_SAV_Files(self, event):
+        try:
+            self.Calculation_Link.Create_N1_SAV_Files(event)
+        except Exception as error:
+            wx.MessageBox(
+                u'Create N-1 SAV Files could not start:\n{0}'.format(error),
+                u'Create N-1 SAV Files', wx.OK | wx.ICON_ERROR, self)
+        finally:
+            if event is not None:
+                event.Skip()
     
     # Button tính nhanh có chức năng xuất cad cho tất cả các file trong thư mục được chọn
     def Export_Multiple_Cad( self, event ):

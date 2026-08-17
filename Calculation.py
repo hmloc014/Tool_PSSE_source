@@ -10,7 +10,8 @@ from lineTapDialog import Line_Tab
 from lineTabShuntRector import Line_Tab_Shunt_Reactor
 from chooseBusZoneAreaDialog import Choose_Bus_Zone_Area
 from chooseBusDialog import Choose_Bus
-import glob, os, sys
+import datetime
+import glob, io, os, sys
 import pssepath
 import wx
 import wx.xrc
@@ -30,6 +31,10 @@ from docx.enum.section import WD_ORIENT
 from docx.shared import Pt
 import pandas as pd
 from ui_performance import profiled
+from n1_sav import (apply_outage, as_text, available_capacity_contingencies,
+                    resolve_contingency, safe_filename,
+                    three_winding_inventory)
+from n1_dialog import N1ContingencySelectionDialog
 
 class Calculation(MyFrame1):
     def __init__ (self,parent):
@@ -1951,25 +1956,253 @@ class Calculation(MyFrame1):
             f.write('psspy.flat_2([0,0,0,0,0,0,0,0],[0.0,0.0])\n')
             f.write('psspy.fdns()\n')
             f.write('psspy.fnsl()\n')
-            f.write('psspy.fnsl()\n')
             f.close()
             execfile(path)
             os.remove(path)
             psspy.save(self.PathOrigin)
             call(('cmd','/c','start','',os.path.join(self.PathOrigin)))
-                
+
+    def _n1_choose_file(self, message, wildcard):
+        dialog = wx.FileDialog(self.parent, message=message, wildcard=wildcard,
+                               style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST)
+        try:
+            if dialog.ShowModal() != wx.ID_OK:
+                return ''
+            return dialog.GetPath()
+        finally:
+            dialog.Destroy()
+
+    def _n1_output_path(self, sav_path, element):
+        """Return the exact requested <original>-<bus identity>.sav path."""
+        root, extension = os.path.splitext(sav_path)
+        if not extension:
+            extension = '.sav'
+        suffix = safe_filename(element['display_name']).replace(' ', '')
+        return root + '-' + suffix + extension
+
+    def _n1_write_log(self, sav_path, acc_path, converged, non_converged,
+                      failed):
+        log_path = os.path.join(os.path.dirname(sav_path), 'log.txt')
+        lines = [
+            u'',
+            u'CREATE N-1 SAV FILES: {0}'.format(
+                datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')),
+            u'SAV: {0}'.format(as_text(sav_path)),
+            u'ACC: {0}'.format(as_text(acc_path)),
+            u'Converged and saved: {0}'.format(len(converged)),
+            u'Not converged but saved: {0}'.format(len(non_converged)),
+            u'Failed or unresolved: {0}'.format(len(failed)),
+        ]
+        for name, output_path in non_converged:
+            lines.append(u'NOT CONVERGED BUT SAVED: {0} -> {1}'.format(
+                as_text(name), as_text(os.path.basename(output_path))))
+        for name, reason in failed:
+            lines.append(u'FAILED OR UNRESOLVED: {0} | {1}'.format(
+                as_text(name), as_text(reason)))
+        with io.open(log_path, 'a', encoding='utf-8') as log_file:
+            log_file.write(u'\n'.join(lines) + u'\n')
+        return log_path
+
+    def _n1_show_summary(self, converged, non_converged, failed, log_path):
+        saved_count = len(converged) + len(non_converged)
+        lines = [
+            u'Completed Create N-1 sav files.',
+            u'',
+            u'Files saved: {0}'.format(saved_count),
+            u'Converged: {0}'.format(len(converged)),
+            u'Not converged but saved: {0}'.format(len(non_converged)),
+            u'Failed or unresolved: {0}'.format(len(failed)),
+        ]
+        if non_converged:
+            lines.extend([u'', u'Non-converged cases:'])
+            lines.extend([u'- ' + as_text(item[0]) for item in non_converged])
+        if failed:
+            lines.extend([u'', u'Failed or unresolved cases:'])
+            lines.extend([u'- {0}: {1}'.format(as_text(item[0]), as_text(item[1]))
+                          for item in failed])
+        lines.extend([u'', u'Log: ' + as_text(log_path)])
+        wx.MessageBox(u'\n'.join(lines), u'Create N-1 SAV Files',
+                      wx.OK | wx.ICON_INFORMATION, self.parent)
+
+    def Create_N1_SAV_Files(self, event):
+        """Create one independent one-element-outage SAV per selected ACC case."""
+        sav_path = self._n1_choose_file(
+            u'Choose the original SAV file',
+            u'PSS/E SAV files (*.sav)|*.sav|All files (*.*)|*.*')
+        if not sav_path:
+            return
+
+        acc_path = self._n1_choose_file(
+            u'Choose the ACC file',
+            u'PSS/E ACC files (*.acc)|*.acc|All files (*.*)|*.*')
+        if not acc_path:
+            return
+
+        psspy.psseinit(50000)
+        summary = pssarrays.accc_summary(accfile=acc_path)
+        if summary is None or getattr(summary, 'ierr', 0):
+            wx.MessageBox(u'Unable to read ACC summary:\n' + as_text(acc_path),
+                          u'Create N-1 SAV Files', wx.OK | wx.ICON_ERROR,
+                          self.parent)
+            return
+
+        # The full summary can contain thousands of defined contingencies.  The
+        # requested chooser is specifically the contingency column from the
+        # Flow Element/Available Capacity report, which is a filtered subset.
+        try:
+            report_labels = available_capacity_contingencies(
+                psspy, acc_path, summary)
+        except Exception as error:
+            wx.MessageBox(
+                u'Unable to read Flow Element/Available Capacity cases:\n{0}'.format(
+                    as_text(error)),
+                u'Create N-1 SAV Files', wx.OK | wx.ICON_ERROR, self.parent)
+            return
+
+        summary_labels = {}
+        for raw_label in getattr(summary, 'colabel', []):
+            label = u' '.join(as_text(raw_label).split())
+            summary_labels.setdefault(label.upper(), label)
+
+        cases = []
+        seen = set()
+        for report_label in report_labels:
+            label = u' '.join(as_text(report_label).split())
+            key = label.upper()
+            if not label or key in ('BASE CASE', 'BASECASE', 'BASE') or key in seen:
+                continue
+            label = summary_labels.get(key, label)
+            seen.add(key)
+            description = u''
+            try:
+                solution = pssarrays.accc_solution(
+                    accfile=acc_path, colabel=label, stype='contingency',
+                    busmsm=0.5, sysmsm=5.0)
+                if solution is not None and not getattr(solution, 'ierr', 0):
+                    description = as_text(getattr(solution, 'codesc', u''))
+            except Exception:
+                description = u''
+            cases.append({
+                'label': label,
+                'description': description or label,
+            })
+
+        if not cases:
+            wx.MessageBox(
+                          u'No outage contingencies were found in the Flow Element/Available Capacity report.',
+                          u'Create N-1 SAV Files', wx.OK | wx.ICON_WARNING,
+                          self.parent)
+            return
+
+        selection_dialog = N1ContingencySelectionDialog(
+            self.parent,
+            cases,
+            u'Create N-1 SAV Files - {0} available cases'.format(len(cases)))
+        display_width, display_height = wx.GetDisplaySize()
+        dialog_width = min(1150, max(750, display_width - 160))
+        dialog_height = min(750, max(550, display_height - 160))
+        selection_dialog.SetSize((dialog_width, dialog_height))
+        selection_dialog.CentreOnParent()
+        try:
+            if selection_dialog.ShowModal() != wx.ID_OK:
+                return
+            selected_indices = selection_dialog.GetSelectedIndices()
+        finally:
+            selection_dialog.Destroy()
+
+        if not selected_indices:
+            wx.MessageBox(u'No contingency case was selected.',
+                          u'Create N-1 SAV Files', wx.OK | wx.ICON_INFORMATION,
+                          self.parent)
+            return
+
+        selected_cases = [cases[index] for index in selected_indices]
+        ierr = psspy.case(sav_path)
+        if ierr:
+            wx.MessageBox(u'Unable to open original SAV file:\n' + as_text(sav_path),
+                          u'Create N-1 SAV Files', wx.OK | wx.ICON_ERROR,
+                          self.parent)
+            return
+
+        inventory = three_winding_inventory(psspy)
+        progress_style = (wx.PD_APP_MODAL | wx.PD_ELAPSED_TIME |
+                          wx.PD_REMAINING_TIME)
+        progress = wx.ProgressDialog(
+            u'Create N-1 SAV Files', u'Preparing selected cases...',
+            maximum=len(selected_cases), parent=self.parent,
+            style=progress_style)
+        converged = []
+        non_converged = []
+        failed = []
+
+        try:
+            for index, selected_case in enumerate(selected_cases):
+                label = selected_case['label']
+                description = selected_case['description']
+                progress.Update(index, u'Case {0}/{1}: {2}'.format(
+                    index + 1, len(selected_cases), label))
+
+                # Reload first so neither the outage nor solution state from a
+                # previous selected case can accumulate into this case.
+                ierr = psspy.case(sav_path)
+                if ierr:
+                    failed.append((label, u'Could not reopen the original SAV file.'))
+                    continue
+
+                element = resolve_contingency(
+                    psspy, label, description, inventory)
+                if element.get('state') != 'ready':
+                    failed.append((label, element.get(
+                        'reason', u'Could not resolve the selected contingency.')))
+                    continue
+
+                ierr = apply_outage(psspy, element)
+                if ierr:
+                    failed.append((label, u'PSS/E could not switch off {0}.'.format(
+                        element['display_name'])))
+                    continue
+
+                # Required sequence: one flat start, one FDNS, then one FNSL.
+                psspy.flat_2([0, 0, 0, 0, 0, 0, 0, 0], [0.0, 0.0])
+                psspy.fdns()
+                psspy.fnsl()
+                solved_state = psspy.solved()
+
+                output_path = self._n1_output_path(sav_path, element)
+                save_ierr = psspy.save(output_path)
+                if save_ierr:
+                    failed.append((label, u'PSS/E could not save {0}.'.format(
+                        os.path.basename(output_path))))
+                elif solved_state == 0:
+                    converged.append((label, output_path))
+                else:
+                    non_converged.append((label, output_path))
+
+                progress.Update(index + 1, u'Finished {0}/{1}'.format(
+                    index + 1, len(selected_cases)))
+        except Exception as error:
+            failed.append((u'Unexpected processing error', as_text(error)))
+        finally:
+            try:
+                psspy.case(sav_path)
+            except Exception:
+                pass
+            progress.Destroy()
+
+        log_path = self._n1_write_log(
+            sav_path, acc_path, converged, non_converged, failed)
+        self._n1_show_summary(converged, non_converged, failed, log_path)
+
     def PowerFlow(self,event):
         # Power flow calculation
         psspy.flat_2([0,0,0,0,0,0,0,0],[0.0,0.0])
         psspy.fdns()
-        psspy.fnsl()
         psspy.fnsl()
                         
         if self.parent.macroFile != '':
             f = open(self.parent.macroFile,'a')
             f.writelines("psspy.flat_2([0,0,0,0,0,0,0,0],[0.0,0.0])\n")
             f.writelines("psspy.fdns()\n")
-            f.writelines("psspy.fnsl()\n")
             f.writelines("psspy.fnsl()\n")
             f.close()
 
