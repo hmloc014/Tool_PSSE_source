@@ -13,7 +13,7 @@ os.environ['PATH'] = os.environ['PATH'] + ';' +  PSSE_LOCATION
 pssepath.add_pssepath(33)
 import psspy 
 from subprocess import call
-from Export_To_Cad import acad
+from Export_To_Cad import acad, application_directory
 # from Export_To_Cad_NVA import acadMVA
 # from Export_To_Cad_Load_Percent import acadLoadPercent
 from LoadTab import load2windTab, loadBusTab, loadMachineTab,searchByChoice,loadBusNumberEnter,delFileInfo,loadFileInfo,loadAreaInfo,loadZoneInfo,loadLoadTab,loadShuntTab,loadSourceLoadInfo
@@ -1344,21 +1344,45 @@ class CustomMyframe1(MyFrame1):
     def Export_Multi_Cad( self, event ):
 
         inputPath = openFile(self,'Please select input .dxf file','*.dxf')
+        if not inputPath:
+            return
         dirNameSav = openFolder(self,"Choose the folder contain all sav files." )
-        os.chdir(dirNameSav)
-        savfileNames = glob.glob('*.sav')
-        for savFile in savfileNames:
+        if not dirNameSav:
+            return
+        savfileNames = sorted(glob.glob(os.path.join(dirNameSav, '*.sav')))
+        if not savfileNames:
+            wx.MessageBox("No SAV files were found in the selected folder.")
+            return
+
+        # Some otherwise small cases contain more equipment records than the
+        # 2000-bus workspace permits (for example, more than 230 wind machines).
+        # Initialize once at the same capacity used by Create N-1 SAV Files.
+        psspy.psseinit(50000)
+        completed = 0
+        failed = []
+        for savPath in savfileNames:
+            savFile = os.path.basename(savPath)
             cadFileName = savFile[0:-4]+'.dxf'
             outFilePath = os.path.join(dirNameSav,cadFileName)
             inputName = os.path.basename(inputPath)
             inpDir = os.path.dirname(inputPath)
             outputName = os.path.basename(outFilePath)
             outpDir = os.path.dirname(outFilePath)
-            psspy.psseinit(2000)
-            path = inpDir+'\\'+outputName[0:-4]+'.sav'
-            psspy.case(path)
-            acad(inputName[0:-4],inpDir,outputName[0:-4],outpDir,0,1)
-        wx.MessageBox("Export to multiple cad complete!")
+            ierr = psspy.case(savPath)
+            if ierr:
+                failed.append('%s (PSS/E case error %s)' % (savFile, ierr))
+                continue
+            try:
+                acad(inputName[0:-4],inpDir,outputName[0:-4],outpDir,0,1)
+                completed += 1
+            except Exception as error:
+                failed.append('%s (%r)' % (savFile, error))
+
+        message = "Export to multiple CAD complete.\n\nExported: %s\nFailed: %s" % (
+            completed, len(failed))
+        if failed:
+            message += "\n\n" + "\n".join(failed)
+        wx.MessageBox(message)
 
     # thêm bus mới
     def Add_New_Bus( self, event ):
@@ -2400,7 +2424,7 @@ class CustomMyframe1(MyFrame1):
     
     # Mở cơ sở dữ liệu
     def View_Database_Fcn( self, event ):
-        DatabasePath = "Database.mdb"
+        DatabasePath = os.path.join(application_directory(), "Database.mdb")
         call(('cmd','/c','start','',DatabasePath))
 
     # chức năng cập nhật từng bước
@@ -2651,7 +2675,7 @@ class CustomMyframe1(MyFrame1):
 if __name__ == "__main__":
     app = wx.App(redirect=False)
     frame = CustomMyframe1(None)
-    setOptionalFrameIcon(frame, "icon4.png")
+    setOptionalFrameIcon(frame, os.path.join("images", "icon4.png"))
     frame.Show(True)
     app.MainLoop()
 

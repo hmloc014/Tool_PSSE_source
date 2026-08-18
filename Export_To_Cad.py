@@ -2,6 +2,8 @@
 import csv
 import psspy
 import os
+import re
+import pyodbc
 import wx
 # import win32com.client
 # import dxfgrabber
@@ -14,6 +16,151 @@ from math import *
 from decimal import *
 TWOPLACE = Decimal(10)**-2
 FOURPLACE = Decimal(10)**-4
+
+
+def application_directory():
+    """Return the folder containing the executable, or this module in source runs."""
+    if getattr(sys, 'frozen', False):
+        return os.path.dirname(os.path.abspath(sys.executable))
+    return os.path.dirname(os.path.abspath(__file__))
+
+
+def _clean_text(value):
+    if value is None:
+        return u''
+    if isinstance(value, unicode):
+        text = value
+    elif isinstance(value, str):
+        text = None
+        # PSS/E 33 character arrays can contain either UTF-8 bytes or bytes
+        # stored with the Vietnamese Windows code page.  Never let Python 2's
+        # implicit ASCII conversion reject a valid SAV bus name.
+        for encoding in ('utf-8', 'cp1258'):
+            try:
+                text = value.decode(encoding)
+                break
+            except UnicodeDecodeError:
+                pass
+        if text is None:
+            text = value.decode('latin-1', 'replace')
+    else:
+        text = unicode(value)
+    return u' '.join(text.replace(u'\r', u' ').replace(u'\n', u' ').split())
+
+
+def _load_bus_info():
+    """Load BUS_INFO once for one CAD export; failure falls back to SAV names."""
+    database_path = os.path.join(application_directory(), 'Database.mdb')
+    rows = {}
+    connection = None
+    try:
+        connection = pyodbc.connect(
+            r'DRIVER={Microsoft Access Driver (*.mdb)};DBQ=' +
+            database_path, readonly=True)
+        cursor = connection.cursor()
+        for bus_number, name_vie, name_eng in cursor.execute(
+                'SELECT [Bus_number], [Name_Vie], [Name_Eng] FROM [BUS_INFO]'):
+            rows[int(bus_number)] = {
+                'vie': _clean_text(name_vie),
+                'eng': _clean_text(name_eng),
+            }
+    except Exception as error:
+        print 'BUS_INFO lookup unavailable: %s' % error
+    finally:
+        if connection is not None:
+            try:
+                connection.close()
+            except Exception:
+                pass
+    return rows
+
+
+def _case_identity(file_name):
+    """Parse only a recognized, anchored N-1 suffix from the active SAV name."""
+    stem = os.path.splitext(os.path.basename(file_name))[0]
+    match = re.search(r'_(\d+)to(\d+)-([A-Za-z0-9_]+)$', stem, re.IGNORECASE)
+    if match:
+        return {'kind': 'line', 'from_bus': int(match.group(1)),
+                'to_bus': int(match.group(2)), 'circuit_id': match.group(3)}
+    match = re.search(r'_(\d+)-([A-Za-z0-9_]+)tran$', stem, re.IGNORECASE)
+    if match:
+        return {'kind': 'transformer', 'bus': int(match.group(1)),
+                'circuit_id': match.group(2)}
+    match = re.search(r'_(9\d{5}) gens$', stem, re.IGNORECASE)
+    if match:
+        return {'kind': 'generator', 'bus': int(match.group(1))}
+    return {'kind': 'normal'}
+
+
+def _mapped_voltage(bus_number):
+    if 10000 <= bus_number <= 99999:
+        return 500.0
+    return {1: 110.0, 2: 220.0, 3: 35.0, 4: 22.0}.get(
+        bus_number // 100000)
+
+
+def _voltage_text(bus_numbers, sav_base):
+    values = []
+    for bus_number in bus_numbers:
+        voltage = _mapped_voltage(bus_number)
+        if voltage is None:
+            voltage = sav_base.get(bus_number)
+        if voltage is not None:
+            values.append(float(voltage))
+    if not values:
+        return u'UNKNOWN'
+    voltage = max(values)
+    if abs(voltage - round(voltage)) < 0.01:
+        return unicode(int(round(voltage)))
+    return unicode(round(voltage, 2)).rstrip(u'0').rstrip(u'.')
+
+
+def _bus_display_name(bus_number, language, bus_info, sav_names):
+    record = bus_info.get(bus_number)
+    if record is not None:
+        requested = _clean_text(record.get(language))
+        alternate = _clean_text(record.get('eng' if language == 'vie' else 'vie'))
+        return requested or alternate or unicode(bus_number)
+    sav_name = sav_names.get(bus_number, u'')
+    return sav_name or u'<UNKNOWN_BUS>'
+
+
+def _case_title(case_info, language, bus_info, sav_names, sav_base):
+    if case_info['kind'] == 'normal':
+        if language == 'vie':
+            return u'TRƯỜNG HỢP VẬN HÀNH BÌNH THƯỜNG'
+        return u'NORMAL OPERATING MODE'
+
+    if case_info['kind'] == 'line':
+        bus1 = case_info['from_bus']
+        bus2 = case_info['to_bus']
+        voltage = _voltage_text((bus1, bus2), sav_base)
+        name1 = _bus_display_name(bus1, language, bus_info, sav_names)
+        name2 = _bus_display_name(bus2, language, bus_info, sav_names)
+        if language == 'vie':
+            return u'SỰ CỐ ĐƯỜNG DÂY {0}KV {1} - {2} - {3}'.format(
+                voltage, name1, name2, case_info['circuit_id'])
+        return u'INCIDENT ON {0}KV TRANSMISSION LINE {1} - {2} - {3}'.format(
+            voltage, name1, name2, case_info['circuit_id'])
+
+    bus_number = case_info['bus']
+    name = _bus_display_name(bus_number, language, bus_info, sav_names)
+    if case_info['kind'] == 'generator':
+        if language == 'vie':
+            return u'SỰ CỐ TẠI NHÀ MÁY {0}'.format(name)
+        return u'INCIDENT AT {0}'.format(name)
+
+    voltage = _voltage_text((bus_number,), sav_base)
+    if language == 'vie':
+        return u'SỰ CỐ MẤT 1 MÁY TẠI TBA {0}KV {1}'.format(voltage, name)
+    return u'INCIDENT AT 1 TRANSFORMER IN {0}KV {1} SUBSTATION'.format(
+        voltage, name)
+
+
+def _dxf_text(value):
+    if isinstance(value, unicode):
+        return value.encode('utf-8')
+    return value
 
 # class ExportToCAD():
 def complex(number):
@@ -151,6 +298,30 @@ def array2dict(dict_keys, dict_values):
 # option = 3 : export Load Percent
 
 def acad(inpName,inputPath, destName,destPath,flag,option):
+    """Export one DXF and close every file handle even when conversion fails."""
+    input_file_path = os.path.abspath(
+        os.path.join(inputPath, inpName + '.dxf'))
+    output_file_path = os.path.abspath(
+        os.path.join(destPath, destName + '.dxf'))
+    if os.path.normcase(input_file_path) == os.path.normcase(output_file_path):
+        raise ValueError(
+            'The input DXF template and output DXF must be different files.')
+
+    open_handles = []
+    try:
+        return _acad_export(
+            inpName, inputPath, destName, destPath, flag, option,
+            open_handles)
+    finally:
+        for handle in reversed(open_handles):
+            try:
+                handle.close()
+            except Exception:
+                pass
+
+
+def _acad_export(inpName,inputPath, destName,destPath,flag,option,
+                 open_handles):
     import datetime
     import psspy
     sid = -1
@@ -222,20 +393,37 @@ def acad(inpName,inputPath, destName,destPath,flag,option):
     # mo file dxf
 
     f = open(inputPath+"\\"+inpName+ ".dxf")
+    open_handles.append(f)
     folderName = os.path.split(inputPath)
     
-    re = csv.reader(file(inputPath+"\\"+inpName+'.dxf'))
+    csv_file = file(inputPath+"\\"+inpName+'.dxf')
+    open_handles.append(csv_file)
+    re = csv.reader(csv_file)
  
     if destPath == '':
         savfile, snapfile = psspy.sfiles()
         fpath, fext = os.path.splitext(savfile)
         path, newfile = os.path.split(fpath)
     w = open(destPath+"\\"+destName+".dxf",'w')
+    open_handles.append(w)
     # wMedium = open(destPath+"\\"+destName+".P2C",'w')
 
     report = w.write
     a11,a22 = psspy.sfiles()  # Dong nay lay ten file
     file_name = os.path.basename(a11) # Dong nay lay ten file
+    case_info = _case_identity(file_name)
+    bus_info = _load_bus_info()
+    sav_names = {}
+    sav_base = {}
+    for bus_index, bus_number in enumerate(ibuses.get('number', [])):
+        bus_number = int(bus_number)
+        exname = _clean_text(cbuses.get('exname', [])[bus_index])
+        name = _clean_text(cbuses.get('name', [])[bus_index])
+        sav_names[bus_number] = exname or name
+        try:
+            sav_base[bus_number] = rbuses.get('base', [])[bus_index]
+        except (IndexError, TypeError):
+            pass
     # reportMedium = wMedium.write
 
     data = []
@@ -255,7 +443,16 @@ def acad(inpName,inputPath, destName,destPath,flag,option):
             branch = splitbr(reader)
             
             if check(branch[0]) == 0 and check(branch[1]) == 0 and check(branch[2]) == 0:
-                if int(branch[0]) in ibuses['number'] and int(branch[1]) in ibuses['number']:
+                forced_zero = (
+                    case_info.get('kind') == 'line' and
+                    set((int(branch[0]), int(branch[1]))) ==
+                    set((case_info['from_bus'], case_info['to_bus'])) and
+                    str(branch[2]).upper() ==
+                    str(case_info['circuit_id']).upper())
+                if forced_zero and option == 1:
+                    data.append(reader)
+                    reader = complex(0 + 0j) + '\n'
+                elif int(branch[0]) in ibuses['number'] and int(branch[1]) in ibuses['number']:
                     # print('-------',len(branch),reader)
                     if len(branch) == 4:
                         ierr, MVAPercent = psspy.brnmsc(int(branch[0]),int(branch[1]),(branch[2]), "PCTRTA")
@@ -469,6 +666,19 @@ def acad(inpName,inputPath, destName,destPath,flag,option):
             m = str(now.month)
             y = str(now.year)
             reader = d + '/' + m + '/' + y + '\n'
+
+        if 'CALCULATION CASE VN' in reader:
+            data.append(reader)
+            reader = reader.replace(
+                'CALCULATION CASE VN',
+                _dxf_text(_case_title(
+                    case_info, 'vie', bus_info, sav_names, sav_base)))
+        if 'CALCULATION CASE ENG' in reader:
+            data.append(reader)
+            reader = reader.replace(
+                'CALCULATION CASE ENG',
+                _dxf_text(_case_title(
+                    case_info, 'eng', bus_info, sav_names, sav_base)))
         # if reader == 'SEASON\n':
         #     	if file_name.find("-K-")!=-1:
         #             data.append(reader)

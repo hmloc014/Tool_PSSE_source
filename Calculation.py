@@ -1973,12 +1973,12 @@ class Calculation(MyFrame1):
             dialog.Destroy()
 
     def _n1_output_path(self, sav_path, element):
-        """Return the exact requested <original>-<bus identity>.sav path."""
+        """Return <original>_<contingency identity>.sav with lowercase suffix."""
         root, extension = os.path.splitext(sav_path)
         if not extension:
             extension = '.sav'
-        suffix = safe_filename(element['display_name']).replace(' ', '')
-        return root + '-' + suffix + extension
+        suffix = safe_filename(element['display_name']).lower()
+        return root + '_' + suffix + extension
 
     def _n1_write_log(self, sav_path, acc_path, converged, non_converged,
                       failed):

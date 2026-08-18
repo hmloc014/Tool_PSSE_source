@@ -1,4 +1,5 @@
-from Tool_V3 import MyFrame1
+from Tool_V3 import MyFrame1, setOptionalFrameIcon
+import os
 import wx
 import wx.xrc
 
@@ -16,6 +17,6 @@ class CustomMyframe1(MyFrame1):
 if __name__ == "__main__":
     app = wx.App(redirect=False)
     frame = CustomMyframe1(None)
-    frame.SetIcon(wx.Icon("icon4.png"))
+    setOptionalFrameIcon(frame, os.path.join("images", "icon4.png"))
     frame.Show(True)
     app.MainLoop()

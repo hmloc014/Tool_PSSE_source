@@ -249,7 +249,7 @@ def _resolve_branch(psspy, candidates):
                 'from_bus': from_bus,
                 'to_bus': to_bus,
                 'circuit_id': circuit_id,
-                'display_name': '%s-%s-%s' % (from_bus, to_bus, circuit_id),
+                'display_name': '%sto%s-%s' % (from_bus, to_bus, circuit_id),
                 'status': status,
             }
         ierr, status = psspy.brnint(to_bus, from_bus, circuit_id, 'STATUS')
@@ -260,13 +260,28 @@ def _resolve_branch(psspy, candidates):
                 'from_bus': to_bus,
                 'to_bus': from_bus,
                 'circuit_id': circuit_id,
-                'display_name': '%s-%s-%s' % (to_bus, from_bus, circuit_id),
+                'display_name': '%sto%s-%s' % (to_bus, from_bus, circuit_id),
                 'status': status,
             }
     return None
 
 
-def _resolve_three_winding(inventory, candidates):
+def _bus_voltage(psspy, bus_number):
+    """Return a usable nominal voltage for sorting transformer windings."""
+    try:
+        ierr, voltage = psspy.busdat(bus_number, 'BASE')
+        if not ierr and voltage is not None:
+            return float(voltage)
+    except Exception:
+        pass
+
+    if 10000 <= bus_number <= 99999:
+        return 500.0
+    prefix = bus_number // 100000
+    return {1: 110.0, 2: 220.0, 3: 35.0, 4: 22.0}.get(prefix, 0.0)
+
+
+def _resolve_three_winding(psspy, inventory, candidates):
     for from_bus, to_bus, third_bus, circuit_id in candidates:
         matches = []
         for item in inventory:
@@ -283,22 +298,53 @@ def _resolve_three_winding(inventory, candidates):
             item = item.copy()
             item['state'] = 'ready'
             item['kind'] = 'three_winding_transformer'
-            # Use PSS/E's inventory order for the API call, but retain the
-            # ACC/network-label bus order in the generated filename.
-            if to_bus is not None and third_bus is not None:
-                display_buses = (from_bus, to_bus, third_bus)
-            else:
-                display_buses = (item['from_bus'], item['to_bus'],
-                                 item['third_bus'])
-            item['display_name'] = '%s-%s-%s-%s' % (
-                display_buses[0], display_buses[1], display_buses[2],
-                circuit_id)
+            buses = (item['from_bus'], item['to_bus'], item['third_bus'])
+            highest_voltage_bus = max(
+                buses, key=lambda bus: (_bus_voltage(psspy, bus), bus))
+            item['highest_voltage_bus'] = highest_voltage_bus
+            item['display_name'] = '%s-%stran' % (
+                highest_voltage_bus, item['circuit_id'])
             return item
         if len(matches) > 1:
             return {
                 'state': 'unresolved',
                 'reason': 'More than one 3-winding transformer matches %s.' % circuit_id,
             }
+    return None
+
+
+def _is_generator_bus(bus_number):
+    return 900000 <= bus_number <= 999999
+
+
+def _resolve_generator(psspy, candidates):
+    """Resolve the special ACC line description that represents generator loss."""
+    for from_bus, to_bus, circuit_id in candidates:
+        generator_buses = [bus for bus in (from_bus, to_bus)
+                           if _is_generator_bus(bus)]
+        if len(generator_buses) != 1:
+            continue
+
+        generator_bus = generator_buses[0]
+        try:
+            ierr, status = psspy.macint(
+                generator_bus, circuit_id, 'STATUS')
+        except Exception:
+            ierr, status = 1, None
+        if ierr:
+            return {
+                'state': 'unresolved',
+                'reason': ('Generator bus %s has no machine with ID %s.' %
+                           (generator_bus, circuit_id)),
+            }
+        return {
+            'state': 'ready',
+            'kind': 'generator',
+            'generator_bus': generator_bus,
+            'circuit_id': circuit_id,
+            'display_name': '%s gens' % generator_bus,
+            'status': status,
+        }
     return None
 
 
@@ -312,8 +358,14 @@ def resolve_contingency(psspy, label, description, inventory):
                         _has_three_winding_words(description) or
                         any(candidate[1] is not None for candidate in three_candidates))
 
+    # An ACC "OPEN LINE" ending at a 9xxxxx generator bus is a generator
+    # contingency in this workflow.  Resolve it before attempting a branch.
+    generator_result = _resolve_generator(psspy, branch_candidates)
+    if generator_result:
+        return generator_result
+
     if is_three_winding:
-        result = _resolve_three_winding(inventory, three_candidates)
+        result = _resolve_three_winding(psspy, inventory, three_candidates)
         if result:
             return result
     else:
@@ -321,13 +373,14 @@ def resolve_contingency(psspy, label, description, inventory):
         if result:
             return result
         # A short BUS-ID label is ambiguous until the original SAV is checked.
-        result = _resolve_three_winding(inventory, three_candidates)
+        result = _resolve_three_winding(psspy, inventory, three_candidates)
         if result:
             return result
 
     return {
         'state': 'unresolved',
-        'reason': 'Could not map ACC contingency to one line or 3-winding transformer.',
+        'reason': ('Could not map ACC contingency to one line, generator, or '
+                   '3-winding transformer.'),
     }
 
 
@@ -336,6 +389,14 @@ def apply_outage(psspy, element):
     if element['kind'] == 'line':
         return psspy.branch_chng(element['from_bus'], element['to_bus'],
                                  element['circuit_id'], INTGAR1=0)
+    if element['kind'] == 'generator':
+        default_integer = getattr(psspy, '_i', -999)
+        default_float = getattr(psspy, '_f', -999.0)
+        integers = [0, default_integer, default_integer, default_integer,
+                    default_integer, 0]
+        reals = [default_float] * 16 + [1.0]
+        return psspy.machine_chng_2(
+            element['generator_bus'], element['circuit_id'], integers, reals)
     result = psspy.three_wnd_imped_chng_3(
         element['from_bus'], element['to_bus'], element['third_bus'],
         element['circuit_id'], INTGAR8=0)
