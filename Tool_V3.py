@@ -12,6 +12,43 @@ import wx.xrc
 import wx.grid
 import time
 import wx.aui
+import os
+import sys
+
+
+def findOptionalResource( resourcePath ):
+	"""Return an existing resource path, or None when the optional file is absent."""
+	candidates = [ resourcePath ]
+	for basePath in (
+		getattr( sys, "_MEIPASS", None ),
+		os.path.dirname( os.path.abspath( __file__ ) ),
+		os.path.dirname( os.path.abspath( sys.executable ) ),
+	):
+		if basePath and not os.path.isabs( resourcePath ):
+			candidates.append( os.path.join( basePath, resourcePath ) )
+
+	for candidate in candidates:
+		try:
+			if os.path.isfile( candidate ):
+				return candidate
+		except ( OSError, TypeError ):
+			pass
+	return None
+
+
+def setOptionalFrameIcon( frame, iconPath ):
+	"""Set the frame icon when available; a missing/invalid icon is non-fatal."""
+	resolvedPath = findOptionalResource( iconPath )
+	if resolvedPath is None:
+		return False
+	try:
+		icon = wx.Icon( resolvedPath, wx.BITMAP_TYPE_ANY )
+		if not icon.IsOk():
+			return False
+		frame.SetIcon( icon )
+		return True
+	except Exception:
+		return False
 
 ###########################################################################
 ## Class MyFrame1
@@ -603,12 +640,19 @@ class MyFrame1 ( wx.Frame ):
 		functionButtonBackground = wx.Colour( 242, 242, 242 )
 
 		def styleFunctionButton( button, bitmapPath, toolTip ):
-			bitmap = wx.Bitmap( bitmapPath, wx.BITMAP_TYPE_ANY )
-			if bitmap.IsOk():
-				bitmap = wx.BitmapFromImage( bitmap.ConvertToImage().Scale( 24, 24, wx.IMAGE_QUALITY_HIGH ) )
-			button.SetBitmap( bitmap )
-			button.SetBitmapPosition( wx.LEFT )
-			button.SetBitmapMargins( 12, 4 )
+			resolvedPath = findOptionalResource( bitmapPath )
+			if resolvedPath is not None:
+				try:
+					bitmap = wx.Bitmap( resolvedPath, wx.BITMAP_TYPE_ANY )
+					if bitmap.IsOk():
+						scaledBitmap = wx.BitmapFromImage( bitmap.ConvertToImage().Scale( 24, 24, wx.IMAGE_QUALITY_HIGH ) )
+						if scaledBitmap.IsOk():
+							bitmap = scaledBitmap
+						button.SetBitmap( bitmap )
+						button.SetBitmapPosition( wx.LEFT )
+						button.SetBitmapMargins( 12, 4 )
+				except Exception:
+					pass
 			button.SetFont( functionButtonFont )
 			button.SetBackgroundColour( functionButtonBackground )
 			button.SetToolTipString( toolTip )
