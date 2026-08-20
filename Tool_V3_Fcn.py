@@ -46,6 +46,7 @@ import contextlib
 from Calculation import Calculation
 from ui_performance import (batched_grid_update, clear_grid, debounced_search,
                             profiled)
+from psse_runtime import safe_psseinit
 # import multiprocessing as mt
 # wiki.ozanh.com/doku.php?id=python:misc:wxpython_postevent_threading
 # from dialogEx import Mywin
@@ -261,7 +262,7 @@ class CustomMyframe1(MyFrame1):
         myGrid2Wind = self.grid2wind
         myGrid3Wind = self.grid3wind
 
-        psspy.psseinit(50000)
+        safe_psseinit(psspy, 50000)
         psspy.case(PATH_ORIGIN)
         fileName = os.path.basename(PATH_ORIGIN)
         dirName = r"D:/"
@@ -445,7 +446,7 @@ class CustomMyframe1(MyFrame1):
         myGridZone = self.gridZone
         myGrid2Wind = self.grid2wind
         myGrid3Wind = self.grid3wind
-        psspy.psseinit(50000)
+        safe_psseinit(psspy, 50000)
         dirName = r"D:/"
         
         for i in range(len(PATHS)):
@@ -1357,7 +1358,7 @@ class CustomMyframe1(MyFrame1):
         # Some otherwise small cases contain more equipment records than the
         # 2000-bus workspace permits (for example, more than 230 wind machines).
         # Initialize once at the same capacity used by Create N-1 SAV Files.
-        psspy.psseinit(50000)
+        safe_psseinit(psspy, 50000)
         completed = 0
         failed = []
         for savPath in savfileNames:
@@ -2520,7 +2521,7 @@ class CustomMyframe1(MyFrame1):
     # chức năng run một file macro có sẵn
     def Run_Macro_Fcn( self, event ):
         if PATH == '':
-            psspy.psseinit(2000)
+            safe_psseinit(psspy, 2000)
         # vì khi runn macro file không phải từ tool thì cần có thư viện hỗ trỡ kết nối,
         # do đó khi run 1 file macro có sẵn cần bổ sung phần thư viện này 
         pythonFile = openFile(self,'Please select .py file', '*.py')
@@ -2673,6 +2674,9 @@ class CustomMyframe1(MyFrame1):
             event.Skip()
 
 if __name__ == "__main__":
+    if "--check-auto-init" in sys.argv:
+        safe_psseinit(psspy, 50000)
+        sys.exit(0)
     app = wx.App(redirect=False)
     frame = CustomMyframe1(None)
     setOptionalFrameIcon(frame, os.path.join("images", "icon4.png"))

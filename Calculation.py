@@ -32,9 +32,10 @@ from docx.shared import Pt
 import pandas as pd
 from ui_performance import profiled
 from n1_sav import (apply_outage, as_text, available_capacity_contingencies,
-                    resolve_contingency, safe_filename,
-                    three_winding_inventory)
+                    isolated_type_one_terminal_buses, resolve_contingency,
+                    safe_filename, three_winding_inventory)
 from n1_dialog import N1ContingencySelectionDialog
+from psse_runtime import safe_psseinit
 
 class Calculation(MyFrame1):
     def __init__ (self,parent):
@@ -136,7 +137,7 @@ class Calculation(MyFrame1):
 
     # tính contingency tự động cho tất cả các file
     def Auto_Contigencies_Fcn( self, event ):
-        psspy.psseinit(2000)
+        safe_psseinit(psspy, 50000)
         PATH = self.Path
         PATHFILE = self.PathFile
         dirName = openFolder(self,'Choose the Folder contain all sav and sub,mon,con files')
@@ -854,7 +855,7 @@ class Calculation(MyFrame1):
 
     # tính ngắn mạch cho tất cả các file, tổng hợp thành 1 file txt có phần resume ở cuối
     def Short_Circuit_Cal_All_Cases_Fcn_Export_Word(self,event):
-        psspy.psseinit(2000)
+        safe_psseinit(psspy, 2000)
         PATH = self.Path
         PATHFILE = self.PathFile
         pyFile = openFile(self,'Choose the created python file', "Python file (*.py)|*.py|All files|*")
@@ -942,7 +943,7 @@ class Calculation(MyFrame1):
 
     # tính ngắn mạch cho all files trong thư mục, mỗi file ghi kết quả ra một file txt
     def Short_Circuit_Cal_All_Cases_Fcn_Export_Txt(self,event):
-        psspy.psseinit(2000)
+        safe_psseinit(psspy, 2000)
         PATH = self.Path
         PATHFILE = self.PathFile
         # if PATH <> '':
@@ -1406,7 +1407,7 @@ class Calculation(MyFrame1):
     # tính ổn định tĩnh cho tất cả các file trong thư mục
     def Auto_Static_Stability_Cal_Fcn( self, event ):
         # init để không cần mở file psse vào tool mà vẫn chạy được chức năng tính toán
-        psspy.psseinit(2000)
+        safe_psseinit(psspy, 2000)
         # lấy thông tin đường dẫn của thư mục
         dirName = openFolder(self,'Choose the Folder contain all sav and sub,mon,con files')
         os.chdir(dirName)
@@ -2024,6 +2025,15 @@ class Calculation(MyFrame1):
         wx.MessageBox(u'\n'.join(lines), u'Create N-1 SAV Files',
                       wx.OK | wx.ICON_INFORMATION, self.parent)
 
+    def _n1_run_power_flow(self):
+        """Run the required N-1 power-flow sequence and return its status."""
+        errors = [
+            psspy.flat_2([0, 0, 0, 0, 0, 0, 0, 0], [0.0, 0.0]),
+            psspy.fdns(),
+            psspy.fnsl(),
+        ]
+        return errors, psspy.solved()
+
     def Create_N1_SAV_Files(self, event):
         """Create one independent one-element-outage SAV per selected ACC case."""
         sav_path = self._n1_choose_file(
@@ -2038,7 +2048,7 @@ class Calculation(MyFrame1):
         if not acc_path:
             return
 
-        psspy.psseinit(50000)
+        safe_psseinit(psspy, 50000)
         summary = pssarrays.accc_summary(accfile=acc_path)
         if summary is None or getattr(summary, 'ierr', 0):
             wx.MessageBox(u'Unable to read ACC summary:\n' + as_text(acc_path),
@@ -2163,10 +2173,30 @@ class Calculation(MyFrame1):
                     continue
 
                 # Required sequence: one flat start, one FDNS, then one FNSL.
-                psspy.flat_2([0, 0, 0, 0, 0, 0, 0, 0], [0.0, 0.0])
-                psspy.fdns()
-                psspy.fnsl()
-                solved_state = psspy.solved()
+                solve_errors, solved_state = self._n1_run_power_flow()
+
+                # A 3W outage can strand its dedicated low-voltage terminal as
+                # an energized type-1 bus with no live series element.  Only
+                # after the first solve reports an error/non-convergence, find
+                # that topology condition, disconnect the isolated terminal,
+                # and retry the same power-flow sequence once.
+                if (element.get('kind') == 'three_winding_transformer' and
+                        (any(solve_errors) or solved_state != 0)):
+                    isolated_buses = isolated_type_one_terminal_buses(
+                        psspy, element)
+                    disconnect_error = None
+                    for bus_number in isolated_buses:
+                        ierr = psspy.dscn(bus_number)
+                        if ierr:
+                            disconnect_error = (
+                                u'PSS/E could not disconnect isolated bus {0} '
+                                u'(error {1}).'.format(bus_number, ierr))
+                            break
+                    if disconnect_error is not None:
+                        failed.append((label, disconnect_error))
+                        continue
+                    if isolated_buses:
+                        solve_errors, solved_state = self._n1_run_power_flow()
 
                 output_path = self._n1_output_path(sav_path, element)
                 save_ierr = psspy.save(output_path)

@@ -128,7 +128,7 @@ def _bus_display_name(bus_number, language, bus_info, sav_names):
 def _case_title(case_info, language, bus_info, sav_names, sav_base):
     if case_info['kind'] == 'normal':
         if language == 'vie':
-            return u'TRƯỜNG HỢP VẬN HÀNH BÌNH THƯỜNG'
+            return u'CHẾ ĐỘ VẬN HÀNH BÌNH THƯỜNG'
         return u'NORMAL OPERATING MODE'
 
     if case_info['kind'] == 'line':

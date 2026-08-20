@@ -80,7 +80,6 @@ def createAutoFile(dirname = ''):
         f.write('psspy.flat_2([0,0,0,0,0,0,0,0],[0.0,0.0])\n')
         f.write('psspy.fdns()\n')
         f.write('psspy.fnsl()\n')
-        f.write('psspy.fnsl()\n')
         f.write('psspy.accc_with_dsp( 0.5,[2,0,0,1,1,1,0,0],SUBSYSTEM,DFXFILE,ACCFILE,"","")\n')
     f.close
 

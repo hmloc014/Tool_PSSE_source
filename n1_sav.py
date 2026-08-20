@@ -239,6 +239,59 @@ def three_winding_inventory(psspy):
     return inventory
 
 
+def isolated_type_one_terminal_buses(psspy, element):
+    """Return 3W terminal buses left energized without a live series element."""
+    if element.get('kind') != 'three_winding_transformer':
+        return []
+
+    terminals = [
+        element.get('from_bus'),
+        element.get('to_bus'),
+        element.get('third_bus'),
+    ]
+    type_one_terminals = []
+    for bus_number in terminals:
+        if bus_number is None:
+            continue
+        try:
+            ierr, bus_type = psspy.busint(bus_number, 'TYPE')
+        except Exception:
+            return []
+        if not ierr and int(bus_type) == 1:
+            type_one_terminals.append(int(bus_number))
+
+    if not type_one_terminals:
+        return []
+
+    # ABRNINT flag 3 returns only live lines and two-winding transformers.
+    # ATR3INT flag 1 adds only live three-winding transformers.  If either
+    # topology query fails, do not disconnect anything on an assumption.
+    try:
+        ierr, branch_values = psspy.abrnint(
+            -1, 1, 3, 3, 1, ['FROMNUMBER', 'TONUMBER'])
+        if ierr:
+            return []
+        ierr, transformer_values = psspy.atr3int(
+            -1, 1, 3, 1, 1,
+            ['WIND1NUMBER', 'WIND2NUMBER', 'WIND3NUMBER'])
+        if ierr:
+            return []
+    except Exception:
+        return []
+
+    connected_buses = set()
+    for columns in (branch_values, transformer_values):
+        for column in columns:
+            for bus_number in column:
+                try:
+                    connected_buses.add(int(bus_number))
+                except (TypeError, ValueError):
+                    pass
+
+    return [bus_number for bus_number in type_one_terminals
+            if bus_number not in connected_buses]
+
+
 def _resolve_branch(psspy, candidates):
     for from_bus, to_bus, circuit_id in candidates:
         ierr, status = psspy.brnint(from_bus, to_bus, circuit_id, 'STATUS')
