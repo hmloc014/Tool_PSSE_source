@@ -25,6 +25,8 @@ _ALWAYS_REMOVED_COMMANDS = (
     b'psspy.save(',
     b'psspy.case(',
     b'psspy.bsys(',
+    b'psspy.zsys(',
+    b'psspy.asys(',
 )
 
 _SOLUTION_COMMANDS = (
@@ -255,15 +257,53 @@ def _step_note(line, psspy_module):
     return b'# Run PSSE step: ' + readable_command
 
 
+def _three_winding_group_key(line):
+    """Return the transformer identity for calls in one three-winding step."""
+    parsed = _parse_psspy_call(line)
+    if parsed is None:
+        return None
+
+    command, integers, strings = parsed
+    if not (command.startswith(b'three_wnd_') or
+            command == b'seq_three_winding_data_3'):
+        return None
+    if len(integers) < 3:
+        return None
+
+    identifier = strings[0] if strings else b''
+    return integers[0], integers[1], integers[2], identifier
+
+
 def _add_step_notes(lines, psspy_module):
     """Insert idempotent comments immediately before recorded primary calls."""
     line_ending = b'\r\n' if any(line.endswith(b'\r\n') for line in lines) else b'\n'
     annotated_lines = []
+    active_three_winding_key = None
+    active_three_winding_noted = False
     for line in lines:
+        parsed = _parse_psspy_call(line)
+        three_winding_key = _three_winding_group_key(line)
+        if three_winding_key is not None:
+            command = parsed[0]
+            starts_new_group = command.startswith(b'three_wnd_imped_')
+            if (three_winding_key != active_three_winding_key or
+                    (starts_new_group and active_three_winding_noted)):
+                active_three_winding_key = three_winding_key
+                active_three_winding_noted = False
+        elif parsed is not None:
+            # Another PSS/E call ends the current logical transformer step.
+            active_three_winding_key = None
+            active_three_winding_noted = False
+
         note = _step_note(line, psspy_module)
         if note is not None:
             note_line = note + line_ending
-            if not annotated_lines or annotated_lines[-1] != note_line:
+            should_add_note = True
+            if three_winding_key is not None:
+                should_add_note = not active_three_winding_noted
+                active_three_winding_noted = True
+            if (should_add_note and
+                    (not annotated_lines or annotated_lines[-1] != note_line)):
                 annotated_lines.append(note_line)
         annotated_lines.append(line)
     return annotated_lines

@@ -61,56 +61,76 @@ class CustomGridSearch(MyFrame1):
         self.indexFile = 0
         self.uk = 0
         self.flagSynch  = 0
+        self._refreshing_bus_grid = False
+        self._handling_bus_cell_change = False
 
     # chức năng thực hiện khi có sự chuyển đổi ô làm việc trong bảng thông tin bus
     def on_cell_change_grid_search( self, event ):
-        if self.parent.flagUpdate == 0 and self.parent.flagPaste == 0:
-            self.parent.Mark_Pending_Refresh('bus')
+        # PSS/E calls and grid refreshes can pump nested wx events.  Guard the
+        # whole edit transaction, not only the refresh portion, so a nested
+        # event cannot repeat the change/save/recording operation.
+        if self._handling_bus_cell_change or self._refreshing_bus_grid:
+            return
 
-        if (row == len(self.matrixBus[0]) and str(self.myGridBus.GetCellValue(row,0)) in self.matrixBus[self.indexFile][:,0]):
-            wx.MessageBox("This number is existing in onGridCellChange3!")
-        elif (self.uk == 13):
-            if self.parent.flagSynch == 1:
-                for i,path in enumerate(self.PathFile):
-                    psspy.case(path)
-                    if i==0:
-                        change(self.myGridBus,self.matrixBus[self.indexFile],row-1,col,cellVal,self.parent.macroFile,0)
-                    else:
-                        change(self.myGridBus,self.matrixBus[self.indexFile],row-1,col,cellVal,self.parent.macroFile,1)
-                    psspy.save(path)
+        # wxPython 3 can deliver EVT_GRID_CELL_CHANGE before the edited value
+        # is fully committed.  Use the cell snapshot captured by the selection
+        # handler, as the 2022 implementation did, instead of reading event
+        # coordinates or comparing the not-yet-committed grid value.
+        selected_row = row
+        selected_col = col
+        original_value = cellValue
+        previous_value = cellVal
+        self._handling_bus_cell_change = True
+        try:
+            if self.parent.flagUpdate == 0 and self.parent.flagPaste == 0:
+                self.parent.Mark_Pending_Refresh('bus')
+
+            if (selected_row == len(self.matrixBus[0]) and str(self.myGridBus.GetCellValue(selected_row,0)) in self.matrixBus[self.indexFile][:,0]):
+                wx.MessageBox("This number is existing in onGridCellChange3!")
+            elif (self.uk == 13):
+                if self.parent.flagSynch == 1:
+                    for i,path in enumerate(self.PathFile):
+                        psspy.case(path)
+                        if i==0:
+                            change(self.myGridBus,self.matrixBus[self.indexFile],selected_row-1,selected_col,previous_value,self.parent.macroFile,0)
+                        else:
+                            change(self.myGridBus,self.matrixBus[self.indexFile],selected_row-1,selected_col,previous_value,self.parent.macroFile,1)
+                        psspy.save(path)
+                else:
+                    change(self.myGridBus,self.matrixBus[self.indexFile],selected_row-1,selected_col,previous_value,self.parent.macroFile,0)
+                    psspy.save(self.Path)
             else:
-                change(self.myGridBus,self.matrixBus[self.indexFile],row-1,col,cellVal,self.parent.macroFile,0)
-                psspy.save(self.Path)
-        else:
-            if self.parent.flagSynch == 1:
-                for i,path in enumerate(self.PathFile):
-                    psspy.case(path)
-                    if i == 0:
-                        change(self.myGridBus,self.matrixBus[self.indexFile],row,col,cellValue,self.parent.macroFile,0)
-                    else:
-                        change(self.myGridBus,self.matrixBus[self.indexFile],row,col,cellValue,self.parent.macroFile,1)
-                    psspy.save(path)
-            else:
-                change(self.myGridBus,self.matrixBus[self.indexFile],row,col,cellValue,self.parent.macroFile,0)
-                psspy.save(self.Path)
-        # update
-        if self.parent.flagUpdate == 1:
-            if self.parent.flagSynch == 1:
-                for i,path in enumerate(self.PathFile):
-                    self.onUpdateBus(event,i,path)
-                    # self.parent.UpdatedData(event,i,path)
-            else:
-                self.onUpdateBus(event,self.indexFile,self.Path)
-                # self.parent.UpdatedData(event,self.indexFile,self.Path)
-            # self.parent.onUpdateFcn(event)
-        elif self.parent.flagPaste == 0:
-            dt=np.dtype("<S16")
-            a = np.array([],dt)
-            self.matrixBus[self.indexFile] = loadBusTab(self.Path)
-            for row1 in range(len(self.matrixBus[self.indexFile])):
-                for column1 in range(len(self.matrixBus[self.indexFile][0])):
-                    self.myGridBus.SetCellValue(row1,column1,str(self.matrixBus[self.indexFile][row1][column1]))
-            self.parent.onUpdateFcn(event)
+                if self.parent.flagSynch == 1:
+                    for i,path in enumerate(self.PathFile):
+                        psspy.case(path)
+                        if i == 0:
+                            change(self.myGridBus,self.matrixBus[self.indexFile],selected_row,selected_col,original_value,self.parent.macroFile,0)
+                        else:
+                            change(self.myGridBus,self.matrixBus[self.indexFile],selected_row,selected_col,original_value,self.parent.macroFile,1)
+                        psspy.save(path)
+                else:
+                    change(self.myGridBus,self.matrixBus[self.indexFile],selected_row,selected_col,original_value,self.parent.macroFile,0)
+                    psspy.save(self.Path)
+            # update
+            if self.parent.flagUpdate == 1:
+                if self.parent.flagSynch == 1:
+                    for i,path in enumerate(self.PathFile):
+                        self.onUpdateBus(event,i,path)
+                        # self.parent.UpdatedData(event,i,path)
+                else:
+                    self.onUpdateBus(event,self.indexFile,self.Path)
+                    # self.parent.UpdatedData(event,self.indexFile,self.Path)
+                # self.parent.onUpdateFcn(event)
+            elif self.parent.flagPaste == 0:
+                dt=np.dtype("<S16")
+                a = np.array([],dt)
+                self.matrixBus[self.indexFile] = loadBusTab(self.Path)
+                for row1 in range(len(self.matrixBus[self.indexFile])):
+                    for column1 in range(len(self.matrixBus[self.indexFile][0])):
+                        self.myGridBus.SetCellValue(row1,column1,str(self.matrixBus[self.indexFile][row1][column1]))
+                self.parent.onUpdateFcn(event)
+        finally:
+            self._handling_bus_cell_change = False
 
     # chức năng thực hiện khi righ click tại ô làm việc trong bảng thông tin bus
     def on_cell_right_click_grid_search( self, event ):
@@ -133,13 +153,19 @@ class CustomGridSearch(MyFrame1):
     # chức năng thực hiện tại ô được chọn của bảng thông tin bus
     def on_selected_cell_grid_search( self, event ):
         global row,col,cellValue,cellVal,busNum,busName,busArea,busZone,busBaseKV,busVM,busVA,owner,code
+        if self._handling_bus_cell_change or self._refreshing_bus_grid:
+            return
+
         row = event.GetRow()
         col = event.GetCol()
         colLabel = self.myGridBus.GetColLabelValue(col)
         cellValue = self.myGridBus.GetCellValue(row,col)
         if row>0:
             cellVal = self.myGridBus.GetCellValue(row-1,col)
-        busNum = int(self.myGridBus.GetCellValue(row,0))
+        bus_number_value = self.myGridBus.GetCellValue(row,0)
+        if not str(bus_number_value).strip():
+            return
+        busNum = int(bus_number_value)
         busName = self.myGridBus.GetCellValue(row,1)
         busArea = int(self.myGridBus.GetCellValue(row,3))
         busZone = int(self.myGridBus.GetCellValue(row,5))
@@ -212,16 +238,26 @@ class CustomGridSearch(MyFrame1):
 
     # Cập nhật bảng bus
     @profiled('refresh.bus')
-    @batched_grid_update('myGridBus')
     def onUpdateBus(self,event,indexfile,path):
-        self.indexFile = indexfile
-        self.Path = path
-        clear_grid(self.myGridBus)
-        self.matrixBus[self.indexFile] = loadBusTab(self.Path)
-        for row1 in range(len(self.matrixBus[self.indexFile])):
-            for column1 in range(len(self.matrixBus[self.indexFile][0])):
-                self.myGridBus.SetCellValue(row1,column1,str(self.matrixBus[self.indexFile][row1][column1]))
-        self.parent.onUpdateFcn(event)
+        if self._refreshing_bus_grid:
+            return
+
+        self._refreshing_bus_grid = True
+        try:
+            self.indexFile = indexfile
+            self.Path = path
+            # Preserve the proven 2022 refresh behavior.  ClearGrid/EndBatch can
+            # dispatch a burst of nested cell events in wxPython 3.0.
+            for row1 in range(self.myGridBus.GetNumberRows()):
+                for column1 in range(self.myGridBus.GetNumberCols()):
+                    self.myGridBus.SetCellValue(row1,column1,"")
+            self.matrixBus[self.indexFile] = loadBusTab(self.Path)
+            for row1 in range(len(self.matrixBus[self.indexFile])):
+                for column1 in range(len(self.matrixBus[self.indexFile][0])):
+                    self.myGridBus.SetCellValue(row1,column1,str(self.matrixBus[self.indexFile][row1][column1]))
+            self.parent.onUpdateFcn(event)
+        finally:
+            self._refreshing_bus_grid = False
 
     @profiled('refresh.dashboard_full')
     @batched_grid_update('myGridFile', 'myGridArea', 'myGridZone',

@@ -140,13 +140,14 @@ class Calculation(MyFrame1):
         safe_psseinit(psspy, 50000)
         PATH = self.Path
         PATHFILE = self.PathFile
-        dirName = openFolder(self,'Choose the Folder contain all sav and sub,mon,con files')
+        dirName = openFolder(self.parent,'Choose the Folder contain all sav and sub,mon,con files')
         # tạo file python tự động
         createAutoFile(dirName)
         pyPath = os.path.join(dirName,'autoContigency.py')
         # thực thi file python tự động
         execfile(pyPath)
-        wx.MessageBox("Calculation Finish!")
+        wx.MessageBox("Calculation Finish!", "Auto Contingencies",
+                      wx.OK | wx.ICON_INFORMATION, self.parent)
 
     # tính toán ngắn mạch phân bố
     def Distribution_Short_Circuit_Cal_Fcn(self,event):

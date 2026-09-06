@@ -65,6 +65,7 @@ class CustomGridShunt(MyFrame1):
         self.myGridZone = wx.grid.Grid
         self.myGridFile = wx.grid.Grid
         self.myGridShunt = wx.grid.Grid
+        self._handling_shunt_cell_change = False
     
     # chức năng thực hiện tại ô được chọn của bảng shunt
     def on_selected_cell_grid_shunt( self, event ):
@@ -97,25 +98,33 @@ class CustomGridShunt(MyFrame1):
 
     # chức năng thực hiện khi có sự chuyển đổi ô làm việc trong bảng shunt
     def on_cell_change_grid_shunt( self, event ):
-        
-        col1 = col
-        if self.uk == 13:
-            row1 = row-1
-        else:
-            row1 = row
+        # PSS/E calls and grid refreshes can dispatch nested wx cell events.
+        # Keep the guard active through saving, recording and grid refresh.
+        if self._handling_shunt_cell_change:
+            return
 
-        if self.parent.flagSynch == 1:
-            for i,path in enumerate(self.PathFile):
-                psspy.case(path)
-                if i == 0:
-                    self.on_cell_change_grid_shunt_fcn(event,row1,col1,0 )
-                else:
-                    self.on_cell_change_grid_shunt_fcn(event,row1,col1,1 )
-                psspy.save(path)
-        else:
-            self.on_cell_change_grid_shunt_fcn(event,row1,col1,0 )
-            psspy.save(self.Path)
-        self.UpdateShuntPage(event)
+        self._handling_shunt_cell_change = True
+        try:
+            col1 = col
+            if self.uk == 13:
+                row1 = row-1
+            else:
+                row1 = row
+
+            if self.parent.flagSynch == 1:
+                for i,path in enumerate(self.PathFile):
+                    psspy.case(path)
+                    if i == 0:
+                        self.on_cell_change_grid_shunt_fcn(event,row1,col1,0 )
+                    else:
+                        self.on_cell_change_grid_shunt_fcn(event,row1,col1,1 )
+                    psspy.save(path)
+            else:
+                self.on_cell_change_grid_shunt_fcn(event,row1,col1,0 )
+                psspy.save(self.Path)
+            self.UpdateShuntPage(event)
+        finally:
+            self._handling_shunt_cell_change = False
 
     def on_cell_change_grid_shunt_fcn( self, event,row,col,flag ):
         row1 = row

@@ -649,9 +649,14 @@ class ConnectDatabase(MyFrame1):
 
         return  matrixBranch.transpose(),matrixWind2.transpose(),matrixWind3.transpose()#[branchNumber[0],branchName[0], machineBusNumber[0],machineName[0],wind3[0],wind3Name[0]]
 
-    # chức năng thực hiện khi righ click tại ô làm việc trong bảng đường dây+MBA, hiển thị righ click tab gồm 3 chức năng: thêm, bật/tắt, xóa
+    # chức năng thực hiện khi righ click tại ô làm việc trong bảng đường dây+MBA
     def on_cell_right_click_grid_bus( self, event ):
+        # A right click does not always emit the normal cell-selection event first.
+        # Refresh the shared selection values so every popup action targets the row
+        # underneath the mouse rather than a previously selected element.
+        self.on_selected_cell_grid_bus(event)
         menus = [(wx.NewId(), "Add New", self.addNew),
+                 (wx.NewId(), "Duplicate", self.duplicateElement),
                  (wx.NewId(), "Turn On/Off", self.turnOnOff),
                  (wx.NewId(), "Delete", self.deleteBranch)]
                 #  (wx.NewId(), "Line Tab", self.lineTab)]
@@ -675,6 +680,441 @@ class ConnectDatabase(MyFrame1):
             self.AddNew2Wind(event)
         else:
             self.AddNew3Wind(event)
+
+    def _psse_value(self, function, *args):
+        result = function(*args)
+        ierr = result[0]
+        if ierr != 0:
+            raise RuntimeError('{0} failed with PSS/E error {1}'.format(
+                               function.__name__, ierr))
+        return result[1]
+
+    def _owner_data(self, integer_function, real_function, args):
+        owner_count = self._psse_value(integer_function,
+                                       *(args + ('OWNERS',)))
+        owners = []
+        fractions = []
+        for owner_index in range(1, 5):
+            if owner_index <= owner_count:
+                owners.append(self._psse_value(
+                    integer_function, *(args + ('OWN{0}'.format(owner_index),))))
+                fractions.append(self._psse_value(
+                    real_function, *(args + ('FRACT{0}'.format(owner_index),))))
+            else:
+                owners.append(0)
+                fractions.append(0.0)
+        return owners, fractions
+
+    def _control_data(self, integer_function, args):
+        raw_control = self._psse_value(integer_function,
+                                       *(args + ('CNTRL2',)))
+        if raw_control < 0:
+            return -1, abs(raw_control)
+        return 1, raw_control
+
+    def _selected_grid_sequence_data(self, element_kind):
+        try:
+            if element_kind == 'Line':
+                return [float(self.parent.gridBusInfo.GetCellValue(row, 14)),
+                        float(self.parent.gridBusInfo.GetCellValue(row, 15)),
+                        float(self.parent.gridBusInfo.GetCellValue(row, 16)),
+                        0.0, 0.0, 0.0, 0.0, 0.0]
+            if element_kind == '2-Wind':
+                trans_params = self.SelectTransInfoFromType(typeBr)
+                return ([2, 1, 1],
+                        [0.0, 0.0, float(trans_params[4]),
+                         float(trans_params[5]), 0.0, 0.0, 0.0, 0.0,
+                         0.0, 0.0])
+            z_01 = complex(self.parent.gridBusInfo.GetCellValue(row, 14))
+            z_02 = complex(self.parent.gridBusInfo.GetCellValue(row, 15))
+            z_03 = complex(self.parent.gridBusInfo.GetCellValue(row, 16))
+            return ([1, 1, 2],
+                    [0.0, 0.0, z_01.real, z_01.imag,
+                     0.0, 0.0, z_02.real, z_02.imag,
+                     0.0, 0.0, z_03.real, z_03.imag, 0.0, 0.0])
+        except Exception:
+            return None
+
+    def _read_branch_duplicate_data(self, from_bus, to_bus, source_id):
+        args = (from_bus, to_bus, source_id)
+        owners, fractions = self._owner_data(psspy.brnint, psspy.brndat,
+                                             args)
+        rx = self._psse_value(psspy.brndt2, *(args + ('RX',)))
+        i_shunt = self._psse_value(psspy.brndt2, *(args + ('ISHNT',)))
+        j_shunt = self._psse_value(psspy.brndt2, *(args + ('JSHNT',)))
+        intgar = [self._psse_value(psspy.brnint, *(args + ('STATUS',))),
+                  self._psse_value(psspy.brnint, *(args + ('METER',)))] + owners
+        realar = [rx.real, rx.imag,
+                  self._psse_value(psspy.brndat, *(args + ('CHARG',))),
+                  self._psse_value(psspy.brndat, *(args + ('RATEA',))),
+                  self._psse_value(psspy.brndat, *(args + ('RATEB',))),
+                  self._psse_value(psspy.brndat, *(args + ('RATEC',))),
+                  i_shunt.real, i_shunt.imag, j_shunt.real, j_shunt.imag,
+                  self._psse_value(psspy.brndat, *(args + ('LENGTH',)))]
+        realar.extend(fractions)
+
+        sequence = self._selected_grid_sequence_data('Line')
+        return {'intgar': intgar, 'realar': realar, 'sequence': sequence}
+
+    def _read_two_winding_duplicate_data(self, from_bus, to_bus, source_id):
+        args = (from_bus, to_bus, source_id)
+        owners, fractions = self._owner_data(psspy.brnint, psspy.brndat,
+                                             args)
+        sicod, control_mode = self._control_data(psspy.xfrint, args)
+        rx = self._psse_value(psspy.brndt2, *(args + ('RX',)))
+        intgar = [self._psse_value(psspy.brnint, *(args + ('STATUS',))),
+                  self._psse_value(psspy.brnint, *(args + ('METER',)))]
+        intgar.extend(owners)
+        intgar.extend([
+            self._psse_value(psspy.xfrint, *(args + ('NTPOSN',))),
+            self._psse_value(psspy.xfrint, *(args + ('TABLE',))),
+            self._psse_value(psspy.xfrint, *(args + ('TAPPED',))),
+            self._psse_value(psspy.xfrint, *(args + ('ICONT',))),
+            sicod, control_mode, 1, 1, 1])
+        realar = [
+            rx.real, rx.imag,
+            self._psse_value(psspy.xfrdat, *(args + ('SBASE1',))),
+            self._psse_value(psspy.xfrdat, *(args + ('RATIO',))),
+            self._psse_value(psspy.xfrdat, *(args + ('NOMV1',))),
+            self._psse_value(psspy.xfrdat, *(args + ('ANGLE',))),
+            self._psse_value(psspy.xfrdat, *(args + ('RATIO2',))),
+            self._psse_value(psspy.xfrdat, *(args + ('NOMV2',))),
+            self._psse_value(psspy.brndat, *(args + ('RATEA',))),
+            self._psse_value(psspy.brndat, *(args + ('RATEB',))),
+            self._psse_value(psspy.brndat, *(args + ('RATEC',)))]
+        realar.extend(fractions)
+        realar.extend([
+            self._psse_value(psspy.xfrdat, *(args + ('GMAGNT',))),
+            self._psse_value(psspy.xfrdat, *(args + ('BMAGNT',))),
+            self._psse_value(psspy.xfrdat, *(args + ('RMAX',))),
+            self._psse_value(psspy.xfrdat, *(args + ('RMIN',))),
+            self._psse_value(psspy.xfrdat, *(args + ('VMAX',))),
+            self._psse_value(psspy.xfrdat, *(args + ('VMIN',))),
+            self._psse_value(psspy.xfrdat, *(args + ('CR',))),
+            self._psse_value(psspy.xfrdat, *(args + ('CX',))),
+            self._psse_value(psspy.xfrdat, *(args + ('CNXANG',)))])
+
+        sequence = self._selected_grid_sequence_data('2-Wind')
+        return {'intgar': intgar, 'realar': realar,
+                'charar': [self._psse_value(psspy.xfrnam, *args), ''],
+                'sequence': sequence}
+
+    def _read_three_winding_duplicate_data(self, buses, source_id):
+        bus_1, bus_2, bus_3 = buses
+        psspy.bsys(0, 0, [1.0, 500.0], 0, [], 1, [bus_1],
+                    0, [], 0, [])
+        wind_1 = self._psse_value(psspy.atr3int,
+                                  0, 1, 3, 2, 1, 'WIND1NUMBER')[0]
+        wind_2 = self._psse_value(psspy.atr3int,
+                                  0, 1, 3, 2, 1, 'WIND2NUMBER')[0]
+        wind_3 = self._psse_value(psspy.atr3int,
+                                  0, 1, 3, 2, 1, 'WIND3NUMBER')[0]
+        ids = self._psse_value(
+            psspy.atr3char, 0, 1, 3, 2, 1, 'ID')[0]
+        rx_12_values = self._psse_value(psspy.atr3cplx,
+                                        0, 1, 3, 2, 1, 'RX1-2ACT')[0]
+        rx_23_values = self._psse_value(psspy.atr3cplx,
+                                        0, 1, 3, 2, 1, 'RX2-3ACT')[0]
+        rx_31_values = self._psse_value(psspy.atr3cplx,
+                                        0, 1, 3, 2, 1, 'RX3-1ACT')[0]
+        source_index = None
+        for index in range(len(ids)):
+            array_buses = (int(wind_1[index]), int(wind_2[index]),
+                           int(wind_3[index]))
+            if array_buses == buses and str(ids[index]).strip() == source_id:
+                source_index = index
+                break
+        if source_index is None:
+            raise RuntimeError('Unable to read selected 3-winding transformer')
+
+        rx_12 = rx_12_values[source_index]
+        rx_23 = rx_23_values[source_index]
+        rx_31 = rx_31_values[source_index]
+        intgar = [1, 0, 0, 0, 1, 1, 1, int(status),
+                  bus_1, bus_1, bus_2, bus_3]
+        realar = [rx_12.real, rx_12.imag, rx_23.real, rx_23.imag,
+                  rx_31.real, rx_31.imag, 100.0, 100.0, 100.0,
+                  0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0]
+
+        winding_rates = [0.0, 0.0, 0.0]
+        try:
+            trans_params = self.SelectTransInfoFromType2(typeBr)
+            winding_rates = [float(trans_params[8]), float(trans_params[9]),
+                             float(trans_params[10])]
+        except Exception:
+            winding_bus_values = self._psse_value(
+                psspy.awndint, 0, 1, 3, 3, 1, 'WNDBUSNUMBER')[0]
+            winding_1_values = self._psse_value(
+                psspy.awndint, 0, 1, 3, 3, 1, 'WIND1NUMBER')[0]
+            winding_2_values = self._psse_value(
+                psspy.awndint, 0, 1, 3, 3, 1, 'WIND2NUMBER')[0]
+            winding_3_values = self._psse_value(
+                psspy.awndint, 0, 1, 3, 3, 1, 'WIND3NUMBER')[0]
+            winding_ids = self._psse_value(
+                psspy.awndchar, 0, 1, 3, 3, 1, 'ID')[0]
+            rate_values = self._psse_value(
+                psspy.awndreal, 0, 1, 3, 3, 1, 'RATEA')[0]
+            for index in range(len(winding_ids)):
+                array_buses = (int(winding_1_values[index]),
+                               int(winding_2_values[index]),
+                               int(winding_3_values[index]))
+                if (str(winding_ids[index]).strip() != source_id or
+                        array_buses != buses):
+                    continue
+                winding_bus = int(winding_bus_values[index])
+                if winding_bus in buses:
+                    winding_rates[buses.index(winding_bus)] = float(
+                        rate_values[index])
+
+        windings = []
+        for winding_rate in winding_rates:
+            windings.append(([17, 0, 0, 1, 0],
+                             [1.0, 0.0, 0.0,
+                              winding_rate, winding_rate, winding_rate,
+                              1.1, 0.9, 1.1, 0.9, 0.0, 0.0, 0.0]))
+
+        sequence = self._selected_grid_sequence_data('3-Wind')
+        return {'intgar': intgar, 'realar': realar,
+                'charar': [str(nameElement), ''],
+                'windings': windings, 'sequence': sequence}
+
+    def _selected_three_winding_buses(self, source_id):
+        psspy.bsys(0, 0, [1.0, 500.0], 0, [], 1, [int(busNumber)],
+                    0, [], 0, [])
+        wind_1 = self._psse_value(psspy.atr3int,
+                                  0, 1, 3, 2, 1, 'WIND1NUMBER')[0]
+        wind_2 = self._psse_value(psspy.atr3int,
+                                  0, 1, 3, 2, 1, 'WIND2NUMBER')[0]
+        wind_3 = self._psse_value(psspy.atr3int,
+                                  0, 1, 3, 2, 1, 'WIND3NUMBER')[0]
+        ids = self._psse_value(
+            psspy.atr3char, 0, 1, 3, 2, 1, 'ID')[0]
+        names = self._psse_value(psspy.atr3char, 0, 1, 3, 2, 1,
+                                 'XFRNAME')[0]
+        matches = []
+        for index in range(len(ids)):
+            buses = (int(wind_1[index]), int(wind_2[index]),
+                     int(wind_3[index]))
+            if (str(ids[index]).strip() == source_id and
+                    int(busNumber) in buses and int(toBus) in buses):
+                matches.append((buses, str(names[index]).strip()))
+        if len(matches) > 1 and str(nameElement).strip():
+            named_matches = [item for item in matches
+                             if item[1] == str(nameElement).strip()]
+            if len(named_matches) == 1:
+                matches = named_matches
+        if len(matches) != 1:
+            raise RuntimeError('Unable to identify one selected 3-winding transformer')
+        return matches[0][0]
+
+    def _next_grid_numeric_id(self, element_kind, buses):
+        numeric_ids = []
+        grid = self.parent.gridBusInfo
+        for grid_row in range(grid.GetNumberRows()):
+            row_type = grid.GetCellValue(grid_row, 0)
+            row_to_bus = grid.GetCellValue(grid_row, 2)
+            row_id = grid.GetCellValue(grid_row, 4).strip()
+            try:
+                row_to_bus = int(row_to_bus)
+            except (TypeError, ValueError):
+                continue
+            if element_kind == '3-Wind':
+                same_element_group = ('3-Wind' in row_type and
+                                      row_to_bus in buses)
+            else:
+                same_element_group = (row_type == element_kind and
+                                      row_to_bus == buses[1])
+            if same_element_group and row_id.isdigit():
+                numeric_ids.append(int(row_id))
+        if numeric_ids:
+            return max(numeric_ids) + 1
+        return 1
+
+    def _create_duplicate(self, element_kind, buses, new_id, data):
+        if element_kind == 'Line':
+            result = psspy.branch_data(buses[0], buses[1], new_id,
+                                       data['intgar'], data['realar'])
+            if result > 0:
+                raise RuntimeError('branch_data failed with PSS/E error {0}'.format(result))
+            if data['sequence'] is not None:
+                result = psspy.seq_branch_data_3(
+                    buses[0], buses[1], new_id, 0, data['sequence'])
+                if result > 0:
+                    raise RuntimeError('seq_branch_data_3 failed with PSS/E error {0}'.format(result))
+        elif element_kind == '2-Wind':
+            result = psspy.two_winding_data_4(
+                buses[0], buses[1], new_id, data['intgar'],
+                data['realar'], data['charar'])
+            if result[0] > 0:
+                raise RuntimeError('two_winding_data_4 failed with PSS/E error {0}'.format(result[0]))
+            if data['sequence'] is not None:
+                sequence_realar = data['sequence'][1]
+                result = psspy.seq_two_winding_data_3(
+                    buses[0], buses[1], new_id,
+                    INTGAR1=data['sequence'][0][0],
+                    REALAR3=sequence_realar[2],
+                    REALAR4=sequence_realar[3])
+                if result > 0:
+                    raise RuntimeError('seq_two_winding_data_3 failed with PSS/E error {0}'.format(result))
+        else:
+            result = psspy.three_wnd_imped_data_3(
+                buses[0], buses[1], buses[2], new_id, data['intgar'],
+                data['realar'], data['charar'])
+            if result[0] > 0:
+                raise RuntimeError('three_wnd_imped_data_3 failed with PSS/E error {0}'.format(result[0]))
+            if data['sequence'] is not None:
+                sequence_realar = data['sequence'][1]
+                result = psspy.seq_three_winding_data_3(
+                    buses[0], buses[1], buses[2], new_id,
+                    INTGAR3=data['sequence'][0][2],
+                    REALAR3=sequence_realar[2],
+                    REALAR4=sequence_realar[3],
+                    REALAR7=sequence_realar[6],
+                    REALAR8=sequence_realar[7],
+                    REALAR11=sequence_realar[10],
+                    REALAR12=sequence_realar[11])
+                if result > 0:
+                    raise RuntimeError('seq_three_winding_data_3 failed with PSS/E error {0}'.format(result))
+            for winding_index, winding_data in enumerate(data['windings']):
+                result = psspy.three_wnd_winding_data_3(
+                    buses[0], buses[1], buses[2], new_id,
+                    winding_index + 1, winding_data[0], winding_data[1])
+                if result[0] > 0:
+                    raise RuntimeError('three_wnd_winding_data_3 failed with PSS/E error {0}'.format(result[0]))
+
+    def _write_duplicate_macro(self, element_kind, buses, new_id, data):
+        if self.parent.macroFile == '':
+            return
+        f = open(self.parent.macroFile, 'a')
+        try:
+            if element_kind == 'Line':
+                f.writelines('psspy.branch_data({0},{1},{2},{3},{4})\n'.format(
+                    buses[0], buses[1], repr(new_id), repr(data['intgar']),
+                    repr(data['realar'])))
+                if data['sequence'] is not None:
+                    f.writelines('psspy.seq_branch_data_3({0},{1},{2},0,{3})\n'.format(
+                        buses[0], buses[1], repr(new_id),
+                        repr(data['sequence'])))
+            elif element_kind == '2-Wind':
+                f.writelines('psspy.two_winding_data_4({0},{1},{2},{3},{4},{5})\n'.format(
+                    buses[0], buses[1], repr(new_id), repr(data['intgar']),
+                    repr(data['realar']), repr(data['charar'])))
+                if data['sequence'] is not None:
+                    sequence_realar = data['sequence'][1]
+                    f.writelines("psspy.seq_two_winding_data_3({0},{1},{2},INTGAR1={3},REALAR3={4},REALAR4={5})\n".format(
+                        buses[0], buses[1], repr(new_id),
+                        data['sequence'][0][0], sequence_realar[2],
+                        sequence_realar[3]))
+            else:
+                f.writelines('psspy.three_wnd_imped_data_3({0},{1},{2},{3},{4},{5},{6})\n'.format(
+                    buses[0], buses[1], buses[2], repr(new_id),
+                    repr(data['intgar']), repr(data['realar']),
+                    repr(data['charar'])))
+                if data['sequence'] is not None:
+                    sequence_realar = data['sequence'][1]
+                    f.writelines("psspy.seq_three_winding_data_3({0},{1},{2},{3},INTGAR3={4},REALAR3={5},REALAR4={6},REALAR7={7},REALAR8={8},REALAR11={9},REALAR12={10})\n".format(
+                        buses[0], buses[1], buses[2], repr(new_id),
+                        data['sequence'][0][2], sequence_realar[2],
+                        sequence_realar[3], sequence_realar[6],
+                        sequence_realar[7], sequence_realar[10],
+                        sequence_realar[11]))
+                for winding_index, winding_data in enumerate(data['windings']):
+                    f.writelines('psspy.three_wnd_winding_data_3({0},{1},{2},{3},{4},{5},{6})\n'.format(
+                        buses[0], buses[1], buses[2], repr(new_id),
+                        winding_index + 1, repr(winding_data[0]),
+                        repr(winding_data[1])))
+        finally:
+            f.close()
+
+    @profiled('psse.duplicate.connected_element_and_save')
+    def duplicateElement(self, event):
+        source_id = str(branchID).strip()
+        if typeElement == 'Line':
+            element_kind = 'Line'
+            buses = (int(busNumber), int(toBus))
+            reader = self._read_branch_duplicate_data
+        elif typeElement == '2-Wind':
+            element_kind = '2-Wind'
+            buses = (int(busNumber), int(toBus))
+            reader = self._read_two_winding_duplicate_data
+        elif '3-Wind' in typeElement:
+            element_kind = '3-Wind'
+            try:
+                buses = self._selected_three_winding_buses(source_id)
+            except Exception as error:
+                wx.MessageBox(str(error), 'Duplicate Element',
+                              wx.OK | wx.ICON_ERROR, self.parent)
+                return
+            reader = self._read_three_winding_duplicate_data
+        else:
+            wx.MessageBox('The selected row cannot be duplicated.',
+                          'Duplicate Element', wx.OK | wx.ICON_WARNING,
+                          self.parent)
+            return
+
+        target_paths = []
+        if self.parent.flagSynch == 1:
+            target_paths = [path for path in self.PathFile if path]
+        if not target_paths:
+            target_paths = [None]
+
+        payloads = []
+        new_id = None
+        try:
+            first_candidate = self._next_grid_numeric_id(element_kind,
+                                                         buses)
+            if first_candidate > 99:
+                raise RuntimeError('No unused numeric element ID is available (1-99).')
+            new_id = str(first_candidate)
+
+            for path in target_paths:
+                if path is not None:
+                    ierr = psspy.case(path)
+                    if ierr != 0:
+                        raise RuntimeError('Unable to open case: {0}'.format(path))
+                if element_kind == '3-Wind':
+                    payloads.append(reader(buses, source_id))
+                else:
+                    payloads.append(reader(buses[0], buses[1], source_id))
+
+            for index, path in enumerate(target_paths):
+                if path is not None:
+                    ierr = psspy.case(path)
+                    if ierr != 0:
+                        raise RuntimeError('Unable to open case: {0}'.format(path))
+                self._create_duplicate(element_kind, buses, new_id,
+                                       payloads[index])
+                save_path = path if path is not None else self.Path
+                ierr = psspy.save(save_path)
+                if ierr != 0:
+                    raise RuntimeError('Unable to save case: {0}'.format(save_path))
+
+            self._write_duplicate_macro(element_kind, buses, new_id,
+                                        payloads[0])
+        except Exception as error:
+            wx.MessageBox('Duplicate failed:\n{0}'.format(error),
+                          'Duplicate Element', wx.OK | wx.ICON_ERROR,
+                          self.parent)
+            return
+        finally:
+            if self.parent.flagSynch == 1 and self.Path:
+                psspy.case(self.Path)
+
+        if self.parent.flagUpdate == 0:
+            self.parent.Mark_Pending_Refresh('connections')
+            if element_kind == '2-Wind':
+                self.parent.Mark_Pending_Refresh('2wind')
+            elif element_kind == '3-Wind':
+                self.parent.Mark_Pending_Refresh('3wind')
+        if self.parent.flagUpdate == 1:
+            self.UpdatedBranchData(event)
+        else:
+            self.parent.busNumberEnter_Fcn(event)
+            self.loadBusNumberEnter(busNumber)
+        wx.MessageBox('{0} duplicated with ID {1}.'.format(element_kind,
+                                                           new_id),
+                      'Duplicate Element', wx.OK | wx.ICON_INFORMATION,
+                      self.parent)
     
     # Thêm mới DZ
     def AddNewBranch(self,event):
@@ -800,7 +1240,9 @@ class ConnectDatabase(MyFrame1):
         add3WindDialog.Path = self.Path
         add3WindDialog.PathFile = self.PathFile
         add3WindDialog.ShowModal()
-        if not add3WindDialog.onClose(event):
+        added = (add3WindDialog.flag == 1)
+        add3WindDialog.Destroy()
+        if not added:
             event.Skip()
         elif self.parent.flagUpdate == 1:
             self.UpdatedBranchData(event)
@@ -1723,15 +2165,27 @@ class ConnectDatabase(MyFrame1):
             row = event.GetRow()
             col = event.GetCol()
 
+            row_count = self.parent.gridBusInfo.GetNumberRows()
+            toBusUpper = ''
+            toBusLower = ''
+            toBusUpUpper = ''
+            typeElementUpper = ''
+            typeElementLower = ''
+            cellVal = ''
+            statusUpper = ''
+            branchIDUpper = ''
+            typeBrUpper = ''
+            lengthBrUpper = ''
+            rateUpper = ''
+            nameElementUpper = ''
+
             cellValue = self.parent.gridBusInfo.GetCellValue(row,col)
             status = self.parent.gridBusInfo.GetCellValue(row,5) #12
             toBus = self.parent.gridBusInfo.GetCellValue(row,2)
             typeElement = self.parent.gridBusInfo.GetCellValue(row,0)
-            if row != 0:
+            if row > 0:
                 toBusUpper = self.parent.gridBusInfo.GetCellValue(row-1,2)
-                toBusLower = self.parent.gridBusInfo.GetCellValue(row+1,2)
                 typeElementUpper = self.parent.gridBusInfo.GetCellValue(row-1,0)
-                typeElementLower = self.parent.gridBusInfo.GetCellValue(row+1,0)
                 cellVal = self.parent.gridBusInfo.GetCellValue(row-1,col)
                 statusUpper = self.parent.gridBusInfo.GetCellValue(row-1,5) #12
                 branchIDUpper = self.parent.gridBusInfo.GetCellValue(row-1,4)
@@ -1739,8 +2193,12 @@ class ConnectDatabase(MyFrame1):
                 lengthBrUpper = self.parent.gridBusInfo.GetCellValue(row-1,9)
                 rateUpper = self.parent.gridBusInfo.GetCellValue(row-1,10)
                 nameElementUpper = self.parent.gridBusInfo.GetCellValue(row-1,13)
+
+            if row + 1 < row_count:
+                toBusLower = self.parent.gridBusInfo.GetCellValue(row+1,2)
+                typeElementLower = self.parent.gridBusInfo.GetCellValue(row+1,0)
                 
-            if row !=1 and row!=0:
+            if row > 1:
                 toBusUpUpper = self.parent.gridBusInfo.GetCellValue(row-2,2)
 
             rate = self.parent.gridBusInfo.GetCellValue(row,10)

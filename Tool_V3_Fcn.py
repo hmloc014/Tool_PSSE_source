@@ -51,6 +51,9 @@ from psse_runtime import safe_psseinit
 # wiki.ozanh.com/doku.php?id=python:misc:wxpython_postevent_threading
 # from dialogEx import Mywin
 
+# Update this label for each working version of the tool.
+APP_VERSION = u"V3"
+
 PATH = ''
 PATHFILE = []
 PATH_ORIGIN = ''
@@ -100,11 +103,12 @@ TWOPLACE = Decimal(10)**-2
 class CustomMyframe1(MyFrame1):
     def __init__ (self,parent):
         MyFrame1.__init__ (self,parent)
+        self.SetTitle(u"Tool PSSE {0}".format(APP_VERSION))
         self.LOCATION = os.getcwd()
         self.Path = ''
         self.PathFile = [[]]
         self.parent = parent
-        self.flagUpdate = 0
+        self.flagUpdate = 1
         self.flagReload = 0
         self.flagSynch = 0
         self.flagChangePPercent = 0
@@ -1985,7 +1989,10 @@ class CustomMyframe1(MyFrame1):
         self.gridLoadLink.myGridBus = myGridBus
         self.gridLoadLink.indexFile = indexFile
         self.gridLoadLink.myGridLoad = self.gridLoad
+        self.gridLoadLink.matrixZone = matrixZone
+        self.gridLoadLink.matrixArea = matrixArea
         self.gridLoadLink.matrixLoad = matrixLoad
+        self.gridLoadLink.matrixSource = matrixGen
         self.gridLoadLink.Path = PATH
         self.gridLoadLink.PathFile = PATHFILE
         self.gridLoadLink.uk = ukNumLoad
@@ -2106,6 +2113,9 @@ class CustomMyframe1(MyFrame1):
 
     # chức năng thực hiện khi có sự chuyển đổi ô làm việc trong bảng kháng tụ
     def on_cell_change_grid_shunt( self, event ):
+        # A nested event must not overwrite the active synchronized case.
+        if self.gridShuntLink._handling_shunt_cell_change:
+            return
         self.gridShuntLink.matrixBus = matrixBus
         self.gridShuntLink.myGridBus = myGridBus
         self.gridShuntLink.indexFile = indexFile

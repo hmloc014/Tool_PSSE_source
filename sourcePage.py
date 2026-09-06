@@ -35,7 +35,6 @@ pgen = 0.0
 qgen = 0.0
 pmax = 0.0
 qmax = 0.0
-busNumUpper = 0
 busNameUpper= ''
 busAreaUpper=0
 busZoneUpper=0
@@ -78,7 +77,7 @@ class CustomGridSource(MyFrame1):
     # chức năng thực hiện tại ô được chọn của bảng source
     def on_selected_cell_grid_source( self, event ):
         global row,col,cellValue,cellVal,busNum,busName,busArea,busZone,busID,machineStatus,pgen,qgen,pmax,qmax,indexDyr
-        global busNumberUpper,busNameUpper,busAreaUpper,busZoneUpper,busIDUpper,machineStatusUpper,pgenUpper,qgenUpper,pmaxUpper,qmaxUpper
+        global busNameUpper,busAreaUpper,busZoneUpper,busIDUpper,machineStatusUpper,pgenUpper,qgenUpper,pmaxUpper,qmaxUpper
         row = event.GetRow()
         col = event.GetCol()
         colLabel = self.myGridSource.GetColLabelValue(col)
@@ -86,7 +85,6 @@ class CustomGridSource(MyFrame1):
 
         if row>0:
             cellVal = self.myGridSource.GetCellValue(row-1,col)
-            busNumberUpper =(self.myGridSource.GetCellValue(row-1,0))
             busNameUpper = self.myGridSource.GetCellValue(row-1,1)
             busAreaUpper = int(self.myGridSource.GetCellValue(row-1,2))
             busZoneUpper = int(self.myGridSource.GetCellValue(row-1,4))
@@ -143,9 +141,10 @@ class CustomGridSource(MyFrame1):
     def on_cell_change_grid_source_fcn( self, event,row,col,flag ):
         row1 = row 
         col1 = col
-        busNumUpper = int(busNumberUpper)
         
         if self.uk == 13:
+            # row1 already identifies the edited row after Enter navigation.
+            busNumUpper = int(self.myGridSource.GetCellValue(row1,0))
             cellVal = self.myGridSource.GetCellValue(row1,col1)
             if col1 == 10: # change V_sched
                 psspy.machine_chng_2(busNumUpper,busIDUpper)

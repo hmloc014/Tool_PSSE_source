@@ -145,7 +145,7 @@ class Add_New_3Wind ( wx.Dialog ):
 
 	def onClose( self, event ):
 		event.Skip()
-		return self.flaghay 
+		return self.flag
 
 	# kết nối với database, lấy tất cả loại MBA 3 CD theo cấp điện áp
 	def SelectAllTransTypeByBusVoltage(self,BusNum = 0):

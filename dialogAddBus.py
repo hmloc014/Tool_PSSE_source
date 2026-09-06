@@ -113,7 +113,12 @@ class Add_New_Bus ( wx.Dialog ):
 	# Virtual event handlers, overide them in your derived class
 	# Lấy thông tin từ ô BusNum
 	def onTextBusNum( self, event ):
-		busNum = self.fromBusNum.GetValue()
+		busNum = self.fromBusNum.GetValue().strip()
+		# EVT_TEXT fires for empty and partially typed values.  Wait until there
+		# are enough numeric digits to derive the voltage prefix and zone.
+		if not busNum.isdigit() or len(busNum) < 3:
+			event.Skip()
+			return
 		# bac
 
 		luoi_bac = [10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38] 
@@ -166,6 +171,7 @@ class Add_New_Bus ( wx.Dialog ):
 					self.comboBoxArea.SetValue(str(20))
 				elif int(zone) in luoi_nam:
 					self.comboBoxArea.SetValue(str(30))
+		event.Skip()
 	
 	def OnTextBusName( self, event ):
 		event.Skip()

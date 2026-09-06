@@ -57,7 +57,7 @@ def setOptionalFrameIcon( frame, iconPath ):
 class MyFrame1 ( wx.Frame ):
 	
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"TOOL-PSSE", pos = wx.DefaultPosition, size = wx.Size( 1600,800 ), style = wx.MAXIMIZE_BOX|wx.DEFAULT_FRAME_STYLE|wx.SYSTEM_MENU|wx.TAB_TRAVERSAL ) #
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"TOOL-PSSE", pos = wx.DefaultPosition, size = wx.Size( 1600,900 ), style = wx.MAXIMIZE_BOX|wx.DEFAULT_FRAME_STYLE|wx.SYSTEM_MENU|wx.TAB_TRAVERSAL ) #
 		self.SetSizeHintsSz( wx.DefaultSize, wx.Size(-1,-1  ) ) # 1635,996
 		self.SetFont( wx.Font( 10, wx.FONTFAMILY_ROMAN, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Times New Roman" ) )
 		self.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
@@ -685,6 +685,7 @@ class MyFrame1 ( wx.Frame ):
 		bSizer17 = wx.BoxSizer( wx.VERTICAL )
 
 		self.m_splitter41 = wx.SplitterWindow( self.gridPage, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.SP_3D|wx.SP_NO_XP_THEME )
+		self.m_splitter41.SetMinimumPaneSize( 100 )
 		self.m_splitter41.Bind( wx.EVT_IDLE, self.m_splitter41OnIdle )
 		
 		self.m_panel19 = wx.Panel( self.m_splitter41, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
@@ -776,6 +777,7 @@ class MyFrame1 ( wx.Frame ):
 
 
 		self.m_splitter2 = wx.SplitterWindow( self.m_panel20, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.SP_3D|wx.SP_NO_XP_THEME )
+		self.m_splitter2.SetMinimumPaneSize( 100 )
 		self.m_splitter2.Bind( wx.EVT_IDLE, self.m_splitter2OnIdle )
 		self.m_panel6 = wx.Panel( self.m_splitter2, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer38 = wx.BoxSizer( wx.VERTICAL )
@@ -1736,10 +1738,11 @@ class MyFrame1 ( wx.Frame ):
 		bSizer322.Add( self.m_staticText281, 0, wx.ALL, 5 )
 		
 		self.updateDirect = wx.RadioButton( self.m_panel11, wx.ID_ANY, u"Update step by step", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.updateDirect.SetValue( True )
 		bSizer322.Add( self.updateDirect, 0, wx.ALL, 5 )
 		
 		self.UpdatedLater = wx.RadioButton( self.m_panel11, wx.ID_ANY, u"Update Later (Ctrl+R)", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.UpdatedLater.SetValue( True )
+		self.UpdatedLater.SetValue( False )
 		bSizer322.Add( self.UpdatedLater, 0, wx.ALL, 5 )
 		self.m_panel11.SetSizer( bSizer322 )
 		self.m_panel11.Layout()
