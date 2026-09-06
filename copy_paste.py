@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*- 
 import wx
 import wx.grid
-from Tool_V3 import MyFrame1
+from Tool_V3 import FrameController
 from wx.py.shell import Shell
 
-class CopyPaste(MyFrame1):
+class CopyPaste(FrameController):
     def __init__ (self,parent):
-        MyFrame1.__init__ (self,parent)
+        FrameController.__init__ (self,parent)
         self.parent = parent
         self.myGrid = wx.grid.Grid
 

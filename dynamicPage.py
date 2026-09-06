@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*- 
-from Tool_V3 import MyFrame1
+from Tool_V3 import FrameController
 import pyodbc
 import glob, os, sys
 import pssepath
@@ -46,9 +46,9 @@ qmaxUpper = 0.0
 
 TWOPLACE = Decimal(10)**-2
     
-class CustomGridDyn(MyFrame1):
+class CustomGridDyn(FrameController):
     def __init__ (self,parent):
-        MyFrame1.__init__ (self,parent)
+        FrameController.__init__ (self,parent)
         self.Path = ''
         self.indexFile = 0
         self.uk = 0

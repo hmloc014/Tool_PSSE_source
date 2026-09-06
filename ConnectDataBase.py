@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import pyodbc
 import time
-from Tool_V3 import MyFrame1
+from Tool_V3 import FrameController
 import glob, os, sys
 import pssepath
 import wx
@@ -35,9 +35,9 @@ branchInfoList = []
 TWOPLACE = Decimal(10)**-2
 FIVEPLACE = Decimal(10)**-5
     
-class ConnectDatabase(MyFrame1):
+class ConnectDatabase(FrameController):
     def __init__ (self,parent):
-        MyFrame1.__init__ (self,parent)
+        FrameController.__init__ (self,parent)
         self.Path = ''
         self.PathFile = [[]]
         self.parent = parent

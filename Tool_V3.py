@@ -50,6 +50,25 @@ def setOptionalFrameIcon( frame, iconPath ):
 	except Exception:
 		return False
 
+
+class FrameController(object):
+	"""Share one real dashboard with feature-specific controller objects.
+
+	Controllers keep their existing ``__init__(parent)`` and method interfaces,
+	but no longer construct a complete hidden ``MyFrame1`` of their own.  UI
+	attributes and wx frame methods that are not local controller state are read
+	from the parent dashboard.
+	"""
+
+	def __init__( self, parent ):
+		self.parent = parent
+
+	def __getattr__( self, name ):
+		parent = self.__dict__.get( 'parent' )
+		if parent is None:
+			raise AttributeError( name )
+		return getattr( parent, name )
+
 ###########################################################################
 ## Class MyFrame1
 ###########################################################################

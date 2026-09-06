@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from Tool_V3 import MyFrame1
+from Tool_V3 import FrameController
 import glob, os, sys
 import pssepath
 import wx
@@ -34,9 +34,9 @@ selectedZoneRow = 0
 selectedZoneNum = 0
 TWOPLACE = Decimal(10)**-2
     
-class CustomGridZone(MyFrame1):
+class CustomGridZone(FrameController):
     def __init__ (self,parent):
-        MyFrame1.__init__ (self,parent)
+        FrameController.__init__ (self,parent)
         self.Path = ''
         self.PathFile = [[]]
         self.parent = parent

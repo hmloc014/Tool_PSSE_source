@@ -18,7 +18,7 @@ import wx.xrc
 import pssarrays
 from subprocess import call
 from openpyxl import load_workbook
-from Tool_V3 import MyFrame1
+from Tool_V3 import FrameController
 import dyntools
 PSSE_LOCATION = r"C:\Program Files\PTI\PSSE33\PSSBIN"
 sys.path.append(PSSE_LOCATION)
@@ -37,9 +37,9 @@ from n1_sav import (apply_outage, as_text, available_capacity_contingencies,
 from n1_dialog import N1ContingencySelectionDialog
 from psse_runtime import safe_psseinit
 
-class Calculation(MyFrame1):
+class Calculation(FrameController):
     def __init__ (self,parent):
-        MyFrame1.__init__ (self,parent)
+        FrameController.__init__ (self,parent)
         self.Path = ''
         self.PathFile = [[]]
         self.parent = parent
@@ -78,7 +78,7 @@ class Calculation(MyFrame1):
         [areaList,zoneList,busNumberList] = dialog.ContigencyCalculation(event )
 
         if PATH <> '':   
-            dirName = openFolder(self,"Choose the folder contain sub, mon, con files." )
+            dirName = openFolder(self.parent,"Choose the folder contain sub, mon, con files." )
             
             if dialog.flag == 1:
                 # tạo file sub, mon, con
@@ -114,7 +114,7 @@ class Calculation(MyFrame1):
         PATH = self.PathOrigin
         PATHFILE = self.PathFile
         if PATH != '':   
-            dirNameOrigin = openFile(self,'Choose the created sub/mon/con files', "Sub/Mon/Con files (*.sub)|*.sub|*.mon|*.con|All files|*")
+            dirNameOrigin = openFile(self.parent,'Choose the created sub/mon/con files', "Sub/Mon/Con files (*.sub)|*.sub|*.mon|*.con|All files|*")
             dirName = os.path.dirname(dirNameOrigin)
             dDir = os.path.dirname(PATH)
             dFile = os.path.basename(PATH)
@@ -429,7 +429,7 @@ class Calculation(MyFrame1):
         PATH = self.Path
         if PATH != '':
             # file python line tab
-            pyFile = openFile(self,'Choose the created python file', "Python file (*.py)|*.py|All files|*")
+            pyFile = openFile(self.parent,'Choose the created python file', "Python file (*.py)|*.py|All files|*")
             dirname = os.path.dirname(pyFile)
             path = os.path.join(dirname,'distribution_shortCircuit.py')
             f = open(path,'w')
@@ -452,7 +452,7 @@ class Calculation(MyFrame1):
             # os.remove(path)
 
             # file python tính ngắn mạch
-            pyFile2 = openFile(self,'Choose the created python file', "Python file (*.py)|*.py|All files|*")
+            pyFile2 = openFile(self.parent,'Choose the created python file', "Python file (*.py)|*.py|All files|*")
             dirname2 = os.path.dirname(pyFile2)
             path2 = os.path.join(dirname2,'distribution_shortCircuit.py')
             f = open(path2,'w')
@@ -491,7 +491,7 @@ class Calculation(MyFrame1):
             wx.MessageBox("Result has been saved in {b}.".format(b=fileName))
 
             # tạo file tính ngắn mạch chi tiết
-            pyFile3 = openFile(self,'Choose the created python file', "Python file (*.py)|*.py|All files|*")
+            pyFile3 = openFile(self.parent,'Choose the created python file', "Python file (*.py)|*.py|All files|*")
             dirname3 = os.path.dirname(pyFile2)
             path3 = os.path.join(dirname3,'distribution_shortCircuit.py')
             f = open(path3,'w')
@@ -708,7 +708,7 @@ class Calculation(MyFrame1):
         PATHFILE = self.PathFile
         flagResume = 0
         if PATH <> '':
-            pyFile = openFile(self,'Choose the created python file', "Python file (*.py)|*.py|All files|*")
+            pyFile = openFile(self.parent,'Choose the created python file', "Python file (*.py)|*.py|All files|*")
             dirname = os.path.dirname(pyFile)
             path = dirname+'\\shortCircuitFromFile.py'
             f = open(path,'w')
@@ -859,12 +859,12 @@ class Calculation(MyFrame1):
         safe_psseinit(psspy, 2000)
         PATH = self.Path
         PATHFILE = self.PathFile
-        pyFile = openFile(self,'Choose the created python file', "Python file (*.py)|*.py|All files|*")
+        pyFile = openFile(self.parent,'Choose the created python file', "Python file (*.py)|*.py|All files|*")
         dirname = os.path.dirname(pyFile)
         path_result_1 = os.path.join(dirname,'Phu_Luc_Ngan_Mach.txt')
         fResult = open(path_result_1,'w')
 
-        savFolder = openFolder(self,'Choose the Folder contain all sav files')
+        savFolder = openFolder(self.parent,'Choose the Folder contain all sav files')
         os.chdir(savFolder)
         savFileNames = glob.glob('*.sav')
         # bổ sung phần kết nối PSSE cho file python
@@ -949,9 +949,9 @@ class Calculation(MyFrame1):
         PATHFILE = self.PathFile
         # if PATH <> '':
 
-        pyFile = openFile(self,'Choose the created python file', "Python file (*.py)|*.py|All files|*")
+        pyFile = openFile(self.parent,'Choose the created python file', "Python file (*.py)|*.py|All files|*")
 
-        savFolder = openFolder(self,'Choose the Folder contain all sav files')
+        savFolder = openFolder(self.parent,'Choose the Folder contain all sav files')
         os.chdir(savFolder)
         savFileNames = glob.glob('*.sav')
 
@@ -1069,7 +1069,7 @@ class Calculation(MyFrame1):
             dialog.ShowModal()
             choose = dialog.choose*dialog.flag
             if choose ==1: # tạo file dyn_1.py
-                idv1 = openFile(self,'Select the dyn_1.idv:', "Idv files (*.idv)|*.idv|All files|*")
+                idv1 = openFile(self.parent,'Select the dyn_1.idv:', "Idv files (*.idv)|*.idv|All files|*")
                 dirname = os.path.dirname(idv1)
                 f = open(idv1, 'r')
                 lines = f.readlines()
@@ -1094,7 +1094,7 @@ class Calculation(MyFrame1):
                 self.Dynamic_Stability_Cal_Fcn(event)
             elif choose == 2:
                 # tạo file dyn_21.py
-                idv2 = openFile(self,'Select the dyn_21.idv:', "Idv files (*.idv)|*.idv|All files|*")
+                idv2 = openFile(self.parent,'Select the dyn_21.idv:', "Idv files (*.idv)|*.idv|All files|*")
                 dirname = os.path.dirname(idv2)
                 f = open(idv2, 'r')
                 lines = f.readlines()
@@ -1125,7 +1125,7 @@ class Calculation(MyFrame1):
                 r.close()
                 self.Dynamic_Stability_Cal_Fcn(event)
             elif choose == 4: # bổ sung thêm file dyr (thường bổ sung cho nguồn NLTT)
-                dyr_add = openFile(self,'Select the additional dyr file:', "Dyr files (*.dyr)|*.dyr|All files|*")
+                dyr_add = openFile(self.parent,'Select the additional dyr file:', "Dyr files (*.dyr)|*.dyr|All files|*")
                 if dyr_add != '':
                     if os.path.exists('output21'):
                         r = open('output21','r')
@@ -1183,7 +1183,7 @@ class Calculation(MyFrame1):
                     params = [int(CONs)-1,int(STATEs)-1,int(VARs)-1,int(ICONs)-1] 
                     r.close()
                     # tạo file dyn_22.py
-                    idv22 = openFile(self,'Select the dyn_22.idv:', "Idv files (*.idv)|*.idv|All files|*")
+                    idv22 = openFile(self.parent,'Select the dyn_22.idv:', "Idv files (*.idv)|*.idv|All files|*")
                     createDyn22File(idv22,params,option)
                     # ghi kết quả vào file output22
                     with open('output22', 'w') as f, silence(f):
@@ -1220,7 +1220,7 @@ class Calculation(MyFrame1):
                     os.remove('dyn_22.py')
                 self.Dynamic_Stability_Cal_Fcn(event)
             elif choose == 5: # chạy file sự cố có sẵn
-                pyFile = openFile(self,'Choose the created python file', "Python file (*.py)|*.py|All files|*")
+                pyFile = openFile(self.parent,'Choose the created python file', "Python file (*.py)|*.py|All files|*")
                 dirname = os.path.dirname(pyFile)
                 path = os.path.join(dirname,'dynamic_process.py')
                 createIncidentFile(pyFile)
@@ -1230,7 +1230,7 @@ class Calculation(MyFrame1):
                 call(('cmd','/c','start','',os.path.join(dirname+'\\sme.sav')))
                 # call(('cmd','/c','start','',os.path.join(dirname+'\\dynamic_process.txt')))
             elif choose == 6: # chạy nhiều sự cố cùng lúc, (chạy tất cả các file python sự cố trong thư mục, trả về file out tương ứng)
-                dirName = openFolder(self,'Choose the Folder contain all py files')
+                dirName = openFolder(self.parent,'Choose the Folder contain all py files')
                 os.chdir(dirName)
                 pyFileNames = glob.glob('*.py')
                 
@@ -1410,7 +1410,7 @@ class Calculation(MyFrame1):
         # init để không cần mở file psse vào tool mà vẫn chạy được chức năng tính toán
         safe_psseinit(psspy, 2000)
         # lấy thông tin đường dẫn của thư mục
-        dirName = openFolder(self,'Choose the Folder contain all sav and sub,mon,con files')
+        dirName = openFolder(self.parent,'Choose the Folder contain all sav and sub,mon,con files')
         os.chdir(dirName)
         subFileName = glob.glob('*.sub')
         subFullPath = os.path.join(dirName,subFileName[0])
@@ -1468,7 +1468,7 @@ class Calculation(MyFrame1):
     def Static_Stability_Cal_Selected_Case_Fcn( self, event ):
         PATH = self.Path
         if PATH !='':
-            dirName = openFolder(self,'Choose the Folder contain all sub,mon,con files')
+            dirName = openFolder(self.parent,'Choose the Folder contain all sub,mon,con files')
             os.chdir(dirName)
 
             subFileName = glob.glob('*.sub')
@@ -1937,7 +1937,7 @@ class Calculation(MyFrame1):
         PATH = self.Path
         if PATH != '':
             dirName = os.path.dirname(self.PathOrigin)
-            pyFile = openFile(self,'Choose the created python file', "Python file (*.py)|*.py|All files|*")
+            pyFile = openFile(self.parent,'Choose the created python file', "Python file (*.py)|*.py|All files|*")
             dirname = os.path.dirname(pyFile)
             path = os.path.join(dirname,'shunt_reactor.py')
             f = open(path,'w')
