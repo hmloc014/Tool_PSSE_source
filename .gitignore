@@ -7,12 +7,13 @@ __pycache__/
 .build-tools/
 .build-wheels/
 .pip-cache-build/
-.pyinstaller-cache-*/
+.*pyinstaller-cache-*/
 .uv-cache-build/
 .pytest_cache/
 *.egg-info/
 
 # Generated application builds
+geopandas/
 build/
 build-*/
 dist/
