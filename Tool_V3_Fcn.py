@@ -7,7 +7,7 @@ import pssepath
 from Tool_V3 import MyFrame1, setOptionalFrameIcon
 import wx
 import wx.xrc
-PSSE_LOCATION = r"C:\Program Files\PTI\PSSE33\PSSBIN"
+PSSE_LOCATION = os.path.join(os.environ.get('PROGRAMFILES(X86)', os.environ.get('PROGRAMFILES', r'C:\Program Files')), 'PTI', 'PSSE33', 'PSSBIN')
 sys.path.append(PSSE_LOCATION)
 os.environ['PATH'] = os.environ['PATH'] + ';' +  PSSE_LOCATION
 pssepath.add_pssepath(33)
@@ -104,7 +104,7 @@ class CustomMyframe1(MyFrame1):
     def __init__ (self,parent):
         MyFrame1.__init__ (self,parent)
         self.SetTitle(u"Tool PSSE {0}".format(APP_VERSION))
-        self.LOCATION = os.getcwd()
+        self.LOCATION = application_directory()
         self.Path = ''
         self.PathFile = [[]]
         self.parent = parent
