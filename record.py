@@ -7,6 +7,7 @@ the tool are written as psspy commands to the selected automation file.
 
 import os
 import re
+import tempfile
 
 import wx
 
@@ -368,7 +369,7 @@ def _normalise_automation_name(name):
 
 
 def prompt_automation_path(parent, default_directory, default_name=u'auto1.py'):
-    """Ask for an automation name and return its full path, or None on cancel."""
+    """Return (full path, append), or None when the user cancels."""
     if not default_directory or not os.path.isdir(default_directory):
         default_directory = os.getcwd()
 
@@ -403,19 +404,36 @@ def prompt_automation_path(parent, default_directory, default_name=u'auto1.py'):
             os.path.join(default_directory, automation_name)
         )
         if not os.path.exists(output_path):
-            return output_path
+            return output_path, False
 
-        confirm = wx.MessageDialog(
+        confirm = wx.SingleChoiceDialog(
             parent,
-            u"The file already exists:\n%s\n\nOverwrite it?" % output_path,
-            u"Confirm overwrite",
-            wx.YES_NO | wx.NO_DEFAULT | wx.ICON_QUESTION,
+            u"The file already exists:\n%s\n\nContinue writing or overwrite it?" % output_path,
+            u"Existing recording file",
+            [u"Continue writing", u"Overwrite"],
         )
-        overwrite = confirm.ShowModal() == wx.ID_YES
+        result = confirm.ShowModal()
+        choice = confirm.GetSelection()
         confirm.Destroy()
-        if overwrite:
-            return output_path
-        proposed_name = automation_name
+        if result != wx.ID_OK:
+            return None
+        return output_path, choice == 0
+
+
+def _replace_recording(source, destination):
+    """Publish in one operation, including on the supported Python 2 Windows runtime."""
+    if hasattr(os, 'replace'):
+        os.replace(source, destination)
+    elif os.name == 'nt':
+        import ctypes
+        from ctypes import wintypes
+        move_file = ctypes.WinDLL('kernel32', use_last_error=True).MoveFileExW
+        move_file.argtypes = (wintypes.LPCWSTR, wintypes.LPCWSTR, wintypes.DWORD)
+        move_file.restype = wintypes.BOOL
+        if not move_file(text_type(source), text_type(destination), 1):
+            raise ctypes.WinError(ctypes.get_last_error())
+    else:
+        os.rename(source, destination)
 
 
 class PsseCommandRecorder(object):
@@ -427,6 +445,8 @@ class PsseCommandRecorder(object):
         self._psspy = psspy_module
         self._active = False
         self._output_path = None
+        self._recording_path = None
+        self._append = False
 
     @property
     def is_recording(self):
@@ -436,7 +456,7 @@ class PsseCommandRecorder(object):
     def output_path(self):
         return self._output_path
 
-    def start(self, output_path):
+    def start(self, output_path, append=False):
         if self._active:
             raise RecorderError("A PSSE command recording is already active.")
         if not output_path:
@@ -447,14 +467,27 @@ class PsseCommandRecorder(object):
         if not os.path.isdir(output_directory):
             raise RecorderError("The automation output folder does not exist.")
 
-        ierr = self._psspy.startrecording(self.PYTHON_FORMAT, output_path)
-        if ierr:
-            raise RecorderError(
-                "PSSE could not start recording (error code %s)." % ierr
+        try:
+            descriptor, recording_path = tempfile.mkstemp(
+                prefix='psse_record_', suffix='.py', dir=output_directory
             )
+            os.close(descriptor)
+        except (IOError, OSError) as error:
+            raise RecorderError("Could not create the recording file: %s" % error)
+        try:
+            ierr = self._psspy.startrecording(self.PYTHON_FORMAT, recording_path)
+            if ierr:
+                raise RecorderError(
+                    "PSSE could not start recording (error code %s)." % ierr
+                )
+        except Exception:
+            os.remove(recording_path)
+            raise
 
         self._active = True
         self._output_path = output_path
+        self._recording_path = recording_path
+        self._append = append
         return output_path
 
     def stop(self):
@@ -462,19 +495,52 @@ class PsseCommandRecorder(object):
             return None
 
         output_path = self._output_path
+        recording_path = self._recording_path
+        append = self._append
         ierr = self._psspy.stoprecording()
         self._active = False
         self._output_path = None
+        self._recording_path = None
+        self._append = False
         if ierr:
             raise RecorderError(
-                "PSSE could not finish recording (error code %s)." % ierr
+                "PSSE could not finish recording (error code %s). "
+                "The selected file is unchanged; recording is at %s." % (ierr, recording_path)
             )
 
         try:
-            clean_recorded_macro(output_path, self._psspy)
+            clean_recorded_macro(recording_path, self._psspy)
+            if append:
+                with open(output_path, 'rb') as existing_file:
+                    existing = existing_file.read()
+                if existing:
+                    with open(recording_path, 'rb') as recording_file:
+                        lines = recording_file.readlines()
+                    # Keep new step notes, but omit the repeated PSSE initialization header.
+                    body_start = len(lines)
+                    for index, line in enumerate(lines):
+                        parsed = _parse_psspy_call(line)
+                        if parsed is not None and parsed[0] not in (
+                                b'getdefaultint', b'getdefaultreal', b'getdefaultchar',
+                                b'psseinit'):
+                            body_start = index
+                            break
+                    while body_start > 0:
+                        previous = lines[body_start - 1].strip()
+                        if (not previous.startswith(b'#') or
+                                previous.startswith((b'# File:', b'# -*-', b'#!'))):
+                            break
+                        body_start -= 1
+                    with open(recording_path, 'wb') as recording_file:
+                        recording_file.write(existing)
+                        if not existing.endswith((b'\n', b'\r')):
+                            recording_file.write(b'\n')
+                        recording_file.writelines(lines[body_start:])
+            _replace_recording(recording_path, output_path)
         except (IOError, OSError) as error:
             raise RecorderError(
                 "PSSE recording stopped, but the automation file could not "
-                "be cleaned: %s" % error
+                "be saved: %s. The selected file is unchanged; recording is at %s."
+                % (error, recording_path)
             )
         return output_path

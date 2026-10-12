@@ -14,8 +14,7 @@ __pycache__/
 
 # Generated application builds
 geopandas/
-build/
-build-*/
+*build*/
 dist/
 dist-*/
 *.rar

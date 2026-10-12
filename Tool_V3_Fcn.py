@@ -2659,15 +2659,16 @@ class CustomMyframe1(MyFrame1):
             return
 
         defaultDirectory = os.path.dirname(PATH_ORIGIN)
-        outputPath = prompt_automation_path(self, defaultDirectory, u"auto1.py")
-        if outputPath is None:
+        recordingChoice = prompt_automation_path(self, defaultDirectory, u"auto1.py")
+        if recordingChoice is None:
             self._set_record_tool_state(False)
             if event is not None:
                 event.Skip()
             return
 
+        outputPath, append = recordingChoice
         try:
-            self.commandRecorder.start(outputPath)
+            self.commandRecorder.start(outputPath, append=append)
         except RecorderError as error:
             self._set_record_tool_state(False)
             wx.MessageBox(str(error), u"Recording error", wx.OK | wx.ICON_ERROR, self)
